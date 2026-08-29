@@ -1,0 +1,47 @@
+name: 研究课题
+description: 提议一个新的研究问题或扩展现有研究
+title: "[Research] "
+labels:
+  - research
+body:
+  - type: markdown
+    attributes:
+      value: 请先把目标写成可以被证据回答的问题。
+  - type: input
+    id: object
+    attributes:
+      label: 研究对象
+      description: 名称、上游链接及已知版本
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: 核心问题
+      description: 想回答什么，为什么值得研究？
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 验证方式
+      description: 哪些测试、数据或现象足以支持或推翻假设？
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: 范围与非目标
+      description: 本轮包括什么，又明确不包括什么？
+    validations:
+      required: true
+  - type: dropdown
+    id: status
+    attributes:
+      label: 当前阶段
+      options:
+        - 构想
+        - 已有最小复现
+        - 已有部分证据
+    validations:
+      required: true
