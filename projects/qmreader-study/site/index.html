@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="R-005：QMReader 能力、实现原理、使用场景、扩展方向与研究价值的交互式研究展览。" />
+    <meta name="color-scheme" content="light dark" />
+    <title>R-005 · QMReader 研究展览｜把订阅流变成研究资产</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到主要内容</a>
+
+    <header class="site-header" data-site-header>
+      <a class="brand" href="#top" aria-label="QMReader 研究展览首页">
+        <span class="brand-mark" aria-hidden="true">QM</span>
+        <span class="brand-copy">
+          <strong>R-005 · READER LAB</strong>
+          <small>UPSTREAM · 95EFAB9</small>
+        </span>
+      </a>
+
+      <nav class="primary-nav" aria-label="页面导航">
+        <a href="#demo">场景演示</a>
+        <a href="#capabilities">能力</a>
+        <a href="#architecture">原理</a>
+        <a href="#scenarios">场景</a>
+        <a href="#roadmap">扩展</a>
+        <a href="#meaning">意义</a>
+      </nav>
+
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="切换到深色主题" aria-pressed="false">
+        <span class="theme-toggle-icon" aria-hidden="true"></span>
+        <span data-theme-label>深色</span>
+      </button>
+    </header>
+
+    <main id="main">
+      <section class="hero section-shell" id="top" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="eyebrow"><span>01</span> 核心判断</div>
+          <p class="kicker">SELF-HOSTED · RSS → AI → ASSET</p>
+          <h1 id="hero-title">把订阅流，<br />变成可复用的<span>研究资产。</span></h1>
+          <p class="hero-lede">
+            QMReader 不是一个可嵌入的 RSS SDK。它是一套完整工作台：先让新内容快速可见，再异步翻译、改写、伴读，最后把人的判断沉淀成可引用、可订阅的公开资产。
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="#demo" data-start-link>
+              <span>运行完整演示</span>
+              <span aria-hidden="true">↘</span>
+            </a>
+            <a class="button button-quiet" href="#evidence">查看证据边界</a>
+          </div>
+
+          <dl class="hero-metrics" aria-label="QMReader 研究指标">
+            <div>
+              <dt>61</dt>
+              <dd>内置来源<br /><span>41 个启用</span></dd>
+            </div>
+            <div>
+              <dt>2</dt>
+              <dd>独立阶段<br /><span>抓取 / AI</span></dd>
+            </div>
+            <div>
+              <dt>8/8</dt>
+              <dd>研究契约<br /><span>源码验证通过</span></dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="hero-workbench" aria-label="QMReader 工作台概念预览">
+          <div class="workbench-topline">
+            <span class="live-dot">LIVE MODEL</span>
+            <span>09:42 CST</span>
+          </div>
+          <div class="workbench-grid">
+            <aside class="mini-sources" aria-label="信息源">
+              <span class="mini-label">SOURCES</span>
+              <div class="source-chip active"><i>HF</i><span>Papers</span><b>3</b></div>
+              <div class="source-chip"><i>HN</i><span>Hacker News</span><b>8</b></div>
+              <div class="source-chip"><i>PG</i><span>Essays</span><b>1</b></div>
+              <div class="source-chip"><i>PH</i><span>Product Hunt</span><b>5</b></div>
+            </aside>
+
+            <div class="mini-feed" aria-label="文章列表">
+              <span class="mini-label">TODAY · 17 ITEMS</span>
+              <article class="feed-row selected">
+                <span class="feed-source">Hugging Face Papers · 8m</span>
+                <strong>Small language models are becoming capable research assistants</strong>
+                <small>小语言模型正在成为可靠的研究助手</small>
+              </article>
+              <article class="feed-row">
+                <span class="feed-source">Hacker News · 23m</span>
+                <strong>A practical guide to local-first AI workflows</strong>
+              </article>
+              <article class="feed-row">
+                <span class="feed-source">Simon Willison · 41m</span>
+                <strong>Notes on structured outputs and failure modes</strong>
+              </article>
+            </div>
+
+            <article class="mini-reader">
+              <div class="reader-tabs" role="presentation">
+                <span>原文</span><span>翻译</span><span class="active">改写</span>
+              </div>
+              <span class="mini-label">REWRITE · DEEPSEEK</span>
+              <h2>更小的模型，正在进入真正的研究工作流</h2>
+              <p>关键变化不是参数更少，而是任务开始从“回答问题”转向“保留结构、引用和可追踪输出”。</p>
+              <div class="reader-highlight">
+                <span>乔木点评</span>
+                <p>值得关注的是部署边界，而不是榜单名次。</p>
+              </div>
+            </article>
+          </div>
+          <div class="workbench-status">
+            <span><i class="status-signal"></i> FETCH 已完成 · 1.2s</span>
+            <span>AI WORKER 处理中 · 68%</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="thesis-strip" aria-label="一句话结论">
+        <div class="section-shell thesis-inner">
+          <span class="section-index">THESIS / 结论</span>
+          <p>它最有价值的不是“订阅”，而是把<strong>收集、理解、判断、再发布</strong>连成一条可持续的信息生产线。</p>
+          <span class="thesis-verdict">参考实现价值 <b>高</b></span>
+        </div>
+      </section>
+
+      <section class="demo-section" id="demo" aria-labelledby="demo-title">
+        <div class="section-shell">
+          <div class="section-heading light-on-dark">
+            <div>
+              <div class="eyebrow"><span>02</span> 场景实验室</div>
+              <p class="kicker">3 WORKFLOWS · LOCAL SIMULATION</p>
+              <h2 id="demo-title" data-scenario-title>每天 20 分钟，完成一轮 AI 技术情报加工。</h2>
+            </div>
+            <div class="heading-note">
+              <span data-scenario-fit>直接适用 · 原生能力</span>
+              <p data-scenario-audience>持续阅读英文 AI 资讯、需要形成中文判断和研究素材的个人研究者或内容创作者。</p>
+            </div>
+          </div>
+
+          <div class="scenario-switcher" role="group" aria-label="选择演示场景">
+            <button class="scenario-option active" type="button" data-scenario-select="ai-intel" aria-pressed="true">
+              <span>01 · 直接适用</span>
+              <strong>AI 技术情报</strong>
+              <small>英文资讯 → 中文研究资产</small>
+            </button>
+            <button class="scenario-option" type="button" data-scenario-select="paper-radar" aria-pressed="false">
+              <span>02 · 直接适用</span>
+              <strong>论文雷达</strong>
+              <small>新论文 → 中文速读卡</small>
+            </button>
+            <button class="scenario-option" type="button" data-scenario-select="product-signals" aria-pressed="false">
+              <span>03 · 轻量扩展</span>
+              <strong>产品与竞品信号</strong>
+              <small>发布变化 → 影响判断卡</small>
+            </button>
+          </div>
+
+          <div class="demo-toolbar">
+            <div class="demo-state-copy">
+              <span class="simulation-badge">模拟演示</span>
+              <div>
+                <strong data-demo-title>等待开始</strong>
+                <span data-demo-subtitle>点击运行，观察一篇英文论文如何变成公开研究资产。</span>
+              </div>
+            </div>
+            <div class="demo-actions">
+              <button class="button button-demo" type="button" data-demo-toggle>
+                <span data-demo-button-icon aria-hidden="true">▶</span>
+                <span data-demo-button-label>运行演示</span>
+              </button>
+              <button class="button button-reset" type="button" data-demo-reset disabled>重置</button>
+            </div>
+          </div>
+
+          <div class="pipeline" aria-label="处理管线" data-pipeline>
+            <div class="pipeline-progress" aria-hidden="true"><span data-progress-bar></span></div>
+            <ol>
+              <li data-step="0" class="active" aria-current="step">
+                <span>01</span><strong data-step-title>订阅命中</strong><small data-step-detail>RSS / Sitemap</small>
+              </li>
+              <li data-step="1">
+                <span>02</span><strong data-step-title>抓取补全</strong><small data-step-detail>Fetch worker</small>
+              </li>
+              <li data-step="2">
+                <span>03</span><strong data-step-title>结构翻译</strong><small data-step-detail>Block validation</small>
+              </li>
+              <li data-step="3">
+                <span>04</span><strong data-step-title>改写伴读</strong><small data-step-detail>AI worker</small>
+              </li>
+              <li data-step="4">
+                <span>05</span><strong data-step-title>资产发布</strong><small data-step-detail>RSS / Deep link</small>
+              </li>
+            </ol>
+          </div>
+
+          <div class="demo-workspace" data-demo-workspace>
+            <aside class="demo-queue" aria-label="今日信息队列">
+              <div class="panel-label"><span data-queue-label>今日队列</span><b data-queue-count>03</b></div>
+              <article class="queue-item active" data-queue-item>
+                <div><span data-queue-code>HF</span><small data-queue-age>8 MIN AGO</small></div>
+                <strong data-queue-title>Small language models are becoming capable research assistants</strong>
+                <p data-queue-status>等待处理</p>
+              </article>
+              <article class="queue-item muted" data-queue-item>
+                <div><span data-queue-code>HN</span><small data-queue-age>23 MIN AGO</small></div>
+                <strong data-queue-title>A practical guide to local-first AI workflows</strong>
+                <p>排队中</p>
+              </article>
+              <article class="queue-item muted" data-queue-item>
+                <div><span data-queue-code>SW</span><small data-queue-age>41 MIN AGO</small></div>
+                <strong data-queue-title>Structured outputs and their failure modes</strong>
+                <p>排队中</p>
+              </article>
+              <div class="queue-footnote">
+                <span data-queue-note-title>为什么先显示？</span>
+                <p data-queue-note-text>Fetch 完成就落盘，AI 慢也不阻塞新内容。</p>
+              </div>
+            </aside>
+
+            <article class="demo-document" aria-live="polite" aria-atomic="false">
+              <header>
+                <div class="document-meta">
+                  <span data-document-mode>ORIGINAL FEED</span>
+                  <span data-document-source>HUGGING FACE PAPERS</span>
+                </div>
+                <span class="document-status" data-document-status>NEW</span>
+              </header>
+
+              <div class="document-body">
+                <p class="document-kicker" data-document-kicker>ORIGINAL · ENGLISH</p>
+                <h3 data-document-title>Small language models are becoming capable research assistants</h3>
+                <p class="document-summary" data-document-summary>
+                  A new evaluation explores how compact language models can preserve structure, cite source material, and complete constrained research tasks on local hardware.
+                </p>
+                <div class="document-content" data-document-content>
+                  <p>The paper compares instruction-following behavior across a set of long-form synthesis tasks.</p>
+                  <p>Its most useful finding is not a leaderboard score, but a practical boundary: smaller models become reliable when the workflow constrains inputs and validates outputs.</p>
+                </div>
+                <blockquote data-document-insight hidden>
+                  <span>ARTICLE AGENT</span>
+                  <p data-document-insight-text>这篇文章真正值得复用的是“结构约束 + 输出校验”的流程，而不是某个具体模型名次。</p>
+                </blockquote>
+              </div>
+
+              <footer>
+                <span data-content-hash>HASH · NOT COMPUTED</span>
+                <a href="#architecture" data-asset-link aria-disabled="true">资产链接尚未生成</a>
+              </footer>
+            </article>
+
+            <aside class="demo-monitor" aria-label="任务状态与证据">
+              <div class="panel-label"><span>运行状态</span><b data-monitor-percent>00%</b></div>
+              <dl class="monitor-metrics">
+                <div><dt>可阅读延迟</dt><dd data-fetch-latency>—</dd></div>
+                <div><dt>结构块</dt><dd data-block-count>—</dd></div>
+                <div><dt>公开资产</dt><dd data-asset-count>0</dd></div>
+              </dl>
+
+              <div class="event-log" aria-live="polite" data-event-log>
+                <div class="event active"><span>09:42:08</span><p>检测到新的 RSS 条目</p></div>
+                <div class="event pending"><span>—</span><p>等待 Fetch worker</p></div>
+                <div class="event pending"><span>—</span><p>等待 AI worker</p></div>
+                <div class="event pending"><span>—</span><p>等待资产发布</p></div>
+              </div>
+
+              <div class="monitor-boundary">
+                <span>证据边界</span>
+                <p data-monitor-boundary>这里展示的是已验证代码路径，不调用真实模型，也不代表生成质量评测。</p>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="capability-section section-shell" id="capabilities" aria-labelledby="capability-title">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow"><span>03</span> 能力地图</div>
+            <p class="kicker">WHAT IT ACTUALLY DOES</p>
+            <h2 id="capability-title">六步能力，组成一条<br />完整阅读生产线。</h2>
+          </div>
+          <p class="heading-summary">每项能力都对应锁定提交中的真实模块；右下角标签说明它更偏“通用能力”还是“作者工作流”。</p>
+        </div>
+
+        <div class="capability-grid">
+          <article class="capability-card featured">
+            <span class="card-number">01</span>
+            <div class="card-icon" aria-hidden="true">↙</div>
+            <h3>多源采集</h3>
+            <p>直接 RSS/Atom、RSSHub 候选、Sitemap、WordPress JSON 和手工投稿统一进入来源注册表。</p>
+            <ul><li>61 个内置来源</li><li>按新鲜度、优先级与成本刷新</li></ul>
+            <span class="card-tag">通用基础</span>
+          </article>
+          <article class="capability-card">
+            <span class="card-number">02</span>
+            <div class="card-icon" aria-hidden="true">⌁</div>
+            <h3>正文补全</h3>
+            <p>对摘要型 Feed 继续抓正文，处理编码、重定向、HTML 清洗、去重和并发缓存合并。</p>
+            <ul><li>HN 讨论与作者回复</li><li>Product Hunt 官网材料</li></ul>
+            <span class="card-tag">来源特化</span>
+          </article>
+          <article class="capability-card">
+            <span class="card-number">03</span>
+            <div class="card-icon" aria-hidden="true">文</div>
+            <h3>结构翻译</h3>
+            <p>将 HTML 拆成结构块分批翻译，检查漏块、链接、图片、标签顺序和最低文本覆盖率。</p>
+            <ul><li>缺失块定向重试</li><li>不完整结果拒绝保存</li></ul>
+            <span class="card-tag">核心设计</span>
+          </article>
+          <article class="capability-card">
+            <span class="card-number">04</span>
+            <div class="card-icon" aria-hidden="true">✎</div>
+            <h3>风格改写</h3>
+            <p>根据文章、论文、HN 或产品材料选择不同提示模板，生成更适合中文阅读的二次稿。</p>
+            <ul><li>内容 hash 失效</li><li>段落与长度质量门</li></ul>
+            <span class="card-tag">作者工作流</span>
+          </article>
+          <article class="capability-card">
+            <span class="card-number">05</span>
+            <div class="card-icon" aria-hidden="true">?</div>
+            <h3>文章伴读</h3>
+            <p>围绕单篇文章上下文追问、总结和拆解，保留最近对话并支持流式接口。</p>
+            <ul><li>正文片段约 8,000 字符</li><li>不是跨文章 RAG</li></ul>
+            <span class="card-tag warning">边界明确</span>
+          </article>
+          <article class="capability-card accent">
+            <span class="card-number">06</span>
+            <div class="card-icon" aria-hidden="true">◎</div>
+            <h3>资产沉淀</h3>
+            <p>翻译、改写、点评、划线和对话拥有作者、模型、反馈、稳定深链、RSS 与 Sitemap。</p>
+            <ul><li>从一次输出变成可引用对象</li><li>贡献者页与资产流</li></ul>
+            <span class="card-tag">最大差异</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="architecture-section" id="architecture" aria-labelledby="architecture-title">
+        <div class="section-shell">
+          <div class="section-heading">
+            <div>
+              <div class="eyebrow"><span>04</span> 实现原理</div>
+              <p class="kicker">FAST FIRST, SMART LATER</p>
+              <h2 id="architecture-title">为什么 AI 很慢，<br />文章仍能先出现？</h2>
+            </div>
+            <p class="heading-summary">关键是把“内容新鲜度”和“AI 加工完成度”拆成两个独立状态，而不是让一次请求串行完成所有工作。</p>
+          </div>
+
+          <div class="architecture-map">
+            <div class="architecture-inputs">
+              <span class="map-label">INPUT / 输入</span>
+              <div class="input-node"><b>RSS</b><span>直接订阅</span></div>
+              <div class="input-node"><b>RH</b><span>RSSHub</span></div>
+              <div class="input-node"><b>SM</b><span>Sitemap</span></div>
+              <div class="input-node"><b>URL</b><span>人工投稿</span></div>
+            </div>
+
+            <div class="architecture-workers">
+              <span class="map-label">PROCESS / 双阶段</span>
+              <article class="worker-card fetch-worker">
+                <header><span>WORKER 01</span><b>FAST PATH</b></header>
+                <h3>Fetch worker</h3>
+                <p>抓取、补全、清洗、去重并落盘。完成后立即通知 Web 进程重新载入。</p>
+                <div class="worker-output"><span>输出</span><strong>文章立即可读</strong><b>≈ 1–3s</b></div>
+              </article>
+              <div class="worker-bridge"><span>仅将变化来源入队</span></div>
+              <article class="worker-card ai-worker">
+                <header><span>WORKER 02</span><b>SLOW PATH</b></header>
+                <h3>AI worker</h3>
+                <p>补标题翻译、正文翻译和自动改写；失败不会抹掉已经可读的原始条目。</p>
+                <div class="worker-output"><span>输出</span><strong>加工结果补齐</strong><b>≈ 10–90s</b></div>
+              </article>
+            </div>
+
+            <div class="architecture-store">
+              <span class="map-label">OUTPUT / 存储</span>
+              <div class="store-core">
+                <span>SQLite + cache.json</span>
+                <strong>内容 hash</strong>
+                <p>原文一变，旧翻译与改写自动失效，不把过期结果当作有效缓存。</p>
+              </div>
+              <div class="store-assets">
+                <span>PUBLIC ASSETS</span>
+                <ul><li>翻译</li><li>改写</li><li>批注</li><li>对话</li><li>RSS</li></ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="principle-grid">
+            <article><span>01</span><h3>新鲜度优先</h3><p>读者等待的是新内容，不必等待模型。</p></article>
+            <article><span>02</span><h3>结构校验</h3><p>模型输出先过覆盖率与 HTML 保真门槛。</p></article>
+            <article><span>03</span><h3>资产建模</h3><p>AI 输出具有来源、作者、模型和反馈。</p></article>
+            <article><span>04</span><h3>安全抓取</h3><p>验证 DNS、私网地址、跳转和响应体大小。</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="scenario-section section-shell" id="scenarios" aria-labelledby="scenario-title">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow"><span>05</span> 使用场景</div>
+            <p class="kicker">FIT, NOT HYPE</p>
+            <h2 id="scenario-title">同一条信息管线，<br />可以长成八种工作台。</h2>
+          </div>
+          <p class="heading-summary">扩展不是换一套提示词。先看现有能力能覆盖多少，再明确要补来源适配、团队协作，还是知识检索与审计基础设施。</p>
+        </div>
+
+        <div class="scenario-landscape">
+          <section class="scenario-lane direct-fit" aria-labelledby="direct-fit-title">
+            <header>
+              <span>LEVEL 01</span>
+              <div><h3 id="direct-fit-title">直接适用</h3><p>主要替换来源与提示模板，不改变核心架构。</p></div>
+              <b>4 场景</b>
+            </header>
+            <div class="scenario-card-grid">
+              <article class="scenario-card" data-scenario-card="ai-intel">
+                <span class="scenario-number">01</span><span class="scenario-status">原生能力</span>
+                <h4>个人 AI 技术情报</h4>
+                <p>高质量英文 Feed → 中文研究判断与稳定资产。</p>
+                <small>所需补充：来源配置、个人 Persona</small>
+                <button type="button" data-scenario-jump="ai-intel">进入演示 <span>↗</span></button>
+              </article>
+              <article class="scenario-card" data-scenario-card="paper-radar">
+                <span class="scenario-number">02</span><span class="scenario-status">原生能力</span>
+                <h4>学术论文雷达</h4>
+                <p>论文 Feed 与摘要 → 中文速读卡与研究问题。</p>
+                <small>所需补充：学科来源、论文解读模板</small>
+                <button type="button" data-scenario-jump="paper-radar">进入演示 <span>↗</span></button>
+              </article>
+              <article class="scenario-card" data-scenario-card="creator-desk">
+                <span class="scenario-number">03</span><span class="scenario-status">原生能力</span>
+                <h4>内容创作者选题台</h4>
+                <p>订阅与原文 → 选题库、中文改写和公开策展。</p>
+                <small>所需补充：选题标签、发布模板</small>
+              </article>
+              <article class="scenario-card" data-scenario-card="oss-watch">
+                <span class="scenario-number">04</span><span class="scenario-status">原生能力</span>
+                <h4>开源生态与社区信号</h4>
+                <p>项目博客、HN 与发布 Feed → 趋势观察与周度摘要。</p>
+                <small>所需补充：项目清单、社区权重规则</small>
+              </article>
+            </div>
+          </section>
+
+          <section class="scenario-lane extension-fit" aria-labelledby="extension-fit-title">
+            <header>
+              <span>LEVEL 02</span>
+              <div><h3 id="extension-fit-title">轻量扩展</h3><p>信息管线可复用，需要新增业务规则或协作层。</p></div>
+              <b>2 场景</b>
+            </header>
+            <div class="scenario-card-grid two-up">
+              <article class="scenario-card" data-scenario-card="product-signals">
+                <span class="scenario-number">05</span><span class="scenario-status">需适配器</span>
+                <h4>产品与竞品信号</h4>
+                <p>官网更新、Changelog、Product Hunt → 变化与影响判断卡。</p>
+                <small>需要新增：source adapter、版本差异与实体规则</small>
+                <button type="button" data-scenario-jump="product-signals">进入演示 <span>↗</span></button>
+              </article>
+              <article class="scenario-card" data-scenario-card="team-briefing">
+                <span class="scenario-number">06</span><span class="scenario-status">需协作层</span>
+                <h4>团队周报与公开策展</h4>
+                <p>成员共读与批注 → 经审核的专题周报和资产 RSS。</p>
+                <small>需要新增：团队空间、审批、细粒度权限与通知</small>
+              </article>
+            </div>
+          </section>
+
+          <section class="scenario-lane rebuild-fit" aria-labelledby="rebuild-fit-title">
+            <header>
+              <span>LEVEL 03</span>
+              <div><h3 id="rebuild-fit-title">深度改造</h3><p>概念可借鉴，但底层存储、检索和治理必须升级。</p></div>
+              <b>2 场景</b>
+            </header>
+            <div class="scenario-card-grid two-up">
+              <article class="scenario-card" data-scenario-card="enterprise-knowledge">
+                <span class="scenario-number">07</span><span class="scenario-status">需重构</span>
+                <h4>企业内部知识空间</h4>
+                <p>内部文档与外部信息 → 可检索、可授权的团队知识资产。</p>
+                <small>必须新增：多租户、向量检索、权限、审计与持久队列</small>
+              </article>
+              <article class="scenario-card" data-scenario-card="policy-watch">
+                <span class="scenario-number">08</span><span class="scenario-status">高约束</span>
+                <h4>政策与合规监测</h4>
+                <p>监管网站与公告 → 带来源定位、变更记录和复核状态的简报。</p>
+                <small>必须新增：逐段引用、版本留存、人工复核和告警 SLA</small>
+              </article>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="roadmap-section" id="roadmap" aria-labelledby="roadmap-title">
+        <div class="section-shell">
+          <div class="section-heading light-on-dark">
+            <div>
+              <div class="eyebrow"><span>06</span> 可扩展方向</div>
+              <p class="kicker">FROM PERSONAL TOOL TO PLATFORM</p>
+              <h2 id="roadmap-title">先拆耦合，再补知识，<br />最后谈规模。</h2>
+            </div>
+            <p class="heading-summary">扩展顺序决定项目会成为可持续产品，还是继续长成更大的个人脚本。</p>
+          </div>
+
+          <div class="roadmap-grid">
+            <article>
+              <span class="roadmap-priority">P0 · NOW</span>
+              <h3>工程基线</h3>
+              <ul><li>升级 3 个审计告警依赖</li><li>修复 Windows SQLite 释放</li><li>声明 Node engines</li><li>拆分万行前端单文件</li></ul>
+              <small>先让它稳定、可维护</small>
+            </article>
+            <article>
+              <span class="roadmap-priority">P1 · PRODUCT</span>
+              <h3>可配置产品</h3>
+              <ul><li>OPML 导入导出</li><li>用户自定义来源与规则</li><li>Source adapter 插件</li><li>Persona / Prompt 版本化</li></ul>
+              <small>从“乔木的工具”变成“我的工具”</small>
+            </article>
+            <article>
+              <span class="roadmap-priority">P2 · KNOWLEDGE</span>
+              <h3>知识系统</h3>
+              <ul><li>稳定分块与跨文检索</li><li>答案附原文定位</li><li>专题、实体与观点关联</li><li>事实核验与不确定性</li></ul>
+              <small>从单篇伴读进入真正 RAG</small>
+            </article>
+            <article>
+              <span class="roadmap-priority">P3 · SCALE</span>
+              <h3>规模化</h3>
+              <ul><li>持久化任务队列</li><li>PostgreSQL 与对象存储</li><li>模型成本和质量观测</li><li>Webhook / 扩展 / 移动端</li></ul>
+              <small>最后再解决多人和生态</small>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="meaning-section section-shell" id="meaning" aria-labelledby="meaning-title">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow"><span>07</span> 对我们的意义</div>
+            <p class="kicker">WHAT WE SHOULD TAKE AWAY</p>
+            <h2 id="meaning-title">不照搬产品，<br />要复用它的工作流。</h2>
+          </div>
+          <p class="heading-summary">对 0830 Research Lab 来说，QMReader 最有价值的是一套可验证的信息处理范式，而不是预置来源或“乔木风格”。</p>
+        </div>
+
+        <div class="meaning-layout">
+          <div class="meaning-principles">
+            <article>
+              <span>TAKE 01</span>
+              <h3>研究输入也需要流水线</h3>
+              <p>把来源、抓取时间、原文、AI 产物和人的判断放在同一证据链里，避免只保存最终总结。</p>
+            </article>
+            <article>
+              <span>TAKE 02</span>
+              <h3>AI 输出必须可失效</h3>
+              <p>内容 hash 是一个朴素但重要的提醒：上游材料变了，旧结论就需要重新验证。</p>
+            </article>
+            <article>
+              <span>TAKE 03</span>
+              <h3>阅读结果要成为对象</h3>
+              <p>当翻译、批注和对话拥有稳定地址、作者与反馈，它们才可能被后续研究真正复用。</p>
+            </article>
+          </div>
+
+          <aside class="adoption-card">
+            <span class="adoption-label">OUR DECISION / 采用建议</span>
+            <h3>作为研究样本：<b>值得深入</b></h3>
+            <h3>作为直接产品：<b>选择性复用</b></h3>
+            <div class="adoption-score">
+              <span>参考实现价值</span><strong>8.6<small>/10</small></strong>
+            </div>
+            <ul>
+              <li><span>复用</span>双阶段管线、内容 hash、结构化翻译、资产模型</li>
+              <li><span>改造</span>来源配置、Persona、单机存储、大文件结构</li>
+              <li><span>补足</span>跨文检索、引用、质量评测、权限和规模化</li>
+            </ul>
+            <a class="button button-primary" href="https://yydshly.github.io/0830_1_codex_project/projects/qmreader-study/">阅读完整研究报告 <span aria-hidden="true">→</span></a>
+          </aside>
+        </div>
+      </section>
+
+      <section class="evidence-section" id="evidence" aria-labelledby="evidence-title">
+        <div class="section-shell evidence-layout">
+          <div>
+            <div class="eyebrow"><span>08</span> 证据与边界</div>
+            <p class="kicker">VERIFIED, NOT OVERCLAIMED</p>
+            <h2 id="evidence-title">我们验证了代码路径，<br />没有虚构模型效果。</h2>
+          </div>
+
+          <div class="evidence-stats">
+            <article><strong>8/8</strong><span>研究源码契约通过</span><small>来源、worker、翻译、资产、安全</small></article>
+            <article><strong>66/71</strong><span>上游测试通过</span><small>5 项失败已保留并解释</small></article>
+            <article class="warning"><strong>3</strong><span>依赖审计告警</span><small>high / moderate / low 各 1</small></article>
+          </div>
+
+          <div class="evidence-boundaries">
+            <h3>尚未证明</h3>
+            <ul><li>61 个来源的长期抓取成功率</li><li>真实模型翻译与改写质量</li><li>多用户并发可靠性</li><li>生产环境完整安全性</li></ul>
+            <a href="https://github.com/yydshly/0830_1_codex_project/blob/main/projects/qmreader-study/artifacts/baseline-verification.md">查看基线验证记录 →</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="section-shell footer-inner">
+        <div class="footer-brand">
+          <span class="brand-mark" aria-hidden="true">QM</span>
+          <div><strong>R-005 · QMReader Study</strong><p>第 5 个研究子项目 · 2026-08-31</p></div>
+        </div>
+        <p>研究对象固定于 <code>95efab925273924963d2fdb474a67890261402e3</code> · 上游 MIT License</p>
+        <div class="footer-links"><a href="https://github.com/joeseesun/qmreader/tree/95efab925273924963d2fdb474a67890261402e3">锁定源库</a><a href="https://yydshly.github.io/0830_1_codex_project/projects/qmreader-study/">在线研究页</a><a href="https://github.com/yydshly/0830_1_codex_project/tree/main/projects/qmreader-study">GitHub 目录</a><a href="#top">返回顶部 ↑</a></div>
+      </div>
+    </footer>
+
+    <noscript>
+      <div class="noscript-note">JavaScript 已关闭：研究内容仍可阅读，但交互式处理流程演示不可运行。</div>
+    </noscript>
+  </body>
+</html>

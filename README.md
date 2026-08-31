@@ -16,6 +16,7 @@
 | 状态 | 子项目 | 研究对象 | 核心问题 | 当前结论 | 最近更新 |
 | --- | --- | --- | --- | --- | --- |
 | 进行中 | [R-004 · ViMax 能力研究](projects/vimax-study/) | [HKUDS/ViMax v1.2.0 @ `05a4894`](https://github.com/HKUDS/ViMax/tree/05a48943878312d88fe5a016c12a9654940ecc43) | ViMax 实际实现了哪些视频生产能力，论文机制与当前代码有何边界？ | ViMax 是生成模型之上的 Agentic 视频生产编排框架；已完成 4 个固定上游案例、8 阶段与 8/8/8/14 镜头的可审阅解释器。真实成片质量、成本与 best-of-k 主流程闭环仍待实测。 [研究页](https://yydshly.github.io/0830_1_codex_project/projects/vimax-study/) · [在线展厅](https://yydshly.github.io/0830_1_codex_project/projects/vimax-study/showcase/) | 2026-08-31 |
+| 进行中 | [R-005 · QMReader 能力与架构研究](projects/qmreader-study/) | [joeseesun/qmreader @ `95efab9`](https://github.com/joeseesun/qmreader/tree/95efab925273924963d2fdb474a67890261402e3) | 多源采集、AI 阅读加工与公开资产沉淀如何协作，哪些设计值得复用？ | QMReader 不是通用 RSS SDK，而是“采集 → AI 加工 → 公开资产”的自托管工作台；已完成源码基线、8 类场景与 3 套五阶段演示，真实 AI 质量和规模化表现待验证。 [研究页](https://yydshly.github.io/0830_1_codex_project/projects/qmreader-study/) · [在线展厅](https://yydshly.github.io/0830_1_codex_project/projects/qmreader-study/site/) | 2026-08-31 |
 
 <!-- research-index:end -->
 
