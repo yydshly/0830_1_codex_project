@@ -71,4 +71,4 @@
 | 本质表述 | 明确“选中元素，复制时附带结构化上下文” | root README / study README / hero | 三处首层摘要文本 | Stage 3 | pass | 已完成 |
 | 职责边界 | 不声称 Selector 理解意图或保证 AI 知道/改对 | hero / diagram / scenario | 删除过度主张，保留 Agent 边界 | Stage 3/6 | pass | 已完成 |
 | 相邻布局 | 中文新标题在桌面/手机不溢出 | 1280 / 390 | 浏览器 DOM 宽度和截图 | Stage 7 | pass | 已完成 |
-| 工程与发布 | 测试、全仓校验、远端 Pages | source / GitHub | 自动检查、提交、Pages 与线上内容标记 | Stage 9 | continue | 本地通过后提交发布 |
+| 工程与发布 | 测试、全仓校验、远端 Pages | source / GitHub | commit `2b91729`、checks / Pages 成功、四入口线上标记 | Stage 9 | pass | 已完成 |

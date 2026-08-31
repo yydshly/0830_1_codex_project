@@ -117,6 +117,8 @@ node .\scripts\validate-repository.mjs
 
 - 首轮研究提交：`df4ebc33ac3fd0401a09244e73238cf3205f06da`；
 - Pages workflow：run [`33374938190`](https://github.com/yydshly/0830_1_codex_project/actions/runs/33374938190)，build 与 deploy 均成功；
+- 本质表述修复提交：`2b917294ccf1a6ed31f7e79eb414a4723f920fac`；Repository checks run [`33376391419`](https://github.com/yydshly/0830_1_codex_project/actions/runs/33376391419) 与 Pages run [`33376391461`](https://github.com/yydshly/0830_1_codex_project/actions/runs/33376391461) 均成功；
+- 修复后根索引、研究页、展厅和源库实跑页均 HTTP 200；在线 Chrome 命中“复制时把上下文一起带走”和职责边界，未命中 `AI 就知道` / `VISUAL INTENT COMPILER`，且真实上游启动按钮仍可见；
 - 根站、R-006 研究页、Web 展厅和源库实跑页均返回 HTTP 200，并分别命中 `R-006`、`第 6 个研究子项目`、`不用相信示意图`、`启动真实 Selector` 内容标记；
 - 线上 `selector-0.4.1.js` 为 258171 bytes、SHA-256 `8680cfcb…fb50`；CSS 为 32911 bytes、SHA-256 `09d2b376…d0e5`，与锁定构建一致；
 - 在线 Chrome 实际启动 `v0.4.1`，页面获得 186 个 `data-ai-id`，选中标签为 `button "创建活动"`，无横向溢出。
