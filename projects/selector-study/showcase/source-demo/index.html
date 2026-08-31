@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Selector v0.4.1 锁定源码真实运行示例：在安全的本地后台 fixture 中选择元素并复制结构化上下文。">
+  <meta name="theme-color" content="#0b1712">
+  <title>Selector v0.4.1 · 源库真实运行示例</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="runtime/selector-0.4.1.css">
+</head>
+<body>
+  <a class="skip-link" href="#fixture">跳到可选取示例</a>
+
+  <header class="lab-header">
+    <a class="lab-brand" href="../#source-live" target="_top" aria-label="返回 Selector 研究展厅">
+      <span class="brand-target" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <span><b>SELECTOR / SOURCE LAB</b><small>R-006 · LOCKED RUNTIME</small></span>
+    </a>
+    <div class="runtime-state" data-runtime-state="idle" role="status" aria-live="polite">
+      <i></i><span data-runtime-label>上游运行时尚未启动</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="lab-intro" aria-labelledby="lab-title">
+      <div>
+        <p class="eyebrow"><span>ACTUAL UPSTREAM BUILD</span> v0.4.1 · d88e9a6</p>
+        <h1 id="lab-title">亲手运行源库，<br><em>不只看模拟。</em></h1>
+        <p class="lede">按钮会加载由锁定上游提交原样构建的 Selector 编辑器。启动后，绿色面板、悬停框、选取、备注和复制都来自上游代码；本页只提供一组不含真实数据的安全页面 fixture。</p>
+      </div>
+      <div class="launch-card">
+        <span class="launch-index">01 / START</span>
+        <button type="button" data-launch-selector>
+          <span>启动真实 Selector</span><b>↗</b>
+        </button>
+        <p data-launch-help>加载本项目内已锁定并校验哈希的源码构建产物。</p>
+        <a href="runtime/UPSTREAM.md">查看版本、来源与 SHA-256 →</a>
+      </div>
+    </section>
+
+    <section class="journey" aria-labelledby="journey-title">
+      <div class="journey-heading">
+        <p class="eyebrow"><span>3-MINUTE WALKTHROUGH</span> 最适合的场景：本地 UI 精确修改</p>
+        <h2 id="journey-title">从“改这个按钮”到可粘贴的元素证据。</h2>
+      </div>
+      <ol>
+        <li><span>01</span><div><b>启动</b><p>点击上方按钮，确认右下角出现 Selector 的真实控制面板。</p></div></li>
+        <li><span>02</span><div><b>选取</b><p>点击下方“创建活动”；按住 Shift 再点一张指标卡可多选。</p></div></li>
+        <li><span>03</span><div><b>交付</b><p>用元素旁的铅笔写 instruction，按 Ctrl/⌘ + C 复制真实 prompt。</p></div></li>
+        <li><span>04</span><div><b>核对</b><p>关闭 Selector 后，把剪贴板内容粘贴到页面底部检查结构。</p></div></li>
+      </ol>
+    </section>
+
+    <section class="fixture-shell" id="fixture" aria-labelledby="fixture-title">
+      <div class="fixture-caption">
+        <div><span>SAFE LOCAL FIXTURE</span><h2 id="fixture-title">活动管理后台</h2></div>
+        <p>这里没有账号、密钥或真实客户数据。绿色虚线只是推荐的第一目标，不是 Selector 自己绘制的选框。</p>
+      </div>
+
+      <div class="app-window">
+        <div class="window-bar" aria-hidden="true">
+          <span class="window-dots"><i></i><i></i><i></i></span>
+          <span class="window-address">localhost:5173/campaigns?tab=overview</span>
+          <b>DEV FIXTURE</b>
+        </div>
+
+        <div class="dashboard-layout">
+          <aside class="dashboard-sidebar" aria-label="工作区导航">
+            <a class="product-mark" href="#fixture" aria-label="Canvas 首页"><span>C</span><b>Canvas</b></a>
+            <nav aria-label="主导航">
+              <a href="#overview"><span>⌂</span>总览</a>
+              <a href="#fixture" aria-current="page" data-nav="campaigns"><span>▦</span>活动 <b>12</b></a>
+              <a href="#audience"><span>◌</span>受众</a>
+              <a href="#assets"><span>◇</span>素材库</a>
+            </nav>
+            <div class="local-user"><span>YL</span><p><b>研究团队</b><small>本地工作区</small></p></div>
+          </aside>
+
+          <div class="dashboard-main">
+            <header class="dashboard-heading">
+              <div><p>增长工作台 / 活动</p><h3>活动总览</h3><span>过去 30 天内的公开模拟指标</span></div>
+              <button class="campaign-cta recommended-target" type="button" data-testid="create-campaign" aria-label="创建活动">
+                <span aria-hidden="true">＋</span>创建活动
+              </button>
+            </header>
+
+            <section class="metric-grid" aria-label="活动指标">
+              <article class="metric-card" data-metric="conversion"><span>本月转化</span><strong>18.4%</strong><small>↗ 较上月 +2.1%</small></article>
+              <article class="metric-card" data-metric="active"><span>活跃活动</span><strong>12</strong><small>3 个将在本周结束</small></article>
+              <article class="metric-card" data-metric="reach"><span>触达用户</span><strong>48.2k</strong><small>过去 30 天</small></article>
+            </section>
+
+            <section class="campaign-table" aria-labelledby="campaign-list-title">
+              <div class="table-heading"><div><span>CAMPAIGNS</span><h4 id="campaign-list-title">最近活动</h4></div><button type="button" aria-label="筛选活动">筛选⌄</button></div>
+              <div class="table-row table-head" role="row"><span>活动</span><span>状态</span><span>转化</span><span>更新时间</span></div>
+              <a class="table-row" href="#summer-launch"><strong>夏日新品发布</strong><span><i class="status-live"></i>进行中</span><span>21.8%</span><time datetime="2026-08-31">今天 14:20</time></a>
+              <a class="table-row" href="#member-return"><strong>老客召回计划</strong><span><i class="status-draft"></i>草稿</span><span>—</span><time datetime="2026-08-30">昨天 18:05</time></a>
+              <a class="table-row" href="#autumn-preview"><strong>秋季预热</strong><span><i class="status-review"></i>审核中</span><span>9.7%</span><time datetime="2026-08-29">8 月 29 日</time></a>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="paste-lab" aria-labelledby="paste-title">
+      <div>
+        <p class="eyebrow"><span>VERIFY THE OUTPUT</span> 自动镜像；必要时手工粘贴</p>
+        <h2 id="paste-title">看真实输出里有没有目标身份、语义位置和 instruction。</h2>
+        <p>如果复制成功，输出应至少能指向 <code>[data-testid="create-campaign"]</code> 或等价 locator。本页只在这个无真实数据的 fixture 内把 Selector 交给剪贴板的文本镜像到内存核对区；不改内容、不上传、不保存。</p>
+        <div class="paste-metrics" aria-live="polite"><span><b data-paste-chars>0</b> chars</span><span><b data-paste-lines>0</b> lines</span><button type="button" data-clear-paste>清空</button></div>
+      </div>
+      <label>
+        <span>真实 Selector 输出核对区</span>
+        <textarea rows="12" data-paste-output placeholder="点击 Selector 的“复制提示词”后会自动显示；若浏览器阻止镜像，可关闭面板后在这里按 Ctrl/⌘ + V…"></textarea>
+      </label>
+    </section>
+
+    <section class="truth-boundary" aria-labelledby="truth-title">
+      <div><p class="eyebrow"><span>WHAT THIS PROVES</span> 证据边界</p><h2 id="truth-title">真实运行，不等于所有结论都已证明。</h2></div>
+      <div class="truth-grid">
+        <article><span>已直接演示</span><h3>Light DOM 选择与导出</h3><p>启动、悬停、单选、多选、备注、普通 prompt 与 Markdown 都由锁定上游运行时完成。</p></article>
+        <article><span>本页可观察</span><h3>页面侵入与恢复</h3><p>运行时会写入 <code>data-ai-id</code> 并拦截事件；关闭后刷新 iframe 是最干净的恢复方式。</p></article>
+        <article><span>本页未证明</span><h3>框架源码与 Agent 成功率</h3><p>fixture 没有 React/Vue 私有运行时，也不调用 Codex；这两项仍需独立受控实验。</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Selector R-006 Source Lab</strong><span>由上游 v0.4.1 / <code>d88e9a6</code> 原样构建</span></p>
+    <div><a href="../#source-live" target="_top">返回研究展厅</a><a href="https://github.com/oil-oil/selector/tree/d88e9a6c3c10821a5cc6d87447693d9507a76b35" target="_blank" rel="noopener">上游源码 ↗</a></div>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

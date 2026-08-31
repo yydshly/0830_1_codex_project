@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="zh-CN" class="no-js" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Selector 研究展厅：用交互演示理解视觉元素选择、AI 上下文编译、实现原理、使用场景与扩展方向。">
+  <meta name="theme-color" content="#f2f1e9">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%230d1a14'/%3E%3Cpath d='M7 9h8v2H9v6H7V9Zm18 14h-8v-2h6v-6h2v8Z' fill='%2326e98f'/%3E%3C/svg%3E">
+  <title>Selector 研究展厅 · 从“这个按钮”到可执行上下文</title>
+  <script>
+    const staticMode = new URLSearchParams(window.location.search).has("static");
+    if (!staticMode) {
+      document.documentElement.classList.remove("no-js");
+      document.documentElement.classList.add("js");
+      try {
+        const savedTheme = localStorage.getItem("selector-showcase-theme");
+        if (savedTheme === "dark" || savedTheme === "light") document.documentElement.dataset.theme = savedTheme;
+        else if (window.matchMedia("(prefers-color-scheme: dark)").matches) document.documentElement.dataset.theme = "dark";
+      } catch (_) {}
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header class="site-header" data-site-header>
+    <a class="brand" href="#overview" aria-label="Selector 研究展厅首页">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <span><strong>SELECTOR</strong><small>RESEARCH / 0.4.1</small></span>
+    </a>
+    <nav class="primary-nav" aria-label="研究展厅导航">
+      <a href="#demo">模拟</a>
+      <a href="#source-live">实跑</a>
+      <a href="#capabilities">能力</a>
+      <a href="#architecture">原理</a>
+      <a href="#scenarios">场景</a>
+      <a href="#decision">决策</a>
+      <a href="#extensions">扩展</a>
+      <a href="#meaning">意义</a>
+    </nav>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="切换为深色主题" aria-pressed="false">
+      <span aria-hidden="true">◐</span><span data-theme-label>深色</span>
+    </button>
+  </header>
+
+  <main id="main">
+    <section class="hero section-shell" id="overview" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span>研究结论 01</span> Visual intent compiler</p>
+        <h1 id="hero-title">点一下，<br><em>AI 就知道</em><br>你指的是谁。</h1>
+        <p class="hero-lede">Selector 把模糊的“这个按钮”编译成稳定 selector、语义 locator、组件来源和修改指令。它不写代码，它负责把人的视觉意图交付给会写代码的 Agent。</p>
+        <div class="hero-actions">
+          <a class="primary-action" href="#demo">开始交互演示 <span aria-hidden="true">↓</span></a>
+          <a class="text-action" href="https://github.com/oil-oil/selector/tree/d88e9a6c3c10821a5cc6d87447693d9507a76b35" target="_blank" rel="noopener">查看锁定源码 ↗</a>
+        </div>
+      </div>
+
+      <aside class="hero-diagram" aria-label="Selector 输入输出摘要">
+        <div class="coordinate-tag">X 124 / Y 068</div>
+        <div class="selection-object">
+          <span class="selection-label">SELECTED · BUTTON</span>
+          <span class="selection-corner corner-a"></span>
+          <span class="selection-corner corner-b"></span>
+          <span class="selection-corner corner-c"></span>
+          <span class="selection-corner corner-d"></span>
+          <span class="selection-button">创建活动</span>
+        </div>
+        <div class="context-lines" aria-hidden="true">
+          <span>selector</span><b>[data-testid="create-campaign"]</b>
+          <span>locator</span><b>button "创建活动"</b>
+          <span>source</span><b>CampaignHeader.tsx:42</b>
+          <span>react</span><b>Dashboard › Header</b>
+        </div>
+        <p class="diagram-caption">视觉指代不是上下文。Selector 的工作是完成这次编译。</p>
+      </aside>
+
+      <dl class="hero-facts" aria-label="研究版本信息">
+        <div><dt>锁定版本</dt><dd>v0.4.1</dd></div>
+        <div><dt>上游提交</dt><dd><code>d88e9a6</code></dd></div>
+        <div><dt>运行方式</dt><dd>纯客户端</dd></div>
+        <div><dt>研究状态</dt><dd><span class="status-dot"></span>进行中</dd></div>
+      </dl>
+    </section>
+
+    <section class="demo-section section-shell" id="demo" aria-labelledby="demo-title">
+      <div class="section-heading split-heading">
+        <div>
+          <p class="eyebrow"><span>最佳场景 02</span> Local UI refinement</p>
+          <h2 id="demo-title">本地 React 管理后台的精准 UI 修改</h2>
+        </div>
+        <p>产品经理指着页面说“把创建活动按钮变成更明确的主操作”。下面完整演示 Selector 如何消除目标歧义。</p>
+      </div>
+
+      <div class="demo-legend" aria-label="演示职责边界">
+        <span><b>① 人</b> 选择目标并写意图</span>
+        <span><b>② Selector</b> 编译页面上下文</span>
+        <span><b>③ Codex</b> 根据上下文修改代码</span>
+      </div>
+
+      <div class="demo-workbench" data-demo-workbench>
+        <div class="browser-stage">
+          <div class="browser-chrome" aria-hidden="true">
+            <span class="window-dots"><i></i><i></i><i></i></span>
+            <span class="address-bar">localhost:3000/campaigns?tab=overview</span>
+            <span class="browser-state">DEV</span>
+          </div>
+
+          <div class="mock-app" data-target-surface aria-label="模拟活动管理后台。使用左右方向键切换可选元素。">
+            <aside class="mock-sidebar">
+              <div class="mock-logo"><span>C</span> Canvas</div>
+              <div class="mock-nav" aria-label="模拟导航">
+                <span>总览</span>
+                <button
+                  type="button"
+                  class="mock-nav-item demo-target"
+                  data-nav="campaigns"
+                  data-demo-target="nav"
+                  data-title='link "活动"'
+                  data-tag="a"
+                  data-selector='[data-nav="campaigns"]'
+                  data-locator='link "活动"'
+                  data-source="src/components/AppSidebar.tsx:58"
+                  data-react="DashboardLayout › AppSidebar › NavItem"
+                  data-inside='navigation "主导航"'
+                  data-instruction="让当前导航项更容易识别，但不要只依赖颜色。"
+                ><span aria-hidden="true">▦</span> 活动 <b>12</b></button>
+                <span>受众</span>
+                <span>素材库</span>
+              </div>
+              <div class="mock-user"><i>YL</i><span>研究团队<small>本地工作区</small></span></div>
+            </aside>
+
+            <div class="mock-main">
+              <header class="mock-page-header">
+                <div>
+                  <p>增长工作台 / 活动</p>
+                  <h3>活动总览</h3>
+                </div>
+                <button
+                  type="button"
+                  class="mock-create demo-target is-selected"
+                  data-testid="create-campaign"
+                  data-demo-target="cta"
+                  data-title='button "创建活动"'
+                  data-tag="button"
+                  data-selector='[data-testid="create-campaign"]'
+                  data-locator='button "创建活动"'
+                  data-source="src/components/CampaignHeader.tsx:42"
+                  data-react="DashboardLayout › CampaignsPage › CampaignHeader"
+                  data-inside='main "活动总览"'
+                  data-instruction="提升为实心主按钮，在文案前加入加号图标；保持 data-testid 不变。"
+                ><span class="cta-plus" aria-hidden="true">＋</span><span>创建活动</span></button>
+              </header>
+
+              <div class="mock-metrics">
+                <button
+                  type="button"
+                  class="metric-card demo-target"
+                  data-demo-target="metric"
+                  data-title='Card "本月转化"'
+                  data-tag="article"
+                  data-selector='article.campaign-conversion-card'
+                  data-locator='article "本月转化"'
+                  data-source="src/components/ConversionCard.tsx:19"
+                  data-react="CampaignsPage › MetricsGrid › ConversionCard"
+                  data-inside='region "活动表现"'
+                  data-instruction="突出 18.4% 的主数值，并将环比信息移到同一行右侧。"
+                >
+                  <span>本月转化</span><strong>18.4%</strong><small>↗ 较上月 +2.1%</small>
+                </button>
+                <div class="metric-card"><span>活跃活动</span><strong>12</strong><small>3 个将在本周结束</small></div>
+                <div class="metric-card"><span>触达用户</span><strong>48.2k</strong><small>过去 30 天</small></div>
+              </div>
+
+              <div class="mock-chart">
+                <div class="chart-heading"><span>活动表现</span><b>过去 14 天⌄</b></div>
+                <svg viewBox="0 0 620 190" role="img" aria-label="模拟活动表现折线图">
+                  <g class="chart-grid"><path d="M0 35H620M0 82H620M0 129H620M0 176H620"></path></g>
+                  <path class="chart-area" d="M0 160C55 150 66 117 115 125S182 150 230 101 302 48 346 74 420 130 466 88 540 31 620 43V190H0Z"></path>
+                  <path class="chart-line" d="M0 160C55 150 66 117 115 125S182 150 230 101 302 48 346 74 420 130 466 88 540 31 620 43"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <p class="stage-hint"><kbd>←</kbd><kbd>→</kbd> 切换目标 · 点击任意绿色虚线区域</p>
+        </div>
+
+        <aside class="context-compiler" aria-label="Selector 上下文编译器模拟">
+          <div class="compiler-head">
+            <div><span class="live-dot"></span><b>上下文编译器</b><small>研究页最小机制演示</small></div>
+            <div class="mode-switch" role="group" aria-label="上下文模式">
+              <button type="button" class="is-active" data-mode="prompt" aria-pressed="true">普通</button>
+              <button type="button" data-mode="sharingan" aria-pressed="false">Sharingan</button>
+            </div>
+          </div>
+
+          <div class="target-identity" aria-live="polite">
+            <span data-target-number>目标 01 / 03</span>
+            <strong data-target-name>button “创建活动”</strong>
+            <code data-target-selector>[data-testid="create-campaign"]</code>
+          </div>
+
+          <label class="instruction-field">
+            <span>给这个元素的 instruction</span>
+            <textarea rows="3" data-instruction>提升为实心主按钮，在文案前加入加号图标；保持 data-testid 不变。</textarea>
+            <small><kbd>Ctrl</kbd> / <kbd>⌘</kbd> + <kbd>Enter</kbd> 生成上下文</small>
+          </label>
+
+          <div class="compiler-actions">
+            <button type="button" class="compile-button" data-compile>生成 AI 上下文 <span aria-hidden="true">⌘C</span></button>
+            <button type="button" class="quiet-button" data-copy>复制</button>
+          </div>
+
+          <div class="prompt-shell">
+            <div class="prompt-toolbar">
+              <span data-output-label>SELECTOR PROMPT</span>
+              <span><b data-char-count>369</b> chars · <b data-line-count>10</b> lines</span>
+            </div>
+            <pre tabindex="0" data-prompt-output aria-live="polite">Page: http://localhost:3000/campaigns
+Query: tab=overview
+
+1. button "创建活动" &lt;button&gt;
+   selector: [data-testid="create-campaign"]
+   locator: button "创建活动"
+   inside: main "活动总览"
+   source: src/components/CampaignHeader.tsx:42
+   react: DashboardLayout › CampaignsPage › CampaignHeader
+   instruction: 提升为实心主按钮，在文案前加入加号图标；保持 data-testid 不变。</pre>
+          </div>
+
+          <div class="handoff-bar">
+            <div>
+              <span>Selector 到此为止</span>
+              <p>它不改代码；下方按钮模拟把这段上下文交给 Codex。</p>
+            </div>
+            <button type="button" data-simulate>模拟交给 Codex <span aria-hidden="true">→</span></button>
+          </div>
+
+          <div class="demo-feedback" data-demo-feedback role="status" aria-live="polite">
+            <span>状态</span><b>目标已锁定，等待生成上下文</b>
+          </div>
+
+          <button type="button" class="reset-button" data-reset>重置演示 <kbd>Esc</kbd></button>
+        </aside>
+      </div>
+
+      <noscript>
+        <div class="noscript-note">
+          <strong>静态阅读模式：</strong>JavaScript 未启用，交互选择不可用；上方默认 prompt 仍展示 Selector 的核心输出格式。完整研究内容不依赖 JavaScript。
+        </div>
+      </noscript>
+      <p class="demo-disclaimer">说明：上方是研究页独立实现的机制模拟，不调用真实 Codex；它用于快速解释字段和职责边界。下一节提供锁定上游源码的真实运行示例，两者明确分层。</p>
+    </section>
+
+    <section class="source-live section-shell" id="source-live" aria-labelledby="source-live-title">
+      <div class="section-heading split-heading">
+        <div>
+          <p class="eyebrow"><span>源库实跑 03</span> Actual upstream runtime</p>
+          <h2 id="source-live-title">不用相信示意图，直接运行 v0.4.1。</h2>
+        </div>
+        <p>隔离实验页加载由锁定提交原样构建的 <code>editor.js</code> 与 <code>editor.css</code>。启动、悬停框、选择面板、备注和复制都来自上游，不是研究页仿制。</p>
+      </div>
+
+      <div class="source-proof-bar" aria-label="真实运行证据摘要">
+        <div><span>来源</span><strong>oil-oil/selector</strong></div>
+        <div><span>锁定</span><strong>0.4.1 · d88e9a6</strong></div>
+        <div><span>完整性</span><strong>SHA-256 已记录</strong></div>
+        <div><span>边界</span><strong>安全 Light DOM fixture</strong></div>
+      </div>
+
+      <div class="source-frame-shell">
+        <div class="source-frame-head">
+          <div><i></i><span>ACTUAL SOURCE BUILD / INTERACTIVE</span></div>
+          <a href="source-demo/" target="_blank" rel="noopener">在新标签页全屏运行 ↗</a>
+        </div>
+        <iframe
+          src="source-demo/"
+          title="Selector v0.4.1 锁定上游源码真实运行示例"
+          loading="lazy"
+          allow="clipboard-write; display-capture"
+        ></iframe>
+      </div>
+
+      <div class="source-truth-grid">
+        <article><span>真实来自上游</span><h3>选择与上下文导出</h3><p>在 iframe 内点击“启动真实 Selector”，再选“创建活动”。控制面板和复制结果由锁定运行时直接生成。</p></article>
+        <article><span>研究页提供</span><h3>安全页面 fixture</h3><p>活动后台、引导步骤和粘贴核对区由本研究构造，不含账号、密钥或真实客户数据。</p></article>
+        <article><span>仍未声称</span><h3>Codex 成功率</h3><p>真实 Selector 运行不等于下游 Agent 已经被调用；修改正确率仍属于后续对照实验。</p></article>
+      </div>
+
+      <noscript><p class="noscript-note">JavaScript 未启用，不能在嵌入页启动源库。可直接打开 <a href="source-demo/">源库运行示例</a> 阅读步骤和来源清单。</p></noscript>
+    </section>
+
+    <section class="capabilities section-shell" id="capabilities" aria-labelledby="capabilities-title">
+      <div class="section-heading split-heading">
+        <div><p class="eyebrow"><span>能力 04</span> What it actually does</p><h2 id="capabilities-title">它不是“选框工具”，而是六层上下文。</h2></div>
+        <p>普通模式压缩信息，Sharingan 模式补足复刻证据。两者解决的是不同成本的问题。</p>
+      </div>
+
+      <div class="capability-grid">
+        <article class="capability-item"><span class="cap-number">01</span><div><h3>视觉目标</h3><p>点击、多选、框选、父子与兄弟导航，把“这里”变成明确的 DOM 元素集合。</p></div><code>selection.js</code></article>
+        <article class="capability-item"><span class="cap-number">02</span><div><h3>稳定身份</h3><p>优先测试属性、稳定 ID、可访问属性和语义 class，并验证 selector 当前唯一。</p></div><code>context.js</code></article>
+        <article class="capability-item"><span class="cap-number">03</span><div><h3>语义位置</h3><p>组合 role、可访问名称、表格表头、表单和 landmark，让 Agent 知道元素“是什么、在哪里”。</p></div><code>buildLocator()</code></article>
+        <article class="capability-item"><span class="cap-number">04</span><div><h3>框架来源</h3><p>读取 React Fiber 与 Vue 调试标记，尝试恢复组件链、开发模式源码位置和有限 props/state。</p></div><code>React / Vue</code></article>
+        <article class="capability-item"><span class="cap-number">05</span><div><h3>高保真证据</h3><p>Sharingan 汇总 DOM、几何、样式、CSS 规则、交互态、字体、动画和媒体。</p></div><code>sharingan.js</code></article>
+        <article class="capability-item"><span class="cap-number">06</span><div><h3>可交付输出</h3><p>复制 prompt、转换 Markdown、裁剪截图；大报告下载为文件，保持剪贴板可用。</p></div><code>export.js</code></article>
+      </div>
+    </section>
+
+    <section class="architecture section-shell" id="architecture" aria-labelledby="architecture-title">
+      <div class="section-heading">
+        <p class="eyebrow"><span>实现原理 05</span> Five-stage pipeline</p>
+        <h2 id="architecture-title">从书签到 Prompt，只有五步。</h2>
+      </div>
+
+      <ol class="pipeline" aria-label="Selector 实现流水线">
+        <li><span>01</span><div><h3>封装载荷</h3><p>构建器把 CSS 和源码片段编码进 <code>javascript:</code> 书签，安装后可离线启动。</p></div><a href="https://github.com/oil-oil/selector/blob/d88e9a6c3c10821a5cc6d87447693d9507a76b35/index.html#L173-L221" target="_blank" rel="noopener">证据 ↗</a></li>
+        <li><span>02</span><div><h3>注入与监听</h3><p>遍历 Light DOM，写入临时 <code>data-ai-id</code>，在 capture 阶段监听事件，并用 MutationObserver 跟进 SPA。</p></div><a href="https://github.com/oil-oil/selector/blob/d88e9a6c3c10821a5cc6d87447693d9507a76b35/src/core.js#L177-L282" target="_blank" rel="noopener">证据 ↗</a></li>
+        <li><span>03</span><div><h3>命中目标</h3><p>结合 <code>elementsFromPoint()</code>、可见性、交互标签与结构启发式决定用户真正指向的元素。</p></div><a href="https://github.com/oil-oil/selector/blob/d88e9a6c3c10821a5cc6d87447693d9507a76b35/src/selection.js#L8-L140" target="_blank" rel="noopener">证据 ↗</a></li>
+        <li><span>04</span><div><h3>编译上下文</h3><p>生成 selector、locator、语义容器与 React/Vue 信息；只有必要时才附加布局、HTML 和 props。</p></div><a href="https://github.com/oil-oil/selector/blob/d88e9a6c3c10821a5cc6d87447693d9507a76b35/src/context.js#L316-L662" target="_blank" rel="noopener">证据 ↗</a></li>
+        <li><span>05</span><div><h3>交付给 Agent</h3><p>普通 prompt、Sharingan 报告、Markdown 或截图进入剪贴板；此后才是 Codex 的代码修改阶段。</p></div><a href="https://github.com/oil-oil/selector/blob/d88e9a6c3c10821a5cc6d87447693d9507a76b35/src/export.js#L47-L130" target="_blank" rel="noopener">证据 ↗</a></li>
+      </ol>
+    </section>
+
+    <section class="scenarios section-shell" id="scenarios" aria-labelledby="scenarios-title">
+      <div class="section-heading split-heading">
+        <div><p class="eyebrow"><span>使用场景 06</span> Six working angles</p><h2 id="scenarios-title">同一种选取能力，在六种工作里扮演不同角色。</h2></div>
+        <p>切换角色并运行示例。重点不是“都能用”，而是看它在每个任务中究竟交付什么、值不值得付出信息成本。</p>
+      </div>
+
+      <div class="scenario-lab" data-scenario-lab>
+        <div class="scenario-tabs" role="tablist" aria-label="Selector 多场景演示；使用左右方向键切换">
+          <button id="scenario-tab-ui" type="button" role="tab" aria-selected="true" aria-controls="scenario-panel" tabindex="0" data-scenario-id="ui"><span>产品 / UI</span><strong>精准修改</strong><small>首选</small></button>
+          <button id="scenario-tab-qa" type="button" role="tab" aria-selected="false" aria-controls="scenario-panel" tabindex="-1" data-scenario-id="qa"><span>QA / 缺陷</span><strong>复现交接</strong><small>高收益</small></button>
+          <button id="scenario-tab-replica" type="button" role="tab" aria-selected="false" aria-controls="scenario-panel" tabindex="-1" data-scenario-id="replica"><span>设计 / 复刻</span><strong>视觉取证</strong><small>重证据</small></button>
+          <button id="scenario-tab-content" type="button" role="tab" aria-selected="false" aria-controls="scenario-panel" tabindex="-1" data-scenario-id="content"><span>内容 / 知识</span><strong>Markdown 摘录</strong><small>轻交付</small></button>
+          <button id="scenario-tab-source" type="button" role="tab" aria-selected="false" aria-controls="scenario-panel" tabindex="-1" data-scenario-id="source"><span>工程 / 源码</span><strong>组件追踪</strong><small>开发态</small></button>
+          <button id="scenario-tab-test" type="button" role="tab" aria-selected="false" aria-controls="scenario-panel" tabindex="-1" data-scenario-id="test"><span>测试 / 自动化</span><strong>Locator 草拟</strong><small>需复核</small></button>
+        </div>
+
+        <article class="scenario-stage" id="scenario-panel" role="tabpanel" aria-labelledby="scenario-tab-ui" tabindex="0" data-scenario-stage data-scenario="ui">
+          <header class="scenario-stage-head">
+            <div>
+              <p class="scenario-kicker" data-scenario-kicker>PRODUCT DESIGNER → CODE AGENT</p>
+              <h3 data-scenario-title>把一句“改这个按钮”，变成不会改错对象的任务包。</h3>
+              <p data-scenario-task>在本地 React 活动后台中，把“创建活动”提升为明确主操作，同时保留现有布局。</p>
+            </div>
+            <div class="scenario-fit" aria-label="场景适合度">
+              <span>FIT SCORE</span><strong data-scenario-score>9.2</strong><small>/ 10 · <b data-scenario-fit-label>很高</b></small>
+            </div>
+          </header>
+
+          <div class="scenario-flow">
+            <section class="scenario-problem" aria-labelledby="scenario-problem-title">
+              <span class="scenario-block-label">01 · 没有 Selector</span>
+              <h4 id="scenario-problem-title">失败基线</h4>
+              <p data-scenario-baseline>“右上角绿色按钮”依赖截图坐标；同色按钮、响应式布局和重构都会让描述失效。</p>
+              <div class="scenario-target-card"><span>目标</span><strong data-scenario-target>button “创建活动”</strong></div>
+            </section>
+
+            <section class="scenario-evidence" aria-labelledby="scenario-evidence-title">
+              <span class="scenario-block-label">02 · Selector 编译</span>
+              <h4 id="scenario-evidence-title">证据包</h4>
+              <ul data-scenario-evidence>
+                <li><b>稳定身份</b><span>data-testid + semantic locator</span></li>
+                <li><b>结构位置</b><span>main › campaign header</span></li>
+                <li><b>源码线索</b><span>CampaignHeader.tsx:42</span></li>
+                <li><b>修改意图</b><span>逐元素 instruction</span></li>
+              </ul>
+            </section>
+
+            <section class="scenario-delivery" aria-labelledby="scenario-delivery-title">
+              <div class="scenario-delivery-head"><div><span class="scenario-block-label">03 · 可交付输出</span><h4 id="scenario-delivery-title" data-scenario-output-title>Agent task prompt</h4></div><span class="scenario-output-state" data-scenario-output-state>READY</span></div>
+              <pre data-scenario-output aria-live="polite">// 点击“运行此场景”
+// 查看这个任务会生成哪一种证据交付物</pre>
+              <div class="scenario-runner" aria-label="场景执行阶段">
+                <span data-scenario-step="select"><i></i>锁定目标</span>
+                <span data-scenario-step="compile"><i></i>编译证据</span>
+                <span data-scenario-step="handoff"><i></i>准备交付</span>
+              </div>
+            </section>
+          </div>
+
+          <div class="scenario-decision">
+            <div><span>信息成本</span><strong data-scenario-cost>低</strong><p>采集越多，复核责任越高</p></div>
+            <div><span>主要风险</span><strong data-scenario-risk>开发信息外泄</strong><p>不是“本地运行就安全”</p></div>
+            <div><span>下游动作</span><strong data-scenario-next>Codex 修改组件</strong><p>Selector 本身不写代码</p></div>
+            <div class="scenario-alternative"><span>何时换工具</span><strong data-scenario-alternative>批量改造时直接使用 AST / codemod</strong><p data-scenario-not-use>目标已经能从源码精确定位时，不需要再从页面反推。</p></div>
+          </div>
+
+          <footer class="scenario-actions">
+            <p><span>研究页模拟</span><b data-scenario-feedback aria-live="polite">场景已就绪；运行后展示字段级交付物。</b></p>
+            <button type="button" data-scenario-run>运行此场景 <span aria-hidden="true">→</span></button>
+          </footer>
+        </article>
+
+        <div class="scenario-static" aria-label="静态场景摘要">
+          <article><span>产品 / UI</span><h3>精准修改</h3><p>selector、语义位置、组件链与 instruction → Agent task prompt</p></article>
+          <article><span>QA / 缺陷</span><h3>复现交接</h3><p>交互态、祖先上下文、DOM 片段与截图 → Bug evidence brief</p></article>
+          <article><span>设计 / 复刻</span><h3>视觉取证</h3><p>几何、CSSOM、字体、动画与媒体 → Sharingan report</p></article>
+          <article><span>内容 / 知识</span><h3>Markdown 摘录</h3><p>标题、列表、表格、链接和图片 → Markdown fragment</p></article>
+          <article><span>工程 / 源码</span><h3>组件追踪</h3><p>React/Vue 组件链、source 与受限状态 → Source trace</p></article>
+          <article><span>测试 / 自动化</span><h3>Locator 草拟</h3><p>role、accessible name 与测试属性 → Locator candidates</p></article>
+        </div>
+      </div>
+
+      <div class="scenario-comparison-heading"><span>快速对照</span><p>实验台展示“怎么交付”，下表回答“该不该用”。</p></div>
+
+      <div class="scenario-table" role="table" aria-label="Selector 使用场景适合度">
+        <div class="scenario-row scenario-head" role="row"><span role="columnheader">场景</span><span role="columnheader">适合度</span><span role="columnheader">为什么</span><span role="columnheader">关键边界</span></div>
+        <div class="scenario-row is-best" role="row"><strong role="cell">本地 React / Vue UI 修改<small>最佳场景</small></strong><span role="cell" class="fit fit-high">很高</span><p role="cell">组件链、源码位置和稳定身份同时可得，最能降低“改错对象”。</p><p role="cell">开发构建信息最完整。</p></div>
+        <div class="scenario-row" role="row"><strong role="cell">QA 缺陷复现交接</strong><span role="cell" class="fit fit-high">高</span><p role="cell">目标身份、当前状态和邻近上下文比单张截图更可复现。</p><p role="cell">网络、时间线和后端状态仍需 DevTools。</p></div>
+        <div class="scenario-row" role="row"><strong role="cell">参考页面高保真复刻</strong><span role="cell" class="fit fit-medium">中高</span><p role="cell">Sharingan 提供 DOM、CSS、字体、动画和媒体线索。</p><p role="cell">跨域资源、版权和报告体积。</p></div>
+        <div class="scenario-row" role="row"><strong role="cell">内容摘录为 Markdown</strong><span role="cell" class="fit fit-medium">中</span><p role="cell">选择局部内容后保留标题、列表、表格、链接与代码结构。</p><p role="cell">不是批量采集或知识库同步器。</p></div>
+        <div class="scenario-row" role="row"><strong role="cell">组件与源码追踪</strong><span role="cell" class="fit fit-high">高</span><p role="cell">开发态 React/Vue 调试信息可连接页面和组件代码。</p><p role="cell">依赖私有字段，生产构建会退化。</p></div>
+        <div class="scenario-row" role="row"><strong role="cell">测试 locator 草拟</strong><span role="cell" class="fit fit-medium">中</span><p role="cell">可暴露测试属性、role 与可访问名称，帮助起草用例。</p><p role="cell">必须在真实测试框架中验证唯一性和稳定性。</p></div>
+        <div class="scenario-row" role="row"><strong role="cell">批量爬取 / 自动化回归</strong><span role="cell" class="fit fit-low">低</span><p role="cell">交互式书签并非批处理或持续集成工具。</p><p role="cell">应使用 Playwright、CDP 或爬虫。</p></div>
+      </div>
+    </section>
+
+    <section class="decision section-shell" id="decision" aria-labelledby="decision-title">
+      <div class="section-heading split-heading">
+        <div><p class="eyebrow"><span>采用决策 07</span> Route before capture</p><h2 id="decision-title">先别问怎么用，先判断该不该用。</h2></div>
+        <p>选择任务、环境、数据、规模和保真要求。结果不是成功率预测，而是一条可解释的工具路由。</p>
+      </div>
+
+      <div class="decision-console" data-decision-console>
+        <form class="decision-inputs" data-decision-form>
+          <div class="decision-form-head"><span>INPUT / 05 SIGNALS</span><p>每次选择都会立即重新计算，不上传任何数据。</p></div>
+
+          <fieldset>
+            <legend><span>01</span>你要完成什么任务？</legend>
+            <div class="decision-options decision-options-task">
+              <label><input type="radio" name="decision-task" value="ui" checked><span><b>UI 修改</b><small>精准指代</small></span></label>
+              <label><input type="radio" name="decision-task" value="qa"><span><b>缺陷复现</b><small>冻结状态</small></span></label>
+              <label><input type="radio" name="decision-task" value="replica"><span><b>视觉复刻</b><small>运行时取证</small></span></label>
+              <label><input type="radio" name="decision-task" value="content"><span><b>内容摘录</b><small>保留结构</small></span></label>
+              <label><input type="radio" name="decision-task" value="source"><span><b>源码追踪</b><small>连接组件</small></span></label>
+              <label><input type="radio" name="decision-task" value="test"><span><b>测试定位</b><small>起草 locator</small></span></label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend><span>02</span>页面处于什么环境？</legend>
+            <div class="decision-options">
+              <label><input type="radio" name="decision-environment" value="local" checked><span><b>本地开发</b><small>信息最完整</small></span></label>
+              <label><input type="radio" name="decision-environment" value="public"><span><b>公开网页</b><small>注意版权</small></span></label>
+              <label><input type="radio" name="decision-environment" value="production"><span><b>已登录 / 生产</b><small>高风险</small></span></label>
+            </div>
+          </fieldset>
+
+          <div class="decision-compact-groups">
+            <fieldset>
+              <legend><span>03</span>数据敏感度</legend>
+              <div class="decision-options">
+                <label><input type="radio" name="decision-sensitivity" value="standard" checked><span><b>普通</b></span></label>
+                <label><input type="radio" name="decision-sensitivity" value="sensitive"><span><b>敏感</b></span></label>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend><span>04</span>任务规模</legend>
+              <div class="decision-options">
+                <label><input type="radio" name="decision-scale" value="single" checked><span><b>单个</b></span></label>
+                <label><input type="radio" name="decision-scale" value="multiple"><span><b>少量</b></span></label>
+                <label><input type="radio" name="decision-scale" value="batch"><span><b>批量</b></span></label>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend><span>05</span>保真要求</legend>
+              <div class="decision-options">
+                <label><input type="radio" name="decision-fidelity" value="compact" checked><span><b>紧凑</b></span></label>
+                <label><input type="radio" name="decision-fidelity" value="high"><span><b>高保真</b></span></label>
+              </div>
+            </fieldset>
+          </div>
+
+          <button class="decision-reset" type="reset" data-decision-reset>恢复推荐基线 <span aria-hidden="true">↺</span></button>
+        </form>
+
+        <aside class="decision-result" data-decision-result data-status="recommended" aria-live="polite">
+          <div class="decision-result-head">
+            <div><span data-decision-status>RECOMMENDED</span><p>研究页相对适合度，不是实测成功率</p></div>
+            <strong><b data-decision-score>92</b><small>/100</small></strong>
+          </div>
+          <div class="decision-mode">
+            <span>ROUTE</span>
+            <h3 data-decision-mode>Selector · 普通 Prompt</h3>
+            <p data-decision-reason>本地单个 UI 目标最适合使用紧凑上下文：身份和源码线索收益高，信息成本低。</p>
+          </div>
+          <ol class="decision-route" aria-label="建议执行路径">
+            <li><span>01 · 收集</span><strong data-decision-collect>selector、locator、组件链、instruction</strong></li>
+            <li><span>02 · 补充</span><strong data-decision-supplement>目标页面路径与验收标准</strong></li>
+            <li><span>03 · 交付</span><strong data-decision-handoff>交给 Codex 修改并人工审查 diff</strong></li>
+            <li><span>04 · 闸门</span><strong data-decision-gate>复制前检查 URL、文本与 props/state</strong></li>
+          </ol>
+          <div class="decision-explanation">
+            <span>为什么是这个结果</span>
+            <ul data-decision-signals><li>本地开发态最容易获取组件和 source 线索</li><li>单目标不需要批量自动化工具</li><li>紧凑模式足以降低元素身份歧义</li></ul>
+          </div>
+          <div class="decision-alternative"><span>替代路线</span><strong data-decision-alternative>如果目标已知源码位置，直接编辑组件更快。</strong></div>
+        </aside>
+
+        <div class="decision-static" aria-label="无 JavaScript 时的工具路由">
+          <article><span>单个 / 少量本地 UI</span><h3>普通 Prompt</h3><p>用 selector、locator、组件链和 instruction 降低改错对象的概率。</p></article>
+          <article><span>合法高保真复刻</span><h3>Sharingan</h3><p>仅在确实需要 DOM/CSS/字体/动画证据，并能审查数据与版权时使用。</p></article>
+          <article><span>局部内容保存</span><h3>Markdown</h3><p>适合一次性选取有结构的章节；整站与持续同步应换采集管线。</p></article>
+          <article><span>批量 / CI / 敏感生产</span><h3>换工具或先停止</h3><p>优先 Playwright、CDP、crawler、codemod 或经批准的脱敏流程。</p></article>
+        </div>
+      </div>
+      <p class="decision-disclaimer">决策规则来自锁定源码能力与本研究边界，用来做工具路由，不代表真实 Agent 成功率、隐私担保或法律意见。</p>
+    </section>
+
+    <section class="extensions section-shell" id="extensions" aria-labelledby="extensions-title">
+      <div class="section-heading">
+        <p class="eyebrow"><span>可扩展方向 08</span> From clipboard to protocol</p>
+        <h2 id="extensions-title">真正的下一步，是把一次复制变成闭环。</h2>
+      </div>
+      <div class="extension-grid">
+        <article><span class="priority">P0</span><h3>结构化协议 / MCP</h3><p>从自由文本升级为 JSON Schema，让元素、截图、源码位置和 instruction 可被 Agent 直接消费。</p><b>收益：减少解析歧义</b></article>
+        <article><span class="priority">P0</span><h3>开发服务器源码映射</h3><p>通过 Vite/Webpack/source map 稳定关联 DOM 与 JSX/Vue/Svelte 源码，不再依赖私有 debug 字段。</p><b>收益：生产级定位</b></article>
+        <article><span class="priority">P1</span><h3>Shadow DOM 与 iframe</h3><p>递归 open shadow root；对同源 iframe 注入，对跨域 frame 交给扩展或 CDP。</p><b>收益：扩大页面覆盖</b></article>
+        <article><span class="priority">P1</span><h3>多状态采集</h3><p>一次保存 hover、focus、active、disabled、暗色和多 viewport，而非只记录当前瞬间。</p><b>收益：减少视觉漏项</b></article>
+        <article><span class="priority">P0</span><h3>隐私预览与策略</h3><p>导出前显示字段清单，支持项目白名单、PII 检测和域名级策略。</p><b>收益：从启发式走向治理</b></article>
+        <article><span class="priority">P2</span><h3>修改—验证闭环</h3><p>Agent 修改后自动刷新、重新定位目标、截图 diff，并把结论固化为回归测试。</p><b>收益：从交接变成验证</b></article>
+      </div>
+    </section>
+
+    <section class="meaning section-shell" id="meaning" aria-labelledby="meaning-title">
+      <div class="meaning-copy">
+        <p class="eyebrow"><span>对我们的意义 09</span> Adoption decision</p>
+        <h2 id="meaning-title">工具值得用，根依赖不值得加，研究问题值得继续。</h2>
+        <p>我们的仓库强调“问题 → 假设 → 实验 → 证据 → 结论”。Selector 恰好能把一次前端视觉反馈变成可保存、可对照、可回归的证据包。</p>
+        <div class="evidence-chain" aria-label="研究证据链">
+          <span>选中对象</span><i>→</i><span>修改指令</span><i>→</i><span>DOM / CSS</span><i>→</i><span>截图</span><i>→</i><span>代码提交</span><i>→</i><span>回归测试</span>
+        </div>
+      </div>
+      <div class="adoption-score" aria-label="采用建议评分">
+        <div><span>日常前端工具</span><strong>8<small>/10</small></strong><i style="--score:80%"></i><p>立即试用，按页面审查敏感信息。</p></div>
+        <div><span>仓库公共依赖</span><strong>2<small>/10</small></strong><i style="--score:20%"></i><p>保持在子项目，不引入根工具链。</p></div>
+        <div><span>研究课题价值</span><strong>7<small>/10</small></strong><i style="--score:70%"></i><p>用对照实验量化正确率、token 和返工。</p></div>
+      </div>
+    </section>
+
+    <section class="limits section-shell" id="limits" aria-labelledby="limits-title">
+      <div class="section-heading split-heading">
+        <div><p class="eyebrow risk"><span>边界 09</span> Local does not mean harmless</p><h2 id="limits-title">本地运行，不等于可以盲目复制。</h2></div>
+        <p>Sharingan 会观察页面运行态。真正的安全边界发生在“复制给谁、复制了什么”。</p>
+      </div>
+      <div class="limits-grid">
+        <article><span>DOM</span><h3>Shadow DOM / iframe</h3><p>当前主要覆盖 Light DOM；没有通用 shadow root 与 frame 内遍历。</p></article>
+        <article><span>ORIGIN</span><h3>跨域 CSS / 资源</h3><p>免费书签版无法读取跨域 stylesheet 文本，也可能无法内联跨域图片与字体。</p></article>
+        <article><span>DEBUG</span><h3>框架私有字段</h3><p>React/Vue 组件与源码信息在开发构建最有效，不能保证跨版本稳定。</p></article>
+        <article><span>PRIVACY</span><h3>启发式脱敏</h3><p>报告可能包含 URL、表单值、props/state 和页面文本；导出前必须复核。</p></article>
+        <article><span>PAGE</span><h3>页面侵入性</h3><p>工具写入 <code>data-ai-id</code> 并拦截事件；结束后刷新页面是最干净的恢复方式。</p></article>
+        <article><span>MATURITY</span><h3>工程成熟度</h3><p>主分支 check 只做构建；README 声明 MIT，但锁定提交没有独立 LICENSE 文件。</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer section-shell">
+    <div>
+      <strong>Selector 能力研究</strong>
+      <p>基于固定源码、保持边界、等待实验。</p>
+    </div>
+    <div class="footer-links">
+      <a href="../">研究 README</a>
+      <a href="../artifacts/capability-evidence.md">能力证据</a>
+      <a href="https://github.com/oil-oil/selector/tree/d88e9a6c3c10821a5cc6d87447693d9507a76b35" target="_blank" rel="noopener">上游源码 ↗</a>
+    </div>
+    <p class="footer-meta">AUDITED COMMIT · D88E9A6 · 2026-08-30</p>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,3 @@
+# Preserve the exact locked upstream build bytes used by the source demo.
+showcase/source-demo/runtime/selector-0.4.1.js -text whitespace=-blank-at-eof,cr-at-eol
+showcase/source-demo/runtime/selector-0.4.1.css -text whitespace=-blank-at-eof,cr-at-eol
