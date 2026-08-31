@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "library": "backpass",
+    "version": "0.1.14",
+    "commit": "d8cbdb68ca20a9ad6626810e0c24a576e43223c7",
+    "harness": "codex"
+  },
+  "scope": {
+    "selectedSessions": 1,
+    "fingerprint": "sha256:50b918c9dae4",
+    "rawTranscriptCommitted": false,
+    "externalModelCalled": false,
+    "backpassStateCreated": false,
+    "agentRulesModified": false
+  },
+  "association": {
+    "strict": true,
+    "tier": 1,
+    "confidence": "exact",
+    "exactRepositoryCwd": true,
+    "topLevelUserSession": true,
+    "recordedCommitResolvable": true
+  },
+  "deterministicPipeline": {
+    "stages": [
+      "codex.classify",
+      "associate",
+      "readTranscript",
+      "distill+redact"
+    ],
+    "normalizedEvents": 175,
+    "rawBytes": 5282189,
+    "distilledBytes": 26455,
+    "compressionPercent": 99.5,
+    "userTurns": 4,
+    "assistantTurns": 23,
+    "toolCalls": 147,
+    "traceElided": true,
+    "estimatedTraceTokens": 6629,
+    "redactionMarkers": 0
+  },
+  "analysisBoundary": {
+    "upstreamLlmAnalysisRun": false,
+    "reason": "The upstream semantic evidence classifier requires acpx/LLM access; this privacy-preserving demo stops before that call.",
+    "interpretationOwner": "researcher"
+  },
+  "evidenceGate": {
+    "candidateSessions": 1,
+    "defaultMinimumForNewGap": 2,
+    "comparison": "1 < 2",
+    "status": "hold",
+    "proposalGenerated": false
+  },
+  "researchInterpretation": {
+    "status": "completed-local-review",
+    "observations": [
+      {
+        "kind": "friction-candidate",
+        "summary": "A fixed showcase port was found occupied near delivery, which caused a port change and repeated smoke checks.",
+        "owner": "researcher",
+        "upstreamVerdict": false
+      },
+      {
+        "kind": "positive-practice",
+        "summary": "The session verified responsive layouts, theme behavior, keyboard operation, fallbacks, reduced motion, and console errors before handoff.",
+        "owner": "researcher",
+        "upstreamVerdict": false
+      }
+    ],
+    "candidateMemoryGap": {
+      "summary": "Before serving a research showcase, check that the chosen port is free and verify the loaded page identity before full browser validation.",
+      "status": "awaiting-independent-corroboration",
+      "proposedRule": false
+    }
+  }
+}

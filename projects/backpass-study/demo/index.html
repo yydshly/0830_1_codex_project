@@ -1,0 +1,732 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="R-002，第 2 个研究子项目：Backpass Agent 项目记忆优化器的能力、实现原理、使用场景、扩展方向与研究仓库演示。"
+    />
+    <meta name="theme-color" content="#f3f0e7" />
+    <title>R-002 · Backpass：让项目规则从真实失误里长出来</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到主要内容</a>
+
+    <header class="site-header" aria-label="主导航">
+      <a class="brand" href="#top" aria-label="返回顶部">
+        <span class="brand-mark" aria-hidden="true">bp</span>
+        <span>
+          <strong>R-002 · Backpass Study</strong>
+          <small>第 2 个研究子项目</small>
+        </span>
+      </a>
+
+      <nav class="site-nav" aria-label="页面章节">
+        <a href="#capabilities">能力</a>
+        <a href="#mechanism">原理</a>
+        <a href="#real-session">实测</a>
+        <a href="#scenes">场景</a>
+        <a href="#demo">演示</a>
+        <a href="#meaning">对我们的意义</a>
+      </nav>
+
+      <button class="theme-toggle" type="button" aria-label="切换到深色主题" aria-pressed="false">
+        <span class="theme-icon" aria-hidden="true">◐</span>
+        <span class="theme-label">深色</span>
+      </button>
+    </header>
+
+    <main id="main">
+      <section class="hero section-shell" id="top">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="signal-dot"></span> R-002 / Agent memory / evidence loop</p>
+          <h1>让项目规则，<br />从真实失误里长出来。</h1>
+          <p class="hero-lead">
+            Backpass 读取本机 Agent 历史会话，把重复错误折叠成证据，再提出可逐项审核的
+            <code>AGENTS.md</code> 与 Skill 修改。它优化的是项目记忆，<strong>不是训练模型权重</strong>。
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="#real-session">查看真实历史实测 <span aria-hidden="true">↓</span></a>
+            <a class="button button-quiet" href="#verdict">先看采用判断</a>
+          </div>
+
+          <ul class="principle-list" aria-label="核心原则">
+            <li><span>01</span>本地发现会话</li>
+            <li><span>02</span>引用作为证据</li>
+            <li><span>03</span>人工决定落盘</li>
+          </ul>
+        </div>
+
+        <aside class="research-card" aria-label="研究快照">
+          <div class="research-card-head">
+            <span>R-002 RESEARCH SNAPSHOT</span>
+            <span class="status-pill">进行中</span>
+          </div>
+          <dl class="snapshot-grid">
+            <div>
+              <dt>研究编号</dt>
+              <dd><code>R-002</code></dd>
+            </div>
+            <div>
+              <dt>包版本</dt>
+              <dd>0.1.14</dd>
+            </div>
+            <div>
+              <dt>能力契约</dt>
+              <dd class="evidence-text">5 / 5 通过</dd>
+            </div>
+            <div>
+              <dt>Windows 基线</dt>
+              <dd class="risk-text">266 / 356</dd>
+            </div>
+          </dl>
+          <div class="verdict-strip">
+            <span>当前判断</span>
+            <strong>值得研究 &gt; 直接采用</strong>
+          </div>
+          <div class="mini-loop" aria-label="Backpass 简化闭环">
+            <span>规则</span><i aria-hidden="true">→</i><span>会话</span><i aria-hidden="true">→</i
+            ><span>证据</span><i aria-hidden="true">→</i><span>建议</span>
+          </div>
+        </aside>
+      </section>
+
+      <section class="thesis section-shell" aria-labelledby="thesis-title">
+        <div class="section-number">00 / 一分钟理解</div>
+        <div class="thesis-grid">
+          <div>
+            <h2 id="thesis-title">这不是自动写规则，<br />而是给规则建立反馈闭环。</h2>
+          </div>
+          <div class="thesis-copy">
+            <p>
+              今天的 Agent 会话会留下大量过程记录，但下一次会话通常不会从这些记录中学习。Backpass
+              将“真实发生过什么”变成项目指令的维护依据。
+            </p>
+            <div class="contrast-pair">
+              <div class="contrast-item positive">
+                <span>它是</span>
+                <strong>证据约束的项目记忆优化器</strong>
+              </div>
+              <div class="contrast-item negative">
+                <span>它不是</span>
+                <strong>模型微调、代码审查或 CI</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell content-section" id="capabilities" aria-labelledby="capabilities-title">
+        <div class="section-heading">
+          <div>
+            <div class="section-number">01 / 能力</div>
+            <h2 id="capabilities-title">从会话仓库到可审查修改</h2>
+          </div>
+          <p>七类 Agent 历史、两级模型、一个人工闸门。每个阶段都尽量把“模型说了算”缩到最小。</p>
+        </div>
+
+        <div class="capability-grid">
+          <article class="capability-card capability-card-wide">
+            <span class="card-index">A1</span>
+            <h3>发现并归属会话</h3>
+            <p>读取 Claude、Codex、Pi、OpenCode、Grok、Cursor CLI、Hermes 的本地记录。</p>
+            <ul class="tag-row" aria-label="仓库归属层级">
+              <li>worktree</li>
+              <li>git remote</li>
+              <li>best-effort</li>
+            </ul>
+          </article>
+          <article class="capability-card">
+            <span class="card-index">A2</span>
+            <h3>确定性压缩</h3>
+            <p>保留人类与 Agent 消息，把工具调用压成一行，并限制长会话输入规模。</p>
+          </article>
+          <article class="capability-card">
+            <span class="card-index">A3</span>
+            <h3>单会话损失分析</h3>
+            <p>区分规则带来的正向作用、伤害、未遵循、无关与尚未覆盖的缺口。</p>
+          </article>
+          <article class="capability-card">
+            <span class="card-index">A4</span>
+            <h3>跨会话证据折叠</h3>
+            <p>新规则默认需要至少两个不同会话支持，避免一次偶发失败改写长期记忆。</p>
+          </article>
+          <article class="capability-card">
+            <span class="card-index">A5</span>
+            <h3>预算内提出修改</h3>
+            <p>支持新增、重写、删除和抽取为 Skill；默认一次最多五项小步修改。</p>
+          </article>
+          <article class="capability-card capability-card-accent">
+            <span class="card-index">A6</span>
+            <h3>人工审核与安全写入</h3>
+            <p>只有 <code>backpass apply</code> 写入；写前重验版本、预算与组合，失败时回滚。</p>
+            <div class="gate-line"><span aria-hidden="true">✓</span> 人拥有最终权重</div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell content-section mechanism" id="mechanism" aria-labelledby="mechanism-title">
+        <div class="section-heading">
+          <div>
+            <div class="section-number">02 / 实现原理</div>
+            <h2 id="mechanism-title">“梯度下降”是一套工程映射</h2>
+          </div>
+          <p>真正确定性的部分是发现、采样、计数、diff 与写入门槛；损失解释和修改综合仍由 LLM 判断。</p>
+        </div>
+
+        <div class="mechanism-layout">
+          <ol class="pipeline" aria-label="Backpass 流水线">
+            <li>
+              <span class="pipeline-marker">1</span>
+              <div><strong>Collect</strong><small>为当前仓库找到真实会话</small></div>
+            </li>
+            <li>
+              <span class="pipeline-marker">2</span>
+              <div><strong>Distill</strong><small>去噪、截断并脱敏</small></div>
+            </li>
+            <li>
+              <span class="pipeline-marker">3</span>
+              <div><strong>Calculate loss</strong><small>逐会话判断规则影响</small></div>
+            </li>
+            <li>
+              <span class="pipeline-marker">4</span>
+              <div><strong>Aggregate</strong><small>折叠重复证据与缺口</small></div>
+            </li>
+            <li>
+              <span class="pipeline-marker">5</span>
+              <div><strong>Propose & apply</strong><small>暂存编辑，人类选择落盘</small></div>
+            </li>
+          </ol>
+
+          <div class="mapping-table" role="table" aria-label="机器学习术语与 Backpass 映射">
+            <div class="mapping-row mapping-head" role="row">
+              <span role="columnheader">机器学习隐喻</span><span role="columnheader">实际对象</span>
+            </div>
+            <div class="mapping-row" role="row"><span role="cell">权重</span><strong role="cell">AGENTS.md + Skills</strong></div>
+            <div class="mapping-row" role="row"><span role="cell">前向传播</span><strong role="cell">一次 Agent 会话</strong></div>
+            <div class="mapping-row" role="row"><span role="cell">损失</span><strong role="cell">成功、违规、伤害、缺口</strong></div>
+            <div class="mapping-row" role="row"><span role="cell">梯度</span><strong role="cell">跨会话定性证据</strong></div>
+            <div class="mapping-row" role="row"><span role="cell">学习率</span><strong role="cell">单次修改上限</strong></div>
+            <div class="mapping-row" role="row"><span role="cell">模型容量</span><strong role="cell">常驻 Token 预算</strong></div>
+          </div>
+        </div>
+
+        <div class="formula-band">
+          <div>
+            <span>近期加权采样</span>
+            <code>weight = 2<sup>−age / halfLife</sup></code>
+          </div>
+          <p>近期会话更容易被保留，旧会话仍有机会进入样本；每个会话的随机值由稳定哈希产生，重跑不会无故洗牌。</p>
+        </div>
+      </section>
+
+      <section class="section-shell content-section real-session" id="real-session" aria-labelledby="real-session-title">
+        <div class="section-heading">
+          <div>
+            <div class="section-number">03 / 单条真实历史实测</div>
+            <h2 id="real-session-title">拿一条真实 Codex 历史，看 Backpass 到底做什么</h2>
+          </div>
+          <p>
+            结论先说：它能把一条历史变成<strong>可归属、可压缩、可计数</strong>的证据输入；但一条历史不足以生成新规则。
+            本次没有让外部模型读取原文，所以“候选信号”由研究者标注，不冒充 Backpass 的 LLM 判断。
+          </p>
+        </div>
+
+        <div class="real-privacy-band" role="note" aria-label="真实历史实验隐私边界">
+          <span><strong>1</strong> 条已授权历史</span>
+          <span><strong>本地</strong> 只读与脱敏</span>
+          <span><strong>0</strong> 次外部模型调用</span>
+          <span><strong>0</strong> 个规则文件写入</span>
+        </div>
+
+        <div class="real-legend" aria-label="实测信息来源图例">
+          <span data-source="upstream"><i aria-hidden="true"></i>上游确定性输出</span>
+          <span data-source="research"><i aria-hidden="true"></i>研究者解释</span>
+          <span data-source="hold"><i aria-hidden="true"></i>证据不足，停止</span>
+        </div>
+
+        <div class="real-lab">
+          <aside class="real-source-card" aria-label="脱敏会话样本">
+            <div class="real-card-label">SELECTED SAMPLE</div>
+            <h3>当前研究仓库的一条顶层会话</h3>
+            <p>只展示不可逆指纹与派生统计；原始正文、本机路径、完整会话 ID 均未进入网页和仓库。</p>
+            <dl class="real-source-data">
+              <div><dt>不可逆指纹</dt><dd><code>sha256:50b918c9dae4</code></dd></div>
+              <div><dt>原始体积</dt><dd>5.04 MiB</dd></div>
+              <div><dt>规范化事件</dt><dd>175</dd></div>
+              <div><dt>仓库归属</dt><dd>Tier 1 · exact</dd></div>
+            </dl>
+            <div class="real-source-foot">
+              <span aria-hidden="true">✓</span>
+              <p><strong>双重校验通过</strong><small>工作目录精确匹配，记录的 Git commit 可解析。</small></p>
+            </div>
+          </aside>
+
+          <div class="real-stage-card">
+            <div class="real-stage-head">
+              <div>
+                <span>LOCAL PIPELINE</span>
+                <strong id="real-state">READY</strong>
+              </div>
+              <code>backpass@0.1.14</code>
+            </div>
+
+            <div class="real-stepper" role="tablist" aria-label="单条真实历史处理阶段">
+              <button type="button" role="tab" id="real-tab-0" data-real-step="0" aria-controls="real-stage-panel" aria-selected="true" tabindex="0"><span>01</span>发现</button>
+              <button type="button" role="tab" id="real-tab-1" data-real-step="1" aria-controls="real-stage-panel" aria-selected="false" tabindex="-1"><span>02</span>归属</button>
+              <button type="button" role="tab" id="real-tab-2" data-real-step="2" aria-controls="real-stage-panel" aria-selected="false" tabindex="-1"><span>03</span>压缩</button>
+              <button type="button" role="tab" id="real-tab-3" data-real-step="3" aria-controls="real-stage-panel" aria-selected="false" tabindex="-1"><span>04</span>信号</button>
+              <button type="button" role="tab" id="real-tab-4" data-real-step="4" aria-controls="real-stage-panel" aria-selected="false" tabindex="-1"><span>05</span>门槛</button>
+            </div>
+
+            <div
+              class="real-stage-output"
+              id="real-stage-panel"
+              role="tabpanel"
+              aria-live="polite"
+              aria-atomic="true"
+              aria-labelledby="real-tab-0"
+              tabindex="0"
+            >
+              <div class="real-stage-kicker" id="real-stage-kicker">等待运行 · no raw transcript</div>
+              <h3 id="real-stage-title">先看真实输入怎样被缩成证据</h3>
+              <p id="real-stage-copy">点击“自动演示”连续查看五个阶段，或直接选择上方任一步。所有展示值都来自脱敏派生证据。</p>
+              <div class="real-metrics" id="real-stage-metrics" aria-label="当前阶段数据">
+                <div><span>样本</span><strong>1</strong></div>
+                <div><span>模型调用</span><strong>0</strong></div>
+                <div><span>规则写入</span><strong>0</strong></div>
+              </div>
+
+              <div class="real-observation" id="real-observation" data-source="research" hidden>
+                <span>研究者观察，不是上游判定</span>
+                <p>候选摩擦：固定演示端口在交付末段发现被占用，触发换端口与复验。候选做法：启动前检查端口，并先验证页面身份。</p>
+              </div>
+
+              <div class="real-gate" id="real-gate" data-gate="hold" hidden>
+                <div><span>NEW GAP EVIDENCE</span><strong>1 &lt; 2 · HOLD</strong></div>
+                <p>只有一条候选历史：不生成规则建议，不写 <code>AGENTS.md</code>。等待第二条独立会话重复出现，再进入语义分析与提案。</p>
+              </div>
+            </div>
+
+            <div class="real-controls">
+              <button class="button button-primary" id="run-real-demo" type="button">自动演示</button>
+              <button class="button button-quiet" id="next-real-step" type="button">下一步</button>
+              <button class="text-button" id="reset-real-demo" type="button">重置</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="real-boundary-note">
+          <strong>这里展示了什么？</strong>
+          <p>
+            前三步是 Backpass 源码真实运行结果；第四步是本地人工阅读压缩轨迹后的候选解释；第五步使用上游默认证据门槛停止。
+            若你想看两条以上会话如何形成修改，请继续到<a href="#demo">合成多会话闭环</a>。
+          </p>
+        </div>
+      </section>
+
+      <section class="section-shell content-section scenes" id="scenes" aria-labelledby="scenes-title">
+        <div class="section-heading">
+          <div>
+            <div class="section-number">04 / 使用场景扩展地图</div>
+            <h2 id="scenes-title">从仓库治理，扩展到可审查的工作方法</h2>
+          </div>
+          <p>
+            Backpass 的通用前提不是“有聊天记录”，而是有重复任务、可定位的结果信号、可写回的记忆表面，以及愿意审核修改的人。下面按落地距离区分当前能力和扩展想象。
+          </p>
+        </div>
+
+        <div class="scene-maturity" aria-label="场景成熟度分层">
+          <article class="maturity-card maturity-native">
+            <span>01 / CURRENT</span>
+            <strong>当前近似可用</strong>
+            <p>会话天然属于 Git 仓库，经验可写回 <code>AGENTS.md</code> 或 Skill。</p>
+          </article>
+          <article class="maturity-card maturity-adjacent">
+            <span>02 / ADJACENT</span>
+            <strong>近邻扩展</strong>
+            <p>仍围绕研发仓库，但需要接入测试、CI、发布或任务谱系等结果证据。</p>
+          </article>
+          <article class="maturity-card maturity-domain">
+            <span>03 / DOMAIN</span>
+            <strong>领域扩展</strong>
+            <p>需要新的会话适配器、业务真值、权限治理和专用记忆载体。</p>
+          </article>
+        </div>
+
+        <div class="scene-filter-bar">
+          <div class="scene-filters" role="toolbar" aria-label="按成熟度筛选使用场景">
+            <button type="button" data-scene-filter="all" aria-pressed="true">全部 <span>12</span></button>
+            <button type="button" data-scene-filter="native" aria-pressed="false">当前可用 <span>4</span></button>
+            <button type="button" data-scene-filter="adjacent" aria-pressed="false">近邻扩展 <span>4</span></button>
+            <button type="button" data-scene-filter="domain" aria-pressed="false">领域扩展 <span>4</span></button>
+          </div>
+          <p id="scene-count" aria-live="polite">显示 12 / 12 个场景</p>
+        </div>
+
+        <div class="scenario-grid" id="scenario-grid">
+          <article class="scenario-card" data-scene-card data-scene-tier="native">
+            <header><span class="scenario-code">C-01</span><span class="scenario-tier">当前近似可用</span></header>
+            <h3>代码仓库规范治理</h3>
+            <p>把反复遗漏的构建、测试、目录边界和提交要求，变成小步、可拒绝的项目规则建议。</p>
+            <dl>
+              <div><dt>证据输入</dt><dd>编码会话、返工指令、工具调用摘要</dd></div>
+              <div><dt>记忆写回</dt><dd><code>AGENTS.md</code>、编码 Skill</dd></div>
+              <div><dt>可观察收益</dt><dd>返工次数、漏跑验证、规则违例下降</dd></div>
+              <div><dt>前置条件</dt><dd>长期仓库、会话归属稳定、人工审核</dd></div>
+            </dl>
+          </article>
+
+          <article class="scenario-card" data-scene-card data-scene-tier="native">
+            <header><span class="scenario-code">C-02</span><span class="scenario-tier">当前近似可用</span></header>
+            <h3>研究项目质量门禁</h3>
+            <p>从版本未锁定、许可证漏记、实验失败未入日志等重复问题中，维护研究方法。</p>
+            <dl>
+              <div><dt>证据输入</dt><dd>研究会话、用户返工、验证命令结果</dd></div>
+              <div><dt>记忆写回</dt><dd>项目规则、研究流程 Skill</dd></div>
+              <div><dt>可观察收益</dt><dd>复现实验完整率、日志覆盖率提升</dd></div>
+              <div><dt>前置条件</dt><dd>研究产物在仓库内、结论可验证</dd></div>
+            </dl>
+          </article>
+
+          <article class="scenario-card" data-scene-card data-scene-tier="native">
+            <header><span class="scenario-code">C-03</span><span class="scenario-tier">当前近似可用</span></header>
+            <h3>文档与知识库维护</h3>
+            <p>将反复出现的术语错误、章节缺失和文档验收习惯沉淀到仓库级写作规则。</p>
+            <dl>
+              <div><dt>证据输入</dt><dd>文档会话、审阅意见、最终保留 diff</dd></div>
+              <div><dt>记忆写回</dt><dd>文档规范、术语与发布 Skill</dd></div>
+              <div><dt>可观察收益</dt><dd>审阅轮次、术语偏差、缺页数量下降</dd></div>
+              <div><dt>前置条件</dt><dd>文档版本化、审阅反馈可追溯</dd></div>
+            </dl>
+          </article>
+
+          <article class="scenario-card" data-scene-card data-scene-tier="native">
+            <header><span class="scenario-code">C-04</span><span class="scenario-tier">当前近似可用</span></header>
+            <h3>Skill 与常驻记忆瘦身</h3>
+            <p>识别低频但篇幅很长的规则，将其抽成按需 Skill；把高频关键规则留在常驻上下文。</p>
+            <dl>
+              <div><dt>证据输入</dt><dd>Skill 触发、遵循与无关会话证据</dd></div>
+              <div><dt>记忆写回</dt><dd>Skill 描述、触发规则、根记忆</dd></div>
+              <div><dt>可观察收益</dt><dd>常驻 Token、误触发与漏触发下降</dd></div>
+              <div><dt>前置条件</dt><dd>可测量 Token 预算与 Skill 使用情况</dd></div>
+            </dl>
+          </article>
+
+          <article class="scenario-card" data-scene-card data-scene-tier="adjacent">
+            <header><span class="scenario-code">A-01</span><span class="scenario-tier">近邻扩展</span></header>
+            <h3>测试与缺陷修复闭环</h3>
+            <p>让“测试真正失败了什么”参与损失判断，减少只根据对话语气推断修复质量的偏差。</p>
+            <dl>
+              <div><dt>证据输入</dt><dd>测试报告、缺陷回归、最终修复 diff</dd></div>
+              <div><dt>记忆写回</dt><dd>测试策略、调试与回归 Skill</dd></div>
+              <div><dt>可观察收益</dt><dd>同类回归率、无效修复次数下降</dd></div>
+              <div><dt>前置条件</dt><dd>测试结果适配器、失败分类与去重</dd></div>
+            </dl>
+          </article>
+
+          <article class="scenario-card" data-scene-card data-scene-tier="adjacent">
+            <header><span class="scenario-code">A-02</span><span class="scenario-tier">近邻扩展</span></header>
+            <h3>CI、发布与回滚经验</h3>
+            <p>从构建失败、错误发布顺序和回滚复盘中，维护项目自己的发布运行手册。</p>
+            <dl>
+              <div><dt>证据输入</dt><dd>CI 状态、部署日志、回滚与验收记录</dd></div>
+              <div><dt>记忆写回</dt><dd>发布 Skill、检查表、环境规则</dd></div>
+              <div><dt>可观察收益</dt><dd>发布失败率、恢复时间、漏检下降</dd></div>
+              <div><dt>前置条件</dt><dd>CI/部署连接器、环境作用域隔离</dd></div>
+            </dl>
+          </article>
+
+          <article class="scenario-card" data-scene-card data-scene-tier="adjacent">
+            <header><span class="scenario-code">A-03</span><span class="scenario-tier">近邻扩展</span></header>
+            <h3>事故响应与复盘 Runbook</h3>
+            <p>把诊断顺序、升级时机和已证伪路径从多次事故中提炼出来，同时保留人工审批。</p>
+            <dl>
+              <div><dt>证据输入</dt><dd>事故时间线、指挥记录、监控恢复信号</dd></div>
+              <div><dt>记忆写回</dt><dd>值班 Runbook、诊断与升级 Skill</dd></div>
+              <div><dt>可观察收益</dt><dd>MTTR、重复误诊、无效升级下降</dd></div>
+              <div><dt>前置条件</dt><dd>时间因果对齐、敏感日志隔离、审批</dd></div>
+            </dl>
+          </article>
+
+          <article class="scenario-card" data-scene-card data-scene-tier="adjacent">
+            <header><span class="scenario-code">A-04</span><span class="scenario-tier">近邻扩展</span></header>
+            <h3>多 Agent 交接与任务编排</h3>
+            <p>识别重复调查、上下文遗漏和错误升级，把协作经验写成任务拆分与交接约束。</p>
+            <dl>
+              <div><dt>证据输入</dt><dd>父子任务谱系、handoff、重复工具调用</dd></div>
+              <div><dt>记忆写回</dt><dd>协作规则、角色与交接 Skill</dd></div>
+              <div><dt>可观察收益</dt><dd>重复工作、交接返工、阻塞时间下降</dd></div>
+              <div><dt>前置条件</dt><dd>任务 lineage、重试/分支去重、作用域</dd></div>
+            </dl>
+          </article>
+
+          <article class="scenario-card" data-scene-card data-scene-tier="domain">
+            <header><span class="scenario-code">D-01</span><span class="scenario-tier">领域扩展</span></header>
+            <h3>数据分析与经营报告</h3>
+            <p>从口径纠错、SQL 返工和图表误读中维护分析规范，但必须引入数据真值而非只读对话。</p>
+            <dl>
+              <div><dt>证据输入</dt><dd>查询历史、指标字典、审阅与发布结果</dd></div>
+              <div><dt>记忆写回</dt><dd>分析规范、指标与报告 Skill</dd></div>
+              <div><dt>可观察收益</dt><dd>口径错误、查询返工、误报下降</dd></div>
+              <div><dt>前置条件</dt><dd>数据源适配、只读权限、指标真值</dd></div>
+            </dl>
+          </article>
+
+          <article class="scenario-card" data-scene-card data-scene-tier="domain">
+            <header><span class="scenario-code">D-02</span><span class="scenario-tier">领域扩展</span></header>
+            <h3>客服与服务 SOP 优化</h3>
+            <p>将重复升级、错误承诺和高质量解决路径折叠为可审查的服务流程与回复策略。</p>
+            <dl>
+              <div><dt>证据输入</dt><dd>客服对话、升级原因、解决与满意度</dd></div>
+              <div><dt>记忆写回</dt><dd>服务 SOP、回复与升级 Skill</dd></div>
+              <div><dt>可观察收益</dt><dd>一次解决率提升，错误升级与承诺下降</dd></div>
+              <div><dt>前置条件</dt><dd>CRM 适配、PII/DLP、政策审批与版本</dd></div>
+            </dl>
+          </article>
+
+          <article class="scenario-card" data-scene-card data-scene-tier="domain">
+            <header><span class="scenario-code">D-03</span><span class="scenario-tier">领域扩展</span></header>
+            <h3>安全与合规审查</h3>
+            <p>从漏报、误报与审计整改中更新检查方法；规则建议只能辅助评审，不能替代责任人签署。</p>
+            <dl>
+              <div><dt>证据输入</dt><dd>审计发现、误报复核、整改验证</dd></div>
+              <div><dt>记忆写回</dt><dd>安全审查 Skill、合规检查表</dd></div>
+              <div><dt>可观察收益</dt><dd>重复缺陷、误报率与整改遗漏下降</dd></div>
+              <div><dt>前置条件</dt><dd>强访问控制、证据留存、责任人批准</dd></div>
+            </dl>
+          </article>
+
+          <article class="scenario-card" data-scene-card data-scene-tier="domain">
+            <header><span class="scenario-code">D-04</span><span class="scenario-tier">领域扩展</span></header>
+            <h3>内容生产与品牌规范</h3>
+            <p>把审稿中反复发生的调性、事实、渠道格式问题转成编辑规则，并按效果淘汰无效偏好。</p>
+            <dl>
+              <div><dt>证据输入</dt><dd>草稿、审改 diff、事实核验、发布表现</dd></div>
+              <div><dt>记忆写回</dt><dd>品牌指南、编辑与渠道 Skill</dd></div>
+              <div><dt>可观察收益</dt><dd>审稿轮次、事实错误、格式返工下降</dd></div>
+              <div><dt>前置条件</dt><dd>版权边界、品牌版本、效果归因规则</dd></div>
+            </dl>
+          </article>
+        </div>
+
+        <div class="scene-boundary-title">
+          <span>采用门槛</span>
+          <h3>先判断有没有真正的反馈闭环</h3>
+        </div>
+        <div class="scene-columns">
+          <div class="scene-column scene-fit">
+            <div class="scene-label">成立条件</div>
+            <ul>
+              <li><strong>任务重复</strong><span>相似任务足够多，能形成跨会话证据</span></li>
+              <li><strong>结果可观察</strong><span>测试、返工、采用结果或业务指标可作为真值</span></li>
+              <li><strong>记忆可写回</strong><span>存在规则、Skill、SOP 或 Runbook 等稳定载体</span></li>
+              <li><strong>人类可审核</strong><span>责任人能理解证据、拒绝建议并承担决策</span></li>
+            </ul>
+          </div>
+          <div class="scene-column scene-avoid">
+            <div class="scene-label">停止信号</div>
+            <ul>
+              <li><strong>没有客观结果</strong><span>只能从对话措辞猜测好坏，因果归因不可靠</span></li>
+              <li><strong>样本高度相关</strong><span>同一任务的重试被误当作独立支持证据</span></li>
+              <li><strong>数据不可合规处理</strong><span>脱敏、权限和保留策略不足以保护敏感内容</span></li>
+              <li><strong>无人承担审核</strong><span>机械门槛能查形式，不能替代领域责任人</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="demo-section" id="demo" aria-labelledby="demo-title">
+        <div class="section-shell">
+          <div class="section-heading demo-heading">
+            <div>
+              <div class="section-number">05 / 多会话完整闭环（合成数据）</div>
+              <h2 id="demo-title">研究子项目反复漏掉“验证与记录”</h2>
+            </div>
+            <p>
+              这是最贴合我们的场景：多个 Codex 会话完成了子项目，却重复漏跑仓库验证或未把结果写入研究日志。下面用合成会话演示一个完整反向步骤。
+            </p>
+          </div>
+
+          <div class="demo-notice" role="note">
+            <span aria-hidden="true">◇</span>
+            合成数据演示：不读取真实会话，不调用模型，也不会修改当前仓库。
+          </div>
+
+          <div class="demo-workspace">
+            <div class="session-stack" aria-label="合成 Agent 会话">
+              <div class="workspace-title">
+                <span>输入样本</span><code>3 sessions / codex</code>
+              </div>
+              <article class="session-card">
+                <div><span class="session-id">S-01</span><span class="session-result warning">返工</span></div>
+                <p>“子项目已创建，测试通过。”</p>
+                <blockquote>用户：根研究索引和仓库验证呢？</blockquote>
+              </article>
+              <article class="session-card">
+                <div><span class="session-id">S-02</span><span class="session-result warning">遗漏</span></div>
+                <p>“已完成 README 与获取脚本。”</p>
+                <blockquote>日志中没有记录 <code>validate-repository</code> 结果。</blockquote>
+              </article>
+              <article class="session-card session-card-muted">
+                <div><span class="session-id">S-03</span><span class="session-result success">完整</span></div>
+                <p>运行目标测试与仓库验证，并把失败边界写入 research-log。</p>
+              </article>
+            </div>
+
+            <div class="backpass-console">
+              <div class="console-topbar">
+                <span><i></i><i></i><i></i></span>
+                <code>backpass · one gradient step</code>
+                <span class="console-state" id="console-state">READY</span>
+              </div>
+
+              <ol class="stepper" aria-label="演示步骤">
+                <li><button type="button" data-step="0" aria-current="step"><span>1</span>收集</button></li>
+                <li><button type="button" data-step="1"><span>2</span>压缩</button></li>
+                <li><button type="button" data-step="2"><span>3</span>损失</button></li>
+                <li><button type="button" data-step="3"><span>4</span>聚合</button></li>
+                <li><button type="button" data-step="4"><span>5</span>建议</button></li>
+              </ol>
+
+              <div class="progress-track" aria-hidden="true"><span id="progress-fill"></span></div>
+
+              <div class="console-output" aria-live="polite" aria-atomic="true">
+                <div class="output-kicker" id="output-kicker">等待运行</div>
+                <h3 id="output-title">一次小步，而不是重写整份规则</h3>
+                <p id="output-copy">点击“运行反向步骤”，观察三次研究会话如何变成一条有引用、有门槛、可拒绝的规则建议。</p>
+                <div class="output-data" id="output-data">
+                  <div><span>样本</span><strong>3</strong></div>
+                  <div><span>重复缺口</span><strong>0</strong></div>
+                  <div><span>待审核修改</span><strong>0</strong></div>
+                </div>
+                <pre class="diff-block" id="diff-block" hidden><code><span class="diff-context">## Verification</span>
+<span class="diff-add">+ 完成研究子项目后，运行目标测试和</span>
+<span class="diff-add">+ node scripts/validate-repository.mjs；</span>
+<span class="diff-add">+ 将通过、失败与边界写入 research-log.md。</span></code></pre>
+              </div>
+
+              <div class="review-actions" id="review-actions" hidden>
+                <button class="button button-accept" type="button" id="accept-edit">接受这项修改</button>
+                <button class="button button-reject" type="button" id="reject-edit">拒绝并记住</button>
+              </div>
+
+              <div class="console-controls">
+                <button class="button button-primary" type="button" id="run-demo">运行反向步骤</button>
+                <button class="button button-quiet" type="button" id="next-step">单步查看</button>
+                <button class="text-button" type="button" id="reset-demo">重置</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="demo-outcome" id="demo-outcome" aria-live="polite" hidden>
+            <div class="outcome-icon" aria-hidden="true">✓</div>
+            <div>
+              <span id="outcome-label">已接受</span>
+              <h3 id="outcome-title">规则进入下一次 Agent 会话</h3>
+              <p id="outcome-copy">写入前仍会检查文件是否变化、修改组合是否完整以及 Token 预算是否满足。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell content-section extensions" id="extensions" aria-labelledby="extensions-title">
+        <div class="section-heading">
+          <div>
+            <div class="section-number">06 / 可扩展方向</div>
+            <h2 id="extensions-title">从“会读日志”走向“可证明有效”</h2>
+          </div>
+          <p>最重要的扩展不是支持更多模型，而是让损失更客观、证据更独立、作用域更准确。</p>
+        </div>
+
+        <div class="extension-list">
+          <article>
+            <div class="priority">P0</div>
+            <div><h3>结果驱动的损失</h3><p>把测试、CI、用户返工、最终 diff 是否保留加入证据，不只让 LLM 阅读对话猜因果。</p></div>
+            <span class="impact">可信度</span>
+          </article>
+          <article>
+            <div class="priority">P0</div>
+            <div><h3>旧/新记忆反事实回放</h3><p>用同一组合成任务比较修改前后成功率、返工次数、Token 与工具调用。</p></div>
+            <span class="impact">可验证</span>
+          </article>
+          <article>
+            <div class="priority">P0</div>
+            <div><h3>目录级项目记忆</h3><p>让 <code>projects/&lt;name&gt;</code> 的局部经验留在局部，只有跨项目共性才提升到根规则。</p></div>
+            <span class="impact">最适合我们</span>
+          </article>
+          <article>
+            <div class="priority">P1</div>
+            <div><h3>隐私与 Windows 基线</h3><p>原始会话默认禁读、DLP 与本地模型模式；修复路径、假可执行文件和 symlink 测试。</p></div>
+            <span class="impact">可采用</span>
+          </article>
+          <article>
+            <div class="priority">P2</div>
+            <div><h3>团队证据治理</h3><p>通过 PR、Code Owners、规则有效期和效果看板共享派生证据，而不是共享原始会话。</p></div>
+            <span class="impact">可规模化</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell content-section meaning" id="meaning" aria-labelledby="meaning-title">
+        <div class="section-heading">
+          <div>
+            <div class="section-number">07 / 对我们的意义</div>
+            <h2 id="meaning-title">它最像研究仓库的“方法论编译器”</h2>
+          </div>
+        </div>
+
+        <div class="meaning-grid">
+          <article class="meaning-card meaning-primary">
+            <span>价值 01</span>
+            <h3>让研究规范从声明变成反馈系统</h3>
+            <p>版本、许可证、research-log、根索引和验证命令，不再只靠人记得；重复遗漏会形成待审核证据。</p>
+          </article>
+          <article class="meaning-card">
+            <span>价值 02</span>
+            <h3>控制多技术栈规则膨胀</h3>
+            <p>高频、安全关键规则留在根记忆，低频流程抽到 Skill，减少每次会话都付费的常驻 Token。</p>
+          </article>
+          <article class="meaning-card">
+            <span>价值 03</span>
+            <h3>提供一个可研究的元课题</h3>
+            <p>我们可以测量规则修改前后的返工率，而不是停在“这个提示词看起来更好”的主观判断。</p>
+          </article>
+        </div>
+
+        <div class="adoption-panel" id="verdict">
+          <div class="adoption-copy">
+            <div class="section-number">采用判断</div>
+            <h3>现在：作为研究对象接入。<br />以后：满足三个条件再进入主流程。</h3>
+          </div>
+          <ol class="adoption-conditions">
+            <li><span>1</span><div><strong>Windows 核心路径稳定</strong><small>不再由平台假设阻断上游测试</small></div></li>
+            <li><span>2</span><div><strong>积累足够独立会话</strong><small>避免同一任务的重试形成伪证据</small></div></li>
+            <li><span>3</span><div><strong>支持项目级作用域</strong><small>局部经验不会污染根 AGENTS.md</small></div></li>
+          </ol>
+          <div class="adoption-score" aria-label="研究价值高，直接采用成熟度中低">
+            <div><span>研究价值</span><meter min="0" max="5" value="5">5/5</meter><strong>高</strong></div>
+            <div><span>直接采用</span><meter min="0" max="5" value="2">2/5</meter><strong>谨慎</strong></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer section-shell">
+      <div>
+        <span class="brand-mark" aria-hidden="true">bp</span>
+        <p>R-002 · 第 2 个研究子项目 · Backpass Agent 记忆优化研究</p>
+      </div>
+      <nav aria-label="研究资料">
+        <a href="../">在线研究页</a>
+        <a href="../artifacts/baseline-verification.md">基线证据</a>
+        <a href="https://github.com/yydshly/0830_1_codex_project/tree/main/projects/backpass-study" rel="noreferrer">GitHub 研究目录 ↗</a>
+        <a href="https://github.com/kunchenguid/backpass/tree/d8cbdb68ca20a9ad6626810e0c24a576e43223c7" rel="noreferrer">锁定上游 ↗</a>
+      </nav>
+    </footer>
+  </body>
+</html>
