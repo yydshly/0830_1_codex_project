@@ -1,0 +1,62 @@
+{
+  "url": "http://127.0.0.1:4192/",
+  "timestamp": "2026-08-31T07:56:44.827Z",
+  "browser": "Chromium",
+  "checks": {
+    "pageLoads": true,
+    "meaningfulContent": true,
+    "noErrorOverlay": true,
+    "noConsoleErrors": true,
+    "skillFilter": "9 script-enhanced skills",
+    "capabilitySummary": "8 result domains covering 26 skills in 4/2/1 responsive columns",
+    "oneLineAbilities": "26 outcome-first descriptions",
+    "keyboardMechanicNavigation": "End selects guardrails",
+    "keyboardAudienceNavigation": "ArrowRight selects research team",
+    "caseLab": "7 cases × contract + 5 stages",
+    "usageGuide": "7 goal-first prompts × user/skill/runtime/effect responsibilities",
+    "usageRun": "prompt call-to-action completes the selected deterministic case",
+    "realVideoDelivery": "32s / 1920×1080 / browser-played MP4 with responsive player and evidence link",
+    "directVideoRoute": "?case=video#demo selects the real delivery on load",
+    "concreteArtifacts": "each case exposes at least one full artifact preview",
+    "gates": {
+      "research": "READY / 有边界交付",
+      "meeting": "HOLD / 需要人工确认",
+      "workshop": "SETUP / 实现前需配置",
+      "video": "READY / 真实媒体已交付",
+      "launch": "REVIEW / 等待人工批准",
+      "brief": "DRY RUN / DM 未发送",
+      "cleanup": "HOLD / 等待精确批准"
+    },
+    "caseKeyboardNavigation": "End selects cleanup; Home returns research",
+    "stageKeyboardNavigation": "End selects gate stage",
+    "runCancellation": "switching cases resets the prior run",
+    "theme": "light → dark → light",
+    "viewports": [
+      1440,
+      768,
+      390
+    ],
+    "horizontalOverflow": false,
+    "visibleFocus": true,
+    "reducedMotion": true,
+    "externalApiCalls": 0
+  },
+  "performance": {
+    "ttfb": 87.19999999552965,
+    "domContentLoaded": 494.3999999985099,
+    "load": 494.59999999403954,
+    "resources": 5,
+    "paints": {
+      "first-paint": 432,
+      "first-contentful-paint": 432
+    }
+  },
+  "screenshots": [
+    "showcase-capability-index.png",
+    "showcase-video-delivery.png",
+    "showcase-usage-desktop.png",
+    "showcase-desktop.png",
+    "showcase-tablet.png",
+    "showcase-mobile.png"
+  ]
+}

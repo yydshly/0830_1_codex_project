@@ -1,0 +1,103 @@
+{
+  "generatedAt": "2026-08-30T20:50:12.117Z",
+  "targetUrl": "http://127.0.0.1:4192/",
+  "stageUrl": "http://127.0.0.1:4192/video-stage.html",
+  "upstreamSkills": [
+    "web-demo-video",
+    "measured-ui-callouts"
+  ],
+  "render": {
+    "fps": 20,
+    "frameCount": 640,
+    "deterministicEntry": "window.__tick(frameIndex)",
+    "deviceScaleFactor": 2
+  },
+  "interaction": {
+    "sameOriginIframe": true,
+    "coordinates": "getBoundingClientRect()",
+    "events": "iframe MouseEvent"
+  },
+  "output": {
+    "relativePath": "showcase/media/solo-skills-real-demo.mp4",
+    "poster": "showcase/media/solo-skills-real-demo-poster.jpg",
+    "contactSheet": "artifacts/solo-skills-real-demo-contact-sheet.jpg",
+    "bytes": 3297168,
+    "durationSeconds": 32,
+    "video": {
+      "codec": "h264",
+      "profile": "High",
+      "pixelFormat": "yuv420p",
+      "width": 1920,
+      "height": 1080,
+      "frameRate": "20/1",
+      "frames": 640
+    },
+    "audioStreams": 0
+  },
+  "checkpoints": {
+    "0": {
+      "frame": 0,
+      "t": 0,
+      "scrollY": 0,
+      "selectedFilter": "all",
+      "selectedMechanic": "discovery",
+      "selectedCase": "research",
+      "selectedStage": "0"
+    },
+    "104": {
+      "frame": 104,
+      "t": 5.2,
+      "scrollY": 992,
+      "selectedFilter": "script",
+      "selectedMechanic": "discovery",
+      "selectedCase": "research",
+      "selectedStage": "0"
+    },
+    "244": {
+      "frame": 244,
+      "t": 12.2,
+      "scrollY": 2232,
+      "selectedFilter": "script",
+      "selectedMechanic": "guardrails",
+      "selectedCase": "research",
+      "selectedStage": "0"
+    },
+    "350": {
+      "frame": 350,
+      "t": 17.5,
+      "scrollY": 4645,
+      "selectedFilter": "script",
+      "selectedMechanic": "guardrails",
+      "selectedCase": "video",
+      "selectedStage": "0"
+    },
+    "430": {
+      "frame": 430,
+      "t": 21.5,
+      "scrollY": 5604,
+      "selectedFilter": "script",
+      "selectedMechanic": "guardrails",
+      "selectedCase": "video",
+      "selectedStage": "1"
+    },
+    "530": {
+      "frame": 530,
+      "t": 26.5,
+      "scrollY": 5779,
+      "selectedFilter": "script",
+      "selectedMechanic": "guardrails",
+      "selectedCase": "video",
+      "selectedStage": "5"
+    },
+    "639": {
+      "frame": 639,
+      "t": 31.95,
+      "scrollY": 5794,
+      "selectedFilter": "script",
+      "selectedMechanic": "guardrails",
+      "selectedCase": "video",
+      "selectedStage": "5"
+    }
+  },
+  "browserErrors": []
+}

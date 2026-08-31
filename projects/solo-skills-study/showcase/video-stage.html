@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Solo Skills · Real Web Demo Stage</title>
+  <style>
+    :root { color-scheme: dark; font-family: "Microsoft YaHei", "PingFang SC", sans-serif; }
+    * { box-sizing: border-box; }
+    html, body { width: 960px; height: 540px; margin: 0; overflow: hidden; background: #0d0e0c; }
+    body { position: relative; }
+    #stage {
+      position: relative;
+      width: 960px;
+      height: 540px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 88% 12%, rgba(71, 184, 169, 0.18), transparent 28%),
+        linear-gradient(150deg, #171914 0%, #0d0e0c 58%, #19140f 100%);
+    }
+    #stage::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.18;
+      background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+    #brand {
+      position: absolute;
+      top: 25px;
+      left: 48px;
+      z-index: 8;
+      color: #f06f49;
+      font-family: Consolas, monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .17em;
+    }
+    #cap {
+      position: absolute;
+      top: 20px;
+      right: 48px;
+      z-index: 8;
+      max-width: 620px;
+      color: #f5f0e8;
+      font-size: 24px;
+      font-weight: 800;
+      line-height: 1.1;
+      text-align: right;
+      letter-spacing: -.035em;
+    }
+    #browser {
+      position: absolute;
+      left: 56px;
+      top: 76px;
+      z-index: 3;
+      width: 848px;
+      height: 392px;
+      overflow: hidden;
+      border: 1px solid rgba(242, 236, 225, .42);
+      border-radius: 11px;
+      background: #efe8dc;
+      box-shadow: 0 24px 70px rgba(0,0,0,.48);
+    }
+    #browser-bar {
+      height: 34px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 0 13px;
+      border-bottom: 1px solid #c9c0b2;
+      background: #e8e0d4;
+    }
+    .dot { width: 9px; height: 9px; border-radius: 50%; }
+    .dot:nth-child(1) { background: #ee684d; }
+    .dot:nth-child(2) { background: #e8b34f; }
+    .dot:nth-child(3) { background: #4ab3a5; }
+    #url {
+      margin-left: 10px;
+      padding: 5px 12px;
+      flex: 1;
+      border: 1px solid #c7bdae;
+      border-radius: 5px;
+      color: #6c655d;
+      background: #f6f1e8;
+      font: 8px Consolas, monospace;
+    }
+    #viewport { position: relative; width: 848px; height: 358px; overflow: hidden; background: #eee7da; }
+    #site {
+      width: 1440px;
+      height: 608px;
+      border: 0;
+      display: block;
+      transform: scale(.5888889);
+      transform-origin: 0 0;
+      background: #eee7da;
+    }
+    #cursor {
+      position: absolute;
+      z-index: 20;
+      width: 19px;
+      height: 25px;
+      transform: translate(-2px, -2px);
+      filter: drop-shadow(0 2px 2px rgba(0,0,0,.45));
+      transition: none;
+      pointer-events: none;
+    }
+    #cursor svg { display: block; width: 100%; height: 100%; }
+    #ring {
+      position: absolute;
+      z-index: 19;
+      width: 34px;
+      height: 34px;
+      border: 2px solid #f06f49;
+      border-radius: 50%;
+      opacity: 0;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+    #foot {
+      position: absolute;
+      left: 56px;
+      right: 56px;
+      bottom: 27px;
+      z-index: 8;
+      display: flex;
+      justify-content: space-between;
+      color: #c7c1b7;
+      font: 10px/1.4 Consolas, monospace;
+      letter-spacing: .06em;
+    }
+    #progress { color: #4ab3a5; }
+    #end {
+      position: absolute;
+      inset: 0;
+      z-index: 30;
+      display: grid;
+      place-items: center;
+      opacity: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 50% 38%, rgba(74,179,165,.18), transparent 34%),
+        #11120f;
+    }
+    .end-card { width: 760px; text-align: center; color: #f5f0e8; }
+    .end-card small { color: #f06f49; font: 11px Consolas, monospace; letter-spacing: .18em; }
+    .end-card h1 { margin: 22px 0 14px; font-size: 54px; line-height: 1.02; letter-spacing: -.065em; }
+    .end-card p { margin: 0 auto; max-width: 630px; color: #c7c1b7; font: 17px/1.7 Georgia, "Noto Serif SC", serif; }
+    .end-facts { margin-top: 32px; display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid #45463e; }
+    .end-facts span { padding: 19px 10px; border-right: 1px solid #45463e; font: 11px Consolas, monospace; color: #4ab3a5; }
+    .end-facts span:last-child { border-right: 0; }
+  </style>
+</head>
+<body>
+  <main id="stage" aria-label="Solo Skills 真实网页演示视频舞台">
+    <div id="brand">SOLO SKILLS / REAL SCENARIO</div>
+    <div id="cap">把现场工作，变成可重复执行的 Skill</div>
+    <section id="browser" aria-label="真实研究网页">
+      <div id="browser-bar"><i class="dot"></i><i class="dot"></i><i class="dot"></i><span id="url">127.0.0.1:4192 · solo-skills-study</span></div>
+      <div id="viewport"><iframe id="site" src="./index.html?render=video" title="Solo Skills 研究展厅"></iframe></div>
+    </section>
+    <div id="ring"></div>
+    <div id="cursor" aria-hidden="true">
+      <svg viewBox="0 0 24 30" xmlns="http://www.w3.org/2000/svg"><path d="M2 1.5v22l5.6-5.1 4.1 9.3 4.2-1.9-4.1-8.9h8.1L2 1.5Z" fill="#fff" stroke="#10110f" stroke-width="1.8" stroke-linejoin="round"/></svg>
+    </div>
+    <div id="foot"><span id="note">真实网页 · DOM 实测坐标 · 无音乐</span><span id="progress">FRAME 000 / 639</span></div>
+    <section id="end">
+      <div class="end-card">
+        <small>FIELD PROCEDURE → REUSABLE CAPABILITY</small>
+        <h1>不是让 AI 更会说，<br>而是让它更会完成工作。</h1>
+        <p>Solo Skills 把具体场景里的输入、步骤、工具、验证与人工门禁，沉淀成下一次仍能执行的工作规程。</p>
+        <div class="end-facts"><span>26 个场景 Skill</span><span>真实网页已渲染</span><span>边界与证据可复查</span></div>
+      </div>
+    </section>
+  </main>
+  <script>
+    const FPS = 20;
+    const LAST_FRAME = 639;
+    const iframe = document.querySelector("#site");
+    const cap = document.querySelector("#cap");
+    const note = document.querySelector("#note");
+    const progress = document.querySelector("#progress");
+    const cursor = document.querySelector("#cursor");
+    const ring = document.querySelector("#ring");
+    const browser = document.querySelector("#browser");
+    const end = document.querySelector("#end");
+    let ready = false;
+
+    const clamp = (value, min = 0, max = 1) => Math.max(min, Math.min(max, value));
+    const ease = (value) => { const x = clamp(value); return x * x * (3 - 2 * x); };
+    const mix = (from, to, amount) => from + (to - from) * ease(amount);
+
+    function siteWindow() { return iframe.contentWindow; }
+    function siteDocument() { return iframe.contentDocument; }
+    function sectionTop(id) {
+      const element = siteDocument().querySelector(`#${id}`);
+      return element ? Math.max(0, element.offsetTop - 58) : 0;
+    }
+    function dispatchClick(element) {
+      if (!element) return false;
+      const rect = element.getBoundingClientRect();
+      const event = new (siteWindow().MouseEvent)("click", {
+        bubbles: true,
+        cancelable: true,
+        view: siteWindow(),
+        clientX: rect.left + rect.width / 2,
+        clientY: rect.top + rect.height / 2
+      });
+      element.dispatchEvent(event);
+      return true;
+    }
+    function ensureSelected(selector, selectedAttribute = "aria-selected") {
+      const element = siteDocument().querySelector(selector);
+      if (!element) return null;
+      const isPressed = selectedAttribute === "aria-pressed" ? element.getAttribute(selectedAttribute) === "true" : element.getAttribute(selectedAttribute) === "true";
+      if (!isPressed) dispatchClick(element);
+      return element;
+    }
+    function pointFor(element) {
+      if (!element) return { x: 820, y: 430 };
+      const frameRect = iframe.getBoundingClientRect();
+      const rect = element.getBoundingClientRect();
+      const scaleX = frameRect.width / iframe.offsetWidth;
+      const scaleY = frameRect.height / iframe.offsetHeight;
+      return {
+        x: frameRect.left + (rect.left + rect.width / 2) * scaleX,
+        y: frameRect.top + (rect.top + rect.height / 2) * scaleY
+      };
+    }
+    function placeCursor(point, pulse = 0) {
+      cursor.style.left = `${point.x}px`;
+      cursor.style.top = `${point.y}px`;
+      ring.style.left = `${point.x}px`;
+      ring.style.top = `${point.y}px`;
+      ring.style.opacity = String(clamp(1 - Math.abs(pulse - .5) * 4));
+    }
+    function pulseAt(t, center, width = .5) {
+      return clamp((t - (center - width / 2)) / width);
+    }
+    function scrollTo(top) {
+      siteWindow().scrollTo(0, Math.round(top));
+    }
+
+    iframe.addEventListener("load", () => {
+      const doc = siteDocument();
+      const style = doc.createElement("style");
+      style.textContent = "html{scroll-behavior:auto!important}*,*::before,*::after{animation:none!important;transition:none!important}";
+      doc.head.appendChild(style);
+      siteWindow().__soloSkillsShowcase?.setTheme("light");
+      ready = true;
+      window.__stageReady = true;
+    });
+
+    window.__tick = async function tick(frameIndex) {
+      if (!ready) throw new Error("Stage iframe is not ready");
+      const frame = Math.max(0, Math.min(LAST_FRAME, Number(frameIndex)));
+      const t = frame / FPS;
+      let target = null;
+      let pulse = 0;
+      browser.style.opacity = "1";
+      end.style.opacity = "0";
+      cursor.style.opacity = "1";
+
+      if (t < 3) {
+        scrollTo(0);
+        cap.textContent = "把现场工作，变成可重复执行的 Skill";
+        note.textContent = "真实网页 · 当前研究项目 · 不是静态 mockup";
+        target = siteDocument().querySelector(".hero-actions a");
+      } else if (t < 9) {
+        const start = sectionTop("capabilities");
+        scrollTo(mix(0, start, (t - 3) / 2.2));
+        cap.textContent = "26 个技能，不等于 26 个开箱即用的软件";
+        note.textContent = "先识别知识型、脚本增强型与环境耦合型";
+        const all = siteDocument().querySelector('[data-skill-filter="all"]');
+        const script = siteDocument().querySelector('[data-skill-filter="script"]');
+        target = t < 5.2 ? all : script;
+        ensureSelected(t < 5.2 ? '[data-skill-filter="all"]' : '[data-skill-filter="script"]', "aria-pressed");
+        pulse = pulseAt(t, 5.2, .7);
+      } else if (t < 15) {
+        const start = sectionTop("capabilities");
+        const finish = sectionTop("mechanics");
+        scrollTo(mix(start, finish, (t - 9) / 2.1));
+        cap.textContent = "价值来自上下文工程：加载、执行、验证、暂停";
+        note.textContent = "真实 MouseEvent · 目标坐标来自 getBoundingClientRect()";
+        const discovery = '[data-mechanic="discovery"]';
+        const guardrails = '[data-mechanic="guardrails"]';
+        target = ensureSelected(t < 12.2 ? discovery : guardrails);
+        pulse = pulseAt(t, 12.2, .7);
+      } else if (t < 27) {
+        const start = sectionTop("mechanics");
+        const finish = sectionTop("demo");
+        scrollTo(mix(start, finish, (t - 15) / 2.2));
+        cap.textContent = "真实场景：把当前网页交付为确定性演示视频";
+        note.textContent = "同源 iframe · frameIndex 时间轴 · 640 个源帧";
+        const videoTab = ensureSelected('[data-case="video"]');
+        if (t < 19.2) {
+          target = videoTab;
+          pulse = pulseAt(t, 17.5, .8);
+        } else {
+          const stage = Math.min(5, Math.max(0, Math.floor((t - 19.2) / 1.38)));
+          target = ensureSelected(`[data-demo-step="${stage}"]`);
+          pulse = pulseAt((t - 19.2) % 1.38, .69, .55);
+          const usage = siteDocument().querySelector("[data-case-usage]");
+          if (usage) scrollTo(usage.offsetTop - 50 + Math.min(360, (t - 19.2) * 35));
+        }
+      } else {
+        cap.textContent = "";
+        note.textContent = "";
+        const fade = ease((t - 27) / 1.1);
+        browser.style.opacity = String(1 - fade);
+        cursor.style.opacity = String(1 - fade);
+        end.style.opacity = String(fade);
+      }
+
+      placeCursor(pointFor(target), pulse);
+      progress.textContent = `FRAME ${String(frame).padStart(3, "0")} / ${LAST_FRAME}`;
+      return {
+        frame,
+        t,
+        scrollY: Math.round(siteWindow().scrollY),
+        selectedFilter: siteDocument().querySelector('[data-skill-filter][aria-pressed="true"]')?.dataset.skillFilter || null,
+        selectedMechanic: siteDocument().querySelector('[data-mechanic][aria-selected="true"]')?.dataset.mechanic || null,
+        selectedCase: siteDocument().querySelector('[data-case][aria-selected="true"]')?.dataset.case || null,
+        selectedStage: siteDocument().querySelector('[data-demo-step][aria-selected="true"]')?.dataset.demoStep || null
+      };
+    };
+
+    window.__stageMeta = { fps: FPS, frames: LAST_FRAME + 1, duration: (LAST_FRAME + 1) / FPS, size: [960, 540], deviceScaleFactor: 2 };
+    window.__stageReady = false;
+  </script>
+</body>
+</html>

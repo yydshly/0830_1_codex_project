@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="R-007，第 7 个研究子项目：Solo Skills 的 8 类实际能力、26 个 Skill、实现原理、七个案例与真实视频交付。">
+  <meta name="color-scheme" content="light dark">
+  <title>R-007 · Solo Skills 研究展厅</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script>
+    document.documentElement.classList.add("js");
+    try {
+      const savedTheme = localStorage.getItem("solo-skills-theme");
+      if (savedTheme === "light" || savedTheme === "dark") document.documentElement.dataset.theme = savedTheme;
+    } catch (_) {}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header class="site-header" data-site-header>
+    <div class="header-inner">
+      <a class="brand" href="#overview" aria-label="Solo Skills 研究展厅首页">
+        <span class="brand-seal" aria-hidden="true">S/S</span>
+        <span class="brand-copy">
+          <strong>SOLO / SKILLS</strong>
+          <small>R-007 · FIELD MANUAL · d5789f5</small>
+        </span>
+      </a>
+
+      <nav class="primary-nav" aria-label="研究展厅导航">
+        <a href="#capabilities">能力</a>
+        <a href="#mechanics">原理</a>
+        <a href="#scenarios">场景</a>
+        <a href="#demo">案例实验室</a>
+        <a href="#extensions">扩展</a>
+        <a href="#value">意义</a>
+      </nav>
+
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="切换到深色主题">
+        <span aria-hidden="true" data-theme-icon>◐</span>
+        <span data-theme-label>深色</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero section-shell" id="overview" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span>R-007 / STUDY 07</span> 第 7 个研究子项目 · 一人公司的 Agent 操作手册</p>
+        <h1 id="hero-title">把踩过的坑，变成下一次会自动发生的<em>正确步骤</em></h1>
+        <p class="hero-lede">Solo Skills 不是 Agent 框架，也不是一组万能提示词。它把真实运营中的步骤、异常、审批和脚本封装成 26 个可按需加载的工作规程。</p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="#demo">进入七案例实验室</a>
+          <a class="button button-quiet" href="#capabilities">浏览 26 个技能</a>
+          <a class="button button-quiet" href="https://github.com/yydshly/0830_1_codex_project/tree/main/projects/solo-skills-study" target="_blank" rel="noopener">研究源码 ↗</a>
+        </div>
+
+        <ul class="hero-facts" aria-label="锁定版本事实">
+          <li><strong>26</strong><span>公开技能</span></li>
+          <li><strong>49</strong><span>自动化来源</span></li>
+          <li><strong>9</strong><span>代码文件</span></li>
+          <li><strong>MIT</strong><span>上游许可</span></li>
+        </ul>
+      </div>
+
+      <aside class="stack-docket" aria-label="Skill 能力栈">
+        <div class="docket-heading">
+          <span>SKILL STACK / 001</span>
+          <span class="status status-verified">已验证结构</span>
+        </div>
+        <ol class="stack-layers">
+          <li>
+            <span>01</span>
+            <div><strong>触发说明</strong><small>name + description</small></div>
+            <code>发现</code>
+          </li>
+          <li>
+            <span>02</span>
+            <div><strong>工作规程</strong><small>SKILL.md</small></div>
+            <code>加载</code>
+          </li>
+          <li>
+            <span>03</span>
+            <div><strong>领域资料</strong><small>references + assets</small></div>
+            <code>按需</code>
+          </li>
+          <li>
+            <span>04</span>
+            <div><strong>确定性执行</strong><small>scripts + tools + APIs</small></div>
+            <code>动作</code>
+          </li>
+          <li>
+            <span>05</span>
+            <div><strong>安全边界</strong><small>dry-run + review + recovery</small></div>
+            <code>治理</code>
+          </li>
+        </ol>
+        <p class="docket-note"><strong>边界：</strong>Skill 只提供过程知识；它不会自动安装依赖、授予权限或变成后台定时服务。</p>
+      </aside>
+    </section>
+
+    <section class="evidence-strip" aria-label="研究证据摘要">
+      <div class="evidence-strip-inner section-shell">
+        <p><span class="evidence-kind fact">上游事实</span>固定提交 <code>d5789f592af17980054052fc7c05fe8a8e46be79</code></p>
+        <p><span class="evidence-kind result">本地证据</span>结构契约 4/4 通过，26 个 frontmatter 可发现</p>
+        <a href="https://github.com/bam-bam-2/solo-skills/tree/d5789f592af17980054052fc7c05fe8a8e46be79" target="_blank" rel="noopener">查看固定源码 ↗</a>
+      </div>
+    </section>
+
+    <section class="section section-shell" id="capabilities" aria-labelledby="capabilities-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span>01 / CAPABILITY INDEX</span> 它能做什么</p>
+          <h2 id="capabilities-title">先看能力，再看 Skill 名：一句话知道它能完成什么</h2>
+        </div>
+        <p>上面先按工作结果汇总，下面逐项解释 26 个 Skill；知识型、脚本增强型和环境耦合型继续说明它距离真实运行还有多远。</p>
+      </div>
+
+      <div class="capability-outcomes" data-capability-outcomes aria-label="Solo Skills 八类实际能力总览">
+        <article data-capability-domain data-count="4"><span>01 / 4 SKILLS</span><h3>内容与媒体</h3><p>生成 PDF 电子书、图片方案、搜索型博客和网页演示视频。</p><small>book-pdf · image · blog · video</small></article>
+        <article data-capability-domain data-count="3"><span>02 / 3 SKILLS</span><h3>写作与风格</h3><p>识别文风、提炼个人声音，并把样文沉淀为可复用写作 Skill。</p><small>humanize · style · voice DNA</small></article>
+        <article data-capability-domain data-count="5"><span>03 / 5 SKILLS</span><h3>会议与活动</h3><p>完成会议提炼、纪要发布、工作坊准备、社区启动和活动销售。</p><small>meeting · workshop · community · sales</small></article>
+        <article data-capability-domain data-count="5"><span>04 / 5 SKILLS</span><h3>消息与触达</h3><p>生成每日情报、提醒、邮件、聊天消息和社交平台回复。</p><small>brief · reminder · mail · chat · reply</small></article>
+        <article data-capability-domain data-count="4"><span>05 / 4 SKILLS</span><h3>Agent 工程</h3><p>操作桌面软件，配置项目 Agent，并协调多 Agent 与常驻 Bot。</p><small>computer use · harness · orchestration · fleet</small></article>
+        <article data-capability-domain data-count="2"><span>06 / 2 SKILLS</span><h3>计算与模型路由</h3><p>在模型达到限额时切换执行者，并把重任务卸载到远程机器。</p><small>fallback · remote offload</small></article>
+        <article data-capability-domain data-count="2"><span>07 / 2 SKILLS</span><h3>搜索与证据</h3><p>扩展地域搜索范围，并按真实界面坐标制作可信标注证据。</p><small>daangn search · measured callouts</small></article>
+        <article data-capability-domain data-count="1"><span>08 / 1 SKILL</span><h3>数据安全操作</h3><p>把 Notion 页面移入可恢复归档，并显式说明删除与恢复边界。</p><small>notion-delete</small></article>
+      </div>
+
+      <div class="filter-toolbar" role="toolbar" aria-label="按技能形态筛选">
+        <div class="filter-buttons" data-filter-group>
+          <button type="button" class="is-active" data-skill-filter="all" aria-pressed="true">全部 <span>26</span></button>
+          <button type="button" data-skill-filter="knowledge" aria-pressed="false">知识型 <span>9</span></button>
+          <button type="button" data-skill-filter="script" aria-pressed="false">脚本增强 <span>9</span></button>
+          <button type="button" data-skill-filter="coupled" aria-pressed="false">环境耦合 <span>8</span></button>
+        </div>
+        <p aria-live="polite"><strong data-skill-count>26</strong> 个技能正在显示</p>
+      </div>
+
+      <div class="skill-index" data-skill-index>
+        <article class="skill-item" data-skill data-type="script"><span class="skill-no">01</span><div><h3><code>book-pdf</code></h3><p>把 Markdown 稿件制作成有目录、页码和章节设计的 PDF 电子书。</p></div><span class="skill-kind kind-script">脚本增强</span><small>内容制作</small></article>
+        <article class="skill-item" data-skill data-type="script"><span class="skill-no">02</span><div><h3><code>claude-codex-fallback</code></h3><p>当 Claude 达到使用限额时，把未完成任务自动交给 Codex 继续。</p></div><span class="skill-kind kind-script">脚本增强</span><small>模型路由</small></article>
+        <article class="skill-item" data-skill data-type="knowledge"><span class="skill-no">03</span><div><h3><code>community-launch</code></h3><p>把社区招募、宣传、资料库和成员入驻组织成一套启动工作流。</p></div><span class="skill-kind kind-knowledge">知识型</span><small>社区运营</small></article>
+        <article class="skill-item" data-skill data-type="coupled"><span class="skill-no">04</span><div><h3><code>computer-use</code></h3><p>让 Agent 根据可访问性树和截图操作真实桌面软件。</p></div><span class="skill-kind kind-coupled">环境耦合</span><small>桌面操作</small></article>
+        <article class="skill-item" data-skill data-type="coupled"><span class="skill-no">05</span><div><h3><code>daangn-search</code></h3><p>跨地区搜索韩国二手平台商品，突破单一地域的结果限制。</p></div><span class="skill-kind kind-coupled">环境耦合</span><small>平台搜索</small></article>
+        <article class="skill-item" data-skill data-type="coupled"><span class="skill-no">06</span><div><h3><code>daily-brief-bot</code></h3><p>每天自动收集、筛选并把个性化情报简报发送到 Discord。</p></div><span class="skill-kind kind-coupled">环境耦合</span><small>情报简报</small></article>
+        <article class="skill-item" data-skill data-type="coupled"><span class="skill-no">07</span><div><h3><code>discord-agent-fleet</code></h3><p>集中管理多个常驻 Discord Agent 的运行、休眠、限额与恢复。</p></div><span class="skill-kind kind-coupled">环境耦合</span><small>Bot 运维</small></article>
+        <article class="skill-item" data-skill data-type="script"><span class="skill-no">08</span><div><h3><code>discord-reminder</code></h3><p>在指定时间自动发送一次性 Discord 私信提醒。</p></div><span class="skill-kind kind-script">脚本增强</span><small>提醒调度</small></article>
+        <article class="skill-item" data-skill data-type="knowledge"><span class="skill-no">09</span><div><h3><code>event-sales-script</code></h3><p>为活动不同销售阶段生成适配各渠道的售票沟通文案。</p></div><span class="skill-kind kind-knowledge">知识型</span><small>活动销售</small></article>
+        <article class="skill-item" data-skill data-type="coupled"><span class="skill-no">10</span><div><h3><code>harness</code></h3><p>为一个项目配置专属 Agent、Skills 和持续改进机制。</p></div><span class="skill-kind kind-coupled">环境耦合</span><small>Agent 工程</small></article>
+        <article class="skill-item" data-skill data-type="script"><span class="skill-no">11</span><div><h3><code>humanize-korean</code></h3><p>检测并改写韩语中的翻译腔和明显 AI 文风。</p></div><span class="skill-kind kind-script">脚本增强</span><small>文风治理</small></article>
+        <article class="skill-item" data-skill data-type="coupled"><span class="skill-no">12</span><div><h3><code>kakaotalk-cli</code></h3><p>让 Agent 在 macOS 上读取和发送 KakaoTalk 消息。</p></div><span class="skill-kind kind-coupled">环境耦合</span><small>消息自动化</small></article>
+        <article class="skill-item" data-skill data-type="knowledge"><span class="skill-no">13</span><div><h3><code>measured-ui-callouts</code></h3><p>按真实界面坐标制作准确标注并遮蔽截图中的隐私信息。</p></div><span class="skill-kind kind-knowledge">知识型</span><small>证据制作</small></article>
+        <article class="skill-item" data-skill data-type="coupled"><span class="skill-no">14</span><div><h3><code>meeting-minutes</code></h3><p>把会议转录整理成纪要，并同步到 Notion 和 Discord。</p></div><span class="skill-kind kind-coupled">环境耦合</span><small>会议运营</small></article>
+        <article class="skill-item" data-skill data-type="knowledge"><span class="skill-no">15</span><div><h3><code>meeting-summary</code></h3><p>从长会议记录中提取决定、行动项、负责人和期限。</p></div><span class="skill-kind kind-knowledge">知识型</span><small>信息提取</small></article>
+        <article class="skill-item" data-skill data-type="knowledge"><span class="skill-no">16</span><div><h3><code>multi-method-image-generation</code></h3><p>并行使用生成模型、HTML、照片和已有素材产出并比较图片方案。</p></div><span class="skill-kind kind-knowledge">知识型</span><small>图像生产</small></article>
+        <article class="skill-item" data-skill data-type="knowledge"><span class="skill-no">17</span><div><h3><code>naver-blog-post</code></h3><p>根据真实搜索证据生成 Naver 博客标题、正文和配图方案。</p></div><span class="skill-kind kind-knowledge">知识型</span><small>搜索内容</small></article>
+        <article class="skill-item" data-skill data-type="script"><span class="skill-no">18</span><div><h3><code>naver-mail</code></h3><p>让 Agent 读取并发送 Naver 邮件。</p></div><span class="skill-kind kind-script">脚本增强</span><small>邮件操作</small></article>
+        <article class="skill-item" data-skill data-type="script"><span class="skill-no">19</span><div><h3><code>notion-delete</code></h3><p>把指定 Notion 页面安全移入可恢复归档，而不是永久删除。</p></div><span class="skill-kind kind-script">脚本增强</span><small>数据操作</small></article>
+        <article class="skill-item" data-skill data-type="coupled"><span class="skill-no">20</span><div><h3><code>orchestration</code></h3><p>把复杂目标拆成任务 DAG，并协调多个 Agent 完成。</p></div><span class="skill-kind kind-coupled">环境耦合</span><small>任务编排</small></article>
+        <article class="skill-item" data-skill data-type="script"><span class="skill-no">21</span><div><h3><code>remote-offload</code></h3><p>把耗时的编码、构建和批量采集任务卸载到远程机器。</p></div><span class="skill-kind kind-script">脚本增强</span><small>计算卸载</small></article>
+        <article class="skill-item" data-skill data-type="knowledge"><span class="skill-no">22</span><div><h3><code>style-skill-creator</code></h3><p>从示例文章反推出可重复使用的写作风格 Skill。</p></div><span class="skill-kind kind-knowledge">知识型</span><small>技能生成</small></article>
+        <article class="skill-item" data-skill data-type="script"><span class="skill-no">23</span><div><h3><code>threads-reply</code></h3><p>学习个人回复风格，批量准备并经审批发布 Threads 回复。</p></div><span class="skill-kind kind-script">脚本增强</span><small>社交发布</small></article>
+        <article class="skill-item" data-skill data-type="knowledge"><span class="skill-no">24</span><div><h3><code>voice-dna-creator</code></h3><p>把样文中的语气、结构、用词和禁区整理成个人声音档案。</p></div><span class="skill-kind kind-knowledge">知识型</span><small>风格分析</small></article>
+        <article class="skill-item" data-skill data-type="script"><span class="skill-no">25</span><div><h3><code>web-demo-video</code></h3><p>把真实网页自动生成可复现的产品演示视频。</p></div><span class="skill-kind kind-script">脚本增强</span><small>产品视频</small></article>
+        <article class="skill-item" data-skill data-type="knowledge"><span class="skill-no">26</span><div><h3><code>workshop-prep</code></h3><p>一次准备好工作坊目标、课程结构、物料和当日运行表。</p></div><span class="skill-kind kind-knowledge">知识型</span><small>活动策划</small></article>
+      </div>
+
+      <div class="boundary-callout">
+        <span class="callout-index">READ / 01</span>
+        <div><strong>格式可迁移 ≠ 运行可迁移</strong><p>复制一个 `SKILL.md` 很容易；让它在 Windows、Codex、不同账号和不同权限下可靠运行，才是我们的研究重点。</p></div>
+      </div>
+    </section>
+
+    <section class="section mechanics-section" id="mechanics" aria-labelledby="mechanics-title">
+      <div class="section-shell">
+        <div class="section-heading section-heading-inverse">
+          <div>
+            <p class="eyebrow"><span>02 / MECHANICS</span> 它为什么有效</p>
+            <h2 id="mechanics-title">它做的是上下文工程，不是训练一个新模型</h2>
+          </div>
+          <p>Agent 先看到很小的能力目录，只有任务匹配时才加载完整规程；复杂知识和脚本继续按需展开。</p>
+        </div>
+
+        <div class="mechanic-workbench">
+          <ol class="mechanic-tabs" role="tablist" aria-label="Skill 工作原理">
+            <li><button type="button" role="tab" aria-selected="true" aria-controls="mechanic-discovery" id="tab-discovery" tabindex="0" data-mechanic="discovery"><span>01</span>发现技能</button></li>
+            <li><button type="button" role="tab" aria-selected="false" aria-controls="mechanic-activation" id="tab-activation" tabindex="-1" data-mechanic="activation"><span>02</span>加载规程</button></li>
+            <li><button type="button" role="tab" aria-selected="false" aria-controls="mechanic-resources" id="tab-resources" tabindex="-1" data-mechanic="resources"><span>03</span>按需取材</button></li>
+            <li><button type="button" role="tab" aria-selected="false" aria-controls="mechanic-execution" id="tab-execution" tabindex="-1" data-mechanic="execution"><span>04</span>执行动作</button></li>
+            <li><button type="button" role="tab" aria-selected="false" aria-controls="mechanic-guardrails" id="tab-guardrails" tabindex="-1" data-mechanic="guardrails"><span>05</span>经过护栏</button></li>
+          </ol>
+
+          <div class="mechanic-panels">
+            <article class="mechanic-panel" role="tabpanel" id="mechanic-discovery" aria-labelledby="tab-discovery" data-mechanic-panel="discovery">
+              <p class="panel-label">DISCOVERY / ~100 TOKENS PER SKILL</p>
+              <h3>只把名称和触发说明放进可见目录</h3>
+              <p>Agent 不需要预先阅读全部 26 份长文。`name` 和 `description` 告诉它“会做什么、什么时候应该使用”。</p>
+              <dl><div><dt>输入</dt><dd>用户请求 + 技能目录</dd></div><div><dt>输出</dt><dd>最相关的候选技能</dd></div></dl>
+              <code class="code-slip">description: “会议转录 → 纪要 → 发布”</code>
+            </article>
+            <article class="mechanic-panel" role="tabpanel" id="mechanic-activation" aria-labelledby="tab-activation" data-mechanic-panel="activation" hidden>
+              <p class="panel-label">ACTIVATION / FULL SKILL.md</p>
+              <h3>匹配之后，再把完整操作规程装进上下文</h3>
+              <p>这里出现步骤顺序、输入输出、失败路径、审批要求和停止条件。它把“老手经验”变成模型可以遵循的临时制度。</p>
+              <dl><div><dt>输入</dt><dd>被选中的 SKILL.md</dd></div><div><dt>输出</dt><dd>可执行工作计划与边界</dd></div></dl>
+              <code class="code-slip">缺失转录 → 不得脑补 → 先请求副本</code>
+            </article>
+            <article class="mechanic-panel" role="tabpanel" id="mechanic-resources" aria-labelledby="tab-resources" data-mechanic-panel="resources" hidden>
+              <p class="panel-label">PROGRESSIVE DISCLOSURE / ON DEMAND</p>
+              <h3>参考资料、模板和资产只在需要时读取</h3>
+              <p>`references/` 保存细分规则和案例，`assets/` 保存模板。主文件保持可发现，深层知识又不会永久占据上下文。</p>
+              <dl><div><dt>输入</dt><dd>当前步骤所需资源</dd></div><div><dt>输出</dt><dd>模板、规则、基线或示例</dd></div></dl>
+              <code class="code-slip">references/ai-tell-taxonomy.md</code>
+            </article>
+            <article class="mechanic-panel" role="tabpanel" id="mechanic-execution" aria-labelledby="tab-execution" data-mechanic-panel="execution" hidden>
+              <p class="panel-label">EXECUTION / DETERMINISTIC WHERE POSSIBLE</p>
+              <h3>判断交给 Agent，重复动作交给脚本或工具</h3>
+              <p>PDF 转换、API 发布、SSH 卸载适合代码；内容判断、异常解释和取舍仍由 Agent 按规程处理。</p>
+              <dl><div><dt>输入</dt><dd>结构化参数与已授权动作</dd></div><div><dt>输出</dt><dd>文件、请求或外部状态变化</dd></div></dl>
+              <code class="code-slip">scripts/publish-thread.mjs --go</code>
+            </article>
+            <article class="mechanic-panel" role="tabpanel" id="mechanic-guardrails" aria-labelledby="tab-guardrails" data-mechanic-panel="guardrails" hidden>
+              <p class="panel-label">GOVERNANCE / HUMAN IN THE LOOP</p>
+              <h3>真正的可靠性来自预览、审批、证据和恢复</h3>
+              <p>高风险动作应当默认 dry-run、发布前复核、缺失信息停止、部分失败可恢复。仓库已经包含不少这种经验，但落实并不均匀。</p>
+              <dl><div><dt>输入</dt><dd>候选结果 + 风险状态</dd></div><div><dt>输出</dt><dd>批准、暂停、回滚或继续</dd></div></dl>
+              <code class="code-slip">status: HOLD / human review required</code>
+            </article>
+          </div>
+        </div>
+
+        <div class="mechanic-notes">
+          <article><span>不是</span><h3>新模型</h3><p>没有再训练权重；价值来自按任务加载的过程知识。</p></article>
+          <article><span>不是</span><h3>新权限</h3><p>Skill 不能绕过宿主 Agent、操作系统或外部平台的授权。</p></article>
+          <article><span>不是</span><h3>后台服务</h3><p>定时与常驻依然需要 cron、launchd、队列或独立进程。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-shell" id="scenarios" aria-labelledby="scenarios-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span>03 / USE CASES</span> 使用场景 · 谁最值得用</p>
+          <h2 id="scenarios-title">重复三次、容易出错、又有明确边界的工作最适合</h2>
+        </div>
+        <p>从三个采用视角切换。判断标准不是“能不能让 AI 做”，而是“能否把结果、风险和失败方式写成可验证规程”。</p>
+      </div>
+
+      <div class="audience-workbench">
+        <div class="audience-tabs" role="tablist" aria-label="采用视角">
+          <button type="button" role="tab" aria-selected="true" aria-controls="audience-solo" id="audience-tab-solo" tabindex="0" data-audience="solo">个人经营者</button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="audience-research" id="audience-tab-research" tabindex="-1" data-audience="research">研究团队</button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="audience-platform" id="audience-tab-platform" tabindex="-1" data-audience="platform">平台工程</button>
+        </div>
+
+        <div class="audience-panels">
+          <article class="audience-panel" role="tabpanel" id="audience-solo" aria-labelledby="audience-tab-solo" data-audience-panel="solo">
+            <span class="audience-score">FIT / HIGH</span>
+            <div><p class="panel-label">ONE PERSON, MANY REPEATED FLOWS</p><h3>把内容、客户沟通和日常运营变成“数字员工手册”</h3><p>最适合反复发生、平台明确、仍需要人判断的任务，例如会议纪要、博客、产品演示和提醒。</p></div>
+            <dl><div><dt>直接价值</dt><dd>减少重新解释与重复踩坑</dd></div><div><dt>必要条件</dt><dd>保留人工审批与真实账号边界</dd></div><div><dt>先试技能</dt><dd>meeting-summary · web-demo-video</dd></div><div><dt>不应假设</dt><dd>复制文件后即可无人值守</dd></div></dl>
+          </article>
+          <article class="audience-panel" role="tabpanel" id="audience-research" aria-labelledby="audience-tab-research" data-audience-panel="research" hidden>
+            <span class="audience-score">FIT / HIGH</span>
+            <div><p class="panel-label">EVIDENCE → PROCEDURE → REUSE</p><h3>把验证过的研究结论变成下一次实验自动遵循的规程</h3><p>研究日志记录“为什么成立”，Skill 负责“下次如何做”。测试把结论从经验提升为可回归的能力。</p></div>
+            <dl><div><dt>直接价值</dt><dd>研究结论进入执行闭环</dd></div><div><dt>必要条件</dt><dd>每条规则链接证据和适用版本</dd></div><div><dt>先试技能</dt><dd>measured-ui-callouts · meeting-summary</dd></div><div><dt>不应假设</dt><dd>文档规则天然会被模型严格遵守</dd></div></dl>
+          </article>
+          <article class="audience-panel" role="tabpanel" id="audience-platform" aria-labelledby="audience-tab-platform" data-audience-panel="platform" hidden>
+            <span class="audience-score">FIT / MEDIUM</span>
+            <div><p class="panel-label">RAW MATERIAL, NOT PRODUCTION PLATFORM</p><h3>把个人 SOP 提炼成有权限、配置、评测和运行状态的组织能力</h3><p>适合作为 Skill 工程的案例库，但必须先移除硬编码、补齐测试、幂等、秘密治理和客户端适配。</p></div>
+            <dl><div><dt>直接价值</dt><dd>丰富的失败案例与现实护栏</dd></div><div><dt>必要条件</dt><dd>能力清单、沙箱、审计与可观测性</dd></div><div><dt>先做工作</dt><dd>静态审计 · adapter · eval harness</dd></div><div><dt>不应假设</dt><dd>个人机器基线等于组织生产基线</dd></div></dl>
+          </article>
+        </div>
+      </div>
+
+      <div class="fit-matrix">
+        <article class="fit-card fit-good"><span>✓</span><div><h3>适合</h3><p>步骤稳定、重复频繁、输入输出可说明、失败能被检测、外部动作可审批。</p></div></article>
+        <article class="fit-card fit-caution"><span>!</span><div><h3>先加固</h3><p>会发送、删除、付费、远程执行或处理秘密；必须有预览、权限和恢复。</p></div></article>
+        <article class="fit-card fit-bad"><span>×</span><div><h3>不优先</h3><p>一次性开放探索、目标无法验证，或要求强事务一致性的核心系统。</p></div></article>
+      </div>
+    </section>
+
+    <section class="section demo-section" id="demo" aria-labelledby="demo-title">
+      <div class="section-shell">
+        <div class="section-heading section-heading-inverse">
+          <div>
+            <p class="eyebrow"><span>04 / REAL CASE LAB</span> 全量能力实验室</p>
+            <h2 id="demo-title">同一套 Skill 思路，跑过七种真实工作形态</h2>
+          </div>
+          <p>旗舰案例直接使用本研究项目的真实文件与测试证据；涉及会议、账号和客户信息的案例使用脱敏拟真 fixture。每个案例都是前端确定性模拟，展示完整输入、五阶段执行、产物、依赖、副作用和最终门禁。</p>
+        </div>
+
+        <div class="lab-facts" aria-label="案例实验室摘要">
+          <div><strong>7</strong><span>端到端案例</span></div>
+          <div><strong>1</strong><span>真实项目输入</span></div>
+          <div><strong>6</strong><span>扩展工作形态</span></div>
+          <div><strong>0</strong><span>外部 API 调用</span></div>
+        </div>
+
+        <div class="case-tabs" role="tablist" aria-label="选择能力案例" data-case-tabs>
+          <button type="button" role="tab" id="case-tab-research" aria-controls="case-panel" aria-selected="true" tabindex="0" data-case="research"><span>01 · LIVE</span><strong>研究交付</strong><small>真实项目证据</small></button>
+          <button type="button" role="tab" id="case-tab-meeting" aria-controls="case-panel" aria-selected="false" tabindex="-1" data-case="meeting"><span>02 · FIXTURE</span><strong>会议运营</strong><small>缺失证据门禁</small></button>
+          <button type="button" role="tab" id="case-tab-workshop" aria-controls="case-panel" aria-selected="false" tabindex="-1" data-case="workshop"><span>03 · FIXTURE</span><strong>Skill 设计</strong><small>重复工作访谈</small></button>
+          <button type="button" role="tab" id="case-tab-video" aria-controls="case-panel" aria-selected="false" tabindex="-1" data-case="video"><span>04 · LIVE TARGET</span><strong>演示视频</strong><small>浏览器 + FFmpeg</small></button>
+          <button type="button" role="tab" id="case-tab-launch" aria-controls="case-panel" aria-selected="false" tabindex="-1" data-case="launch"><span>05 · FIXTURE</span><strong>内容发布</strong><small>dry-run + 批准</small></button>
+          <button type="button" role="tab" id="case-tab-brief" aria-controls="case-panel" aria-selected="false" tabindex="-1" data-case="brief"><span>06 · FIXTURE</span><strong>每日情报</strong><small>调度 + 去重</small></button>
+          <button type="button" role="tab" id="case-tab-cleanup" aria-controls="case-panel" aria-selected="false" tabindex="-1" data-case="cleanup"><span>07 · PROPOSAL</span><strong>安全清理</strong><small>归档 + 恢复</small></button>
+        </div>
+
+        <article class="case-brief" role="tabpanel" id="case-panel" aria-labelledby="case-tab-research" aria-live="polite" data-case-brief>
+          <div class="case-brief-copy">
+            <div class="case-badges"><span class="case-source is-live" data-case-source>LIVE PROJECT</span><span data-case-type>旗舰案例 · 真实项目证据</span></div>
+            <h3 data-case-title>把这个真实研究项目收口成可决策的交付包</h3>
+            <p data-case-summary>直接读取本项目已经存在的版本、结构测试、研究日志和网页运行事实，组合四个 Skill 思路，产出采用结论、证据包与下一项可复用 Skill。</p>
+          </div>
+          <dl class="case-contract">
+            <div><dt>触发</dt><dd data-case-trigger></dd></div>
+            <div><dt>Skill 栈</dt><dd data-case-skills></dd></div>
+            <div><dt>运行环境</dt><dd data-case-environment></dd></div>
+            <div><dt>副作用边界</dt><dd data-case-side-effect></dd></div>
+          </dl>
+        </article>
+
+        <section class="case-usage" aria-labelledby="case-usage-title" data-case-usage>
+          <div class="case-usage-heading">
+            <div>
+              <p class="panel-label">HOW TO USE / 从目标调用</p>
+              <h3 id="case-usage-title">你实际要怎么使用这个库？</h3>
+            </div>
+            <p data-case-goal></p>
+          </div>
+
+          <div class="usage-command">
+            <div>
+              <span>YOU SAY TO THE AGENT</span>
+              <pre data-case-prompt tabindex="0"></pre>
+            </div>
+            <button class="button button-primary" type="button" data-usage-run>按这个请求运行演示</button>
+          </div>
+
+          <div class="usage-role-grid">
+            <article><span>01 / 你提供</span><h4>业务材料</h4><ul data-case-provide></ul></article>
+            <article><span>02 / Skill 负责</span><h4>规程与判断</h4><ul data-case-skill-does></ul></article>
+            <article><span>03 / 环境负责</span><h4>工具与权限</h4><ul data-case-runtime-does></ul></article>
+            <article><span>04 / 你看到</span><h4>产物与门禁</h4><ul data-case-effect></ul></article>
+          </div>
+
+          <p class="usage-boundary"><strong>调用边界：</strong>下面的演示执行这条请求对应的确定性流程；它不会替你安装工具、提供 Token、启动后台服务或执行真实外部动作。</p>
+        </section>
+
+        <section class="real-delivery" data-real-delivery hidden aria-labelledby="real-delivery-title">
+          <div class="real-delivery-copy">
+            <div><span class="real-delivery-badge">REAL LOCAL DELIVERABLE</span><span data-real-delivery-type>WEB → VIDEO</span></div>
+            <h3 id="real-delivery-title" data-real-delivery-title></h3>
+            <p data-real-delivery-summary></p>
+            <ul data-real-delivery-stats></ul>
+            <a class="button button-quiet" data-real-delivery-evidence target="_blank" rel="noopener">打开结构化渲染证据</a>
+          </div>
+          <div class="real-delivery-media">
+            <video data-real-delivery-video controls playsinline preload="metadata" aria-label="Solo Skills 真实网页演示视频"></video>
+            <p>真实 Chromium · DOM 实测坐标 · frameIndex 时间轴 · FFmpeg</p>
+          </div>
+        </section>
+
+        <div class="demo-workbench" data-demo-workbench data-demo-state="idle">
+          <div class="demo-toolbar">
+            <div>
+              <span class="demo-status-dot" aria-hidden="true"></span>
+              <strong data-demo-status>READY / 真实输入已装载</strong>
+              <small data-demo-run-id>case: research / deterministic-local-run</small>
+            </div>
+            <div class="demo-actions">
+              <button class="button button-quiet" type="button" data-demo-reset>重置</button>
+              <button class="button button-quiet" type="button" data-demo-next>下一阶段</button>
+              <button class="button button-primary" type="button" data-demo-run>运行完整案例</button>
+            </div>
+          </div>
+
+          <div class="demo-progress" aria-label="案例执行进度">
+            <span class="demo-progress-bar" data-demo-progress></span>
+          </div>
+
+          <div class="demo-stage-tabs" role="tablist" aria-label="案例执行阶段">
+            <button type="button" role="tab" aria-selected="true" tabindex="0" data-demo-step="0"><span>00</span>契约</button>
+            <button type="button" role="tab" aria-selected="false" tabindex="-1" data-demo-step="1"><span>01</span>输入</button>
+            <button type="button" role="tab" aria-selected="false" tabindex="-1" data-demo-step="2"><span>02</span>计划</button>
+            <button type="button" role="tab" aria-selected="false" tabindex="-1" data-demo-step="3"><span>03</span>执行</button>
+            <button type="button" role="tab" aria-selected="false" tabindex="-1" data-demo-step="4"><span>04</span>验证</button>
+            <button type="button" role="tab" aria-selected="false" tabindex="-1" data-demo-step="5"><span>05</span>门禁</button>
+          </div>
+
+          <div class="demo-grid">
+            <article class="transcript-card case-input-card">
+              <div class="card-heading"><span data-case-input-label>INPUT / REAL REPOSITORY</span><span class="evidence-kind demo-label" data-case-input-badge>真实项目</span></div>
+              <div class="case-input" data-case-input></div>
+              <div class="transcript-meta"><span data-case-input-origin>source: local repository</span><span>只读展示</span><span>可复查</span></div>
+            </article>
+
+            <article class="output-card" aria-live="polite" aria-atomic="true">
+              <div class="card-heading"><span data-demo-output-label>OUTPUT / CONTRACT</span><span class="demo-stage-count" data-demo-stage-count>0 / 5</span></div>
+              <div class="demo-output" data-demo-output></div>
+            </article>
+          </div>
+
+          <div class="demo-log" aria-label="案例运行日志">
+            <span>RUN TRACE</span>
+            <ol data-demo-log><li class="is-current">等待用户启动确定性案例</li></ol>
+          </div>
+        </div>
+
+        <noscript>
+          <div class="noscript-demo"><strong>JavaScript 未启用。</strong>交互实验室无法切换和逐步运行。七个案例分别覆盖真实研究交付、会议纪要、Skill 设计、网页视频、内容发布、每日情报和安全清理；所有外部发布、删除和账号动作默认关闭。</div>
+        </noscript>
+
+        <div class="demo-lessons lab-lessons">
+          <article><span>LIVE</span><h3>真实证据不等于真实外部执行</h3><p>旗舰案例使用当前仓库；视频目标也是真实页面，但媒体渲染与平台发布仍单独标记。</p></article>
+          <article><span>TRACE</span><h3>每个案例都走完整链路</h3><p>触发 → 输入 → 计划 → 执行 → 验证 → 门禁，不只展示最终漂亮文本。</p></article>
+          <article><span>GATE</span><h3>不同风险得到不同终态</h3><p>READY、DRY RUN、SETUP、REVIEW 和 HOLD 同时存在，展示 Skill 真正的治理价值。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-shell" id="extensions" aria-labelledby="extensions-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span>05 / EXTENSION ROADMAP</span> 可扩展方向</p>
+          <h2 id="extensions-title">优先把“能跑”变成“可移植、可测试、可治理”</h2>
+        </div>
+        <p>继续堆技能数量的边际价值有限。最值得做的是把个人环境假设拆出来，并建立生产可靠性的公共底座。</p>
+      </div>
+
+      <div class="extension-grid">
+        <article class="extension-card extension-priority"><span class="extension-rank">P0</span><div><p class="panel-label">PORTABILITY</p><h3>客户端与平台适配层</h3><p>把 Claude、Codex、OpenCode、Orca 和 macOS/Windows/Linux 的工具差异从业务规程中分离。</p><dl><div><dt>入口</dt><dd>capability manifest</dd></div><div><dt>收益</dt><dd>真正跨环境复用</dd></div></dl></div></article>
+        <article class="extension-card extension-priority"><span class="extension-rank">P0</span><div><p class="panel-label">CONFIGURATION</p><h3>配置、秘密和业务数据分离</h3><p>移除账号、路径、频道和品牌硬编码，使用 schema、环境配置与安全秘密存储。</p><dl><div><dt>入口</dt><dd>skill.config.schema.json</dd></div><div><dt>收益</dt><dd>减少个人环境泄漏</dd></div></dl></div></article>
+        <article class="extension-card extension-priority"><span class="extension-rank">P0</span><div><p class="panel-label">EVALUATION</p><h3>Skill 契约、Golden Case 与失败测试</h3><p>为触发、输出、不脑补、审批、错误恢复和副作用建立自动评测。</p><dl><div><dt>入口</dt><dd>fixtures + eval harness</dd></div><div><dt>收益</dt><dd>规则变化可回归</dd></div></dl></div></article>
+        <article class="extension-card"><span class="extension-rank">P1</span><div><p class="panel-label">RUNTIME</p><h3>幂等、断点、重试与观测</h3><p>外部发布使用幂等键和状态机；记录每次运行、成本、权限和恢复动作。</p><dl><div><dt>入口</dt><dd>run manifest + audit log</dd></div><div><dt>收益</dt><dd>部分失败可恢复</dd></div></dl></div></article>
+        <article class="extension-card"><span class="extension-rank">P2</span><div><p class="panel-label">LOCALIZATION</p><h3>中文平台与中文文体适配</h3><p>把 Naver、KakaoTalk、Threads 的业务模式映射到飞书、微信、小红书等，而非逐字翻译。</p><dl><div><dt>入口</dt><dd>platform adapters</dd></div><div><dt>收益</dt><dd>进入我们的真实工作流</dd></div></dl></div></article>
+        <article class="extension-card"><span class="extension-rank">P2</span><div><p class="panel-label">ECOSYSTEM</p><h3>依赖图、版本和可信分发</h3><p>声明技能依赖、最小权限、来源摘要和版本兼容，形成可审计的内部目录。</p><dl><div><dt>入口</dt><dd>registry + digest + SBOM</dd></div><div><dt>收益</dt><dd>降低供应链风险</dd></div></dl></div></article>
+      </div>
+    </section>
+
+    <section class="section value-section" id="value" aria-labelledby="value-title">
+      <div class="section-shell">
+        <div class="section-heading section-heading-inverse">
+          <div>
+            <p class="eyebrow"><span>06 / WHY IT MATTERS</span> 对我们的意义</p>
+            <h2 id="value-title">让研究结论从“读过”升级为“下次自动照做”</h2>
+          </div>
+          <p>我们的研究仓库负责证明结论；Skill 负责在下一次任务中重新加载结论。两者结合，才形成长期能力。</p>
+        </div>
+
+        <ol class="research-loop" aria-label="研究成果转化为 Skill 的六步链路">
+          <li><span>01</span><strong>问题</strong><small>要回答什么</small></li>
+          <li><span>02</span><strong>实验</strong><small>改变一个变量</small></li>
+          <li><span>03</span><strong>证据</strong><small>记录成功与失败</small></li>
+          <li><span>04</span><strong>Skill</strong><small>固化步骤与边界</small></li>
+          <li><span>05</span><strong>测试</strong><small>防止规则漂移</small></li>
+          <li><span>06</span><strong>复用</strong><small>下一次按需加载</small></li>
+        </ol>
+
+        <div class="adoption-grid">
+          <article><span class="adoption-label">NOW / 立即借鉴</span><h3>失败经验写进规程</h3><p>把 research-log 里的可靠失败转成“触发条件、停止条件、验证方法”，而不是只写成功路径。</p></article>
+          <article><span class="adoption-label">PILOT / 先做试点</span><h3>从三个低风险技能开始</h3><p><code>meeting-summary</code>、<code>measured-ui-callouts</code>、<code>web-demo-video</code> 能直接强化研究记录、证据和展示。</p></article>
+          <article><span class="adoption-label">HOLD / 暂不整库安装</span><h3>先完成可迁移性与安全审计</h3><p>涉及发布、删除、秘密、远程命令和常驻 Bot 的技能，在没有适配器和测试前不进入日常自动化。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-shell evidence-section" id="evidence" aria-labelledby="evidence-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span>07 / EVIDENCE & BOUNDARY</span> 我们已经知道什么</p>
+          <h2 id="evidence-title">可信展示必须同时放上证据和未验证边界</h2>
+        </div>
+        <p>此页面总结锁定提交的静态结构和本地基线，不证明所有外部集成都可在 Windows + Codex 直接运行。</p>
+      </div>
+
+      <div class="evidence-grid">
+        <article class="evidence-card"><span class="evidence-kind fact">上游事实</span><h3>26 个技能来自 49 个个人自动化</h3><p>上游 README 声明并公开技能目录；本地结构测试确认 26/26 都有可发现 frontmatter。</p><a href="https://github.com/bam-bam-2/solo-skills/blob/d5789f592af17980054052fc7c05fe8a8e46be79/README.md" target="_blank" rel="noopener">固定 README ↗</a></article>
+        <article class="evidence-card"><span class="evidence-kind result">本地证据</span><h3>结构契约通过，脚本基线并不全通过</h3><p>Node 与 5 个 Python 文件可解析；Notion 脚本在无 Token 启动时因函数定义顺序抛出 `NameError`。</p><a href="../artifacts/baseline-verification.md">查看基线报告 →</a></article>
+        <article class="evidence-card"><span class="evidence-kind judgment">研究判断</span><h3>它更像现场手册，不是生产平台</h3><p>过程知识质量很高，但客户端、路径、账号、调度和安全实现需要重新工程化。</p><a href="../README.md">查看完整研究说明 →</a></article>
+        <article class="evidence-card"><span class="evidence-kind demo-label">案例实验室</span><h3>两项真实本地交付，五项脱敏或受限扩展</h3><p>研究收口与网页视频使用真实项目；其他案例用于说明步骤、组合和护栏，不会发送、删除、调度或发布到外部平台。</p><a href="#demo">返回案例实验室 ↑</a></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid section-shell">
+      <div><span class="brand-seal" aria-hidden="true">S/S</span><p><strong>R-007 · Solo Skills 能力、可靠性与可迁移性研究</strong><br>第 7 个研究子项目 · 锁定提交 d5789f5 · 2026-08-31</p></div>
+      <div><strong>研究入口</strong><a href="../">在线研究页</a><a href="https://github.com/yydshly/0830_1_codex_project/tree/main/projects/solo-skills-study" target="_blank" rel="noopener">本研究源码 ↗</a><a href="./media/solo-skills-real-demo.mp4">真实演示 MP4</a></div>
+      <div><strong>上游入口</strong><a href="https://github.com/bam-bam-2/solo-skills/tree/d5789f592af17980054052fc7c05fe8a8e46be79" target="_blank" rel="noopener">锁定源码 ↗</a><a href="https://github.com/bam-bam-2/solo-skills/blob/d5789f592af17980054052fc7c05fe8a8e46be79/LICENSE" target="_blank" rel="noopener">MIT License ↗</a></div>
+      <p class="footer-note">本网页是独立研究展示，不代表上游作者。外部工具、平台和内容仍受各自版本、条款与许可证约束。</p>
+    </div>
+  </footer>
+
+  <noscript><p class="noscript-note">JavaScript 未启用：筛选、切换和演示不可用，但页面核心研究内容仍可阅读。</p></noscript>
+  <script src="./case-data.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
