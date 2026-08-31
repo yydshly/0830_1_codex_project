@@ -5,7 +5,7 @@
 | 字段 | 决策 |
 | --- | --- |
 | Entry mode | Revision-led implementation：Revision 6 已完成 18 种书型与 36 方向图谱；用户指出“书只是包装”，要求核对并继续扩展真正的非书可变形表面 |
-| Request revision | 7 |
+| Request revision | 7.1（采用意义可见性纠偏；公开 URL 仍使用 `rev=7`） |
 | Target user and context | 想快速判断该效果能做什么、如何实现、何时值得采用的前端开发者、交互设计师与创意技术人员 |
 | Desired first impression | 第一眼仍是可操作的中央物体；“可变表面”入口直接显示标签、幕布、地图、包装与传送门等非书对象，用户无需把它们理解成书型别名 |
 | Visual ambition | Immersive |
@@ -22,6 +22,13 @@
 | User-decision boundary | 不重新分发无许可证的上游源码/素材，不修改上游仓库，不调用付费服务；不把 CSS 视觉材质称为真实物理，不把无自碰撞的幕布称为布料仿真，不把 CSS portal 称为 WebGL 场景连续穿越 |
 | Observable completion criteria | Revision 2–6 已通过标准继续有效；Revision 7 追加 16 条通用可变表面标准 |
 | Coverage record | `docs/frontend-coverage.md` |
+
+## Revision 7.1 adoption-value visibility correction
+
+- **Observed gap:** 已实现的表面、场景和边界可以操作，但 Demo 没有直接回答“适合什么、解决什么问题”；原 Revision 6 图谱深链也没有把用户引向 Revision 7 实作。
+- **Foreground value:** 表面面板在选择器之前显示当前形态的适用场景、采用意义与四类需求选择指南，并随 surface 选择同步；这些内容属于操作界面，不再只留在 README。
+- **Legacy discovery:** Revision 6 图谱保留原研究状态，同时在首段提供清楚的 Revision 7 真实表面深链，不静默改写旧分享链接。
+- **Acceptance:** 12 个定义全部具有非空 `meaning` 和多个 `scenarios`；旧深链入口和新价值卡片在 1440×1000 视口可见，点击得到正确 URL/state，横向溢出为 0。
 
 ## Revision 7 baseline and scope correction
 

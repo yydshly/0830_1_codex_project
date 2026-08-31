@@ -93,6 +93,8 @@ python -m http.server 4173 --directory projects/sketchbook-page-curl-study
 
 先打开 <http://127.0.0.1:4173/demo/> 体验传统柔性翻页；切换顶部“可变表面 12”，或用 <http://127.0.0.1:4173/demo/?rev=7&panel=surfaces&surface=label-peel&material=paper&scene=launch&progress=.55&intro=0> 直达标签剥离。内容上下文、表面和材质可以分别切换。Revision 6 的书型入口 <http://127.0.0.1:4173/demo/?rev=6&panel=forms&form=mixmatch&intro=0> 与六轴图谱 <http://127.0.0.1:4173/demo/?rev=6&panel=explore&direction=mechanism-iris-aperture&intro=0> 继续保留；需要查看上游原理、证据与许可证边界时再打开 <http://127.0.0.1:4173/showcase/>。
 
+“可变表面 12”会随当前形态直接显示适用场景、对你的意义与四类选择依据；Revision 6 创意图谱首屏也提供 Revision 7 真实表面入口，避免概念图谱与已实现能力断开。
+
 运行测试：
 
 ```powershell
@@ -117,6 +119,7 @@ node --test projects/sketchbook-page-curl-study/tests/*.test.mjs
 | E12 | 大量创意方向需要详细但诚实地组织 | 六轴 36 方向 + 三层成熟度 + 12 个组合场景 + 图谱到舞台深链 | 数量与字段完整；筛选稳定；LIVE 映射实际模型；REMIX/HORIZON 明示边界 | 通过 |
 | E14 | 条带曲率可以脱离书本拓扑成为通用表面系统 | 12 个独立非书 renderer + 共享条带链 + 三维正交状态 | 结构计数、几何变化、手势、深链、五材质可见差异、三视口与降级均可复验 | 通过 |
 | E15 | Revision 7 可以形成公开可追溯交付 | README/日志/证据/测试/Actions/Pages/线上 Chromium | 新提交、CI 与部署成功，公开深链 HTTP 200 且状态正确 | 通过 |
+| E16 | 已实现的效果必须直接回答“为什么采用” | 12 项动态价值文案 + 四类选择指南 + Rev6→Rev7 入口 | 当前表面同步显示场景和意义；旧图谱首屏可进入真实表面；桌面无溢出且深链正确 | 通过 |
 
 ## 初步证据
 

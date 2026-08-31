@@ -214,6 +214,9 @@ const refs = {
   surfaceTopology: document.querySelector('#surface-topology'),
   surfaceRelease: document.querySelector('#surface-release'),
   surfaceBoundary: document.querySelector('#surface-boundary'),
+  surfaceValueName: document.querySelector('#surface-value-name'),
+  surfaceMeaning: document.querySelector('#surface-meaning'),
+  surfaceScenarios: document.querySelector('#surface-scenarios'),
   materialBoundary: document.querySelector('#material-boundary'),
   axisFilter: document.querySelector('#axis-filter'),
   tierFilter: document.querySelector('#tier-filter'),
@@ -320,6 +323,17 @@ function directionIndex() { return Math.max(0, DIRECTIONS.findIndex((direction) 
 function setNodeText(node, value) {
   const next = String(value);
   if (node.textContent !== next) node.textContent = next;
+}
+
+function setTextList(node, values) {
+  const signature = values.join('\u001f');
+  if (node.dataset.items === signature) return;
+  node.replaceChildren(...values.map((value) => {
+    const item = document.createElement('li');
+    item.textContent = value;
+    return item;
+  }));
+  node.dataset.items = signature;
 }
 
 const TIER_COPY = Object.freeze({
@@ -1145,6 +1159,9 @@ function updateControls() {
     refs.surfaceTopology.textContent = selectedSurface.topology;
     refs.surfaceRelease.textContent = selectedSurface.release;
     refs.surfaceBoundary.textContent = selectedSurface.boundary;
+    setNodeText(refs.surfaceValueName, selectedSurface.name);
+    setNodeText(refs.surfaceMeaning, selectedSurface.meaning);
+    setTextList(refs.surfaceScenarios, selectedSurface.scenarios);
     refs.materialBoundary.textContent = material.boundary;
   }
   refs.surfaceAction.disabled = !surfaceMode || state.fallback;

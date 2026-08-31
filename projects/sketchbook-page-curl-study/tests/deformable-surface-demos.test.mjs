@@ -165,11 +165,14 @@ test('Revision 7 defines twelve non-book surfaces with an explicit public contra
     assert.ok(selected, `${surfaceId} has a definition`);
     for (const key of [
       'name', 'kicker', 'title', 'dek', 'accent', 'action', 'kind', 'progressLabel',
-      'release', 'dragAxis', 'gesture', 'anchor', 'slicing', 'deformation', 'topology', 'boundary'
+      'release', 'dragAxis', 'gesture', 'anchor', 'slicing', 'deformation', 'topology', 'boundary', 'meaning'
     ]) {
       assert.equal(typeof selected[key], 'string', `${surfaceId}.${key} is public copy`);
       assert.ok(selected[key].length > 0, `${surfaceId}.${key} is not empty`);
     }
+    assert.ok(Array.isArray(selected.scenarios), `${surfaceId}.scenarios is public copy`);
+    assert.ok(selected.scenarios.length >= 2, `${surfaceId} names multiple scenarios`);
+    assert.ok(selected.scenarios.every((scenario) => typeof scenario === 'string' && scenario.length > 0));
     assert.match(selected.accent, /^#[0-9a-f]{6}$/i);
     assert.ok(['toggle', 'cycle', 'release'].includes(selected.kind));
     assert.ok(['x', 'y', 'diagonal', 'split'].includes(selected.dragAxis));
@@ -369,11 +372,22 @@ test('Revision 7 page controller exposes one surface radio set and preserves dee
   assert.equal((html.match(/<button[^>]+data-material="[^"]+"/g) || []).length, 5);
   assert.equal((html.match(/role="radiogroup" aria-label="可变表面形态"/g) || []).length, 1);
   assert.doesNotMatch(html, /class="surface-spec"[^>]+aria-live/);
+  for (const id of ['surface-value-name', 'surface-meaning', 'surface-scenarios']) {
+    assert.match(html, new RegExp(`id="${id}"`));
+  }
+  assert.match(html, /对你的意义/);
+  assert.match(html, /系统价值/);
+  assert.match(html, /class="surface-value__guide"/);
+  assert.match(html, /class="surface-revision-jump"/);
+  assert.match(html, /panel=surfaces&amp;surface=label-peel/);
   assert.match(app, /surfaceStep = Math\.round\(state\.surfaceProgress/);
   assert.match(app, /function syncPanelUrl\(/);
   assert.match(app, /function surfacePointerDelta\(/);
   assert.match(app, /bindRadioNavigation\(refs\.surfaceButtons/);
   assert.match(app, /surfaceStatusText\(state\.surface, surfaceState\).*内容：/);
+  assert.match(app, /setNodeText\(refs\.surfaceMeaning, selectedSurface\.meaning\)/);
+  assert.match(app, /setTextList\(refs\.surfaceScenarios, selectedSurface\.scenarios\)/);
+  assert.match(css, /\.surface-value[^\n]*var\(--scene-accent\)/);
   for (const selector of ['surface-blind__face', 'surface-material__sample', 'surface-portal__frame', 'surface-ribbon__segment']) {
     assert.match(css, new RegExp(`\\.${selector}[^\\n]*var\\(--surface-fill`));
   }

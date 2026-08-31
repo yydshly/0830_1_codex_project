@@ -909,6 +909,12 @@ button:focus-visible, a:focus-visible, [tabindex]:focus-visible, input:focus-vis
 .atlas-metrics strong { color: var(--ink); font: 400 1.1rem/1 var(--serif); }
 .atlas-metrics small { overflow: hidden; color: var(--muted); font: 700 .45rem/1.25 var(--mono); text-overflow: ellipsis; white-space: nowrap; }
 
+.surface-revision-jump { display: grid; gap: .32rem; margin: 0 0 .25rem; padding: .78rem .82rem; border: 1px solid color-mix(in srgb,var(--scene-accent) 45%,var(--line)); border-radius: 9px; background: linear-gradient(135deg,color-mix(in srgb,var(--scene-accent) 13%,transparent),rgba(255,255,255,.025)); color: var(--ink); text-decoration: none; box-shadow: inset 3px 0 0 var(--scene-accent); }
+.surface-revision-jump span { color: var(--scene-accent); font: 700 .43rem/1 var(--mono); letter-spacing: .11em; }
+.surface-revision-jump strong { font-size: .62rem; line-height: 1.35; }
+.surface-revision-jump small { color: var(--muted); font-size: .49rem; line-height: 1.45; }
+.surface-revision-jump:hover { border-color: var(--scene-accent); background: color-mix(in srgb,var(--scene-accent) 16%,rgba(255,255,255,.025)); }
+
 .explore-filter-block { display: grid; gap: .5rem; padding: .78rem 0; border-bottom: 1px solid var(--line); }
 .explore-filter-label { display: flex; align-items: center; justify-content: space-between; gap: .75rem; margin: 0; color: var(--muted); font: 700 .49rem/1 var(--mono); }
 .explore-filter-label span { color: var(--scene-accent); letter-spacing: .13em; }

@@ -13,6 +13,7 @@ Revision 7 已闭合；状态词仅使用 `pass`、`defer`、`blocked`。Revisio
 | 第四：正交组合 | 8 内容上下文 × 12 surface × 5 material 独立选择且互不重置 | surface controls / URL | context/surface/material 数据集与 URL 分别同步；cycle 刷新 step 保真；480 为可寻址空间 | Stage 4/5/6 | pass | 已闭合 |
 | 第四：统一操作 | 中央拖动、range、主动作、左右导航、键盘、Escape 驱动 12 项 | pointer/range/action/nav/key | 具名方向手势、progress/step/detached/status/transform、radio roving tabindex 与退出清理均通过 | Stage 4/5/6 | pass | 已闭合 |
 | 第四：材质边界 | paper/card/vellum/textile/foil 实际改变表面变量与外观，物理边界诚实 | material / five presets | 12 项各有 5 个不同舞台截图哈希；computed vars/data-material/边界文案完整 | Stage 3/6 | pass | 已闭合 |
+| 采用判断 | 当前演示直接说明适用场景、对你的意义和按目标选择依据；旧图谱可发现新实作 | value card / rev6 jump | 12 定义均有 scenarios/meaning；选择后同步；原虹膜深链首屏入口→Rev7 深链；1440px 可见且 overflow=0 | Stage 2/4/7 | pass | 已闭合 |
 | 第五：跨表面 | 1440/768/390、键盘、reduced-motion、fallback、直达 URL 保持可达可解释 | viewport/input/motion/capability | 三档 overflow=false；cycle reload 保真；reduce=`1e-06s`；fallback static/action-range disabled | Stage 7/8 | pass | 已闭合 |
 | Performance | 12 renderer 与材质不引入外部资源或明显加载退化 | 1440px runtime | 8 local/0 external、decoded≈387KB、DOM=478、navigation≈235ms、errors=[] | Stage 8 | pass | 已闭合 |
 | 研究记录与边界 | README、日志、根索引解释从翻页到通用表面及 CSS/WebGL 边界 | project/root docs | README/E14/contract/validation/handoff 均明确独立实现与布料/材质/portal 边界 | Stage 9 | pass | 已闭合 |
