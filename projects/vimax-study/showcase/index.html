@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="R-004 · ViMax Agentic Video Generation 交互式能力研究：能力、真实案例、实现方式、上游演示与扩展方向。">
+  <meta name="color-scheme" content="dark light">
+  <title>R-004 · ViMax 研究展厅 · 从创意到多镜头视频</title>
+  <link rel="stylesheet" href="./styles.css?rev=2">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header class="site-header" data-site-header>
+    <div class="header-inner">
+      <a class="brand" href="#overview" aria-label="ViMax 研究展厅首页">
+        <span class="brand-mark" aria-hidden="true">VM</span>
+        <span>
+          <strong>R-004 · ViMax / Research Dossier</strong>
+          <small>第 4 个研究子项目 · 源码固定于 05a4894</small>
+        </span>
+      </a>
+
+      <nav class="primary-nav" aria-label="研究展厅导航">
+        <a href="#capabilities">能力</a>
+        <a href="#scenarios">场景</a>
+        <a href="#architecture">实现</a>
+        <a href="#demos">演示</a>
+        <a href="#extensions">扩展</a>
+      </nav>
+
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="切换到浅色主题">
+        <span aria-hidden="true" data-theme-icon>◐</span>
+        <span data-theme-label>浅色</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero section-shell" id="overview" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span>能力研究 01</span> Agentic Video Generation</p>
+        <h1 id="hero-title">把一段灵感，组织成一条<br><em>AI 制片流水线</em></h1>
+        <p class="hero-lede">ViMax 不是一个新的视频基础模型。它是模型之上的导演系统：规划故事、锁定角色、设计分镜、调度图像与视频模型，再把短镜头装配成片。</p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="#scenarios">进入真实案例</a>
+          <a class="button button-quiet" href="#capabilities">先看能力边界</a>
+        </div>
+
+        <dl class="hero-facts" aria-label="审查基础信息">
+          <div>
+            <dt>版本</dt>
+            <dd>v1.2.0</dd>
+          </div>
+          <div>
+            <dt>输入路线</dt>
+            <dd>3 种</dd>
+          </div>
+          <div>
+            <dt>代码许可证</dt>
+            <dd>MIT</dd>
+          </div>
+          <div>
+            <dt>研究状态</dt>
+            <dd>静态核验通过</dd>
+          </div>
+        </dl>
+      </div>
+
+      <figure class="production-docket" aria-labelledby="docket-title">
+        <figcaption id="docket-title">
+          <span>Production docket</span>
+          <strong>一句创意会经过什么？</strong>
+        </figcaption>
+        <blockquote>“一名宇航员在废弃的火星基地发现一株植物。”</blockquote>
+        <ol class="docket-flow">
+          <li><span>01</span><strong>故事</strong><small>结构与节奏</small></li>
+          <li><span>02</span><strong>角色</strong><small>正 / 侧 / 背参考</small></li>
+          <li><span>03</span><strong>分镜</strong><small>景别与运动</small></li>
+          <li><span>04</span><strong>关键帧</strong><small>视觉锚点</small></li>
+          <li><span>05</span><strong>短镜头</strong><small>外部视频模型</small></li>
+          <li><span>06</span><strong>成片</strong><small>顺序拼接 MP4</small></li>
+        </ol>
+        <div class="docket-note">
+          <span class="status status-implemented">代码已实现</span>
+          <p>“长视频”来自多镜头编排，不是一次生成的连续长镜头。</p>
+        </div>
+      </figure>
+    </section>
+
+    <aside class="evidence-strip" aria-label="研究证据边界">
+      <div class="section-shell evidence-strip-inner">
+        <p><span>已核验</span> 三个 Pipeline、RAG、相机图、TUI / Web UI</p>
+        <p><span>未运行</span> 付费图像与视频 API 的实际画质、成本和成功率</p>
+        <a href="../artifacts/capability-evidence.md">查看完整证据清单 →</a>
+      </div>
+    </aside>
+
+    <section class="section section-shell" id="capabilities" aria-labelledby="capabilities-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span>01</span> 能力</p>
+          <h2 id="capabilities-title">它到底能做什么？</h2>
+        </div>
+        <p>从输入路线、视觉控制到运行工作台，所有条目都对应固定 commit 中的代码，而不是只引用宣传文案。</p>
+      </div>
+
+      <div class="filter-toolbar" aria-label="能力分类筛选">
+        <div class="filter-buttons" role="group" aria-label="能力类型">
+          <button type="button" class="filter-button is-active" data-capability-filter="all" aria-pressed="true">全部</button>
+          <button type="button" class="filter-button" data-capability-filter="narrative" aria-pressed="false">叙事</button>
+          <button type="button" class="filter-button" data-capability-filter="visual" aria-pressed="false">视觉</button>
+          <button type="button" class="filter-button" data-capability-filter="runtime" aria-pressed="false">运行</button>
+        </div>
+        <p aria-live="polite"><strong data-capability-count>6</strong> 项能力</p>
+      </div>
+
+      <div class="capability-grid" data-capability-grid>
+        <article class="capability-card" data-capability="narrative">
+          <div class="card-index">C01</div>
+          <span class="status status-implemented">已实现</span>
+          <h3>Idea2Video</h3>
+          <p>输入几句话和创作要求，自动扩写故事、提取角色、生成剧本并逐场景进入视频流程。</p>
+          <ul class="artifact-list">
+            <li>story.txt</li><li>characters.json</li><li>script.json</li><li>final_video.mp4</li>
+          </ul>
+          <a class="evidence-link" href="https://github.com/HKUDS/ViMax/blob/05a48943878312d88fe5a016c12a9654940ecc43/pipelines/idea2video_pipeline.py" target="_blank" rel="noopener noreferrer">源码证据 ↗</a>
+        </article>
+
+        <article class="capability-card" data-capability="narrative visual">
+          <div class="card-index">C02</div>
+          <span class="status status-implemented">已实现</span>
+          <h3>Script2Video</h3>
+          <p>把明确剧本拆成角色、分镜、镜头描述和相机关系，再生成关键帧、镜头视频并装配。</p>
+          <ul class="artifact-list">
+            <li>storyboard.json</li><li>camera_tree.json</li><li>first_frame.png</li><li>video.mp4</li>
+          </ul>
+          <a class="evidence-link" href="https://github.com/HKUDS/ViMax/blob/05a48943878312d88fe5a016c12a9654940ecc43/pipelines/script2video_pipeline.py" target="_blank" rel="noopener noreferrer">源码证据 ↗</a>
+        </article>
+
+        <article class="capability-card" data-capability="narrative">
+          <div class="card-index">C03</div>
+          <span class="status status-implemented">已实现</span>
+          <h3>Novel2Video</h3>
+          <p>小说分块压缩、提取事件链，通过 FAISS 召回原文并 rerank，再规划场景与跨事件人物状态。</p>
+          <ul class="artifact-list">
+            <li>novel_compressed.txt</li><li>event_*.json</li><li>relevant_chunks</li><li>scene_*.json</li>
+          </ul>
+          <a class="evidence-link" href="https://github.com/HKUDS/ViMax/blob/05a48943878312d88fe5a016c12a9654940ecc43/pipelines/novel2movie_pipeline.py" target="_blank" rel="noopener noreferrer">源码证据 ↗</a>
+        </article>
+
+        <article class="capability-card" data-capability="visual">
+          <div class="card-index">C04</div>
+          <span class="status status-implemented">已实现</span>
+          <h3>跨镜头视觉控制</h3>
+          <p>复用角色正 / 侧 / 背肖像，构建相机父子树，并从转场视频提取新机位作为空间锚点。</p>
+          <ul class="artifact-list">
+            <li>角色注册表</li><li>参考图选择</li><li>相机依赖</li><li>转场锚点</li>
+          </ul>
+          <a class="evidence-link" href="https://github.com/HKUDS/ViMax/blob/05a48943878312d88fe5a016c12a9654940ecc43/agents/camera_image_generator.py" target="_blank" rel="noopener noreferrer">源码证据 ↗</a>
+        </article>
+
+        <article class="capability-card" data-capability="runtime">
+          <div class="card-index">C05</div>
+          <span class="status status-implemented">已实现</span>
+          <h3>Agent 工作区</h3>
+          <p>通过 TUI 或 Web UI 管理项目、上传文件、讨论规划、修改结构化产物、查看分镜和渲染状态。</p>
+          <ul class="artifact-list">
+            <li>会话持久化</li><li>上下文压缩</li><li>产物预览</li><li>渲染检查点</li>
+          </ul>
+          <a class="evidence-link" href="https://github.com/HKUDS/ViMax/tree/05a48943878312d88fe5a016c12a9654940ecc43/agent_runtime" target="_blank" rel="noopener noreferrer">源码证据 ↗</a>
+        </article>
+
+        <article class="capability-card" data-capability="runtime visual">
+          <div class="card-index">C06</div>
+          <span class="status status-implemented">已实现</span>
+          <h3>模型调度与恢复</h3>
+          <p>统一异步生成器协议接入多家服务；独立镜头并行执行，已有 JSON、图片和视频可以断点复用。</p>
+          <ul class="artifact-list">
+            <li>4 个图像适配器</li><li>5 个视频适配器</li><li>速率限制</li><li>断点复用</li>
+          </ul>
+          <a class="evidence-link" href="https://github.com/HKUDS/ViMax/blob/05a48943878312d88fe5a016c12a9654940ecc43/tools/protocols.py" target="_blank" rel="noopener noreferrer">源码证据 ↗</a>
+        </article>
+      </div>
+
+      <div class="boundary-callout">
+        <strong>效果边界</strong>
+        <p>它能提高“一致的概率”，不能保证人物、商品、空间或动作绝对正确。复杂多人接触、拥挤场面和精确口型仍是薄弱项。</p>
+      </div>
+    </section>
+
+    <section class="section section-shell" id="scenarios" aria-labelledby="scenarios-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span>02</span> 真实案例实验室</p>
+          <h2 id="scenarios-title">把能力放进具体任务里，<br>看它究竟做了哪一步</h2>
+        </div>
+        <p>四个案例都来自固定上游的文档、入口脚本或 Benchmark。这里演示真实输入和生产机制，不把推导产物冒充本机生成结果。</p>
+      </div>
+
+      <div class="case-truth-strip" aria-label="案例证据状态说明">
+        <div><span class="truth-dot truth-source" aria-hidden="true"></span><strong>真实上游输入</strong><small>原文可追溯到固定 commit</small></div>
+        <div><span class="truth-dot truth-plan" aria-hidden="true"></span><strong>规划产物推导</strong><small>按源码流程展示会产生什么</small></div>
+        <div><span class="truth-dot truth-pending" aria-hidden="true"></span><strong>没有配对成片</strong><small>画质、成本和成功率仍需实跑</small></div>
+      </div>
+
+      <div class="case-lab" data-case-lab>
+        <div class="case-tabs" role="tablist" aria-label="选择真实上游案例">
+          <button type="button" role="tab" id="case-tab-idea" aria-controls="case-surface" aria-selected="true" tabindex="0" data-case-id="cat-dog-new-cat">
+            <span>01 · Idea2Video</span><strong>猫狗遇见新朋友</strong><small>官方 README 示例</small>
+          </button>
+          <button type="button" role="tab" id="case-tab-script" aria-controls="case-surface" aria-selected="false" tabindex="-1" data-case-id="basketball-coaching">
+            <span>02 · Script2Video</span><strong>校园篮球纠错</strong><small>仓库默认脚本</small>
+          </button>
+          <button type="button" role="tab" id="case-tab-barista" aria-controls="case-surface" aria-selected="false" tabindex="-1" data-case-id="barista-type-a">
+            <span>03 · Benchmark A</span><strong>Mara 的咖啡旅程</strong><small>8 镜头 fixture</small>
+          </button>
+          <button type="button" role="tab" id="case-tab-kitchen" aria-controls="case-surface" aria-selected="false" tabindex="-1" data-case-id="kitchen-type-b">
+            <span>04 · Benchmark B</span><strong>餐厅厨房竞赛</strong><small>14 镜头 fixture</small>
+          </button>
+        </div>
+
+        <article class="case-surface" id="case-surface" role="tabpanel" aria-live="polite" aria-labelledby="case-tab-idea" data-case-surface>
+          <header class="case-header">
+            <div>
+              <div class="case-badges">
+                <span class="status status-source" data-case-pipeline>Idea2Video</span>
+                <span class="case-source-badge" data-case-source-type>官方文档输入示例</span>
+              </div>
+              <p class="case-overline" data-case-subtitle>一句关系冲突，扩展成儿童卡通短片</p>
+              <h3 data-case-title>猫狗好友遇见一只新猫</h3>
+            </div>
+            <a class="case-source-link" data-case-source href="https://github.com/HKUDS/ViMax/blob/05a48943878312d88fe5a016c12a9654940ecc43/readme.md#L327-L338" target="_blank" rel="noopener noreferrer">查看上游原文 ↗</a>
+          </header>
+
+          <dl class="case-meta-grid">
+            <div><dt>形式</dt><dd data-case-format>儿童卡通 · 不超过 3 场</dd></div>
+            <div><dt>适合谁</dt><dd data-case-audience>动画提案、教育内容、创意验证</dd></div>
+            <div><dt>输入身份</dt><dd data-case-source-label>官方 README Usage 示例</dd></div>
+            <div><dt>真实性</dt><dd data-case-truth>有真实输入，没有与该输入配对的官方成片</dd></div>
+          </dl>
+
+          <div class="case-input-card">
+            <div class="case-card-label">UPSTREAM INPUT / 上游输入（原文或摘要）</div>
+            <blockquote data-case-input>If a cat and a dog are best friends, what would happen when they meet a new cat?\n\nRequirement: For children, do not exceed 3 scenes.\nStyle: Cartoon.</blockquote>
+          </div>
+
+          <section class="case-production" aria-labelledby="case-production-title">
+            <div class="case-subheading">
+              <div><span>PRODUCTION TRACE</span><h4 id="case-production-title">选择一步，看输入如何变成可审阅产物</h4></div>
+              <p>按钮展示的是代码会生成或消费的产物，不代表本机已经调用模型。</p>
+            </div>
+
+            <div class="case-stage-nav" role="toolbar" aria-label="选择案例生产阶段" data-case-stage-nav>
+              <button type="button" aria-pressed="true" data-case-stage="input"><span>01</span>真实输入</button>
+              <button type="button" aria-pressed="false" data-case-stage="narrative"><span>02</span>叙事规划</button>
+              <button type="button" aria-pressed="false" data-case-stage="identity"><span>03</span>角色锚点</button>
+              <button type="button" aria-pressed="false" data-case-stage="shots"><span>04</span>分镜规格</button>
+              <button type="button" aria-pressed="false" data-case-stage="lineage"><span>05</span>参考传播</button>
+              <button type="button" aria-pressed="false" data-case-stage="assembly"><span>06</span>生成装配</button>
+            </div>
+
+            <div class="case-stage-grid">
+              <article class="case-artifact-panel" data-case-stage-panel>
+                <div class="case-artifact-heading">
+                  <div><span data-stage-number>STEP 01</span><h4 data-stage-title>读取创意、受众和风格约束</h4></div>
+                  <span class="status status-implemented" data-stage-status>源码已实现</span>
+                </div>
+                <p data-stage-description>Idea2VideoPipeline 接收 idea、user_requirement 和 style，再进入故事扩写，而不是直接调用视频模型。</p>
+                <div class="artifact-window">
+                  <div><span data-stage-artifact>README usage snippet / request</span><small>结构化示意</small></div>
+                  <pre data-stage-preview><code>idea: cat + dog + new cat
+audience: children
+max_scenes: 3
+style: Cartoon</code></pre>
+                </div>
+              </article>
+              <aside class="case-stage-reading">
+                <div><span>这一步说明什么</span><p data-stage-observation>ViMax 的入口允许非常短的想法，但会先补齐叙事结构。</p></div>
+                <div><span>人工门禁</span><p data-stage-gate>先确认儿童受众、冲突强度和场景数，再继续生成角色与分镜。</p></div>
+              </aside>
+            </div>
+          </section>
+
+          <section class="case-shots" aria-labelledby="case-shots-title">
+            <div class="case-subheading">
+              <div><span>SHOT BOARD</span><h4 id="case-shots-title">镜头板：每张卡都回答“它继承了什么”</h4></div>
+              <div class="lineage-toggle" role="group" aria-label="切换镜头生成机制">
+                <button type="button" aria-pressed="false" data-lineage-mode="isolated">孤立生成</button>
+                <button type="button" aria-pressed="true" data-lineage-mode="vimax" data-lineage-vimax-label>ViMax 参考链</button>
+              </div>
+            </div>
+            <p class="lineage-note" data-lineage-note>机制示意：显示角色参考、父镜头或空间锚点如何被下游镜头复用；不展示未经实测的质量分数。</p>
+            <div class="case-shot-layout">
+              <div class="case-shot-grid" data-case-shot-grid aria-label="案例镜头列表">
+                <button type="button" class="case-shot-card is-active" aria-pressed="true" data-shot-index="0"><span>01 · 建立镜头</span><strong>猫与狗的日常</strong><small>继承：角色设定、卡通风格</small></button>
+                <button type="button" class="case-shot-card" aria-pressed="false" data-shot-index="1"><span>02 · 新角色</span><strong>陌生猫出现</strong><small>继承：父镜头空间、角色参考</small></button>
+                <button type="button" class="case-shot-card" aria-pressed="false" data-shot-index="2"><span>03 · 反应</span><strong>狗回头观察</strong><small>继承：狗角色肖像</small></button>
+                <button type="button" class="case-shot-card" aria-pressed="false" data-shot-index="3"><span>04 · 特写</span><strong>新猫谨慎靠近</strong><small>继承：新猫角色肖像</small></button>
+                <button type="button" class="case-shot-card" aria-pressed="false" data-shot-index="4"><span>05 · 双人</span><strong>猫与新猫试探</strong><small>继承：双角色参考</small></button>
+                <button type="button" class="case-shot-card" aria-pressed="false" data-shot-index="5"><span>06 · 动作</span><strong>玩具打破僵局</strong><small>继承：场景与道具状态</small></button>
+                <button type="button" class="case-shot-card" aria-pressed="false" data-shot-index="6"><span>07 · 群像</span><strong>三个伙伴同框</strong><small>继承：三角色参考</small></button>
+                <button type="button" class="case-shot-card" aria-pressed="false" data-shot-index="7"><span>08 · 收束</span><strong>新友谊成立</strong><small>继承：场景锚点、角色状态</small></button>
+              </div>
+              <aside class="shot-inspector" data-shot-inspector>
+                <span data-shot-label>SHOT 01 / 建立镜头</span>
+                <h4 data-shot-title>猫与狗的日常</h4>
+                <dl>
+                  <div><dt>景别与任务</dt><dd data-shot-framing>宽景，建立两位主角与共同空间</dd></div>
+                  <div><dt data-lineage-heading>ViMax 参考链</dt><dd data-shot-lineage>角色全身设定、卡通风格、场景描述</dd></div>
+                  <div><dt>需要审查</dt><dd data-shot-risk>动物外形是否适合儿童，角色比例是否稳定</dd></div>
+                </dl>
+              </aside>
+            </div>
+          </section>
+        </article>
+      </div>
+
+      <div class="case-boundary-grid">
+        <article><span>官方视频</span><h3>不能和案例强行配对</h3><p>上游九个视频没有标题、输入 Prompt、模型或 case ID，因此这里只能独立作为官方样片观察。</p></article>
+        <article><span>Benchmark</span><h3>真实 fixture，不是实跑成绩</h3><p>35 个 JSON 提供首帧与视频 Prompt，但没有配套生成媒体、评分器或主 Pipeline runner。</p></article>
+        <article><span>Novel2Video</span><h3>代码存在，缺少小说—成片对</h3><p>长文本压缩、FAISS 检索和场景规划有源码证据；上游没有可映射的真实小说输入与最终总成片。</p></article>
+      </div>
+
+      <div class="case-static-fallback" aria-label="JavaScript 不可用时的案例摘要">
+        <article><strong>Idea2Video</strong><span>官方 README 猫狗创意示例</span></article>
+        <article><strong>Script2Video</strong><span>仓库默认校园篮球剧本</span></article>
+        <article><strong>Benchmark A</strong><span>Mara 跨 2 场 8 镜头、7 类地点</span></article>
+        <article><strong>Benchmark B</strong><span>十四镜头餐厅厨房连续性</span></article>
+      </div>
+    </section>
+
+    <section class="section architecture-section" id="architecture" aria-labelledby="architecture-title">
+      <div class="section-shell">
+        <div class="section-heading section-heading-inverse">
+          <div>
+            <p class="eyebrow"><span>03</span> 实现方式</p>
+            <h2 id="architecture-title">它不是“一个 Agent”，<br>而是一条有状态的生产图</h2>
+          </div>
+          <p>点击流程节点，查看每一层消费什么、产出什么，以及代码证据在哪里。</p>
+        </div>
+
+        <div class="architecture-workbench">
+          <ol class="flow-nav" aria-label="ViMax 实现流程">
+            <li><button type="button" aria-pressed="true" aria-controls="flow-panel-input" data-flow-step="input"><span>01</span>输入路由</button></li>
+            <li><button type="button" aria-pressed="false" aria-controls="flow-panel-narrative" data-flow-step="narrative"><span>02</span>叙事规划</button></li>
+            <li><button type="button" aria-pressed="false" aria-controls="flow-panel-assets" data-flow-step="assets"><span>03</span>角色与分镜</button></li>
+            <li><button type="button" aria-pressed="false" aria-controls="flow-panel-graph" data-flow-step="graph"><span>04</span>视觉依赖图</button></li>
+            <li><button type="button" aria-pressed="false" aria-controls="flow-panel-render" data-flow-step="render"><span>05</span>媒体生成</button></li>
+            <li><button type="button" aria-pressed="false" aria-controls="flow-panel-assembly" data-flow-step="assembly"><span>06</span>装配与恢复</button></li>
+          </ol>
+
+          <div class="flow-panels">
+            <article class="flow-panel" id="flow-panel-input" data-flow-panel="input">
+              <p class="flow-label">Router / Entry</p>
+              <h3>先判断输入属于创意、剧本还是长篇小说</h3>
+              <p>不同输入进入不同 Pipeline。Idea2Video 会先扩写；Script2Video 保留已有创作意图；Novel2Video 增加分块、检索和全局人物管理。</p>
+              <dl><div><dt>输入</dt><dd>idea / script / novel_text</dd></div><div><dt>输出</dt><dd>标准化叙事任务</dd></div></dl>
+              <a href="https://github.com/HKUDS/ViMax/tree/05a48943878312d88fe5a016c12a9654940ecc43/pipelines" target="_blank" rel="noopener noreferrer">查看 Pipeline 目录 ↗</a>
+            </article>
+            <article class="flow-panel" id="flow-panel-narrative" data-flow-panel="narrative" hidden>
+              <p class="flow-label">LLM + RAG</p>
+              <h3>层级拆分，局部规划时再找回全局上下文</h3>
+              <p>小说被压缩成事件链；原文以 512 字符分块建立 FAISS 索引，每个事件召回相关段落并 rerank，再由 SceneExtractor 规划场景。</p>
+              <dl><div><dt>输入</dt><dd>原始文本、事件 process chain</dd></div><div><dt>输出</dt><dd>事件、场景、人物状态</dd></div></dl>
+              <a href="https://github.com/HKUDS/ViMax/blob/05a48943878312d88fe5a016c12a9654940ecc43/pipelines/novel2movie_pipeline.py" target="_blank" rel="noopener noreferrer">查看 Novel2Video ↗</a>
+            </article>
+            <article class="flow-panel" id="flow-panel-assets" data-flow-panel="assets" hidden>
+              <p class="flow-label">Agents / Structured artifacts</p>
+              <h3>专职模块把剧本翻译成可生成的视觉规格</h3>
+              <p>角色提取器维护外观描述，肖像生成器制作正 / 侧 / 背参考；StoryboardArtist 规划镜头，随后拆成首帧、末帧、动作和声音描述。</p>
+              <dl><div><dt>输入</dt><dd>场景剧本、风格与用户要求</dd></div><div><dt>输出</dt><dd>角色库、storyboard、shot descriptions</dd></div></dl>
+              <a href="https://github.com/HKUDS/ViMax/tree/05a48943878312d88fe5a016c12a9654940ecc43/agents" target="_blank" rel="noopener noreferrer">查看 Agents ↗</a>
+            </article>
+            <article class="flow-panel" id="flow-panel-graph" data-flow-panel="graph" hidden>
+              <p class="flow-label">Camera dependency graph</p>
+              <h3>让宽景成为中景和特写的视觉父节点</h3>
+              <p>LLM 根据内容覆盖、景别和时间邻近关系建立无环相机树。子机位等待父镜头关键帧，必要时先生成转场视频，再抽取新视角。</p>
+              <dl><div><dt>输入</dt><dd>所有镜头的 visual_desc</dd></div><div><dt>输出</dt><dd>camera_tree.json、空间锚点</dd></div></dl>
+              <a href="https://github.com/HKUDS/ViMax/blob/05a48943878312d88fe5a016c12a9654940ecc43/agents/camera_image_generator.py" target="_blank" rel="noopener noreferrer">查看相机图实现 ↗</a>
+            </article>
+            <article class="flow-panel" id="flow-panel-render" data-flow-panel="render" hidden>
+              <p class="flow-label">Image + Video providers</p>
+              <h3>关键帧控制画面，外部视频模型负责让它动起来</h3>
+              <p>图像生成器接收文本和角色 / 场景参考；视频生成器接收动作、声音描述及一到两张帧图。当前固定版本包含 4 个图像和 5 个视频适配器。</p>
+              <dl><div><dt>输入</dt><dd>prompt + reference_image_paths</dd></div><div><dt>输出</dt><dd>PNG 关键帧、逐镜头 MP4</dd></div></dl>
+              <a href="https://github.com/HKUDS/ViMax/blob/05a48943878312d88fe5a016c12a9654940ecc43/tools/protocols.py" target="_blank" rel="noopener noreferrer">查看生成器协议 ↗</a>
+            </article>
+            <article class="flow-panel" id="flow-panel-assembly" data-flow-panel="assembly" hidden>
+              <p class="flow-label">MoviePy + Session state</p>
+              <h3>复用已经完成的产物，把短镜头按剧本顺序拼接</h3>
+              <p>每个阶段先检查目标文件是否存在；独立任务并行执行。最终使用 MoviePy 拼接 MP4。Agent runtime 另行记录会话、渲染状态和失效产物。</p>
+              <dl><div><dt>输入</dt><dd>逐镜头视频、场景顺序</dd></div><div><dt>输出</dt><dd>final_video.mp4、render status</dd></div></dl>
+              <a href="https://github.com/HKUDS/ViMax/blob/05a48943878312d88fe5a016c12a9654940ecc43/agent_runtime/vimax_adapters.py" target="_blank" rel="noopener noreferrer">查看运行适配层 ↗</a>
+            </article>
+          </div>
+        </div>
+
+        <div class="architecture-note-grid">
+          <article>
+            <span class="status status-paper">论文机制</span>
+            <h3>VLM best-of-k</h3>
+            <p>论文让 VLM 从多个关键帧候选中选最佳；固定源码虽有 BestImageSelector，但主 Pipeline 未调用。</p>
+          </article>
+          <article>
+            <span class="status status-implemented">代码事实</span>
+            <h3>“多 Agent”的真实形态</h3>
+            <p>它主要是角色化 LLM 模块、Pydantic 结构输出和确定性 Pipeline，不是多个 Agent 自由协商。</p>
+          </article>
+          <article>
+            <span class="status status-pending">待验证</span>
+            <h3>费用与成功率</h3>
+            <p>角色肖像、关键帧、镜头和额外转场都会产生 API 调用；本研究尚未运行付费渲染。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-shell" id="demos" aria-labelledby="demos-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span>04</span> 演示效果</p>
+          <h2 id="demos-title">看真实上游演示，<br>也看它没有证明什么</h2>
+        </div>
+        <p>视频来自 ViMax 官方 README 的 GitHub user-attachments。本页不重新托管，点击后才加载。</p>
+      </div>
+
+      <div class="demo-layout">
+        <div class="demo-player-card">
+          <div class="demo-player-heading">
+            <div>
+              <span class="status status-source">上游素材</span>
+              <h3 data-demo-title>官方演示 A</h3>
+            </div>
+            <a data-demo-source href="https://github.com/user-attachments/assets/c2fb27b0-218c-4976-b3d6-2abf8ea06be7" target="_blank" rel="noopener noreferrer">在 GitHub 打开 ↗</a>
+          </div>
+
+          <div class="video-shell" data-video-shell>
+            <div class="video-consent" data-video-consent>
+              <span class="status status-source">外部媒体</span>
+              <strong>从 GitHub 加载官方演示</strong>
+              <p>视频不是理解研究结论的必要条件；加载后将访问 GitHub user-attachments。</p>
+              <button type="button" class="button button-primary" data-load-demo>加载演示 A</button>
+            </div>
+            <video data-demo-video controls playsinline preload="metadata" aria-label="ViMax 官方演示视频 A" hidden>
+              你的浏览器不支持视频播放。请使用下方 GitHub 来源链接。
+            </video>
+            <div class="video-fallback" data-video-fallback hidden>
+              <strong>外部视频未能加载</strong>
+              <p>研究内容仍可正常阅读；可以通过 GitHub 来源链接直接查看官方演示。</p>
+            </div>
+          </div>
+
+          <div class="demo-selector" role="group" aria-label="选择官方演示视频">
+            <button type="button" class="is-active" aria-pressed="true" data-demo-id="a" data-demo-title="官方演示 A" data-demo-src="https://github.com/user-attachments/assets/c2fb27b0-218c-4976-b3d6-2abf8ea06be7">A <span>Demo 01</span></button>
+            <button type="button" aria-pressed="false" data-demo-id="b" data-demo-title="官方演示 B" data-demo-src="https://github.com/user-attachments/assets/bfa566a8-688d-4d53-a9e2-6cedeb4a399d">B <span>Demo 02</span></button>
+            <button type="button" aria-pressed="false" data-demo-id="c" data-demo-title="官方演示 C" data-demo-src="https://github.com/user-attachments/assets/49f61134-4f78-4285-9a9e-bb5e3e0c4abf">C <span>Demo 03</span></button>
+          </div>
+        </div>
+
+        <aside class="demo-observation">
+          <p class="eyebrow"><span>观察框架</span> 不只看“好不好看”</p>
+          <ol>
+            <li><strong>角色身份</strong><span>跨镜头脸部、发型、服装是否漂移？</span></li>
+            <li><strong>场景空间</strong><span>反打、特写和新机位是否仍属于同一空间？</span></li>
+            <li><strong>语义执行</strong><span>动作是否符合分镜，而非只保持画面漂亮？</span></li>
+            <li><strong>镜头装配</strong><span>节奏、音频和切换是否像完整作品？</span></li>
+          </ol>
+          <div class="observation-warning">
+            <span class="status status-pending">研究边界</span>
+            <p>精选 Demo 只能说明“系统可以产出这些样例”，不能给出成功率、平均质量或成本分布。</p>
+          </div>
+        </aside>
+      </div>
+
+      <figure class="workspace-shot">
+        <div class="workspace-shot-copy">
+          <p class="eyebrow"><span>Web UI</span> v1.2.0</p>
+          <h3>从“黑盒脚本”变成可审阅工作区</h3>
+          <p>官方界面把 Agent 对话、项目产物、分镜预览、渲染状态和供应商设置集中在同一页面。它提升的是生产可见性，而不是底层模型画质。</p>
+          <a href="https://github.com/HKUDS/ViMax/releases/tag/v1.2.0" target="_blank" rel="noopener noreferrer">查看 v1.2.0 发布说明 ↗</a>
+        </div>
+        <div class="workspace-image-frame">
+          <img src="https://raw.githubusercontent.com/HKUDS/ViMax/05a48943878312d88fe5a016c12a9654940ecc43/assets/vimax-web-ui.png" alt="ViMax 官方 Web UI：左侧项目列表，中间 Agent 对话，右侧产物预览" data-upstream-image>
+          <p class="image-fallback" data-image-fallback hidden>官方 Web UI 截图未加载。核心研究内容不依赖该图片。</p>
+        </div>
+      </figure>
+    </section>
+
+    <section class="section extensions-section" id="extensions" aria-labelledby="extensions-title">
+      <div class="section-shell">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow"><span>05</span> 可扩展方向</p>
+            <h2 id="extensions-title">最值得继续做的，<br>不是再加一个提示词</h2>
+          </div>
+          <p>扩展应落在可测量的质量闭环、状态记忆、成本与生产控制上。</p>
+        </div>
+
+        <div class="extension-roadmap">
+          <article class="extension-card extension-priority">
+            <div class="extension-rank">01</div>
+            <div>
+              <span class="status status-priority">优先</span>
+              <h3>接通 VLM 质量闭环</h3>
+              <p>把已有 BestImageSelector 接入主 Pipeline，生成多个候选、评分、低于阈值时重试，并记录失败原因和预算。</p>
+              <dl><div><dt>入口</dt><dd>agents/best_image_selector.py</dd></div><div><dt>价值</dt><dd>最接近论文、容易做消融</dd></div></dl>
+            </div>
+          </article>
+
+          <article class="extension-card">
+            <div class="extension-rank">02</div>
+            <div>
+              <span class="status status-opportunity">高价值</span>
+              <h3>跨场景状态图</h3>
+              <p>显式追踪服装、伤痕、道具、车辆、天气、时间与空间拓扑，让每个镜头在生成前先做状态一致性检查。</p>
+              <dl><div><dt>入口</dt><dd>global information + camera graph</dd></div><div><dt>价值</dt><dd>从人物一致扩展到世界一致</dd></div></dl>
+            </div>
+          </article>
+
+          <article class="extension-card">
+            <div class="extension-rank">03</div>
+            <div>
+              <span class="status status-opportunity">高价值</span>
+              <h3>音频与时间线</h3>
+              <p>增加 TTS、角色声纹、对白对齐、口型、音乐节拍、字幕和可编辑时间线，替代当前主要依赖视频模型原生音频与顺序拼接的方式。</p>
+              <dl><div><dt>入口</dt><dd>shot audio_desc + assembly</dd></div><div><dt>价值</dt><dd>从样片走向可后期制作</dd></div></dl>
+            </div>
+          </article>
+
+          <article class="extension-card">
+            <div class="extension-rank">04</div>
+            <div>
+              <span class="status status-opportunity">基础设施</span>
+              <h3>本地与私有模型后端</h3>
+              <p>基于薄协议接入 ComfyUI、Diffusers 或内部推理服务，同时处理鉴权、轮询、失败恢复和统一媒体格式。</p>
+              <dl><div><dt>入口</dt><dd>tools/protocols.py</dd></div><div><dt>价值</dt><dd>隐私、成本与供应商自由</dd></div></dl>
+            </div>
+          </article>
+
+          <article class="extension-card">
+            <div class="extension-rank">05</div>
+            <div>
+              <span class="status status-opportunity">基础设施</span>
+              <h3>成本感知调度</h3>
+              <p>按镜头重要度选择模型、分辨率和候选数，记录每个产物的费用、时延、重试次数和依赖传播成本。</p>
+              <dl><div><dt>入口</dt><dd>RenderBackend + session logs</dd></div><div><dt>价值</dt><dd>把“能跑”变成“可运营”</dd></div></dl>
+            </div>
+          </article>
+
+          <article class="extension-card">
+            <div class="extension-rank">06</div>
+            <div>
+              <span class="status status-opportunity">研究</span>
+              <h3>领域 Benchmark</h3>
+              <p>为中文短剧、产品广告或教育视频建立固定样例，报告一致性、忠实度、失败率、成本和人工修改次数。</p>
+              <dl><div><dt>入口</dt><dd>vimax_benchmark/</dd></div><div><dt>价值</dt><dd>避免把精选 Demo 当平均水平</dd></div></dl>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="decision-section section-shell" aria-labelledby="decision-title">
+      <div>
+        <p class="eyebrow"><span>研究判断</span> Adopt / Explore / Wait</p>
+        <h2 id="decision-title">值得研究，适合做样片；<br>还不该无验证地承诺成片。</h2>
+      </div>
+      <div class="decision-grid">
+        <article><strong>Explore</strong><p>如果目标是 Agentic 视频、长叙事、跨镜头一致性或内部工作台，ViMax 是很好的实验骨架。</p></article>
+        <article><strong>Prototype</strong><p>如果目标是短片提案、小说视觉化和前期预演，可以从 2 场景、8 镜头的小预算样例开始。</p></article>
+        <article><strong>Wait</strong><p>如果要求绝对身份一致、专业对白音频、低成本批量或完全离线，应先补齐关键模块。</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="section-shell footer-grid">
+      <div>
+        <span class="brand-mark" aria-hidden="true">VM</span>
+        <p>ViMax 能力研究展厅<br>基于固定源码与论文的可追溯审查。</p>
+      </div>
+      <div>
+        <strong>研究材料</strong>
+        <a href="../README.md">项目 README</a>
+        <a href="../artifacts/capability-evidence.md">能力证据清单</a>
+        <a href="../research-log.md">Research log</a>
+      </div>
+      <div>
+        <strong>上游来源</strong>
+        <a href="https://github.com/HKUDS/ViMax" target="_blank" rel="noopener noreferrer">GitHub 仓库 ↗</a>
+        <a href="https://arxiv.org/abs/2606.07649v2" target="_blank" rel="noopener noreferrer">论文 v2 ↗</a>
+        <a href="https://github.com/HKUDS/ViMax/blob/05a48943878312d88fe5a016c12a9654940ecc43/LICENSE" target="_blank" rel="noopener noreferrer">MIT License ↗</a>
+      </div>
+      <p class="footer-note">R-004 · 第 4 个研究子项目。本页不代表 ViMax 官方；演示视频与界面截图来自上游项目。第三方模型与服务受各自条款约束。</p>
+    </div>
+  </footer>
+
+  <noscript>
+    <div class="noscript-note">JavaScript 已关闭：所有研究正文仍可阅读，但筛选、流程切换、主题和演示切换不可用。</div>
+  </noscript>
+
+  <script src="./case-data.js?rev=4" defer></script>
+  <script src="./app.js?rev=4" defer></script>
+</body>
+</html>
