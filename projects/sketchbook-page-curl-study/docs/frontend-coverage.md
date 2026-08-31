@@ -1,6 +1,6 @@
 # Sketchbook 柔性翻页实际效果展厅 · Coverage manifest · Revision 7
 
-状态词仅使用：`continue`、`pass`、`defer`、`blocked`。下表是 Revision 7 的活动范围；Revision 6 及更早证据保留在后表，仅作为未受影响基线。
+Revision 7 已闭合；状态词仅使用 `pass`、`defer`、`blocked`。Revision 6 及更早证据保留在后表，仅作为未受影响基线。
 
 ## Revision 7 active coverage
 
@@ -16,7 +16,7 @@
 | 第五：跨表面 | 1440/768/390、键盘、reduced-motion、fallback、直达 URL 保持可达可解释 | viewport/input/motion/capability | 三档 overflow=false；cycle reload 保真；reduce=`1e-06s`；fallback static/action-range disabled | Stage 7/8 | pass | 已闭合 |
 | Performance | 12 renderer 与材质不引入外部资源或明显加载退化 | 1440px runtime | 8 local/0 external、decoded≈387KB、DOM=478、navigation≈235ms、errors=[] | Stage 8 | pass | 已闭合 |
 | 研究记录与边界 | README、日志、根索引解释从翻页到通用表面及 CSS/WebGL 边界 | project/root docs | README/E14/contract/validation/handoff 均明确独立实现与布料/材质/portal 边界 | Stage 9 | pass | 已闭合 |
-| 工程与交付 | 自动测试、浏览器证据、handoff、GitHub Pages 完整 | Node/repository/browser/pages | tests、validator、≤6 张最终证据、Actions/HTTP、无 continue | Stage 9 | continue | 完成测试后发布 |
+| 工程与交付 | 自动测试、浏览器证据、handoff、GitHub Pages 完整 | Node/repository/browser/pages | 35/35、validator pass、6 张证据；commit `4e21b99` 的 checks `33371045085` / deploy `33371045153` success；四入口 HTTP 200 | Stage 9 | pass | 已闭合 |
 
 ## Revision 6 retained baseline
 
@@ -33,7 +33,7 @@
 | 第三：跨表面 | 1440/768/390、键盘、reduced-motion、fallback 与直达 URL 保持可达和可解释 | viewport/input/motion/capability | overflow=false；focus path；fallback static；deep-link stable | Stage 7/8 | pass | 已闭合 |
 | Performance | 18 renderer + 36 data 不引入外部资源或明显加载退化 | 1440px runtime | resource count、DOM count、navigation、errors=[] | Stage 8 | pass | 已闭合 |
 | 研究记录与边界 | README、日志、根索引记录六轴地图、18 实作、成熟度边界与许可证 | project/root docs | 独立扩展不归因上游；失败实验可追溯 | Stage 9 | pass | 已闭合 |
-| 工程与交付 | 自动测试、浏览器证据和 handoff 完整 | Node/repository/docs | tests、validator、≤6 张最终证据、无 continue | Stage 9 | pass | 已闭合 |
+| 工程与交付 | 自动测试、浏览器证据和 handoff 完整 | Node/repository/docs | tests、validator、≤6 张最终证据、无未闭合项 | Stage 9 | pass | 已闭合 |
 | 公开发布 | 根 README 摘要、固定源库、GitHub 研究目录、Pages 研究页/Demo/showcase/深链均可追溯 | GitHub / Pages / Chromium | R-001 元数据测试；Actions build+deploy success；5 个公开入口 HTTP 200；深链选中虹膜快门且 errors=[] | Stage 9 | pass | 已闭合 |
 
 ## Revision 5 retained baseline
@@ -51,7 +51,7 @@
 | 第三：跨表面 | 1440/768/390、reduced-motion、fallback 下可辨认且无横溢 | viewport/input/motion/capability | 三档 overflow=false；reduce 单帧；fallback 静态终态/disabled | Stage 7/8 | pass | 已闭合 |
 | Performance | 十种 CSS/SVG 书型不增加外部资源或明显加载退化 | 1440px runtime | local resources、navigation、errors=[] | Stage 8 | pass | 已闭合 |
 | 研究记录与边界 | README、研究日志和根索引记录十种书型、统一控制、CSS/DOM 3D 原理、降级与许可证边界 | project/root docs | E11 可追溯；不把独立扩展归因给上游；不新增无证据的性能结论 | Stage 9 | pass | 已闭合 |
-| 工程与交付 | 自动测试、README、日志、证据与 handoff 完整 | Node/repository/docs | tests、validator、≤6 张最终证据、无 continue | Stage 9 | pass | 已闭合 |
+| 工程与交付 | 自动测试、README、日志、证据与 handoff 完整 | Node/repository/docs | tests、validator、≤6 张最终证据、无未闭合项 | Stage 9 | pass | 已闭合 |
 
 ## Revision 4 retained baseline
 

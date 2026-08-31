@@ -38,6 +38,7 @@
 | Reduced motion / fallback | reduced-motion 过渡时长 `1e-06s`；fallback 静态终态可辨，action/range disabled，内容/表面/材质仍可选 | pass |
 | Console/network/performance | console/page/request errors=[]；8 个本地资源、0 external、decoded≈387KB、DOM=478、navigation≈235ms | pass |
 | Static tests | `node --test projects/sketchbook-page-curl-study/tests/*.test.mjs`：35/35 | pass |
+| Public release | commit `4e21b99`；checks run `33371045085`、deploy run `33371045153` success；研究页/Demo/showcase/深链 HTTP 200；线上优惠券 `detached=1` | pass |
 
 ### Revision 7 evidence set
 

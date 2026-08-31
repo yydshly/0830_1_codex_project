@@ -17,7 +17,7 @@
 - **运行时观察：** 标签深链请求 8 个本地资源、0 个外部资源，decoded body 约 387KB，DOM 478，navigation 约 235ms，console/page/request errors=[]。这是本机静态加载观察，不是持续帧时、热量或功耗结论。
 - **证据图：** `artifacts/browser-r7-label-peel.png`、`browser-r7-curtain.png`、`browser-r7-fold-map.png`、`browser-r7-box-net.png`、`browser-r7-coupon-detached.png`、`browser-r7-mobile-fan.png`。最多保留这 6 张最终证据，临时调试图不提交。
 - **来源与边界：** 12 个非书表面、五材质、文案和视觉均为本项目独立实现，不是 MengTo/sketchbook 原生能力。织物没有连续布料、自碰撞或任意褶皱；金属没有 PBR/塑性形变；portal 只验证 CSS 层叠空间和阈值揭示。
-- **发布状态：** 本地实现与浏览器闭环已完成；新 commit、Actions run、Pages HTTP 200 和线上 Chromium 深链证据在推送后补录。
+- **公开发布：** 实现基线 commit `4e21b998073003a0248b70edc1cda882633bcf8e` 已推送；`Repository checks` run `33371045085` 与 `Deploy research site` run `33371045153` 均成功。研究页、Demo、showcase 与 Revision 7 深链均 HTTP 200；线上 1440×1000 Chromium 得到 12 个 surface button、5 个 material button、`surface=label-peel / material=paper / context=launch / progress=.550`，优惠券可切到 `detached=1`，console/page/request errors=[]。
 
 ## 2026-08-31 · E13 GitHub 公开发布与可访问性闭环
 

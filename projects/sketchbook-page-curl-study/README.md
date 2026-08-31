@@ -116,7 +116,7 @@ node --test projects/sketchbook-page-curl-study/tests/*.test.mjs
 | E11 | 扩展应覆盖书籍结构而不只覆盖内容场景 | 18 种独立书型 renderer + 统一控制器 | 每种书型具有不同直属 DOM 与几何状态；可选择、拖动、滑杆、主动作、导航和键盘操作 | 通过 |
 | E12 | 大量创意方向需要详细但诚实地组织 | 六轴 36 方向 + 三层成熟度 + 12 个组合场景 + 图谱到舞台深链 | 数量与字段完整；筛选稳定；LIVE 映射实际模型；REMIX/HORIZON 明示边界 | 通过 |
 | E14 | 条带曲率可以脱离书本拓扑成为通用表面系统 | 12 个独立非书 renderer + 共享条带链 + 三维正交状态 | 结构计数、几何变化、手势、深链、五材质可见差异、三视口与降级均可复验 | 通过 |
-| E15 | Revision 7 可以形成公开可追溯交付 | README/日志/证据/测试/Actions/Pages/线上 Chromium | 新提交、CI 与部署成功，公开深链 HTTP 200 且状态正确 | 发布后补录 |
+| E15 | Revision 7 可以形成公开可追溯交付 | README/日志/证据/测试/Actions/Pages/线上 Chromium | 新提交、CI 与部署成功，公开深链 HTTP 200 且状态正确 | 通过 |
 
 ## 初步证据
 
