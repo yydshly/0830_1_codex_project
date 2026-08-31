@@ -22,6 +22,16 @@
 
 本轮环境未提供 `agent-browser` CLI，因此使用工作区捆绑的 Playwright 与真实无头 Chromium 完成等价检查；断言、截图与控制台监听均针对 `http://127.0.0.1:4217/`。桌面首屏、产品信号完成态和手机首屏证据已更新。
 
+## 在线发布复验
+
+| 公开入口 | 观察 | 结果 |
+| --- | --- | --- |
+| [R-005 在线研究页](https://yydshly.github.io/0830_1_codex_project/projects/qmreader-study/) | HTTP 200；标题为 `R-005 · QMReader 能力与架构研究`；包含锁定上游 SHA 与第 5 项说明 | pass |
+| [R-005 在线交互展厅](https://yydshly.github.io/0830_1_codex_project/projects/qmreader-study/site/) | HTTP 200；标题为 `R-005 · QMReader 研究展览｜把订阅流变成研究资产`；包含锁定上游 SHA 与第 5 个研究子项目说明 | pass |
+| [GitHub Pages 工作流 33365069576](https://github.com/yydshly/0830_1_codex_project/actions/runs/33365069576) | 发布提交 `0f145d90a3d577d0aa9e77f298ea5a577b69daff` 的 build 与 deploy 均完成且结论为 `success` | pass |
+
+在线复验使用无缓存请求头直接读取 GitHub Pages 公开 HTML；Actions 成功与两个 URL 的 HTTP/content 检查相互独立。
+
 ## 跨表面结果
 
 | 表面 | 状态 | 观察 | 结果 |

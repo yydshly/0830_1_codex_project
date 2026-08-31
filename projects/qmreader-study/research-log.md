@@ -2,6 +2,17 @@
 
 实验记录按时间倒序排列。每次记录说明目标、环境、执行、观察、证据、判断和下一步；失败实验保留在记录中。
 
+## 2026-08-31 · R-005 GitHub 与 GitHub Pages 发布
+
+- **目标：** 将完整研究、摘要索引和交互网页作为第 5 个研究子项目公开发布，并确保外部入口能回到锁定源库、研究目录与在线演示。
+- **环境：** GitHub 仓库 `yydshly/0830_1_codex_project`；`main`；GitHub Actions/Jekyll Pages；公开域名 `yydshly.github.io`。
+- **变更：** 统一公开研究身份为 `R-005`；项目 README 新增 30 秒摘要、锁定源库、GitHub 研究目录、在线研究页和在线展厅；根研究索引新增同一摘要与双在线入口；网页品牌与页脚补充稳定编号和公开返回路径。
+- **执行：** 仅暂存根 README 的 QMReader 行与 `projects/qmreader-study`，提交并推送 `0f145d90a3d577d0aa9e77f298ea5a577b69daff`；等待 [Pages 工作流 33365069576](https://github.com/yydshly/0830_1_codex_project/actions/runs/33365069576) 的 build 与 deploy 完成；随后分别请求在线研究页和交互展厅并检查标题、编号、锁定 SHA 与第 5 项说明。
+- **观察：** Actions build 与 deploy 均为 `success`；[在线研究页](https://yydshly.github.io/0830_1_codex_project/projects/qmreader-study/) 和[在线交互展厅](https://yydshly.github.io/0830_1_codex_project/projects/qmreader-study/site/) 均返回 HTTP 200，且公开 HTML 同时包含 `R-005`、锁定提交和“第 5 个研究子项目”。远端 `main` 精确指向发布提交。
+- **证据：** [发布提交 `0f145d9`](https://github.com/yydshly/0830_1_codex_project/commit/0f145d90a3d577d0aa9e77f298ea5a577b69daff)、Pages 工作流、`site/browser-evidence.md`、`tests/publication-contract.test.mjs`。
+- **判断：** R-005 的仓库、研究说明与交互网页三层入口已经形成可公开复核的闭环；发布不改变“真实模型质量与规模化表现仍待实验”的结论边界。
+- **下一步：** 后续能力实验继续固定上游提交，并优先评测真实长文翻译的完整性、成本与时延；无需重新编号本项目。
+
 ## 2026-08-30 · 可扩展场景版图与三模板演示
 
 - **目标：** 回答 QMReader 还能扩展到哪些使用场景，并证明同一条信息管线能够映射到不同输入、判断方式和资产类型。

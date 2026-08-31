@@ -72,8 +72,8 @@ Observable completion criteria: 页面可运行；至少八个扩展场景按改
 | 能力回退 | 无脚本时核心研究结论仍可读 | desktop / JS unavailable | 静态 HTML、`noscript` 与契约测试 | Stage 8 | pass | 无 |
 | 工程交付 | 更新测试、截图、验证记录和仓库检查 | local runtime | `browser-evidence.md` 与验证命令 | Stage 9 | pass | 无 |
 | R-005 发布 | 研究编号、摘要、源库与在线索引在公开表面一致 | README / Jekyll 入口 / 展厅 | 发布契约 3/3；Chromium 1440×1000、390×844 与完成态复验 | Stage 3、7、9 | pass | 无 |
-| R-005 发布 | GitHub 研究目录只包含本研究交付文件 | Git index / remote main | staged diff、commit 与远端 SHA | Stage 9 | continue | 仅暂存 QMReader 与根索引对应行 |
-| R-005 发布 | 在线研究页与交互展厅可访问 | GitHub Pages | workflow 结果、HTTP 200 与在线内容检查 | Stage 9 | continue | 推送后等待 Pages 并复验 |
+| R-005 发布 | GitHub 研究目录只包含本研究交付文件 | Git index / remote main | 暂存路径审计；发布提交 [`0f145d9`](https://github.com/yydshly/0830_1_codex_project/commit/0f145d90a3d577d0aa9e77f298ea5a577b69daff) | Stage 9 | pass | 无 |
+| R-005 发布 | 在线研究页与交互展厅可访问 | GitHub Pages | [工作流 33365069576](https://github.com/yydshly/0830_1_codex_project/actions/runs/33365069576) 成功；两个入口 HTTP 200 且含 R-005、锁定 SHA 与第 5 项说明 | Stage 9 | pass | 无 |
 
 ## Revision 2 refinement ledger
 
