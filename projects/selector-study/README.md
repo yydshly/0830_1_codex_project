@@ -1,6 +1,6 @@
 # R-006 · Selector 能力研究（第 6 个研究子项目）
 
-> 基于固定源码版本，验证 Selector 如何把网页视觉指代转换为 AI 可执行上下文，以及这种上下文对前端修改工作流的实际价值和边界。
+> 基于固定源码版本，验证 Selector 如何在复制选中网页元素时附带结构化上下文，以及这些上下文对前端修改工作流的实际价值和边界。
 
 | 字段 | 内容 |
 | --- | --- |
@@ -19,16 +19,16 @@
 
 ## 30 秒摘要
 
-- **能力：** 在网页上点击、Shift 多选或框选元素，输出稳定 selector、语义 locator、必要的 HTML/样式、React/Vue 调试线索；Sharingan 再补 DOM、CSSOM、几何、字体、动画和媒体。
-- **原理：** 书签把完整 CSS 与 JavaScript 注入当前页面，选择层给 Light DOM 写临时 ID，上下文编译器从 DOM、CSSOM、可访问性和框架私有运行时提取证据。
+- **能力：** 在网页上点击、Shift 多选或框选元素；执行复制时，把稳定 selector、语义 locator、必要的 HTML/样式、React/Vue 调试线索与 instruction 一起写入剪贴板。Sharingan 会复制更完整的 DOM、CSSOM、几何、字体、动画和媒体信息。
+- **原理：** 书签把 CSS 与 JavaScript 注入当前页面，选择层给 Light DOM 写临时 ID；复制动作再从 DOM、CSSOM、可访问性和框架私有运行时收集可用字段，拼成文本或报告。
 - **最合适的场景：** 本地开发页面中，产品或设计人员指着具体 UI，把“改这个”交给 Codex、Claude Code 或 Cursor；收益来自减少目标歧义，不是自动改代码。
 - **不适合：** 批量爬取、CI 自动化、Shadow DOM/跨域 iframe 深层选择、含敏感数据的生产页面，以及源码位置已经明确的机械改造。
-- **对我们的意义：** 它可以成为“人类视觉意图 → Agent 可审查任务包”的前置协议层；值得吸收的是证据编译和风险闸门，不是照搬一个选框 UI。
+- **对我们的意义：** 它说明“复制”可以不只带可见文字，还能带元素身份与结构上下文；值得吸收的是上下文字段选择、输出前预览和风险闸门，不是把工具包装成意图理解器。
 - **证据入口：** [上游锁定源码](https://github.com/oil-oil/selector/tree/d88e9a6c3c10821a5cc6d87447693d9507a76b35) · [在线 Web 展厅](https://yydshly.github.io/0830_1_codex_project/projects/selector-study/showcase/) · [真实源库运行示例](https://yydshly.github.io/0830_1_codex_project/projects/selector-study/showcase/source-demo/)
 
 ## 当前结论
 
-Selector 是运行在当前网页中的视觉元素选择器和上下文编译器，不是 UI 组件库、爬虫或自动改代码的 Agent。它将点击、多选或框选得到的元素转换为包含稳定 CSS selector、语义 locator、页面位置、React/Vue 调试信息和必要样式的紧凑提示；Sharingan 模式进一步输出 DOM、CSSOM、几何、运行时状态、字体、动画和媒体证据。
+Selector 是运行在当前网页中的元素选取与复制增强工具，不是 UI 组件库、爬虫或自动改代码的 Agent。用户先点击、多选或框选元素；在执行复制时，工具把稳定 CSS selector、语义 locator、页面位置、React/Vue 调试信息、必要样式和逐元素备注一起放进剪贴板。Sharingan 模式复制的字段更多，会进一步包含 DOM、CSSOM、几何、运行时状态、字体、动画和媒体证据。
 
 固定版本的源码构建和静态能力检查已经通过；本项目还完成了一个零依赖交互式研究展厅，并在桌面、平板、手机、明暗主题、键盘和 reduced-motion 状态下完成浏览器验收。展厅现在包含两种证据层：研究页模拟负责解释多场景交付物和决策逻辑；源库实跑页直接加载由锁定提交构建且逐字节校验的上游 `editor.js` / `editor.css`，可在安全 Light DOM fixture 中真实完成启动、选取、备注和导出。它仍不等于跨浏览器兼容性、React/Vue 源码映射或 Agent 修改效果已经得到验证。
 
@@ -79,7 +79,7 @@ Selector 是运行在当前网页中的视觉元素选择器和上下文编译�
 
 编辑器启动后遍历当前 Light DOM，为元素添加 `data-ai-id`，并在 document capture 阶段监听鼠标和键盘事件。命中测试结合 `elementsFromPoint()`、可见性、直接文本、交互标签和子元素数量选择“有意义”的目标；覆盖层通过固定定位框标记 hover 和 selection。
 
-### 3. 上下文编译
+### 3. 生成带上下文的复制内容
 
 稳定 selector 依次偏好测试属性、稳定 ID、可访问属性和语义 class，并用 `querySelectorAll()` 验证唯一性。语义 locator 使用显式或隐式 role 加可访问名称。React/Vue 信息来自页面运行时私有调试字段，因此开发构建比生产构建更容易得到组件和源码位置。
 
@@ -182,7 +182,7 @@ Pop-Location
 
 ### 已证实
 
-- Selector 是纯客户端书签式视觉选择和上下文编译工具；
+- Selector 是纯客户端书签式元素选择和“复制时附带上下文”工具；
 - 普通模式具备选择、稳定 selector、语义 locator、React/Vue 调试信息和按需上下文输出；
 - Sharingan 已实现面向 UI 复刻的多维报告；
 - Markdown 和截图是独立导出路径；

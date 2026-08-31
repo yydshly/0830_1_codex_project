@@ -22,13 +22,15 @@ for (const id of requiredSections) {
 }
 
 for (const phrase of [
-  "点一下",
+  "选中元素",
+  "复制时把",
+  "它不理解意图，也不改代码",
   "本地 React 管理后台的精准 UI 修改",
   "不用相信示意图，直接运行 v0.4.1",
   "启动真实 Selector",
   "锁定上游源码",
   "Selector 到此为止",
-  "它不是“选框工具”",
+  "它给一次复制补上六类上下文",
   "实现原理",
   "使用场景",
   "先别问怎么用，先判断该不该用",
@@ -39,6 +41,10 @@ for (const phrase of [
   "data-ai-id",
 ]) {
   assert.ok(html.includes(phrase), `Missing required research statement: ${phrase}`);
+}
+
+for (const phrase of ["VISUAL INTENT COMPILER", "AI 就知道", "生成 AI 上下文", "Selector 编译"]) {
+  assert.ok(!html.includes(phrase), `Overstated wording must not return: ${phrase}`);
 }
 
 assert.equal((html.match(/data-demo-target=/g) || []).length, 3, "Expected three selectable demo targets");

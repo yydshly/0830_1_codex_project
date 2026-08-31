@@ -7,7 +7,7 @@
 | Entry mode | Brief-led implementation，在现有 Selector 研究子项目中新增可运行网页展厅 |
 | Request revision | 1 |
 | Target user and context | 想在 5–10 分钟内判断 Selector 能做什么、如何实现、何时值得采用的开发者、设计师和 Agent 工作流研究者 |
-| Desired first impression | 像一份可以亲手操作的浏览器检查档案：精确、克制、可信，第一眼就理解“视觉指代被编译成结构化上下文” |
+| Desired first impression | 像一份可以亲手操作的浏览器检查档案：精确、克制、可信，第一眼就理解“选中元素，复制时把结构化上下文一起带走” |
 | Visual ambition | Editorial |
 | Experience architecture | Editorial Flow，首屏结论后紧接一个占据主视觉的交互工作台 |
 | Visual constraints | 不依赖外部字体或图片；浏览器检查器式深色工作台与浅色研究正文并置；薄线框、坐标标记和选择框表达技术语义；不使用 WebGL 或装饰性大图 |
@@ -107,3 +107,23 @@
 4. 运行时哈希固定，测试验证关键入口且不依赖外部网络脚本。
 5. 根 README 使用 `R-006`，并给出源库、研究页、在线 Web、源库实跑四个入口。
 6. 推送 main 后等待 Pages 成功并对线上 URL 做 HTTP 与内容验证。
+
+## Scope revision 5 · 回归“复制时附带结构化上下文”的本质表述
+
+| 字段 | 修订决策 |
+| --- | --- |
+| Entry mode | Repair-led；用户指出当前“视觉意图编译器 / AI 就知道”的表述高于源码实际行为 |
+| Observed baseline | 线上首屏使用 `VISUAL INTENT COMPILER`、“点一下，AI 就知道”和“完成人的视觉意图交付”等措辞，容易把选择、复制和下游 AI 三个阶段混成一种理解能力 |
+| Ground-truth statement | Selector 的直接动作是：用户选中元素，在复制时把 selector、locator、DOM/样式/框架等可用上下文与 instruction 一起放进剪贴板；下游 AI 是否理解和修改正确不属于 Selector 本身 |
+| Preserved behavior | 保留现有交互、布局、源库实跑、六场景、决策台、主题和响应式；不改变上游运行时或真实 prompt |
+| Affected surfaces | 根 README R-006 行、研究 README / index、展厅 title/meta/hero/图解/模拟工作台标签、对应测试和研究记录 |
+| Autonomy authorization | 用户明确指出描述不合理，授权对事实表述进行就地修正，不需要重新确认视觉方向 |
+| Acceptance criteria | 首屏第一眼出现“选中 → 复制 → 连同结构化上下文带走”；不再声称 AI 因“一点”就知道目标，也不把工具提升为意图理解器；技术细节和能力边界仍准确 |
+| Adjacent checks | 1280px 与 390px 中文换行、导航和 hero 无溢出；真实运行区、复制主流程和测试不回归 |
+
+### Revision 5 observable completion criteria
+
+1. 根索引、研究摘要和展厅首屏都把“复制时附带上下文”作为第一层本质。
+2. 删除或降级 `Visual intent compiler`、“AI 就知道”、“人的视觉意图 → 任务包”等过度抽象表达。
+3. 清楚保留 Selector 只负责选取与复制、Agent 才负责理解和改代码的职责边界。
+4. 新文案在桌面和手机不造成横向溢出，交互与真实源库示例保持通过。

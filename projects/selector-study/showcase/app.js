@@ -164,7 +164,7 @@
     updateCounts(text);
     if (announce) {
       generated = true;
-      updateFeedback(activeMode === "sharingan" ? "Sharingan 示例报告已生成，可交给 Agent 进行高保真复刻" : "普通上下文已生成，目标身份和 instruction 已打包", false);
+      updateFeedback(activeMode === "sharingan" ? "Sharingan 示例报告已整理，可复制给 Agent 作为高保真复刻线索" : "复制内容已整理，目标身份和 instruction 会一起带入剪贴板", false);
       promptOutput.scrollTop = 0;
     }
   }
@@ -194,7 +194,7 @@
     instruction.value = target.dataset.instruction;
     generated = false;
     updateOutput(false);
-    updateFeedback("目标已锁定，等待生成上下文", false);
+    updateFeedback("目标已锁定，等待整理复制内容", false);
     if (settings.focus) target.focus({ preventScroll: true });
   }
 
@@ -258,7 +258,7 @@
   instruction.addEventListener("input", function () {
     generated = false;
     updateOutput(false);
-    updateFeedback("instruction 已更新，等待重新生成上下文", false);
+    updateFeedback("instruction 已更新，等待重新整理复制内容", false);
   });
 
   instruction.addEventListener("keydown", function (event) {
@@ -352,7 +352,7 @@
     {
       id: "ui",
       kicker: "PRODUCT DESIGNER → CODE AGENT",
-      title: "把一句“改这个按钮”，变成不会改错对象的任务包。",
+      title: "把一句“改这个按钮”，变成带元素上下文的复制结果。",
       task: "在本地 React 活动后台中，把“创建活动”提升为明确主操作，同时保留现有布局。",
       score: "9.2",
       fitLabel: "很高",
@@ -365,7 +365,7 @@
         ["修改意图", "逐元素 instruction"],
       ],
       outputTitle: "Agent task prompt",
-      outputState: "COMPILED",
+      outputState: "READY TO COPY",
       output: [
         "UI CHANGE CONTEXT",
         "page: /campaigns?tab=overview",
@@ -382,7 +382,7 @@
       next: "Codex 修改组件",
       alternative: "批量改造时直接使用 AST / codemod",
       notUse: "目标已经能从源码精确定位时，不需要再从页面反推。",
-      feedback: "已编译 UI 修改任务：元素身份、源码线索和 instruction 可以一起交给代码 Agent。",
+      feedback: "复制内容已整理：元素身份、源码线索和 instruction 可以一起交给代码 Agent。",
     },
     {
       id: "qa",

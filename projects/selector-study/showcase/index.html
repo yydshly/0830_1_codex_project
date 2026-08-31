@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Selector 研究展厅：用交互演示理解视觉元素选择、AI 上下文编译、实现原理、使用场景与扩展方向。">
+  <meta name="description" content="Selector 研究展厅：解释如何选中网页元素，并在复制时附带 selector、locator、DOM、样式和框架上下文。">
   <meta name="theme-color" content="#f2f1e9">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%230d1a14'/%3E%3Cpath d='M7 9h8v2H9v6H7V9Zm18 14h-8v-2h6v-6h2v8Z' fill='%2326e98f'/%3E%3C/svg%3E">
-  <title>Selector 研究展厅 · 从“这个按钮”到可执行上下文</title>
+  <title>Selector 研究展厅 · 选中元素，连同上下文一起复制</title>
   <script>
     const staticMode = new URLSearchParams(window.location.search).has("static");
     if (!staticMode) {
@@ -47,9 +47,9 @@
   <main id="main">
     <section class="hero section-shell" id="overview" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="eyebrow"><span>研究结论 01</span> Visual intent compiler</p>
-        <h1 id="hero-title">点一下，<br><em>AI 就知道</em><br>你指的是谁。</h1>
-        <p class="hero-lede">Selector 把模糊的“这个按钮”编译成稳定 selector、语义 locator、组件来源和修改指令。它不写代码，它负责把人的视觉意图交付给会写代码的 Agent。</p>
+        <p class="eyebrow"><span>研究结论 01</span> Copy with page context</p>
+        <h1 id="hero-title">选中元素，<br><em>复制时把</em><br>上下文一起带走。</h1>
+        <p class="hero-lede">Selector 先让你点选页面元素；当你复制时，它把稳定 selector、语义 locator、必要的 DOM / 样式 / 框架线索和 instruction 一起写进剪贴板。它不理解意图，也不改代码。</p>
         <div class="hero-actions">
           <a class="primary-action" href="#demo">开始交互演示 <span aria-hidden="true">↓</span></a>
           <a class="text-action" href="https://github.com/oil-oil/selector/tree/d88e9a6c3c10821a5cc6d87447693d9507a76b35" target="_blank" rel="noopener">查看锁定源码 ↗</a>
@@ -72,7 +72,7 @@
           <span>source</span><b>CampaignHeader.tsx:42</b>
           <span>react</span><b>Dashboard › Header</b>
         </div>
-        <p class="diagram-caption">视觉指代不是上下文。Selector 的工作是完成这次编译。</p>
+        <p class="diagram-caption">普通复制只有可见内容；Selector 的关键是让剪贴板同时带上元素身份与结构上下文。</p>
       </aside>
 
       <dl class="hero-facts" aria-label="研究版本信息">
@@ -94,7 +94,7 @@
 
       <div class="demo-legend" aria-label="演示职责边界">
         <span><b>① 人</b> 选择目标并写意图</span>
-        <span><b>② Selector</b> 编译页面上下文</span>
+        <span><b>② Selector</b> 收集并组织页面上下文</span>
         <span><b>③ Codex</b> 根据上下文修改代码</span>
       </div>
 
@@ -187,9 +187,9 @@
           <p class="stage-hint"><kbd>←</kbd><kbd>→</kbd> 切换目标 · 点击任意绿色虚线区域</p>
         </div>
 
-        <aside class="context-compiler" aria-label="Selector 上下文编译器模拟">
+        <aside class="context-compiler" aria-label="Selector 带上下文复制结果模拟">
           <div class="compiler-head">
-            <div><span class="live-dot"></span><b>上下文编译器</b><small>研究页最小机制演示</small></div>
+            <div><span class="live-dot"></span><b>复制内容预览</b><small>研究页最小机制演示</small></div>
             <div class="mode-switch" role="group" aria-label="上下文模式">
               <button type="button" class="is-active" data-mode="prompt" aria-pressed="true">普通</button>
               <button type="button" data-mode="sharingan" aria-pressed="false">Sharingan</button>
@@ -205,11 +205,11 @@
           <label class="instruction-field">
             <span>给这个元素的 instruction</span>
             <textarea rows="3" data-instruction>提升为实心主按钮，在文案前加入加号图标；保持 data-testid 不变。</textarea>
-            <small><kbd>Ctrl</kbd> / <kbd>⌘</kbd> + <kbd>Enter</kbd> 生成上下文</small>
+            <small><kbd>Ctrl</kbd> / <kbd>⌘</kbd> + <kbd>Enter</kbd> 整理复制内容</small>
           </label>
 
           <div class="compiler-actions">
-            <button type="button" class="compile-button" data-compile>生成 AI 上下文 <span aria-hidden="true">⌘C</span></button>
+            <button type="button" class="compile-button" data-compile>整理复制内容 <span aria-hidden="true">⌘C</span></button>
             <button type="button" class="quiet-button" data-copy>复制</button>
           </div>
 
@@ -239,7 +239,7 @@ Query: tab=overview
           </div>
 
           <div class="demo-feedback" data-demo-feedback role="status" aria-live="polite">
-            <span>状态</span><b>目标已锁定，等待生成上下文</b>
+            <span>状态</span><b>目标已锁定，等待整理复制内容</b>
           </div>
 
           <button type="button" class="reset-button" data-reset>重置演示 <kbd>Esc</kbd></button>
@@ -294,7 +294,7 @@ Query: tab=overview
 
     <section class="capabilities section-shell" id="capabilities" aria-labelledby="capabilities-title">
       <div class="section-heading split-heading">
-        <div><p class="eyebrow"><span>能力 04</span> What it actually does</p><h2 id="capabilities-title">它不是“选框工具”，而是六层上下文。</h2></div>
+        <div><p class="eyebrow"><span>能力 04</span> What it adds to copy</p><h2 id="capabilities-title">它给一次复制补上六类上下文。</h2></div>
         <p>普通模式压缩信息，Sharingan 模式补足复刻证据。两者解决的是不同成本的问题。</p>
       </div>
 
@@ -318,7 +318,7 @@ Query: tab=overview
         <li><span>01</span><div><h3>封装载荷</h3><p>构建器把 CSS 和源码片段编码进 <code>javascript:</code> 书签，安装后可离线启动。</p></div><a href="https://github.com/oil-oil/selector/blob/d88e9a6c3c10821a5cc6d87447693d9507a76b35/index.html#L173-L221" target="_blank" rel="noopener">证据 ↗</a></li>
         <li><span>02</span><div><h3>注入与监听</h3><p>遍历 Light DOM，写入临时 <code>data-ai-id</code>，在 capture 阶段监听事件，并用 MutationObserver 跟进 SPA。</p></div><a href="https://github.com/oil-oil/selector/blob/d88e9a6c3c10821a5cc6d87447693d9507a76b35/src/core.js#L177-L282" target="_blank" rel="noopener">证据 ↗</a></li>
         <li><span>03</span><div><h3>命中目标</h3><p>结合 <code>elementsFromPoint()</code>、可见性、交互标签与结构启发式决定用户真正指向的元素。</p></div><a href="https://github.com/oil-oil/selector/blob/d88e9a6c3c10821a5cc6d87447693d9507a76b35/src/selection.js#L8-L140" target="_blank" rel="noopener">证据 ↗</a></li>
-        <li><span>04</span><div><h3>编译上下文</h3><p>生成 selector、locator、语义容器与 React/Vue 信息；只有必要时才附加布局、HTML 和 props。</p></div><a href="https://github.com/oil-oil/selector/blob/d88e9a6c3c10821a5cc6d87447693d9507a76b35/src/context.js#L316-L662" target="_blank" rel="noopener">证据 ↗</a></li>
+        <li><span>04</span><div><h3>组织上下文</h3><p>生成 selector、locator、语义容器与 React/Vue 信息；只有必要时才附加布局、HTML 和 props。</p></div><a href="https://github.com/oil-oil/selector/blob/d88e9a6c3c10821a5cc6d87447693d9507a76b35/src/context.js#L316-L662" target="_blank" rel="noopener">证据 ↗</a></li>
         <li><span>05</span><div><h3>交付给 Agent</h3><p>普通 prompt、Sharingan 报告、Markdown 或截图进入剪贴板；此后才是 Codex 的代码修改阶段。</p></div><a href="https://github.com/oil-oil/selector/blob/d88e9a6c3c10821a5cc6d87447693d9507a76b35/src/export.js#L47-L130" target="_blank" rel="noopener">证据 ↗</a></li>
       </ol>
     </section>
@@ -343,7 +343,7 @@ Query: tab=overview
           <header class="scenario-stage-head">
             <div>
               <p class="scenario-kicker" data-scenario-kicker>PRODUCT DESIGNER → CODE AGENT</p>
-              <h3 data-scenario-title>把一句“改这个按钮”，变成不会改错对象的任务包。</h3>
+              <h3 data-scenario-title>把一句“改这个按钮”，变成带元素上下文的复制结果。</h3>
               <p data-scenario-task>在本地 React 活动后台中，把“创建活动”提升为明确主操作，同时保留现有布局。</p>
             </div>
             <div class="scenario-fit" aria-label="场景适合度">
@@ -360,8 +360,8 @@ Query: tab=overview
             </section>
 
             <section class="scenario-evidence" aria-labelledby="scenario-evidence-title">
-              <span class="scenario-block-label">02 · Selector 编译</span>
-              <h4 id="scenario-evidence-title">证据包</h4>
+              <span class="scenario-block-label">02 · Selector 附加</span>
+              <h4 id="scenario-evidence-title">复制上下文</h4>
               <ul data-scenario-evidence>
                 <li><b>稳定身份</b><span>data-testid + semantic locator</span></li>
                 <li><b>结构位置</b><span>main › campaign header</span></li>
@@ -376,7 +376,7 @@ Query: tab=overview
 // 查看这个任务会生成哪一种证据交付物</pre>
               <div class="scenario-runner" aria-label="场景执行阶段">
                 <span data-scenario-step="select"><i></i>锁定目标</span>
-                <span data-scenario-step="compile"><i></i>编译证据</span>
+                <span data-scenario-step="compile"><i></i>组织上下文</span>
                 <span data-scenario-step="handoff"><i></i>准备交付</span>
               </div>
             </section>
@@ -530,7 +530,7 @@ Query: tab=overview
       <div class="meaning-copy">
         <p class="eyebrow"><span>对我们的意义 09</span> Adoption decision</p>
         <h2 id="meaning-title">工具值得用，根依赖不值得加，研究问题值得继续。</h2>
-        <p>我们的仓库强调“问题 → 假设 → 实验 → 证据 → 结论”。Selector 恰好能把一次前端视觉反馈变成可保存、可对照、可回归的证据包。</p>
+        <p>我们的仓库强调“问题 → 假设 → 实验 → 证据 → 结论”。Selector 的直接价值，是让一次复制不只有可见文本，还能带上元素身份、页面结构和框架线索，减少后续研究与修改时的指代歧义。</p>
         <div class="evidence-chain" aria-label="研究证据链">
           <span>选中对象</span><i>→</i><span>修改指令</span><i>→</i><span>DOM / CSS</span><i>→</i><span>截图</span><i>→</i><span>代码提交</span><i>→</i><span>回归测试</span>
         </div>

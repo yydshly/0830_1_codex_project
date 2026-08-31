@@ -4,7 +4,7 @@
 
 | 用户阶段 | 要求或产物 | Surface / state | Evidence | Owning stage | Status |
 | --- | --- | --- | --- | --- | --- |
-| 能力 | 首屏说明视觉指代到 AI 上下文的定位 | 1440px，明暗主题 | 桌面/平板截图、DOM 文本 | Stage 2 | pass |
+| 能力 | 首屏说明“选中元素，复制时附带结构化上下文”的定位 | 1440px，明暗主题 | 桌面/平板截图、DOM 文本 | Stage 2 | pass |
 | 最佳场景演示 | 选择三个模拟后台元素 | 默认、鼠标、方向键 | 浏览器 DOM 状态；桌面/手机方向键记录 | Stage 4/5 | pass |
 | 最佳场景演示 | 编辑 instruction 并生成普通上下文 | 输入、生成、复制 | 输出断言、结构测试 | Stage 5/6 | pass |
 | 最佳场景演示 | 切换 Sharingan 报告范围 | 普通/Sharingan | 浏览器确认 Geometry 与 Effective Style | Stage 5/6 | pass |
@@ -63,3 +63,12 @@
 | 响应式 | 源库入口和运行态在桌面/手机可用 | 1280 / 390 | 两张截图、无横向溢出断言 | Stage 7 | pass | 已完成 |
 | 工程 | 新测试覆盖哈希、版本、入口和零外部网络依赖 | source/test | `verify-source-demo.mjs` | Stage 9 | pass | 已完成 |
 | 发布 | 根 README 有 R-006 摘要、源库与在线 Web 索引 | GitHub / Pages | commit `df4ebc3`、Pages run `33374938190`、线上 HTTP/浏览器证据 | Stage 9 | pass | 已完成 |
+
+## Scope revision 5 · copy-with-context wording repair
+
+| 用户阶段 | 要求或产物 | Surface / state | Evidence needed | Owning stage | Status | Next action |
+| --- | --- | --- | --- | --- | --- | --- |
+| 本质表述 | 明确“选中元素，复制时附带结构化上下文” | root README / study README / hero | 三处首层摘要文本 | Stage 3 | pass | 已完成 |
+| 职责边界 | 不声称 Selector 理解意图或保证 AI 知道/改对 | hero / diagram / scenario | 删除过度主张，保留 Agent 边界 | Stage 3/6 | pass | 已完成 |
+| 相邻布局 | 中文新标题在桌面/手机不溢出 | 1280 / 390 | 浏览器 DOM 宽度和截图 | Stage 7 | pass | 已完成 |
+| 工程与发布 | 测试、全仓校验、远端 Pages | source / GitHub | 自动检查、提交、Pages 与线上内容标记 | Stage 9 | continue | 本地通过后提交发布 |

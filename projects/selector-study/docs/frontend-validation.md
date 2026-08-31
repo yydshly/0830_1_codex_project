@@ -17,6 +17,17 @@
 | 视口 | 1440×1000、768×1024、390×844 |
 | 页面依赖 | 研究页本地 CSS/JS；源库实跑另加载逐字节锁定的上游 `editor.js` / `editor.css`；无外部字体、图片、脚本或 API |
 
+## Revision 5 · “复制时附带上下文”表述修复
+
+| 检查 | 结果 | 证据 |
+| --- | --- | --- |
+| 本质表述 | 根索引、研究 README 与网页首屏统一为“选中元素，复制时附带 selector、locator、DOM、样式、框架线索和 instruction” | 文本审计与 `verify-showcase.mjs` |
+| 能力边界 | 首屏明确写出“它不理解意图，也不改代码”；删除 `VISUAL INTENT COMPILER`、“AI 就知道”、“生成 AI 上下文”和“Selector 编译”等过度主张 | 负向文本断言 |
+| 演示语义 | 主流程改为“收集并组织页面上下文 → 整理复制内容 → 复制 → 下游 Agent 修改”，真实上游 iframe 与锁定运行时未改动 | 页面 DOM 与 source runtime 哈希测试 |
+| 桌面 | 1280×900 首屏标题、说明与结构图完整，`scrollWidth = 1265 <= innerWidth = 1280` | Chrome DOM 断言、更新后的桌面截图 |
+| 手机 | 390×844 标题和边界说明完整换行，`scrollWidth = 375 <= innerWidth = 390` | Chrome DOM 断言、更新后的手机截图 |
+| 源库入口 | 同源 iframe 保留“Selector v0.4.1 锁定上游源码真实运行示例”，上游 JS/CSS SHA-256 未变化 | `verify-source-demo.mjs` |
+
 ## Revision 4 · 锁定源库真实运行
 
 | 检查 | 结果 | 证据 |
@@ -42,7 +53,7 @@
 
 | 场景 | 浏览器运行结果 | 差异化输出 |
 | --- | --- | --- |
-| 产品 / UI | `COMPILED` | `UI CHANGE CONTEXT`：selector、locator、组件链、source 与 instruction |
+| 产品 / UI | `READY TO COPY` | `UI CHANGE CONTEXT`：selector、locator、组件链、source 与 instruction |
 | QA / 缺陷 | `CAPTURED` | `BUG EVIDENCE BRIEF`：交互态、祖先上下文、邻近元素与缺失证据 |
 | 设计 / 复刻 | `REPORTED` | `SHARINGAN REPORT`：几何、样式、字体、状态、资源与版权边界 |
 | 内容 / 知识 | `SERIALIZED` | `Markdown fragment`：标题、表格、列表和链接结构 |
@@ -98,7 +109,7 @@ node .\scripts\validate-repository.mjs
 
 ## 保留边界
 
-- 三张最终截图分别保留设计复刻/默认推荐、QA/敏感生产停止、Markdown/批量替代组合，用最小证据集覆盖场景与决策状态；平板同时覆盖暗色主题。
+- 三张最终截图记录修复后的默认完整页面；平板同时覆盖暗色主题。差异化场景与决策状态继续由 DOM 运行断言覆盖。
 - `?static=1` 是为浏览器验收提供的显式静态阅读入口，与真正禁用 JavaScript 时保留 `.no-js` 的页面路径使用同一套 CSS；真正无脚本时还会显示 `<noscript>` 说明。
 - 上游 Selector 的 Chrome / Light DOM 普通主流程已经有直接证据；其余浏览器、Shadow DOM、iframe 深层选择、Sharingan 完整报告和 Agent 效果仍属于 E3–E5，不从单一 fixture 外推。
 

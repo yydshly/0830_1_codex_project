@@ -15,7 +15,7 @@
 | 截图与图文组合 | [`src/export.js`](https://github.com/oil-oil/selector/blob/d88e9a6c3c10821a5cc6d87447693d9507a76b35/src/export.js) | 裁剪 PNG、文本和图片剪贴板内容 | 已实现；权限和浏览器差异待验证 |
 | 离线书签 | [`scripts/build.js`](https://github.com/oil-oil/selector/blob/d88e9a6c3c10821a5cc6d87447693d9507a76b35/scripts/build.js)、[`index.html`](https://github.com/oil-oil/selector/blob/d88e9a6c3c10821a5cc6d87447693d9507a76b35/index.html) | 内嵌 CSS 与 JavaScript 的 bookmarklet | 已实现 |
 
-## 2. 上下文编译策略
+## 2. 复制内容生成策略
 
 ### 稳定 selector
 
