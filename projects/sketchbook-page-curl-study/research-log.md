@@ -9,6 +9,7 @@
 - **实现：** 12 个 `SURFACE_DEFINITIONS` 各新增 2–3 个适用场景和一句采用意义；表面面板首段新增随当前选择同步的 `WHY IT MATTERS / 对你的意义` 卡片，以及“揭示第二层、对照与选择、空间化叙事、改变对象状态”四类选择指南。Revision 6 创意图谱首屏新增 Revision 7 真实表面入口，让旧公开深链也能发现新能力。
 - **自动验证：** 公共定义契约新增 `meaning/scenarios` 断言，页面控制器测试覆盖价值节点、动态同步、选择指南和旧入口。项目测试为 35/35，`node scripts/validate-repository.mjs` 通过。
 - **本地浏览器证据：** 1440×1000 Chromium 从原 `rev=6&panel=explore&direction=mechanism-iris-aperture` 打开时，Revision 7 入口位于视口内；点击后进入 `panel=surfaces&surface=label-peel`，价值卡片位于 `top=409 / bottom=668`、页面横向溢出为 0。标签显示“商品包装 / 优惠揭示 / 前后对比”；切到对比百叶后同步为“改造前后 / 时间变化 / 材质／数据对照”。request failures=[]。
+- **公开发布：** 实现提交 [`59ba0b9`](https://github.com/yydshly/0830_1_codex_project/commit/59ba0b991c6fd54c22853fe64a606179ec356549) 已推送；`Repository checks` run [`33374489279`](https://github.com/yydshly/0830_1_codex_project/actions/runs/33374489279) 与 `Deploy research site` run [`33374489278`](https://github.com/yydshly/0830_1_codex_project/actions/runs/33374489278) 均成功。线上原 Rev6 深链 HTTP 200 且入口在视口内；点击进入 Rev7 后价值卡片 `top=409 / bottom=668`、四类指南正确、横向溢出为 0、page/request failures=[]。Edge 仍会单独请求站点根 `/favicon.ico` 并得到 404；它不是本项目应用资源，也不影响页面功能。
 
 ## 2026-08-31 · E14 从翻页到通用可变表面
 
