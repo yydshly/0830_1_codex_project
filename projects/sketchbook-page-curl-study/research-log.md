@@ -2,6 +2,18 @@
 
 实验记录按时间倒序排列。失败和证据不足的实验不会删除。
 
+## 2026-08-31 · E13 GitHub 公开发布与可访问性闭环
+
+- **发布目标：** 将本项目固定为公开研究编号 `R-001 / 第 1 个研究子项目`，在仓库外部入口提供摘要、上游固定版本、GitHub 源码目录、在线研究页、实际 Demo、技术展厅与可复现深链，而不是只把本地文件推到远端。
+- **公开摘要：** 根 README 的研究索引新增 R-001 行，说明条带链核心、8 套原创场景、18 种可操作书型、六轴 36 个方向和 12 个跨轴组合；项目 README 同时列出源库、研究源码与四个在线入口，并明确放大镜只是增强层而非翻页算法。
+- **版本证据：** 公开基线提交为 `84ae99c2144100fb4f85495a70acc1abe8704315`（`research: publish R-001 Sketchbook study`），已推送至 `origin/main`。上游索引固定到 MengTo/sketchbook commit `c1e477814c4c9e204452ebf9b298aa13629cbfc2`，未改为不稳定的分支首页。
+- **自动化证据：** GitHub Actions `Repository checks` run `33366112690` 成功；`Deploy research site` run `33366112730` 的 build 与 deploy 两个 job 均成功，Pages 部署于 2026-08-31 完成。
+- **HTTP 证据：** GitHub 研究目录、在线研究页、`demo/`、`showcase/` 与 `?rev=6&panel=explore&direction=mechanism-iris-aperture&intro=0` 深链均返回 HTTP 200，四个 Pages 表面都包含 R-001 标识。
+- **真实浏览器证据：** 1440×1000 Chromium 直接打开线上深链后，标题为 `R-001 · FOLD / 18 · 柔性翻页实际效果`，品牌为 `R-001 · 柔性纸张实际效果`，活动面板为 `explore`，选中方向为 `mechanism-iris-aperture / 虹膜快门书`，方向数为 36；全页无横向溢出，console errors、page errors 与 failed requests 均为空。
+- **工程闭环：** 26/26 项项目测试与 repository validator 通过；公开元数据回归测试覆盖项目 README、Pages 入口、Demo、showcase、根 README、固定上游链接和全部在线索引。
+- **隔离边界：** 本次只提交 R-001 目录与根 README 中对应的一行；工作区里其他未完成研究条目和子项目保持未提交，未被混入 R-001 发布提交。
+- **结果：** R-001 已完成“远端源码可查、外部摘要可读、在线能力可操作、深链状态可复现、发布证据可追溯”的公开交付。真实 iOS/Android 触控竞争与持续性能仍按原条件延期，不因 Pages 发布而被提升为已验证。
+
 ## 2026-08-31 · E12 六轴创意图谱与八种新增实作
 
 - **用户目标：** 在十种书型基础上继续“尽可能详细、多、创意性更多”地描述与探索，同时延续先前纠偏：中央舞台必须有实际效果，不能退回技术拆分或仅用说明卡替代演示。

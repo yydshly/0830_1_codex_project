@@ -7,4 +7,4 @@
 5. **仍有效延期：** 真实 iOS/Android 上的 pointer capture 与滚动竞争，以及 24 条带持续 30 秒的帧时、发热和功耗；复杂可选择文本/表单仍需内容快照与独立无障碍层。
 6. **来源边界：** 18 种书型、36 个方向、12 个组合、全部页面视觉和交互均为本项目原创独立实现，不代表 MengTo/sketchbook 原生能力；上游锁定版本未发现标准 `LICENSE`，不得据此推定可复制或再分发。
 
-发布状态与 GitHub Pages 的最终 HTTP 验证记录在 `research-log.md` 最新实验中；本文件不把 REMIX/HORIZON 或真机性能冒充已完成。
+发布基线为 commit `84ae99c`：GitHub Actions `Repository checks` run `33366112690` 与 `Deploy research site` run `33366112730` 均成功；GitHub 研究目录、Pages 研究页、Demo、showcase 和虹膜快门深链均返回 HTTP 200，线上 Chromium 深链复验无 console/page/request 错误。完整证据记录在 `research-log.md` 的 E13；本文件不把 REMIX/HORIZON 或真机性能冒充已完成。

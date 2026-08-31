@@ -18,6 +18,7 @@
 | Performance | 18 renderer + 36 data 不引入外部资源或明显加载退化 | 1440px runtime | resource count、DOM count、navigation、errors=[] | Stage 8 | pass | 已闭合 |
 | 研究记录与边界 | README、日志、根索引记录六轴地图、18 实作、成熟度边界与许可证 | project/root docs | 独立扩展不归因上游；失败实验可追溯 | Stage 9 | pass | 已闭合 |
 | 工程与交付 | 自动测试、浏览器证据和 handoff 完整 | Node/repository/docs | tests、validator、≤6 张最终证据、无 continue | Stage 9 | pass | 已闭合 |
+| 公开发布 | 根 README 摘要、固定源库、GitHub 研究目录、Pages 研究页/Demo/showcase/深链均可追溯 | GitHub / Pages / Chromium | R-001 元数据测试；Actions build+deploy success；5 个公开入口 HTTP 200；深链选中虹膜快门且 errors=[] | Stage 9 | pass | 已闭合 |
 
 ## Revision 5 retained baseline
 
