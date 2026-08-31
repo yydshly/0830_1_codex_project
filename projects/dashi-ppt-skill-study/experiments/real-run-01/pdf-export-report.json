@@ -1,0 +1,966 @@
+{
+  "format": "pdf",
+  "url": "http://127.0.0.1:4175/projects/dashi-ppt-skill-study/experiments/real-run-01/ppt/",
+  "outFile": "E:\\0830_1_codex_project\\projects\\dashi-ppt-skill-study\\artifacts\\real-run-01\\dashi-real-run-01-comparison.pdf",
+  "startedAt": "2026-08-30T21:22:42.699Z",
+  "finishedAt": "2026-08-30T21:23:03.426Z",
+  "durationMs": 20730,
+  "result": {
+    "outFile": "E:\\0830_1_codex_project\\projects\\dashi-ppt-skill-study\\artifacts\\real-run-01\\dashi-real-run-01-comparison.pdf",
+    "reportFile": null,
+    "screenshot": true,
+    "generationMode": "chunked-screenshot",
+    "pages": 32,
+    "batchSize": 8,
+    "batches": [
+      {
+        "start": 0,
+        "end": 8
+      },
+      {
+        "start": 8,
+        "end": 16
+      },
+      {
+        "start": 16,
+        "end": 24
+      },
+      {
+        "start": 24,
+        "end": 32
+      }
+    ],
+    "slideReports": [
+      {
+        "index": 1,
+        "stateId": "slide-1::v1",
+        "sourceSlideId": "slide-1",
+        "variantKind": "template",
+        "exportIndex": 0,
+        "attempts": 1,
+        "finalizedAnimations": 0,
+        "stability": {
+          "count": 28,
+          "area": 13380434,
+          "contentAreaRatio": 1,
+          "bbox": {
+            "left": 0,
+            "top": 0,
+            "right": 1990,
+            "bottom": 1080
+          },
+          "stableFrames": 2
+        },
+        "pixel": {
+          "width": 1920,
+          "height": 1080,
+          "stdDev": 58.719,
+          "uniqueColors": 120,
+          "nonBackgroundRatio": 0.99894,
+          "blank": false
+        }
+      },
+      {
+        "index": 2,
+        "stateId": "slide-1::v2",
+        "sourceSlideId": "slide-1",
+        "variantKind": "template",
+        "exportIndex": 1,
+        "attempts": 1,
+        "finalizedAnimations": 0,
+        "stability": {
+          "count": 23,
+          "area": 10188905,
+          "contentAreaRatio": 1,
+          "bbox": {
+            "left": 0,
+            "top": 0,
+            "right": 1920,
+            "bottom": 1084
+          },
+          "stableFrames": 2
+        },
+        "pixel": {
+          "width": 1920,
+          "height": 1080,
+          "stdDev": 59.016,
+          "uniqueColors": 120,
+          "nonBackgroundRatio": 0.22464,
+          "blank": false
+        }
+      },
+      {
+        "index": 3,
+        "stateId": "slide-1::v3",
+        "sourceSlideId": "slide-1",
+        "variantKind": "template",
+        "exportIndex": 2,
+        "attempts": 1,
+        "finalizedAnimations": 0,
+        "stability": {
+          "count": 24,
+          "area": 11732250,
+          "contentAreaRatio": 1,
+          "bbox": {
+            "left": 0,
+            "top": -360,
+            "right": 2140,
+            "bottom": 1080
+          },
+          "stableFrames": 2
+        },
+        "pixel": {
+          "width": 1920,
+          "height": 1080,
+          "stdDev": 62.231,
+          "uniqueColors": 94,
+          "nonBackgroundRatio": 0.95391,
+          "blank": false
+        }
+      },
+      {
+        "index": 4,
+        "stateId": "slide-1::v4",
+        "sourceSlideId": "slide-1",
+        "variantKind": "bespoke",
+        "exportIndex": 3,
+        "attempts": 1,
+        "finalizedAnimations": 0,
+        "stability": {
+          "count": 18,
+          "area": 11725225,
+          "contentAreaRatio": 1,
+          "bbox": {
+            "left": 0,
+            "top": -205,
+            "right": 2125,
+            "bottom": 1080
+          },
+          "stableFrames": 2
+        },
+        "pixel": {
+          "width": 1920,
+          "height": 1080,
+          "stdDev": 26.757,
+          "uniqueColors": 52,
+          "nonBackgroundRatio": 0.02042,
+          "blank": false
+        }
+      },
+      {
+        "index": 5,
+        "stateId": "slide-2::v1",
+        "sourceSlideId": "slide-2",
+        "variantKind": "template",
+        "exportIndex": 4,
+        "attempts": 1,
+        "finalizedAnimations": 0,
+        "stability": {
+          "count": 65,
+          "area": 10250908,
+          "contentAreaRatio": 1,
+          "bbox": {
+            "left": -77,
+            "top": -108,
+            "right": 1920,
+            "bottom": 1080
+          },
+          "stableFrames": 2
+        },
+        "pixel": {
+          "width": 1920,
+          "height": 1080,
+          "stdDev": 52.876,
+          "uniqueColors": 96,
+          "nonBackgroundRatio": 0.19514,
+          "blank": false
+        }
+      },
+      {
+        "index": 6,
+        "stateId": "slide-2::v2",
+        "sourceSlideId": "slide-2",
+        "variantKind": "template",
+        "exportIndex": 5,
+        "attempts": 1,
+        "finalizedAnimations": 0,
+        "stability": {
+          "count": 73,
+          "area": 10778209,
+          "contentAreaRatio": 1,
+          "bbox": {
+            "left": 0,
+            "top": 0,
+            "right": 1920,
+            "bottom": 1080
+          },
+          "stableFrames": 2
+        },
+        "pixel": {
+          "width": 1920,
+          "height": 1080,
+          "stdDev": 50.674,
+          "uniqueColors": 109,
+          "nonBackgroundRatio": 0.21707,
+          "blank": false
+        }
+      },
+      {
+        "index": 7,
+        "stateId": "slide-2::v3",
+        "sourceSlideId": "slide-2",
+        "variantKind": "template",
+        "exportIndex": 6,
+        "attempts": 1,
+        "finalizedAnimations": 0,
+        "stability": {
+          "count": 79,
+          "area": 11825525,
+          "contentAreaRatio": 1,
+          "bbox": {
+            "left": 0,
+            "top": -86,
+            "right": 1920,
+            "bottom": 1080
+          },
+          "stableFrames": 2
+        },
+        "pixel": {
+          "width": 1920,
+          "height": 1080,
+          "stdDev": 49.704,
+          "uniqueColors": 100,
+          "nonBackgroundRatio": 0.37712,
+          "blank": false
+        }
+      },
+      {
+        "index": 8,
+        "stateId": "slide-2::v4",
+        "sourceSlideId": "slide-2",
+        "variantKind": "bespoke",
+        "exportIndex": 7,
+        "attempts": 1,
+        "finalizedAnimations": 0,
+        "stability": {
+          "count": 34,
+          "area": 12542743,
+          "contentAreaRatio": 1,
+          "bbox": {
+            "left": 0,
+            "top": -205,
+            "right": 2125,
+            "bottom": 1080
+          },
+          "stableFrames": 2
+        },
+        "pixel": {
+          "width": 1920,
+          "height": 1080,
+          "stdDev": 37.226,
+          "uniqueColors": 54,
+          "nonBackgroundRatio": 0.05585,
+          "blank": false
+        }
+      },
+      {
+        "index": 9,
+        "stateId": "slide-3::v1",
+        "sourceSlideId": "slide-3",
+        "variantKind": "template",
+        "exportIndex": 8,
+        "attempts": 1,
+        "finalizedAnimations": 0,
+        "stability": {
+          "count": 115,
+          "area": 11907654,
+          "contentAreaRatio": 1,
+          "bbox": {
+            "left": 0,
+            "top": -86,
+            "right": 1997,
+            "bottom": 1080
+          },
+          "stableFrames": 2
+        },
+        "pixel": {
+          "width": 1920,
+          "height": 1080,
+          "stdDev": 68.456,
+          "uniqueColors": 79,
+          "nonBackgroundRatio": 0.14958,
+          "blank": false
+        }
+      },
+      {
+        "index": 10,
+        "stateId": "slide-3::v2",
+        "sourceSlideId": "slide-3",
+        "variantKind": "template",
+        "exportIndex": 9,
+        "attempts": 1,
+        "finalizedAnimations": 0,
+        "stability": {
+          "count": 91,
+          "area": 10244779,
+          "contentAreaRatio": 1,
+          "bbox": {
+            "left": 0,
+            "top": -22,
+            "right": 1920,
+            "bottom": 1080
+          },
+          "stableFrames": 2
+        },
+        "pixel": {
+          "width": 1920,
+          "height": 1080,
+          "stdDev": 50.41,
+          "uniqueColors": 111,
+          "nonBackgroundRatio": 0.20019,
+          "blank": false
+        }
+      },
+      {
+        "index": 11,
+        "stateId": "slide-3::v3",
+        "sourceSlideId": "slide-3",
+        "variantKind": "template",
+        "exportIndex": 10,
+        "attempts": 1,
+        "finalizedAnimations": 0,
+        "stability": {
+          "count": 86,
+          "area": 9109785,
+          "contentAreaRatio": 1,
+          "bbox": {
+            "left": 0,
+            "top": 0,
+            "right": 1920,
+            "bottom": 1080
+          },
+          "stableFrames": 2
+        },
+        "pixel": {
+          "width": 1920,
+          "height": 1080,
+          "stdDev": 62.007,
+          "uniqueColors": 78,
+          "nonBackgroundRatio": 0.09536,
+          "blank": false
+        }
+      },
+      {
+        "index": 12,
+        "stateId": "slide-3::v4",
+        "sourceSlideId": "slide-3",
+        "variantKind": "bespoke",
+        "exportIndex": 11,
+        "attempts": 1,
+        "finalizedAnimations": 0,
+        "stability": {
+          "count": 45,
+          "area": 13326888,
+          "contentAreaRatio": 1,
+          "bbox": {
+            "left": 0,
+            "top": -205,
+            "right": 2125,
+            "bottom": 1080
+          },
+          "stableFrames": 2
+        },
+        "pixel": {
+          "width": 1920,
+          "height": 1080,
+          "stdDev": 37.999,
+          "uniqueColors": 61,
+          "nonBackgroundRatio": 0.0603,
+          "blank": false
+        }
+      },
+      {
+        "index": 13,
+        "stateId": "slide-4::v1",
+        "sourceSlideId": "slide-4",
+        "variantKind": "template",
+        "exportIndex": 12,
+        "attempts": 1,
+        "finalizedAnimations": 0,
+        "stability": {
+          "count": 98,
+          "area": 10250351,
+          "contentAreaRatio": 1,
+          "bbox": {
+            "left": 0,
+            "top": -86,
+            "right": 1997,
+            "bottom": 1080
+          },
+          "stableFrames": 2
+        },
+        "pixel": {
+          "width": 1920,
+          "height": 1080,
+          "stdDev": 41.294,
+          "uniqueColors": 68,
+          "nonBackgroundRatio": 0.18378,
+          "blank": false
+        }
+      },
+      {
+        "index": 14,
+        "stateId": "slide-4::v2",
+        "sourceSlideId": "slide-4",
+        "variantKind": "template",
+        "exportIndex": 13,
+        "attempts": 1,
+        "finalizedAnimations": 0,
+        "stability": {
+          "count": 92,
+          "area": 11748985,
+          "contentAreaRatio": 1,
+          "bbox": {
+            "left": 0,
+            "top": -86,
+            "right": 1920,
+            "bottom": 1080
+          },
+          "stableFrames": 2
+        },
+        "pixel": {
+          "width": 1920,
+          "height": 1080,
+          "stdDev": 50.948,
+          "uniqueColors": 116,
+          "nonBackgroundRatio": 0.26804,
+          "blank": false
+        }
+      },
+      {
+        "index": 15,
+        "stateId": "slide-4::v3",
+        "sourceSlideId": "slide-4",
+        "variantKind": "template",
+        "exportIndex": 14,
+        "attempts": 1,
+        "finalizedAnimations": 0,
+        "stability": {
+          "count": 97,
+          "area": 10866075,
+          "contentAreaRatio": 1,
+          "bbox": {
+            "left": 0,
+            "top": -86,
+            "right": 1997,
+            "bottom": 1080
+          },
+          "stableFrames": 2
+        },
+        "pixel": {
+          "width": 1920,
+          "height": 1080,
+          "stdDev": 58.614,
+          "uniqueColors": 61,
+          "nonBackgroundRatio": 0.2254,
+          "blank": false
+        }
+      },
+      {
+        "index": 16,
+        "stateId": "slide-4::v4",
+        "sourceSlideId": "slide-4",
+        "variantKind": "bespoke",
+        "exportIndex": 15,
+        "attempts": 1,
+        "finalizedAnimations": 0,
+        "stability": {
+          "count": 30,
+          "area": 12256557,
+          "contentAreaRatio": 1,
+          "bbox": {
+            "left": 0,
+            "top": -205,
+            "right": 2125,
+            "bottom": 1080
+          },
+          "stableFrames": 2
+        },
+        "pixel": {
+          "width": 1920,
+          "height": 1080,
+          "stdDev": 40.466,
+          "uniqueColors": 57,
+          "nonBackgroundRatio": 0.07877,
+          "blank": false
+        }
+      },
+      {
+        "index": 17,
+        "stateId": "slide-5::v1",
+        "sourceSlideId": "slide-5",
+        "variantKind": "template",
+        "exportIndex": 16,
+        "attempts": 1,
+        "finalizedAnimations": 0,
+        "stability": {
+          "count": 79,
+          "area": 12086105,
+          "contentAreaRatio": 1,
+          "bbox": {
+            "left": 0,
+            "top": -86,
+            "right": 1920,
+            "bottom": 1080
+          },
+          "stableFrames": 2
+        },
+        "pixel": {
+          "width": 1920,
+          "height": 1080,
+          "stdDev": 46.524,
+          "uniqueColors": 98,
+          "nonBackgroundRatio": 0.37325,
+          "blank": false
+        }
+      },
+      {
+        "index": 18,
+        "stateId": "slide-5::v2",
+        "sourceSlideId": "slide-5",
+        "variantKind": "template",
+        "exportIndex": 17,
+        "attempts": 1,
+        "finalizedAnimations": 0,
+        "stability": {
+          "count": 74,
+          "area": 8426289,
+          "contentAreaRatio": 1,
+          "bbox": {
+            "left": 0,
+            "top": 0,
+            "right": 1920,
+            "bottom": 1080
+          },
+          "stableFrames": 2
+        },
+        "pixel": {
+          "width": 1920,
+          "height": 1080,
+          "stdDev": 65.428,
+          "uniqueColors": 72,
+          "nonBackgroundRatio": 0.10115,
+          "blank": false
+        }
+      },
+      {
+        "index": 19,
+        "stateId": "slide-5::v3",
+        "sourceSlideId": "slide-5",
+        "variantKind": "template",
+        "exportIndex": 18,
+        "attempts": 1,
+        "finalizedAnimations": 0,
+        "stability": {
+          "count": 91,
+          "area": 11618937,
+          "contentAreaRatio": 1,
+          "bbox": {
+            "left": 0,
+            "top": -86,
+            "right": 1997,
+            "bottom": 1080
+          },
+          "stableFrames": 2
+        },
+        "pixel": {
+          "width": 1920,
+          "height": 1080,
+          "stdDev": 77.287,
+          "uniqueColors": 74,
+          "nonBackgroundRatio": 0.17863,
+          "blank": false
+        }
+      },
+      {
+        "index": 20,
+        "stateId": "slide-5::v4",
+        "sourceSlideId": "slide-5",
+        "variantKind": "bespoke",
+        "exportIndex": 19,
+        "attempts": 1,
+        "finalizedAnimations": 0,
+        "stability": {
+          "count": 34,
+          "area": 12594664,
+          "contentAreaRatio": 1,
+          "bbox": {
+            "left": 0,
+            "top": -205,
+            "right": 2125,
+            "bottom": 1080
+          },
+          "stableFrames": 2
+        },
+        "pixel": {
+          "width": 1920,
+          "height": 1080,
+          "stdDev": 37.61,
+          "uniqueColors": 54,
+          "nonBackgroundRatio": 0.05719,
+          "blank": false
+        }
+      },
+      {
+        "index": 21,
+        "stateId": "slide-6::v1",
+        "sourceSlideId": "slide-6",
+        "variantKind": "template",
+        "exportIndex": 20,
+        "attempts": 1,
+        "finalizedAnimations": 0,
+        "stability": {
+          "count": 91,
+          "area": 9959517,
+          "contentAreaRatio": 1,
+          "bbox": {
+            "left": 0,
+            "top": -22,
+            "right": 1920,
+            "bottom": 1080
+          },
+          "stableFrames": 2
+        },
+        "pixel": {
+          "width": 1920,
+          "height": 1080,
+          "stdDev": 41.657,
+          "uniqueColors": 106,
+          "nonBackgroundRatio": 0.18389,
+          "blank": false
+        }
+      },
+      {
+        "index": 22,
+        "stateId": "slide-6::v2",
+        "sourceSlideId": "slide-6",
+        "variantKind": "template",
+        "exportIndex": 21,
+        "attempts": 1,
+        "finalizedAnimations": 0,
+        "stability": {
+          "count": 80,
+          "area": 8114270,
+          "contentAreaRatio": 1,
+          "bbox": {
+            "left": 0,
+            "top": 0,
+            "right": 1920,
+            "bottom": 1080
+          },
+          "stableFrames": 2
+        },
+        "pixel": {
+          "width": 1920,
+          "height": 1080,
+          "stdDev": 61.001,
+          "uniqueColors": 77,
+          "nonBackgroundRatio": 0.09186,
+          "blank": false
+        }
+      },
+      {
+        "index": 23,
+        "stateId": "slide-6::v3",
+        "sourceSlideId": "slide-6",
+        "variantKind": "template",
+        "exportIndex": 22,
+        "attempts": 1,
+        "finalizedAnimations": 0,
+        "stability": {
+          "count": 73,
+          "area": 10796880,
+          "contentAreaRatio": 1,
+          "bbox": {
+            "left": 0,
+            "top": 0,
+            "right": 1920,
+            "bottom": 1080
+          },
+          "stableFrames": 2
+        },
+        "pixel": {
+          "width": 1920,
+          "height": 1080,
+          "stdDev": 48.756,
+          "uniqueColors": 103,
+          "nonBackgroundRatio": 0.24227,
+          "blank": false
+        }
+      },
+      {
+        "index": 24,
+        "stateId": "slide-6::v4",
+        "sourceSlideId": "slide-6",
+        "variantKind": "bespoke",
+        "exportIndex": 23,
+        "attempts": 1,
+        "finalizedAnimations": 0,
+        "stability": {
+          "count": 38,
+          "area": 13008156,
+          "contentAreaRatio": 1,
+          "bbox": {
+            "left": 0,
+            "top": -205,
+            "right": 2125,
+            "bottom": 1080
+          },
+          "stableFrames": 2
+        },
+        "pixel": {
+          "width": 1920,
+          "height": 1080,
+          "stdDev": 30.963,
+          "uniqueColors": 53,
+          "nonBackgroundRatio": 0.05312,
+          "blank": false
+        }
+      },
+      {
+        "index": 25,
+        "stateId": "slide-7::v1",
+        "sourceSlideId": "slide-7",
+        "variantKind": "template",
+        "exportIndex": 24,
+        "attempts": 1,
+        "finalizedAnimations": 0,
+        "stability": {
+          "count": 73,
+          "area": 10788714,
+          "contentAreaRatio": 1,
+          "bbox": {
+            "left": 0,
+            "top": 0,
+            "right": 1920,
+            "bottom": 1080
+          },
+          "stableFrames": 2
+        },
+        "pixel": {
+          "width": 1920,
+          "height": 1080,
+          "stdDev": 53.993,
+          "uniqueColors": 103,
+          "nonBackgroundRatio": 0.23786,
+          "blank": false
+        }
+      },
+      {
+        "index": 26,
+        "stateId": "slide-7::v2",
+        "sourceSlideId": "slide-7",
+        "variantKind": "template",
+        "exportIndex": 25,
+        "attempts": 1,
+        "finalizedAnimations": 0,
+        "stability": {
+          "count": 103,
+          "area": 11912146,
+          "contentAreaRatio": 1,
+          "bbox": {
+            "left": 0,
+            "top": -86,
+            "right": 1997,
+            "bottom": 1080
+          },
+          "stableFrames": 2
+        },
+        "pixel": {
+          "width": 1920,
+          "height": 1080,
+          "stdDev": 78.023,
+          "uniqueColors": 74,
+          "nonBackgroundRatio": 0.18618,
+          "blank": false
+        }
+      },
+      {
+        "index": 27,
+        "stateId": "slide-7::v3",
+        "sourceSlideId": "slide-7",
+        "variantKind": "template",
+        "exportIndex": 26,
+        "attempts": 1,
+        "finalizedAnimations": 0,
+        "stability": {
+          "count": 64,
+          "area": 10643169,
+          "contentAreaRatio": 1,
+          "bbox": {
+            "left": -77,
+            "top": -108,
+            "right": 2222,
+            "bottom": 1080
+          },
+          "stableFrames": 2
+        },
+        "pixel": {
+          "width": 1920,
+          "height": 1080,
+          "stdDev": 56.954,
+          "uniqueColors": 100,
+          "nonBackgroundRatio": 0.20644,
+          "blank": false
+        }
+      },
+      {
+        "index": 28,
+        "stateId": "slide-7::v4",
+        "sourceSlideId": "slide-7",
+        "variantKind": "bespoke",
+        "exportIndex": 27,
+        "attempts": 1,
+        "finalizedAnimations": 0,
+        "stability": {
+          "count": 36,
+          "area": 14089644,
+          "contentAreaRatio": 1,
+          "bbox": {
+            "left": 0,
+            "top": -205,
+            "right": 2125,
+            "bottom": 1080
+          },
+          "stableFrames": 2
+        },
+        "pixel": {
+          "width": 1920,
+          "height": 1080,
+          "stdDev": 33.127,
+          "uniqueColors": 55,
+          "nonBackgroundRatio": 0.05156,
+          "blank": false
+        }
+      },
+      {
+        "index": 29,
+        "stateId": "slide-8::v1",
+        "sourceSlideId": "slide-8",
+        "variantKind": "template",
+        "exportIndex": 28,
+        "attempts": 1,
+        "finalizedAnimations": 0,
+        "stability": {
+          "count": 74,
+          "area": 8306919,
+          "contentAreaRatio": 1,
+          "bbox": {
+            "left": 0,
+            "top": 0,
+            "right": 1920,
+            "bottom": 1080
+          },
+          "stableFrames": 2
+        },
+        "pixel": {
+          "width": 1920,
+          "height": 1080,
+          "stdDev": 60.199,
+          "uniqueColors": 77,
+          "nonBackgroundRatio": 0.09078,
+          "blank": false
+        }
+      },
+      {
+        "index": 30,
+        "stateId": "slide-8::v2",
+        "sourceSlideId": "slide-8",
+        "variantKind": "template",
+        "exportIndex": 29,
+        "attempts": 1,
+        "finalizedAnimations": 0,
+        "stability": {
+          "count": 79,
+          "area": 11780038,
+          "contentAreaRatio": 1,
+          "bbox": {
+            "left": 0,
+            "top": -86,
+            "right": 1920,
+            "bottom": 1080
+          },
+          "stableFrames": 2
+        },
+        "pixel": {
+          "width": 1920,
+          "height": 1080,
+          "stdDev": 47.582,
+          "uniqueColors": 100,
+          "nonBackgroundRatio": 0.37425,
+          "blank": false
+        }
+      },
+      {
+        "index": 31,
+        "stateId": "slide-8::v3",
+        "sourceSlideId": "slide-8",
+        "variantKind": "template",
+        "exportIndex": 30,
+        "attempts": 1,
+        "finalizedAnimations": 0,
+        "stability": {
+          "count": 91,
+          "area": 10154686,
+          "contentAreaRatio": 1,
+          "bbox": {
+            "left": 0,
+            "top": -22,
+            "right": 1920,
+            "bottom": 1080
+          },
+          "stableFrames": 2
+        },
+        "pixel": {
+          "width": 1920,
+          "height": 1080,
+          "stdDev": 52.239,
+          "uniqueColors": 109,
+          "nonBackgroundRatio": 0.21417,
+          "blank": false
+        }
+      },
+      {
+        "index": 32,
+        "stateId": "slide-8::v4",
+        "sourceSlideId": "slide-8",
+        "variantKind": "bespoke",
+        "exportIndex": 31,
+        "attempts": 1,
+        "finalizedAnimations": 0,
+        "stability": {
+          "count": 35,
+          "area": 12984106,
+          "contentAreaRatio": 1,
+          "bbox": {
+            "left": 0,
+            "top": -205,
+            "right": 2125,
+            "bottom": 1080
+          },
+          "stableFrames": 2
+        },
+        "pixel": {
+          "width": 1920,
+          "height": 1080,
+          "stdDev": 37.668,
+          "uniqueColors": 63,
+          "nonBackgroundRatio": 0.05656,
+          "blank": false
+        }
+      }
+    ],
+    "bytes": 7179010
+  },
+  "note": "Research harness bypassed the upstream HTTPS wrapper after its OpenSSL executable preflight failed. The actual upstream html-deck-to-pptx export engine and browser launcher were used unchanged against the same loopback deck URL."
+}

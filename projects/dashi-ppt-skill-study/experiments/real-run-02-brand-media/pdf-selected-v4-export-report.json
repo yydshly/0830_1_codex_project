@@ -1,0 +1,259 @@
+{
+  "format": "pdf",
+  "url": "http://127.0.0.1:4175/projects/dashi-ppt-skill-study/experiments/real-run-02-brand-media/ppt-selected/",
+  "outFile": "E:\\0830_1_codex_project\\projects\\dashi-ppt-skill-study\\artifacts\\real-run-02-brand-media\\dashi-brand-media-selected-v4.pdf",
+  "startedAt": "2026-08-30T22:21:26.109Z",
+  "finishedAt": "2026-08-30T22:21:30.821Z",
+  "durationMs": 4711,
+  "variantOutputMode": "selected-only",
+  "result": {
+    "outFile": "E:\\0830_1_codex_project\\projects\\dashi-ppt-skill-study\\artifacts\\real-run-02-brand-media\\dashi-brand-media-selected-v4.pdf",
+    "reportFile": null,
+    "screenshot": true,
+    "generationMode": "screenshot",
+    "pages": 8,
+    "batchSize": 8,
+    "batches": [
+      {
+        "start": 0,
+        "end": 8
+      }
+    ],
+    "slideReports": [
+      {
+        "index": 1,
+        "stateId": "slide-1::v4",
+        "sourceSlideId": "slide-1",
+        "variantKind": "bespoke",
+        "exportIndex": 0,
+        "attempts": 1,
+        "finalizedAnimations": 0,
+        "stability": {
+          "count": 18,
+          "area": 11434678,
+          "contentAreaRatio": 1,
+          "bbox": {
+            "left": 0,
+            "top": 0,
+            "right": 1920,
+            "bottom": 1080
+          },
+          "stableFrames": 2
+        },
+        "pixel": {
+          "width": 1920,
+          "height": 1080,
+          "stdDev": 43.184,
+          "uniqueColors": 51,
+          "nonBackgroundRatio": 0.06139,
+          "blank": false
+        }
+      },
+      {
+        "index": 2,
+        "stateId": "slide-2::v4",
+        "sourceSlideId": "slide-2",
+        "variantKind": "bespoke",
+        "exportIndex": 1,
+        "attempts": 1,
+        "finalizedAnimations": 0,
+        "stability": {
+          "count": 32,
+          "area": 13162572,
+          "contentAreaRatio": 1,
+          "bbox": {
+            "left": 0,
+            "top": 0,
+            "right": 1920,
+            "bottom": 1080
+          },
+          "stableFrames": 2
+        },
+        "pixel": {
+          "width": 1920,
+          "height": 1080,
+          "stdDev": 35.35,
+          "uniqueColors": 318,
+          "nonBackgroundRatio": 0.25543,
+          "blank": false
+        }
+      },
+      {
+        "index": 3,
+        "stateId": "slide-3::v4",
+        "sourceSlideId": "slide-3",
+        "variantKind": "bespoke",
+        "exportIndex": 2,
+        "attempts": 1,
+        "finalizedAnimations": 0,
+        "stability": {
+          "count": 40,
+          "area": 13395794,
+          "contentAreaRatio": 1,
+          "bbox": {
+            "left": 0,
+            "top": 0,
+            "right": 1920,
+            "bottom": 1080
+          },
+          "stableFrames": 2
+        },
+        "pixel": {
+          "width": 1920,
+          "height": 1080,
+          "stdDev": 26.467,
+          "uniqueColors": 70,
+          "nonBackgroundRatio": 0.03122,
+          "blank": false
+        }
+      },
+      {
+        "index": 4,
+        "stateId": "slide-4::v4",
+        "sourceSlideId": "slide-4",
+        "variantKind": "bespoke",
+        "exportIndex": 3,
+        "attempts": 1,
+        "finalizedAnimations": 0,
+        "stability": {
+          "count": 40,
+          "area": 12920077,
+          "contentAreaRatio": 1,
+          "bbox": {
+            "left": 0,
+            "top": 0,
+            "right": 1920,
+            "bottom": 1080
+          },
+          "stableFrames": 2
+        },
+        "pixel": {
+          "width": 1920,
+          "height": 1080,
+          "stdDev": 37.877,
+          "uniqueColors": 55,
+          "nonBackgroundRatio": 0.07455,
+          "blank": false
+        }
+      },
+      {
+        "index": 5,
+        "stateId": "slide-5::v4",
+        "sourceSlideId": "slide-5",
+        "variantKind": "bespoke",
+        "exportIndex": 4,
+        "attempts": 1,
+        "finalizedAnimations": 0,
+        "stability": {
+          "count": 38,
+          "area": 12523894,
+          "contentAreaRatio": 1,
+          "bbox": {
+            "left": 0,
+            "top": 0,
+            "right": 1920,
+            "bottom": 1080
+          },
+          "stableFrames": 2
+        },
+        "pixel": {
+          "width": 1920,
+          "height": 1080,
+          "stdDev": 31.051,
+          "uniqueColors": 56,
+          "nonBackgroundRatio": 0.04078,
+          "blank": false
+        }
+      },
+      {
+        "index": 6,
+        "stateId": "slide-6::v4",
+        "sourceSlideId": "slide-6",
+        "variantKind": "bespoke",
+        "exportIndex": 5,
+        "attempts": 1,
+        "finalizedAnimations": 0,
+        "stability": {
+          "count": 36,
+          "area": 12594974,
+          "contentAreaRatio": 1,
+          "bbox": {
+            "left": 0,
+            "top": 0,
+            "right": 1920,
+            "bottom": 1080
+          },
+          "stableFrames": 2
+        },
+        "pixel": {
+          "width": 1920,
+          "height": 1080,
+          "stdDev": 27.033,
+          "uniqueColors": 80,
+          "nonBackgroundRatio": 0.02753,
+          "blank": false
+        }
+      },
+      {
+        "index": 7,
+        "stateId": "slide-7::v4",
+        "sourceSlideId": "slide-7",
+        "variantKind": "bespoke",
+        "exportIndex": 6,
+        "attempts": 1,
+        "finalizedAnimations": 0,
+        "stability": {
+          "count": 33,
+          "area": 12518940,
+          "contentAreaRatio": 1,
+          "bbox": {
+            "left": 0,
+            "top": 0,
+            "right": 1920,
+            "bottom": 1080
+          },
+          "stableFrames": 2
+        },
+        "pixel": {
+          "width": 1920,
+          "height": 1080,
+          "stdDev": 32.47,
+          "uniqueColors": 57,
+          "nonBackgroundRatio": 0.03684,
+          "blank": false
+        }
+      },
+      {
+        "index": 8,
+        "stateId": "slide-8::v4",
+        "sourceSlideId": "slide-8",
+        "variantKind": "bespoke",
+        "exportIndex": 7,
+        "attempts": 1,
+        "finalizedAnimations": 0,
+        "stability": {
+          "count": 33,
+          "area": 12079068,
+          "contentAreaRatio": 1,
+          "bbox": {
+            "left": 0,
+            "top": 0,
+            "right": 1920,
+            "bottom": 1080
+          },
+          "stableFrames": 2
+        },
+        "pixel": {
+          "width": 1920,
+          "height": 1080,
+          "stdDev": 40.907,
+          "uniqueColors": 54,
+          "nonBackgroundRatio": 0.05238,
+          "blank": false
+        }
+      }
+    ],
+    "bytes": 1248956
+  },
+  "note": "Research harness bypassed the upstream HTTPS wrapper after its OpenSSL executable preflight failed. The actual upstream html-deck-to-pptx export engine and browser launcher were used unchanged against the same loopback deck URL."
+}

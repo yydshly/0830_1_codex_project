@@ -1,0 +1,230 @@
+{
+  "format": "pptx",
+  "url": "http://127.0.0.1:4175/projects/dashi-ppt-skill-study/experiments/real-run-02-brand-media/ppt/",
+  "outFile": "E:\\0830_1_codex_project\\projects\\dashi-ppt-skill-study\\artifacts\\real-run-02-brand-media\\dashi-brand-media-selected.pptx",
+  "startedAt": "2026-08-30T22:14:08.371Z",
+  "finishedAt": "2026-08-30T22:14:14.521Z",
+  "durationMs": 6133,
+  "variantOutputMode": "selected-only",
+  "result": {
+    "outFile": "E:\\0830_1_codex_project\\projects\\dashi-ppt-skill-study\\artifacts\\real-run-02-brand-media\\dashi-brand-media-selected.pptx",
+    "reportFile": null,
+    "captureMode": "captured-tree",
+    "slideCount": 8,
+    "textObjects": 206,
+    "shapeObjects": 99,
+    "imageObjects": 12,
+    "slideSummaries": [
+      {
+        "index": 1,
+        "key": "slide-1::v1",
+        "capturedNodes": 40,
+        "maxDepth": 9,
+        "textNodes": 15,
+        "backgroundImages": 0,
+        "svgImages": 0,
+        "canvasImages": 0,
+        "imageNodes": 0,
+        "shapeCandidates": 8,
+        "renderedTextObjects": 15,
+        "renderedShapeObjects": 7,
+        "renderedImageObjects": 0
+      },
+      {
+        "index": 2,
+        "key": "slide-2::v1",
+        "capturedNodes": 51,
+        "maxDepth": 10,
+        "textNodes": 20,
+        "backgroundImages": 0,
+        "svgImages": 0,
+        "canvasImages": 0,
+        "imageNodes": 1,
+        "shapeCandidates": 13,
+        "renderedTextObjects": 20,
+        "renderedShapeObjects": 11,
+        "renderedImageObjects": 1
+      },
+      {
+        "index": 3,
+        "key": "slide-3::v1",
+        "capturedNodes": 62,
+        "maxDepth": 9,
+        "textNodes": 20,
+        "backgroundImages": 0,
+        "svgImages": 0,
+        "canvasImages": 0,
+        "imageNodes": 0,
+        "shapeCandidates": 14,
+        "renderedTextObjects": 20,
+        "renderedShapeObjects": 18,
+        "renderedImageObjects": 0
+      },
+      {
+        "index": 4,
+        "key": "slide-4::v1",
+        "capturedNodes": 38,
+        "maxDepth": 7,
+        "textNodes": 24,
+        "backgroundImages": 0,
+        "svgImages": 1,
+        "canvasImages": 0,
+        "imageNodes": 2,
+        "shapeCandidates": 5,
+        "renderedTextObjects": 24,
+        "renderedShapeObjects": 5,
+        "renderedImageObjects": 2
+      },
+      {
+        "index": 5,
+        "key": "slide-5::v1",
+        "capturedNodes": 108,
+        "maxDepth": 11,
+        "textNodes": 60,
+        "backgroundImages": 0,
+        "svgImages": 0,
+        "canvasImages": 0,
+        "imageNodes": 1,
+        "shapeCandidates": 29,
+        "renderedTextObjects": 60,
+        "renderedShapeObjects": 21,
+        "renderedImageObjects": 5
+      },
+      {
+        "index": 6,
+        "key": "slide-6::v1",
+        "capturedNodes": 62,
+        "maxDepth": 9,
+        "textNodes": 27,
+        "backgroundImages": 0,
+        "svgImages": 3,
+        "canvasImages": 0,
+        "imageNodes": 3,
+        "shapeCandidates": 8,
+        "renderedTextObjects": 27,
+        "renderedShapeObjects": 11,
+        "renderedImageObjects": 3
+      },
+      {
+        "index": 7,
+        "key": "slide-7::v1",
+        "capturedNodes": 76,
+        "maxDepth": 12,
+        "textNodes": 20,
+        "backgroundImages": 0,
+        "svgImages": 0,
+        "canvasImages": 0,
+        "imageNodes": 1,
+        "shapeCandidates": 15,
+        "renderedTextObjects": 20,
+        "renderedShapeObjects": 15,
+        "renderedImageObjects": 1
+      },
+      {
+        "index": 8,
+        "key": "slide-8::v1",
+        "capturedNodes": 48,
+        "maxDepth": 10,
+        "textNodes": 20,
+        "backgroundImages": 0,
+        "svgImages": 0,
+        "canvasImages": 0,
+        "imageNodes": 0,
+        "shapeCandidates": 14,
+        "renderedTextObjects": 20,
+        "renderedShapeObjects": 11,
+        "renderedImageObjects": 0
+      }
+    ],
+    "warnings": [
+      {
+        "slide": 4,
+        "type": "node-image-fallback-text-extracted",
+        "node": "svg",
+        "textCount": 20,
+        "sample": "0 90 180 270 360 52 21 -31 14 -7 4 -10 52% · 工艺设备 5252% · 工艺设备 21% · 暖通空调 2152% · 工艺设备 14% · 空压系统 1452% · 工艺设备 4% · 线损与其他 452% · 工艺设备"
+      },
+      {
+        "slide": 4,
+        "type": "node-image-fallback",
+        "node": "svg",
+        "count": 1
+      },
+      {
+        "slide": 5,
+        "type": "node-image-fallback-text-extracted",
+        "node": "masked-element",
+        "textCount": 54,
+        "sample": "试点投入 试点投入 试点投入 试点投入 1. 试点投入 72 万元 · 试点投入 72 万元 试点投入 · 72 万元 节电门槛 节电门槛 节电门槛 节电门槛 2. 节电门槛 ≥ 8% · 节电门槛 ≥ 8% 节电门槛 · ≥ 8% 削峰门槛 削峰门槛 削峰门槛 削峰门槛 3. 削峰门槛 ≥ 12% · 削峰门槛 ≥ "
+      },
+      {
+        "slide": 5,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 5,
+        "type": "node-image-fallback-text-extracted",
+        "node": "masked-element",
+        "textCount": 42,
+        "sample": "试点投入 节电门槛 节电门槛 节电门槛 节电门槛 2. 节电门槛 ≥ 8% · 节电门槛 ≥ 8% 节电门槛 · ≥ 8% 削峰门槛 削峰门槛 削峰门槛 削峰门槛 3. 削峰门槛 ≥ 12% · 削峰门槛 ≥ 12% 削峰门槛 · ≥ 12% 回收期门槛 回收期门槛 回收期门槛 回收期门槛 回收期门槛 4. 回收期门槛"
+      },
+      {
+        "slide": 5,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 5,
+        "type": "node-image-fallback-text-extracted",
+        "node": "masked-element",
+        "textCount": 30,
+        "sample": "节电门槛 削峰门槛 削峰门槛 削峰门槛 削峰门槛 3. 削峰门槛 ≥ 12% · 削峰门槛 ≥ 12% 削峰门槛 · ≥ 12% 回收期门槛 回收期门槛 回收期门槛 回收期门槛 回收期门槛 4. 回收期门槛 4. 回收期门槛 ≤ 12 个月 · 回收期门槛 ≤ 12 个月 · 回收期门槛 ≤ 12 个月 回收期门槛 ·"
+      },
+      {
+        "slide": 5,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 5,
+        "type": "node-image-fallback-text-extracted",
+        "node": "masked-element",
+        "textCount": 17,
+        "sample": "削峰门槛 回收期门槛 回收期门槛 回收期门槛 回收期门槛 4. 回收期门槛 4. 回收期门槛 ≤ 12 个月 · 回收期门槛 ≤ 12 个月 · 回收期门槛 ≤ 12 个月 回收期门槛 · ≤ 12 个月 4. 回收期门槛 试点投入 ≤ 12 个月 回收期门槛：通过后才复制 数据接入、策略引擎与现场服务 试点投入：数据"
+      },
+      {
+        "slide": 5,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 6,
+        "type": "node-image-fallback",
+        "node": "svg",
+        "count": 1
+      },
+      {
+        "slide": 6,
+        "type": "node-image-fallback",
+        "node": "svg",
+        "count": 1
+      },
+      {
+        "slide": 6,
+        "type": "node-image-fallback",
+        "node": "svg",
+        "count": 1
+      }
+    ]
+  },
+  "note": "Research harness bypassed the upstream HTTPS wrapper after its OpenSSL executable preflight failed. The actual upstream html-deck-to-pptx export engine and browser launcher were used unchanged against the same loopback deck URL."
+}

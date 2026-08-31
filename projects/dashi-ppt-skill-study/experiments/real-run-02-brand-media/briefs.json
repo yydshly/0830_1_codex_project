@@ -1,0 +1,162 @@
+[
+  {
+    "role": "cover",
+    "content": {
+      "presentation": {
+        "title": "园区能源协同优化试点",
+        "titleShort": "能源协同优化试点",
+        "summary": "以 12 周验证峰值控制、设备协同与可复制运营机制",
+        "summaryShort": "12 周形成可复制机制",
+        "takeaway": "模拟决策样例｜不代表真实客户经营数据",
+        "coverLabels": ["GRIDWISE LAB", "投资决策稿", "2026-08-31"]
+      },
+      "meta": {
+        "brand": "GRIDWISE LAB",
+        "panelTitle": "工业园区能源管理",
+        "date": "2026-08-31",
+        "pageLabel": "01"
+      }
+    }
+  },
+  {
+    "role": "context",
+    "content": {
+      "presentation": {
+        "title": "峰值与设备孤岛正在放大能源成本",
+        "titleShort": "峰值与设备孤岛放大成本",
+        "summary": "园区已有光伏、储能与分项计量，但调度仍按设备各自优化，负荷高峰缺少统一策略。",
+        "summaryShort": "设备齐全，协同不足",
+        "takeaway": "先用一个园区验证统一调度，再决定是否复制到其他基地。",
+        "mediaAlt": "工业园区能源中控室模拟主视觉",
+        "items": [
+          {"id": "electricity", "label": "年用电量", "value": 28.6, "displayValue": "28.6 GWh", "unit": "GWh", "detail": "模拟基线", "required": true, "priority": 1},
+          {"id": "peak", "label": "最大需量", "value": 8.4, "displayValue": "8.4 MW", "unit": "MW", "detail": "夏季工作日峰值", "required": true, "priority": 1},
+          {"id": "assets", "label": "可调资源", "value": 3, "displayValue": "3 类", "unit": "类", "detail": "光伏、储能、柔性负荷", "required": true, "priority": 1}
+        ]
+      },
+      "media": ["assets/user-media/gridwise-energy-control-room.png"],
+      "meta": {"brand": "GRIDWISE LAB", "panelTitle": "现状判断", "pageLabel": "02"}
+    }
+  },
+  {
+    "role": "process",
+    "content": {
+      "presentation": {
+        "title": "统一数据与控制闭环是试点的核心",
+        "titleShort": "统一数据与控制闭环",
+        "summary": "先把计量、预测、策略与执行串成闭环，不在试点期替换已有设备控制系统。",
+        "summaryShort": "叠加协同层，不替换底层系统",
+        "takeaway": "试点的工程目标是可回退、可审计、可复制。",
+        "items": [
+          {"id": "sense", "label": "采集", "detail": "15 分钟粒度汇聚电表、气象与设备状态", "required": true, "priority": 1},
+          {"id": "predict", "label": "预测", "detail": "滚动预测次日负荷与光伏出力", "required": true, "priority": 1},
+          {"id": "optimize", "label": "优化", "detail": "同时约束需量、电价与生产计划", "required": true, "priority": 1},
+          {"id": "execute", "label": "执行", "detail": "下发储能与柔性负荷策略并保留人工接管", "required": true, "priority": 1},
+          {"id": "learn", "label": "复盘", "detail": "按班次解释收益、偏差与异常", "required": true, "priority": 1}
+        ]
+      },
+      "meta": {"brand": "GRIDWISE LAB", "panelTitle": "方案闭环", "pageLabel": "03"}
+    }
+  },
+  {
+    "role": "breakdown",
+    "content": {
+      "presentation": {
+        "title": "两类负荷贡献了 73% 的用电基线",
+        "titleShort": "两类负荷占用电基线 73%",
+        "summary": "工艺设备与空调是优先优化对象；储能用于削峰，而不是替代效率改造。",
+        "summaryShort": "先抓工艺设备与空调",
+        "takeaway": "试点策略优先覆盖工艺排程、冷站联动与储能峰值控制。",
+        "items": [
+          {"id": "process", "label": "工艺设备", "value": 52, "displayValue": "52%", "unit": "%", "detail": "可通过排程与待机策略优化", "required": true, "priority": 1},
+          {"id": "hvac", "label": "暖通空调", "value": 21, "displayValue": "21%", "unit": "%", "detail": "可通过冷站与末端协同优化", "required": true, "priority": 1},
+          {"id": "air", "label": "空压系统", "value": 14, "displayValue": "14%", "unit": "%", "detail": "关注泄漏与群控", "required": true, "priority": 1},
+          {"id": "aux", "label": "辅助系统", "value": 9, "displayValue": "9%", "unit": "%", "detail": "照明与通用动力", "required": true, "priority": 1},
+          {"id": "loss", "label": "线损与其他", "value": 4, "displayValue": "4%", "unit": "%", "detail": "作为校核项", "required": true, "priority": 1}
+        ],
+        "chartData": [
+          {"id": "process", "label": "工艺设备", "value": 52, "displayValue": "52%", "unit": "%"},
+          {"id": "hvac", "label": "暖通空调", "value": 21, "displayValue": "21%", "unit": "%"},
+          {"id": "air", "label": "空压系统", "value": 14, "displayValue": "14%", "unit": "%"},
+          {"id": "aux", "label": "辅助系统", "value": 9, "displayValue": "9%", "unit": "%"},
+          {"id": "loss", "label": "线损与其他", "value": 4, "displayValue": "4%", "unit": "%"}
+        ]
+      },
+      "meta": {"brand": "GRIDWISE LAB", "panelTitle": "负荷结构", "pageLabel": "04", "unit": "模拟数据"}
+    }
+  },
+  {
+    "role": "comparison",
+    "content": {
+      "presentation": {
+        "title": "72 万元试点换取三项可验证收益",
+        "titleShort": "72 万元验证三项收益",
+        "summary": "收益采用门槛而非承诺值：只有同时满足节能、削峰和可运营性，才进入规模化。",
+        "summaryShort": "用门槛管理预期",
+        "takeaway": "预计年化收益 235 万元、静态回收期约 3.7 个月；均为模拟测算。",
+        "items": [
+          {"id": "budget", "label": "试点投入", "value": 72, "displayValue": "72 万元", "unit": "万元", "detail": "数据接入、策略引擎与现场服务", "required": true, "priority": 1},
+          {"id": "saving", "label": "节电门槛", "value": 8, "displayValue": "≥ 8%", "unit": "%", "detail": "按天气与产量归一化", "required": true, "priority": 1},
+          {"id": "peak-cut", "label": "削峰门槛", "value": 12, "displayValue": "≥ 12%", "unit": "%", "detail": "以最大需量口径核算", "required": true, "priority": 1},
+          {"id": "payback", "label": "回收期门槛", "value": 12, "displayValue": "≤ 12 个月", "unit": "月", "detail": "通过后才复制", "required": true, "priority": 1}
+        ]
+      },
+      "meta": {"brand": "GRIDWISE LAB", "panelTitle": "经济性门槛", "pageLabel": "05", "unit": "模拟测算"}
+    }
+  },
+  {
+    "role": "actions",
+    "content": {
+      "presentation": {
+        "title": "12 周按四个决策门推进",
+        "titleShort": "12 周四个决策门",
+        "summary": "每个阶段都有可交付证据，任何安全或生产约束不满足都可回退到观察模式。",
+        "summaryShort": "每阶段可验收、可回退",
+        "takeaway": "第 12 周只做一个决定：复制、延长验证，或停止。",
+        "items": [
+          {"id": "w1", "label": "第 1–2 周｜基线", "detail": "数据质量、计量边界与收益口径确认", "required": true, "priority": 1},
+          {"id": "w2", "label": "第 3–5 周｜影子运行", "detail": "只给建议，不下发控制，验证预测与策略", "required": true, "priority": 1},
+          {"id": "w3", "label": "第 6–9 周｜受控执行", "detail": "限定设备与时段，逐步扩大策略覆盖", "required": true, "priority": 1},
+          {"id": "w4", "label": "第 10–12 周｜对照评估", "detail": "按班次和天气归一化，完成复制建议", "required": true, "priority": 1}
+        ]
+      },
+      "meta": {"brand": "GRIDWISE LAB", "panelTitle": "实施路线", "pageLabel": "06"}
+    }
+  },
+  {
+    "role": "risks",
+    "content": {
+      "presentation": {
+        "title": "三条护栏让试点不干扰生产",
+        "titleShort": "三条护栏保护生产",
+        "summary": "权限、回退和核算口径在上线前冻结，避免把算法收益建立在不可控风险上。",
+        "summaryShort": "先冻结护栏，再上线策略",
+        "takeaway": "运营负责人拥有最终控制权，自动策略永远不是唯一通道。",
+        "items": [
+          {"id": "authority", "label": "权限护栏", "detail": "只开放白名单设备与限定时段", "required": true, "priority": 1},
+          {"id": "rollback", "label": "回退护栏", "detail": "异常时 60 秒内切回原控制逻辑", "required": true, "priority": 1},
+          {"id": "measurement", "label": "核算护栏", "detail": "天气、产量和班次归一化后再认定收益", "required": true, "priority": 1}
+        ]
+      },
+      "meta": {"brand": "GRIDWISE LAB", "panelTitle": "治理边界", "pageLabel": "07"}
+    }
+  },
+  {
+    "role": "closing",
+    "content": {
+      "presentation": {
+        "title": "建议批准 72 万元、12 周的受控试点",
+        "titleShort": "批准 72 万元受控试点",
+        "summary": "目标不是一次性做出漂亮看板，而是证明能源协同可以在生产约束内持续运营。",
+        "summaryShort": "验证可持续运营能力",
+        "takeaway": "批准后两周内完成基线确认，第五周提交首个继续/停止决策包。",
+        "items": [
+          {"id": "owner", "label": "业务负责人", "detail": "园区运营总监", "required": true, "priority": 1},
+          {"id": "decision", "label": "本次决策", "detail": "批准试点预算与跨部门资源", "required": true, "priority": 1},
+          {"id": "next", "label": "下一检查点", "detail": "第 5 周影子运行评审", "required": true, "priority": 1}
+        ]
+      },
+      "meta": {"brand": "GRIDWISE LAB", "panelTitle": "决策请求", "pageLabel": "08", "date": "2026-08-31"}
+    }
+  }
+]

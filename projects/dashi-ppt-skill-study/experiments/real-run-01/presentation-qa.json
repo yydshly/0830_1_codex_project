@@ -1,0 +1,17 @@
+{
+  "initialComparison": {
+    "status": "failed",
+    "overflowSlides": [15, 18],
+    "interpretation": "Static goal and copy validation passed, but PowerPoint rendering exposed two off-canvas candidates."
+  },
+  "finalComparison": {
+    "status": "passed",
+    "overflowSlides": [],
+    "commandResult": "Test passed. No overflow detected."
+  },
+  "selectedV4": {
+    "status": "passed",
+    "overflowSlides": [],
+    "commandResult": "Test passed. No overflow detected."
+  }
+}

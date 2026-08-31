@@ -1,0 +1,172 @@
+{
+  "schemaVersion": 1,
+  "experimentId": "real-run-02-brand-media",
+  "generatedAt": "2026-08-31T06:45:00+08:00",
+  "upstream": {
+    "repository": "https://github.com/chuspeeism/dashi-ppt-skill",
+    "version": "0.4.11",
+    "commit": "7cb23347f91cda1a5519eafc8c040704e389535a",
+    "license": "AGPL-3.0",
+    "modified": false
+  },
+  "scenario": {
+    "name": "GRIDWISE LAB 园区能源协同优化试点",
+    "audience": "园区运营总监、能源经理、财务与生产负责人",
+    "decision": "是否批准 72 万元、12 周的受控试点",
+    "logicalSlides": 8,
+    "dataClassification": "synthetic",
+    "disclaimer": "All business, operating and financial values were authored as synthetic research data."
+  },
+  "input": {
+    "themePack": "theme03",
+    "randomSeed": "dashi-study-20260831-brand-media-r01",
+    "workflowRunId": "theme03-20260831-brand-media-r01",
+    "variantsPerSlide": 4,
+    "templateVariantsPerSlide": 3,
+    "bespokeVariantsPerSlide": 1,
+    "generatedMedia": {
+      "count": 1,
+      "file": "source-assets/gridwise-energy-control-room.png",
+      "sha256": "294392545C17AC0D46B413DEAA9647C556A97A537E85246E7B07B4A5ABAA39B6"
+    },
+    "theme03Identity": {
+      "primary": "#2742EC",
+      "accent": "#C2F53D",
+      "type": [
+        "Archivo",
+        "Noto Sans SC",
+        "Space Mono"
+      ]
+    }
+  },
+  "allocation": {
+    "uniqueLayouts": 14,
+    "maxLayoutReuse": 3,
+    "layoutFamilies": 5,
+    "compositionIdentities": 10,
+    "agentArtDirectionEdits": 4,
+    "edits": [
+      "Slide 2 v4 changed from editorial to split and bound the generated image plus three metrics.",
+      "Slide 4 v4 changed from matrix to chart-led.",
+      "Slide 6 v4 changed from split to process.",
+      "Slide 7 v4 changed from an empty four-quadrant matrix to split."
+    ]
+  },
+  "contracts": {
+    "propsSafe": "passed-with-two-non-hard-range-warnings",
+    "goalSchema": "passed",
+    "swissDeck": "passed-8-slides",
+    "goalCopy": "passed",
+    "fourVariantQuality": "passed-8-logical-groups",
+    "workflowFailures": 2,
+    "workflowRetries": 2,
+    "failureInterpretation": "The first image-led v4 composition did not map visible media src/alt from canonical content. Canonical media fields and contentMap entries fixed both failures."
+  },
+  "timingsMs": {
+    "dashiScaffold": 2097,
+    "dashiInitialRender": 3832,
+    "dashiComparisonPptx": 20189,
+    "dashiSelectedV4Pptx": 8122,
+    "dashiSelectedV4Pdf": 4711,
+    "directProgrammaticBaselineBuild": 3901,
+    "measurementNote": "Local wall-clock measurements only. Content-authoring/model token cost and manual PowerPoint effort were not measured."
+  },
+  "exports": {
+    "comparison": {
+      "slideCount": 32,
+      "objects": {
+        "text": 671,
+        "shapes": 374,
+        "images": 37,
+        "total": 1082
+      },
+      "warningRecords": 33,
+      "sha256": "6629D32E29C68A7D76B8A8319F14E84E1B00CAFF64DB191F6F885284FA9FD6ED"
+    },
+    "selectedV4": {
+      "slideCount": 8,
+      "pdfPages": 8,
+      "objects": {
+        "text": 115,
+        "shapes": 78,
+        "images": 10,
+        "total": 203
+      },
+      "warningRecords": 10,
+      "pptxSha256": "88F100E07D4396121CCD8610D6600FA7139FD5A46129D855501F90D0547ABC51",
+      "pdfSha256": "D3F134BFBF03205BBE765D62A86CCBEC634BB78D24560A548AE52FB04467D7A1"
+    },
+    "directProgrammaticBaseline": {
+      "slideCount": 8,
+      "objects": {
+        "text": 117,
+        "shapes": 34,
+        "images": 1,
+        "nativeCharts": 1,
+        "total": 153
+      },
+      "speakerNotesWithSources": 8,
+      "pptxSha256": "4B7C530E65915756F40C1679EFE74DC2EFFB340B47E5F625216324C9D914E15B"
+    }
+  },
+  "presentationQa": {
+    "comparison": {
+      "status": "passed",
+      "overflowSlides": []
+    },
+    "selectedV4": {
+      "status": "passed",
+      "overflowSlides": []
+    },
+    "directProgrammaticBaseline": {
+      "status": "passed-after-three-visual-corrections",
+      "overflowSlides": [],
+      "corrections": [
+        "Spread the five operating-loop columns to eliminate dense labels.",
+        "Reflowed the chart callout to avoid a line-leading comma.",
+        "Reduced the economics title size to restore comfortable safe-area spacing."
+      ]
+    }
+  },
+  "brandAndEditability": {
+    "requestedBrand": {
+      "navy": "#061B2C",
+      "cyan": "#16D7C8",
+      "lime": "#B7F34A"
+    },
+    "dashiTheme03": {
+      "brandFidelity": "approximate",
+      "reason": "The locked theme uses electric blue #2742EC and lime #C2F53D. Exact navy/cyan tokens require a new or extended theme pack.",
+      "chartEditability": "The v4 chart is exported through SVG/image fallback; ten chart labels are extracted as editable text.",
+      "pptxFallbacks": "Each selected slide contains at least one theme SVG fallback."
+    },
+    "directProgrammaticBaseline": {
+      "brandFidelity": "exact-for-the-requested-palette",
+      "chartEditability": "Slide 4 uses one native editable bar chart.",
+      "pptxFallbacks": "One authored hero image is intentionally raster; all other content is native text, shapes or chart objects."
+    }
+  },
+  "efficiencyComparison": {
+    "dashiStrength": "Creates and validates 32 candidates from one canonical eight-slide content package, with deterministic allocation and reusable export checks.",
+    "directProgrammaticStrength": "Produces the exact requested palette and native chart with fewer fallback objects, but only one design route and requires explicit layout programming.",
+    "notMeasured": [
+      "Manual PowerPoint production time",
+      "General AI PPT service production time or cost",
+      "LLM token consumption for authoring",
+      "Human review time across teams"
+    ]
+  },
+  "reproducibility": {
+    "goalSha256": "1C96DDFE8D2A85040588EB13BC95A2ECEF1DF0215D860B3B7ECA167E56B9D7F5",
+    "selectedV4GoalSha256": "CA82458157FF12D215463D36CB7DAA0D6A1E9EC0B46196DA0649C32E095E5CE4",
+    "failedAttemptLog": "failed-attempts.txt",
+    "sourceNotes": "source-notes.txt"
+  },
+  "conclusions": [
+    "Dashi is not distinguished by a single visual style; its defensible value is candidate generation, canonical-content mapping, full-deck allocation, validation and multi-format export.",
+    "A branded image and decision-grade narrative make the selected v4 deck materially stronger than a generic research deck, but the locked theme still cannot meet an unrelated brand palette exactly.",
+    "For repeated standardized decks, the 3+1 candidate workflow and validation pipeline offer more leverage than one-off direct authoring.",
+    "For exact brand reproduction and guaranteed native chart editability, direct programmable authoring is currently the stronger route unless Dashi receives a custom theme and export recipes.",
+    "PowerPoint rendering and object inspection remain mandatory because browser-valid layouts can still change through font wrapping or SVG fallback."
+  ]
+}

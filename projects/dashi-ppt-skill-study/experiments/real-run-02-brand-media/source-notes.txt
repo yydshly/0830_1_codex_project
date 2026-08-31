@@ -1,0 +1,10 @@
+Experiment: real-run-02-brand-media
+Scenario: fictional GRIDWISE LAB industrial-park energy pilot; all operating and financial numbers are synthetic test data.
+Upstream: dashi-ppt-skill v0.4.11, commit 7cb23347f91cda1a5519eafc8c040704e389535a, AGPL-3.0.
+Theme: theme03, whose frozen design tokens use #2742ec electric blue, #c2f53d lime, Archivo / Noto Sans SC and Space Mono.
+Requested brand constraints for the baseline: #061B2C deep navy, #16D7C8 cyan, #B7F34A lime; dark technical editorial tone; GRIDWISE LAB wordmark.
+Generated image: gridwise-energy-control-room.png.
+Generation method: OpenAI built-in image generation tool.
+Prompt summary: photorealistic Chinese industrial park energy control room at blue hour, operators on the right, negative space on the left, deep navy with restrained cyan/lime accents, no logo, no readable UI text, no watermark.
+Media policy: one logical use on slide 2; the same staged file is shared across the four Dashi variants of that logical slide.
+Limit: the image is synthetic and does not depict an actual customer site.

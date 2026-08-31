@@ -1,0 +1,468 @@
+{
+  "schemaVersion": 1,
+  "runId": "theme03-20260831-brand-media-r01",
+  "goalPath": "E:\\0830_1_codex_project\\projects\\dashi-ppt-skill-study\\experiments\\real-run-02-brand-media\\goal.raw.json",
+  "workflowStartedAt": "2026-08-30T22:04:07.609Z",
+  "workflowFinishedAt": "2026-08-30T22:19:42.807Z",
+  "wallClockDurationMs": 935198,
+  "commandDurationMs": 22533,
+  "stageGapDurationMs": 913708,
+  "updatedAt": "2026-08-30T22:19:42.807Z",
+  "stages": {
+    "scaffold": {
+      "stage": "scaffold",
+      "kind": "scaffold",
+      "command": "goal:scaffold",
+      "attempts": [
+        {
+          "sequence": 1,
+          "command": "goal:scaffold",
+          "kind": "scaffold",
+          "runId": "theme03-20260831-brand-media-r01",
+          "status": "passed",
+          "retry": false,
+          "startedAt": "2026-08-30T22:04:07.609Z",
+          "finishedAt": "2026-08-30T22:04:09.312Z",
+          "durationMs": 1703,
+          "gapSincePreviousMs": 0,
+          "metrics": {
+            "layoutQueryCount": 8,
+            "allocation": {
+              "candidateCounts": [
+                {
+                  "slide": 1,
+                  "role": "cover",
+                  "compatible": 4,
+                  "eligible": 4
+                },
+                {
+                  "slide": 2,
+                  "role": "image",
+                  "compatible": 3,
+                  "eligible": 3
+                },
+                {
+                  "slide": 3,
+                  "role": "process",
+                  "compatible": 5,
+                  "eligible": 5
+                },
+                {
+                  "slide": 4,
+                  "role": "breakdown",
+                  "compatible": 16,
+                  "eligible": 16
+                },
+                {
+                  "slide": 5,
+                  "role": "comparison",
+                  "compatible": 11,
+                  "eligible": 11
+                },
+                {
+                  "slide": 6,
+                  "role": "actions",
+                  "compatible": 5,
+                  "eligible": 5
+                },
+                {
+                  "slide": 7,
+                  "role": "risks",
+                  "compatible": 5,
+                  "eligible": 5
+                },
+                {
+                  "slide": 8,
+                  "role": "closing",
+                  "compatible": 5,
+                  "eligible": 5
+                }
+              ],
+              "uniqueLayoutCount": 14,
+              "maximumReuse": 3,
+              "familyDiversity": {
+                "uniqueCount": 5,
+                "families": [
+                  "cards",
+                  "case-study",
+                  "chart",
+                  "hero",
+                  "metrics"
+                ],
+                "perSlide": [
+                  {
+                    "slide": 1,
+                    "uniqueCount": 1
+                  },
+                  {
+                    "slide": 2,
+                    "uniqueCount": 2
+                  },
+                  {
+                    "slide": 3,
+                    "uniqueCount": 2
+                  },
+                  {
+                    "slide": 4,
+                    "uniqueCount": 2
+                  },
+                  {
+                    "slide": 5,
+                    "uniqueCount": 3
+                  },
+                  {
+                    "slide": 6,
+                    "uniqueCount": 1
+                  },
+                  {
+                    "slide": 7,
+                    "uniqueCount": 2
+                  },
+                  {
+                    "slide": 8,
+                    "uniqueCount": 1
+                  }
+                ]
+              },
+              "compositionDiversity": {
+                "uniqueCount": 10,
+                "perSlide": [
+                  {
+                    "slide": 1,
+                    "uniqueCount": 1
+                  },
+                  {
+                    "slide": 2,
+                    "uniqueCount": 2
+                  },
+                  {
+                    "slide": 3,
+                    "uniqueCount": 3
+                  },
+                  {
+                    "slide": 4,
+                    "uniqueCount": 3
+                  },
+                  {
+                    "slide": 5,
+                    "uniqueCount": 3
+                  },
+                  {
+                    "slide": 6,
+                    "uniqueCount": 3
+                  },
+                  {
+                    "slide": 7,
+                    "uniqueCount": 3
+                  },
+                  {
+                    "slide": 8,
+                    "uniqueCount": 2
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "commandCount": 1,
+      "successCount": 1,
+      "failureCount": 0,
+      "retryCount": 0,
+      "totalDurationMs": 1703,
+      "lastDurationMs": 1703,
+      "lastFailureReason": null
+    },
+    "props-safe": {
+      "stage": "props-safe",
+      "kind": "normalize",
+      "command": "props:safe",
+      "attempts": [
+        {
+          "sequence": 2,
+          "command": "props:safe",
+          "kind": "normalize",
+          "runId": "theme03-20260831-brand-media-r01",
+          "status": "failed",
+          "retry": false,
+          "startedAt": "2026-08-30T22:05:23.747Z",
+          "finishedAt": "2026-08-30T22:05:24.300Z",
+          "durationMs": 553,
+          "gapSincePreviousMs": 74435,
+          "metrics": {
+            "layoutChangeCount": 0,
+            "propErrorCount": 0,
+            "goalSpecErrorCount": 6
+          },
+          "failureReason": "slide 2 variant v4 field contentMap: visible target \"elements[3].src\" is not mapped from canonical slide.content; slide 2 variant v4 field composition.elements[3].src: visible copy/data must come from slide.content via contentMap; slide 2 variant v4 field composition.elements[3].alt: visible copy/data must come from slide.content via contentMap; slide 2 authored variant v4 field contentMap: visible target \"elements[3].src\" is not mapped from canonical slide.content; slide 2 authored variant v4 field composition.elements[3].src: visible copy/data must come from slide.content via contentMap; sli"
+        },
+        {
+          "sequence": 4,
+          "command": "props:safe",
+          "kind": "normalize",
+          "runId": "theme03-20260831-brand-media-r01",
+          "status": "passed",
+          "retry": true,
+          "startedAt": "2026-08-30T22:05:50.442Z",
+          "finishedAt": "2026-08-30T22:05:50.950Z",
+          "durationMs": 508,
+          "gapSincePreviousMs": 24409,
+          "metrics": {
+            "layoutChangeCount": 0,
+            "propErrorCount": 0,
+            "goalSpecErrorCount": 0
+          }
+        },
+        {
+          "sequence": 9,
+          "command": "props:safe",
+          "kind": "normalize",
+          "runId": "theme03-20260831-brand-media-r01",
+          "status": "passed",
+          "retry": false,
+          "startedAt": "2026-08-30T22:12:28.497Z",
+          "finishedAt": "2026-08-30T22:12:28.977Z",
+          "durationMs": 480,
+          "gapSincePreviousMs": 331549,
+          "metrics": {
+            "layoutChangeCount": 0,
+            "propErrorCount": 0,
+            "goalSpecErrorCount": 0
+          }
+        }
+      ],
+      "commandCount": 3,
+      "successCount": 2,
+      "failureCount": 1,
+      "retryCount": 1,
+      "totalDurationMs": 1541,
+      "lastDurationMs": 480,
+      "lastFailureReason": "slide 2 variant v4 field contentMap: visible target \"elements[3].src\" is not mapped from canonical slide.content; slide 2 variant v4 field composition.elements[3].src: visible copy/data must come from slide.content via contentMap; slide 2 variant v4 field composition.elements[3].alt: visible copy/data must come from slide.content via contentMap; slide 2 authored variant v4 field contentMap: visible target \"elements[3].src\" is not mapped from canonical slide.content; slide 2 authored variant v4 field composition.elements[3].src: visible copy/data must come from slide.content via contentMap; sli"
+    },
+    "validate-goal-spec": {
+      "stage": "validate-goal-spec",
+      "kind": "validate",
+      "command": "validate:goal-spec",
+      "attempts": [
+        {
+          "sequence": 3,
+          "command": "validate:goal-spec",
+          "kind": "validate",
+          "runId": "theme03-20260831-brand-media-r01",
+          "status": "failed",
+          "retry": false,
+          "startedAt": "2026-08-30T22:05:25.526Z",
+          "finishedAt": "2026-08-30T22:05:26.033Z",
+          "durationMs": 507,
+          "gapSincePreviousMs": 1226,
+          "failureReason": "slide 2 variant v4 field contentMap: visible target \"elements[3].src\" is not mapped from canonical slide.content; slide 2 variant v4 field composition.elements[3].src: visible copy/data must come from slide.content via contentMap; slide 2 variant v4 field composition.elements[3].alt: visible copy/data must come from slide.content via contentMap"
+        },
+        {
+          "sequence": 5,
+          "command": "validate:goal-spec",
+          "kind": "validate",
+          "runId": "theme03-20260831-brand-media-r01",
+          "status": "passed",
+          "retry": true,
+          "startedAt": "2026-08-30T22:05:51.610Z",
+          "finishedAt": "2026-08-30T22:05:51.921Z",
+          "durationMs": 311,
+          "gapSincePreviousMs": 660
+        },
+        {
+          "sequence": 6,
+          "command": "validate:goal-spec",
+          "kind": "validate",
+          "runId": "theme03-20260831-brand-media-r01",
+          "status": "passed",
+          "retry": false,
+          "startedAt": "2026-08-30T22:06:20.839Z",
+          "finishedAt": "2026-08-30T22:06:21.247Z",
+          "durationMs": 408,
+          "gapSincePreviousMs": 28918
+        },
+        {
+          "sequence": 10,
+          "command": "validate:goal-spec",
+          "kind": "validate",
+          "runId": "theme03-20260831-brand-media-r01",
+          "status": "passed",
+          "retry": false,
+          "startedAt": "2026-08-30T22:12:31.525Z",
+          "finishedAt": "2026-08-30T22:12:31.827Z",
+          "durationMs": 302,
+          "gapSincePreviousMs": 2548
+        },
+        {
+          "sequence": 13,
+          "command": "validate:goal-spec",
+          "kind": "validate",
+          "runId": "theme03-20260831-brand-media-r01",
+          "status": "passed",
+          "retry": false,
+          "startedAt": "2026-08-30T22:19:41.859Z",
+          "finishedAt": "2026-08-30T22:19:42.176Z",
+          "durationMs": 317,
+          "gapSincePreviousMs": 418351
+        }
+      ],
+      "commandCount": 5,
+      "successCount": 4,
+      "failureCount": 1,
+      "retryCount": 1,
+      "totalDurationMs": 1845,
+      "lastDurationMs": 317,
+      "lastFailureReason": "slide 2 variant v4 field contentMap: visible target \"elements[3].src\" is not mapped from canonical slide.content; slide 2 variant v4 field composition.elements[3].src: visible copy/data must come from slide.content via contentMap; slide 2 variant v4 field composition.elements[3].alt: visible copy/data must come from slide.content via contentMap"
+    },
+    "render": {
+      "stage": "render",
+      "kind": "render",
+      "command": "render:goal",
+      "attempts": [
+        {
+          "sequence": 7,
+          "command": "render:goal",
+          "kind": "render",
+          "runId": "theme03-20260831-brand-media-r01",
+          "status": "passed",
+          "retry": false,
+          "startedAt": "2026-08-30T22:06:20.837Z",
+          "finishedAt": "2026-08-30T22:06:21.850Z",
+          "durationMs": 1013,
+          "gapSincePreviousMs": 0
+        },
+        {
+          "sequence": 11,
+          "command": "render:goal",
+          "kind": "render",
+          "runId": "theme03-20260831-brand-media-r01",
+          "status": "passed",
+          "retry": false,
+          "startedAt": "2026-08-30T22:12:31.522Z",
+          "finishedAt": "2026-08-30T22:12:32.158Z",
+          "durationMs": 636,
+          "gapSincePreviousMs": 0
+        },
+        {
+          "sequence": 14,
+          "command": "render:goal",
+          "kind": "render",
+          "runId": "theme03-20260831-brand-media-r01",
+          "status": "passed",
+          "retry": false,
+          "startedAt": "2026-08-30T22:19:41.848Z",
+          "finishedAt": "2026-08-30T22:19:42.807Z",
+          "durationMs": 959,
+          "gapSincePreviousMs": 0
+        }
+      ],
+      "commandCount": 3,
+      "successCount": 3,
+      "failureCount": 0,
+      "retryCount": 0,
+      "totalDurationMs": 2608,
+      "lastDurationMs": 959,
+      "lastFailureReason": null
+    },
+    "validate-four-variant-quality": {
+      "stage": "validate-four-variant-quality",
+      "kind": "validate",
+      "command": "validate:four-variant-quality",
+      "attempts": [
+        {
+          "sequence": 8,
+          "command": "validate:four-variant-quality",
+          "kind": "validate",
+          "runId": "theme03-20260831-brand-media-r01",
+          "status": "passed",
+          "retry": false,
+          "startedAt": "2026-08-30T22:06:52.217Z",
+          "finishedAt": "2026-08-30T22:06:56.948Z",
+          "durationMs": 4731,
+          "gapSincePreviousMs": 30367
+        },
+        {
+          "sequence": 12,
+          "command": "validate:four-variant-quality",
+          "kind": "validate",
+          "runId": "theme03-20260831-brand-media-r01",
+          "status": "passed",
+          "retry": false,
+          "startedAt": "2026-08-30T22:12:33.403Z",
+          "finishedAt": "2026-08-30T22:12:43.508Z",
+          "durationMs": 10105,
+          "gapSincePreviousMs": 1245
+        }
+      ],
+      "commandCount": 2,
+      "successCount": 2,
+      "failureCount": 0,
+      "retryCount": 0,
+      "totalDurationMs": 14836,
+      "lastDurationMs": 10105,
+      "lastFailureReason": null
+    }
+  },
+  "commandCounts": {
+    "scaffold": 1,
+    "normalize": 3,
+    "validate": 7,
+    "render": 3
+  },
+  "failureCount": 2,
+  "retryCount": 2,
+  "failures": [
+    {
+      "sequence": 2,
+      "stage": "props-safe",
+      "kind": "normalize",
+      "reason": "slide 2 variant v4 field contentMap: visible target \"elements[3].src\" is not mapped from canonical slide.content; slide 2 variant v4 field composition.elements[3].src: visible copy/data must come from slide.content via contentMap; slide 2 variant v4 field composition.elements[3].alt: visible copy/data must come from slide.content via contentMap; slide 2 authored variant v4 field contentMap: visible target \"elements[3].src\" is not mapped from canonical slide.content; slide 2 authored variant v4 field composition.elements[3].src: visible copy/data must come from slide.content via contentMap; sli"
+    },
+    {
+      "sequence": 3,
+      "stage": "validate-goal-spec",
+      "kind": "validate",
+      "reason": "slide 2 variant v4 field contentMap: visible target \"elements[3].src\" is not mapped from canonical slide.content; slide 2 variant v4 field composition.elements[3].src: visible copy/data must come from slide.content via contentMap; slide 2 variant v4 field composition.elements[3].alt: visible copy/data must come from slide.content via contentMap"
+    }
+  ],
+  "repeatedStages": [
+    {
+      "stage": "props-safe",
+      "kind": "normalize",
+      "command": "props:safe",
+      "commandCount": 3,
+      "failureCount": 1,
+      "retryCount": 1
+    },
+    {
+      "stage": "validate-goal-spec",
+      "kind": "validate",
+      "command": "validate:goal-spec",
+      "commandCount": 5,
+      "failureCount": 1,
+      "retryCount": 1
+    },
+    {
+      "stage": "render",
+      "kind": "render",
+      "command": "render:goal",
+      "commandCount": 3,
+      "failureCount": 0,
+      "retryCount": 0
+    },
+    {
+      "stage": "validate-four-variant-quality",
+      "kind": "validate",
+      "command": "validate:four-variant-quality",
+      "commandCount": 2,
+      "failureCount": 0,
+      "retryCount": 0
+    }
+  ],
+  "metrics": {
+    "layoutQueryCount": 8,
+    "layoutChangeCount": 0,
+    "propErrorCount": 0,
+    "goalSpecErrorCount": 6
+  }
+}

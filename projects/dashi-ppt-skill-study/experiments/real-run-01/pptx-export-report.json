@@ -1,0 +1,1588 @@
+{
+  "format": "pptx",
+  "url": "http://127.0.0.1:4175/projects/dashi-ppt-skill-study/experiments/real-run-01/ppt/",
+  "outFile": "E:\\0830_1_codex_project\\projects\\dashi-ppt-skill-study\\artifacts\\real-run-01\\dashi-real-run-01-comparison.pptx",
+  "startedAt": "2026-08-30T21:10:39.809Z",
+  "finishedAt": "2026-08-30T21:11:05.063Z",
+  "durationMs": 25253,
+  "result": {
+    "outFile": "E:\\0830_1_codex_project\\projects\\dashi-ppt-skill-study\\artifacts\\real-run-01\\dashi-real-run-01-comparison.pptx",
+    "reportFile": null,
+    "captureMode": "captured-tree",
+    "slideCount": 32,
+    "textObjects": 577,
+    "shapeObjects": 1036,
+    "imageObjects": 97,
+    "slideSummaries": [
+      {
+        "index": 1,
+        "key": "slide-1::v1",
+        "capturedNodes": 42,
+        "maxDepth": 8,
+        "textNodes": 13,
+        "backgroundImages": 4,
+        "svgImages": 0,
+        "canvasImages": 0,
+        "imageNodes": 0,
+        "shapeCandidates": 11,
+        "renderedTextObjects": 13,
+        "renderedShapeObjects": 5,
+        "renderedImageObjects": 6
+      },
+      {
+        "index": 2,
+        "key": "slide-1::v2",
+        "capturedNodes": 24,
+        "maxDepth": 7,
+        "textNodes": 6,
+        "backgroundImages": 1,
+        "svgImages": 0,
+        "canvasImages": 0,
+        "imageNodes": 0,
+        "shapeCandidates": 8,
+        "renderedTextObjects": 6,
+        "renderedShapeObjects": 4,
+        "renderedImageObjects": 2
+      },
+      {
+        "index": 3,
+        "key": "slide-1::v3",
+        "capturedNodes": 32,
+        "maxDepth": 7,
+        "textNodes": 7,
+        "backgroundImages": 4,
+        "svgImages": 0,
+        "canvasImages": 0,
+        "imageNodes": 0,
+        "shapeCandidates": 10,
+        "renderedTextObjects": 7,
+        "renderedShapeObjects": 3,
+        "renderedImageObjects": 6
+      },
+      {
+        "index": 4,
+        "key": "slide-1::v4",
+        "capturedNodes": 24,
+        "maxDepth": 6,
+        "textNodes": 6,
+        "backgroundImages": 0,
+        "svgImages": 0,
+        "canvasImages": 0,
+        "imageNodes": 0,
+        "shapeCandidates": 5,
+        "renderedTextObjects": 6,
+        "renderedShapeObjects": 5,
+        "renderedImageObjects": 0
+      },
+      {
+        "index": 5,
+        "key": "slide-2::v1",
+        "capturedNodes": 75,
+        "maxDepth": 7,
+        "textNodes": 16,
+        "backgroundImages": 0,
+        "svgImages": 0,
+        "canvasImages": 0,
+        "imageNodes": 0,
+        "shapeCandidates": 42,
+        "renderedTextObjects": 16,
+        "renderedShapeObjects": 41,
+        "renderedImageObjects": 2
+      },
+      {
+        "index": 6,
+        "key": "slide-2::v2",
+        "capturedNodes": 90,
+        "maxDepth": 6,
+        "textNodes": 21,
+        "backgroundImages": 2,
+        "svgImages": 0,
+        "canvasImages": 0,
+        "imageNodes": 0,
+        "shapeCandidates": 51,
+        "renderedTextObjects": 21,
+        "renderedShapeObjects": 47,
+        "renderedImageObjects": 4
+      },
+      {
+        "index": 7,
+        "key": "slide-2::v3",
+        "capturedNodes": 93,
+        "maxDepth": 7,
+        "textNodes": 18,
+        "backgroundImages": 1,
+        "svgImages": 0,
+        "canvasImages": 0,
+        "imageNodes": 0,
+        "shapeCandidates": 46,
+        "renderedTextObjects": 18,
+        "renderedShapeObjects": 47,
+        "renderedImageObjects": 3
+      },
+      {
+        "index": 8,
+        "key": "slide-2::v4",
+        "capturedNodes": 32,
+        "maxDepth": 6,
+        "textNodes": 14,
+        "backgroundImages": 0,
+        "svgImages": 0,
+        "canvasImages": 0,
+        "imageNodes": 0,
+        "shapeCandidates": 7,
+        "renderedTextObjects": 14,
+        "renderedShapeObjects": 7,
+        "renderedImageObjects": 1
+      },
+      {
+        "index": 9,
+        "key": "slide-2::v1",
+        "capturedNodes": 68,
+        "maxDepth": 7,
+        "textNodes": 9,
+        "backgroundImages": 0,
+        "svgImages": 0,
+        "canvasImages": 0,
+        "imageNodes": 0,
+        "shapeCandidates": 42,
+        "renderedTextObjects": 9,
+        "renderedShapeObjects": 41,
+        "renderedImageObjects": 2
+      },
+      {
+        "index": 10,
+        "key": "slide-3::v2",
+        "capturedNodes": 95,
+        "maxDepth": 7,
+        "textNodes": 20,
+        "backgroundImages": 1,
+        "svgImages": 3,
+        "canvasImages": 0,
+        "imageNodes": 3,
+        "shapeCandidates": 50,
+        "renderedTextObjects": 20,
+        "renderedShapeObjects": 48,
+        "renderedImageObjects": 6
+      },
+      {
+        "index": 11,
+        "key": "slide-3::v3",
+        "capturedNodes": 88,
+        "maxDepth": 6,
+        "textNodes": 28,
+        "backgroundImages": 0,
+        "svgImages": 0,
+        "canvasImages": 0,
+        "imageNodes": 0,
+        "shapeCandidates": 50,
+        "renderedTextObjects": 24,
+        "renderedShapeObjects": 45,
+        "renderedImageObjects": 5
+      },
+      {
+        "index": 12,
+        "key": "slide-3::v4",
+        "capturedNodes": 66,
+        "maxDepth": 9,
+        "textNodes": 21,
+        "backgroundImages": 0,
+        "svgImages": 0,
+        "canvasImages": 0,
+        "imageNodes": 0,
+        "shapeCandidates": 10,
+        "renderedTextObjects": 21,
+        "renderedShapeObjects": 15,
+        "renderedImageObjects": 0
+      },
+      {
+        "index": 13,
+        "key": "slide-4::v1",
+        "capturedNodes": 113,
+        "maxDepth": 8,
+        "textNodes": 33,
+        "backgroundImages": 0,
+        "svgImages": 0,
+        "canvasImages": 0,
+        "imageNodes": 0,
+        "shapeCandidates": 53,
+        "renderedTextObjects": 33,
+        "renderedShapeObjects": 47,
+        "renderedImageObjects": 4
+      },
+      {
+        "index": 14,
+        "key": "slide-4::v2",
+        "capturedNodes": 84,
+        "maxDepth": 6,
+        "textNodes": 20,
+        "backgroundImages": 0,
+        "svgImages": 1,
+        "canvasImages": 0,
+        "imageNodes": 1,
+        "shapeCandidates": 43,
+        "renderedTextObjects": 20,
+        "renderedShapeObjects": 42,
+        "renderedImageObjects": 3
+      },
+      {
+        "index": 15,
+        "key": "slide-4::v3",
+        "capturedNodes": 103,
+        "maxDepth": 9,
+        "textNodes": 32,
+        "backgroundImages": 0,
+        "svgImages": 0,
+        "canvasImages": 0,
+        "imageNodes": 0,
+        "shapeCandidates": 45,
+        "renderedTextObjects": 32,
+        "renderedShapeObjects": 42,
+        "renderedImageObjects": 4
+      },
+      {
+        "index": 16,
+        "key": "slide-4::v4",
+        "capturedNodes": 33,
+        "maxDepth": 6,
+        "textNodes": 15,
+        "backgroundImages": 0,
+        "svgImages": 0,
+        "canvasImages": 0,
+        "imageNodes": 0,
+        "shapeCandidates": 9,
+        "renderedTextObjects": 15,
+        "renderedShapeObjects": 5,
+        "renderedImageObjects": 4
+      },
+      {
+        "index": 17,
+        "key": "slide-5::v1",
+        "capturedNodes": 93,
+        "maxDepth": 7,
+        "textNodes": 18,
+        "backgroundImages": 1,
+        "svgImages": 0,
+        "canvasImages": 0,
+        "imageNodes": 0,
+        "shapeCandidates": 46,
+        "renderedTextObjects": 18,
+        "renderedShapeObjects": 47,
+        "renderedImageObjects": 3
+      },
+      {
+        "index": 18,
+        "key": "slide-5::v2",
+        "capturedNodes": 78,
+        "maxDepth": 6,
+        "textNodes": 20,
+        "backgroundImages": 0,
+        "svgImages": 0,
+        "canvasImages": 0,
+        "imageNodes": 0,
+        "shapeCandidates": 48,
+        "renderedTextObjects": 18,
+        "renderedShapeObjects": 45,
+        "renderedImageObjects": 3
+      },
+      {
+        "index": 19,
+        "key": "slide-5::v3",
+        "capturedNodes": 88,
+        "maxDepth": 8,
+        "textNodes": 19,
+        "backgroundImages": 0,
+        "svgImages": 0,
+        "canvasImages": 0,
+        "imageNodes": 0,
+        "shapeCandidates": 47,
+        "renderedTextObjects": 21,
+        "renderedShapeObjects": 44,
+        "renderedImageObjects": 4
+      },
+      {
+        "index": 20,
+        "key": "slide-5::v4",
+        "capturedNodes": 33,
+        "maxDepth": 6,
+        "textNodes": 15,
+        "backgroundImages": 0,
+        "svgImages": 0,
+        "canvasImages": 0,
+        "imageNodes": 0,
+        "shapeCandidates": 7,
+        "renderedTextObjects": 15,
+        "renderedShapeObjects": 7,
+        "renderedImageObjects": 1
+      },
+      {
+        "index": 21,
+        "key": "slide-5::v1",
+        "capturedNodes": 93,
+        "maxDepth": 7,
+        "textNodes": 18,
+        "backgroundImages": 1,
+        "svgImages": 0,
+        "canvasImages": 0,
+        "imageNodes": 0,
+        "shapeCandidates": 46,
+        "renderedTextObjects": 18,
+        "renderedShapeObjects": 47,
+        "renderedImageObjects": 3
+      },
+      {
+        "index": 22,
+        "key": "slide-6::v2",
+        "capturedNodes": 81,
+        "maxDepth": 6,
+        "textNodes": 22,
+        "backgroundImages": 0,
+        "svgImages": 0,
+        "canvasImages": 0,
+        "imageNodes": 0,
+        "shapeCandidates": 49,
+        "renderedTextObjects": 19,
+        "renderedShapeObjects": 45,
+        "renderedImageObjects": 4
+      },
+      {
+        "index": 23,
+        "key": "slide-6::v3",
+        "capturedNodes": 91,
+        "maxDepth": 6,
+        "textNodes": 22,
+        "backgroundImages": 2,
+        "svgImages": 0,
+        "canvasImages": 0,
+        "imageNodes": 0,
+        "shapeCandidates": 51,
+        "renderedTextObjects": 22,
+        "renderedShapeObjects": 47,
+        "renderedImageObjects": 4
+      },
+      {
+        "index": 24,
+        "key": "slide-6::v4",
+        "capturedNodes": 53,
+        "maxDepth": 9,
+        "textNodes": 15,
+        "backgroundImages": 0,
+        "svgImages": 0,
+        "canvasImages": 0,
+        "imageNodes": 0,
+        "shapeCandidates": 9,
+        "renderedTextObjects": 15,
+        "renderedShapeObjects": 13,
+        "renderedImageObjects": 0
+      },
+      {
+        "index": 25,
+        "key": "slide-7::v1",
+        "capturedNodes": 91,
+        "maxDepth": 6,
+        "textNodes": 22,
+        "backgroundImages": 2,
+        "svgImages": 0,
+        "canvasImages": 0,
+        "imageNodes": 0,
+        "shapeCandidates": 51,
+        "renderedTextObjects": 22,
+        "renderedShapeObjects": 47,
+        "renderedImageObjects": 4
+      },
+      {
+        "index": 26,
+        "key": "slide-7::v2",
+        "capturedNodes": 97,
+        "maxDepth": 8,
+        "textNodes": 23,
+        "backgroundImages": 0,
+        "svgImages": 0,
+        "canvasImages": 0,
+        "imageNodes": 0,
+        "shapeCandidates": 49,
+        "renderedTextObjects": 26,
+        "renderedShapeObjects": 45,
+        "renderedImageObjects": 5
+      },
+      {
+        "index": 27,
+        "key": "slide-7::v3",
+        "capturedNodes": 78,
+        "maxDepth": 7,
+        "textNodes": 20,
+        "backgroundImages": 0,
+        "svgImages": 0,
+        "canvasImages": 0,
+        "imageNodes": 0,
+        "shapeCandidates": 42,
+        "renderedTextObjects": 20,
+        "renderedShapeObjects": 41,
+        "renderedImageObjects": 2
+      },
+      {
+        "index": 28,
+        "key": "slide-7::v4",
+        "capturedNodes": 51,
+        "maxDepth": 9,
+        "textNodes": 15,
+        "backgroundImages": 0,
+        "svgImages": 0,
+        "canvasImages": 0,
+        "imageNodes": 0,
+        "shapeCandidates": 9,
+        "renderedTextObjects": 15,
+        "renderedShapeObjects": 13,
+        "renderedImageObjects": 0
+      },
+      {
+        "index": 29,
+        "key": "slide-8::v1",
+        "capturedNodes": 79,
+        "maxDepth": 6,
+        "textNodes": 21,
+        "backgroundImages": 0,
+        "svgImages": 0,
+        "canvasImages": 0,
+        "imageNodes": 0,
+        "shapeCandidates": 48,
+        "renderedTextObjects": 19,
+        "renderedShapeObjects": 45,
+        "renderedImageObjects": 3
+      },
+      {
+        "index": 30,
+        "key": "slide-8::v2",
+        "capturedNodes": 93,
+        "maxDepth": 7,
+        "textNodes": 18,
+        "backgroundImages": 1,
+        "svgImages": 0,
+        "canvasImages": 0,
+        "imageNodes": 0,
+        "shapeCandidates": 46,
+        "renderedTextObjects": 18,
+        "renderedShapeObjects": 47,
+        "renderedImageObjects": 3
+      },
+      {
+        "index": 31,
+        "key": "slide-8::v3",
+        "capturedNodes": 94,
+        "maxDepth": 7,
+        "textNodes": 19,
+        "backgroundImages": 1,
+        "svgImages": 3,
+        "canvasImages": 0,
+        "imageNodes": 3,
+        "shapeCandidates": 50,
+        "renderedTextObjects": 19,
+        "renderedShapeObjects": 48,
+        "renderedImageObjects": 6
+      },
+      {
+        "index": 32,
+        "key": "slide-8::v4",
+        "capturedNodes": 52,
+        "maxDepth": 9,
+        "textNodes": 17,
+        "backgroundImages": 0,
+        "svgImages": 0,
+        "canvasImages": 0,
+        "imageNodes": 0,
+        "shapeCandidates": 8,
+        "renderedTextObjects": 17,
+        "renderedShapeObjects": 11,
+        "renderedImageObjects": 0
+      }
+    ],
+    "warnings": [
+      {
+        "slide": 1,
+        "type": "decorative-pseudo-border-skipped",
+        "count": 1
+      },
+      {
+        "slide": 1,
+        "type": "node-image-fallback",
+        "node": "css-gradient-background",
+        "count": 1
+      },
+      {
+        "slide": 1,
+        "type": "node-image-fallback",
+        "node": "css-pattern-background",
+        "count": 1
+      },
+      {
+        "slide": 1,
+        "type": "node-image-fallback",
+        "node": "css-gradient-background",
+        "count": 1
+      },
+      {
+        "slide": 1,
+        "type": "node-image-fallback",
+        "node": "css-gradient-background",
+        "count": 1
+      },
+      {
+        "slide": 1,
+        "type": "node-image-fallback-text-extracted",
+        "node": "material-background",
+        "textCount": 1,
+        "sample": "技术采用研究"
+      },
+      {
+        "slide": 1,
+        "type": "node-image-fallback",
+        "node": "material-background",
+        "count": 1,
+        "source": "browser-local-material"
+      },
+      {
+        "slide": 1,
+        "type": "node-image-fallback",
+        "node": "material-background",
+        "count": 1,
+        "source": "browser-local-material"
+      },
+      {
+        "slide": 2,
+        "type": "decorative-pseudo-border-skipped",
+        "count": 1
+      },
+      {
+        "slide": 2,
+        "type": "node-image-fallback",
+        "node": "css-gradient-background",
+        "count": 1
+      },
+      {
+        "slide": 2,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 3,
+        "type": "decorative-pseudo-border-skipped",
+        "count": 1
+      },
+      {
+        "slide": 3,
+        "type": "node-image-fallback-text-extracted",
+        "node": "effect-background",
+        "textCount": 3,
+        "sample": "2026-08-31 Dashi PPT Skill 本地演示生产线"
+      },
+      {
+        "slide": 3,
+        "type": "node-image-fallback",
+        "node": "effect-background",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 3,
+        "type": "node-image-fallback-text-extracted",
+        "node": "material-background",
+        "textCount": 1,
+        "sample": "2026-08-31"
+      },
+      {
+        "slide": 3,
+        "type": "node-image-fallback",
+        "node": "material-background",
+        "count": 1,
+        "source": "browser-local-material"
+      },
+      {
+        "slide": 3,
+        "type": "node-image-fallback",
+        "node": "css-gradient-background",
+        "count": 1
+      },
+      {
+        "slide": 3,
+        "type": "node-image-fallback",
+        "node": "css-pattern-background",
+        "count": 1
+      },
+      {
+        "slide": 3,
+        "type": "node-image-fallback",
+        "node": "css-pattern-background",
+        "count": 1
+      },
+      {
+        "slide": 3,
+        "type": "node-image-fallback",
+        "node": "css-pattern-background",
+        "count": 1
+      },
+      {
+        "slide": 5,
+        "type": "node-image-fallback-text-extracted",
+        "node": "effect-background",
+        "textCount": 16,
+        "sample": "先冻结内容，再选择表现方式 差异不在生成，而在内容与版式解耦 核心差异 通用生成往往把事实与画面一次性写死；Dashi 先冻结内容，再选择表现方式。 通用生成往往把事实与画面一次性写死；Dashi 先冻结内容，再选择表现方式。 通用生成往往把事实与画面一次性写死；Dashi 先冻结内容，再选择表现方式。 通用生成往往把"
+      },
+      {
+        "slide": 5,
+        "type": "node-image-fallback",
+        "node": "effect-background",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 5,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 6,
+        "type": "node-image-fallback-text-extracted",
+        "node": "effect-background",
+        "textCount": 20,
+        "sample": "先冻结内容，再选择表现方式 差异不在生成，而在内容与版式解耦 “ 核心差异 1 份 · Canonical content 1 份 · Canonical content Canonical content 每个逻辑页只维护一份事实源 每个逻辑页只维护一份事实源 Capacity contract Canonical "
+      },
+      {
+        "slide": 6,
+        "type": "node-image-fallback",
+        "node": "effect-background",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 6,
+        "type": "node-image-fallback-text-extracted",
+        "node": "blend-group",
+        "textCount": 1,
+        "sample": "3+1 variants：三个模板候选与一个受主题约束的定制方案"
+      },
+      {
+        "slide": 6,
+        "type": "node-image-fallback",
+        "node": "blend-group",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 6,
+        "type": "node-image-fallback",
+        "node": "css-gradient-background",
+        "count": 1
+      },
+      {
+        "slide": 6,
+        "type": "node-image-fallback",
+        "node": "css-gradient-background",
+        "count": 1
+      },
+      {
+        "slide": 7,
+        "type": "node-image-fallback-text-extracted",
+        "node": "effect-background",
+        "textCount": 3,
+        "sample": "差异不在生成，而在内容与版式解耦 1 份 · Canonical content 通用生成往往把事实与画面一次性写死；Dashi 先冻结内容，再选择表现方式。"
+      },
+      {
+        "slide": 7,
+        "type": "node-image-fallback",
+        "node": "effect-background",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 7,
+        "type": "node-image-fallback",
+        "node": "css-gradient-background",
+        "count": 1
+      },
+      {
+        "slide": 7,
+        "type": "node-image-fallback",
+        "node": "blend-group",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 8,
+        "type": "node-image-fallback-text-extracted",
+        "node": "masked-element",
+        "textCount": 9,
+        "sample": "• 1 份 · Canonical content 每个逻辑页只维护一份事实源 • Capacity contract 标题、条目、数值与媒体要求参与硬筛选 • 3+1 variants 三个模板候选与一个受主题约束的定制方案"
+      },
+      {
+        "slide": 8,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 9,
+        "type": "node-image-fallback-text-extracted",
+        "node": "effect-background",
+        "textCount": 9,
+        "sample": "Capital Lens 活跃资本图谱 头部投资机构 大额融资背后是一批高频出手的头部机构，资本正从广撒网转向对头部资产的集中下注。 大额融资背后是一批高频出手的头部机构，资本正从广撒网转向对头部资产的集中下注。 48 家 全年参与大额轮次的活跃机构 钱多不稀缺，稀缺的是愿意下重注的确定性。"
+      },
+      {
+        "slide": 9,
+        "type": "node-image-fallback",
+        "node": "effect-background",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 9,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 10,
+        "type": "node-image-fallback-text-extracted",
+        "node": "effect-background",
+        "textCount": 20,
+        "sample": "Agent 决策，脚本执行 一份内容依次经过五道确定性关卡 一份内容依次经过五道确定性关卡 “ 内容规划｜形成逐页 brief 与事实包 内容规划｜形成逐页 brief 与事实包 内容规划：形成逐页 brief 与事实包 内容规划：形成逐页 brief 与事实包 内容规划 内容规划 内容规划 内容规划：形成逐页 bri"
+      },
+      {
+        "slide": 10,
+        "type": "node-image-fallback",
+        "node": "effect-background",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 10,
+        "type": "node-image-fallback-text-extracted",
+        "node": "blend-group",
+        "textCount": 2,
+        "sample": "一份内容依次经过五道确定性关卡 全稿分配｜校验与导出：检查内容并生成 PDF / PPTX"
+      },
+      {
+        "slide": 10,
+        "type": "node-image-fallback",
+        "node": "blend-group",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 10,
+        "type": "node-image-fallback",
+        "node": "css-gradient-background",
+        "count": 1
+      },
+      {
+        "slide": 10,
+        "type": "node-image-fallback",
+        "node": "svg",
+        "count": 1
+      },
+      {
+        "slide": 10,
+        "type": "node-image-fallback",
+        "node": "svg",
+        "count": 1
+      },
+      {
+        "slide": 10,
+        "type": "node-image-fallback",
+        "node": "svg",
+        "count": 1
+      },
+      {
+        "slide": 11,
+        "type": "node-image-fallback-text-extracted",
+        "node": "masked-element",
+        "textCount": 22,
+        "sample": "1 1 内容规划 1. 内容规划 2 重点 2 容量查询 2. 容量查询 3 3 全稿分配 3. 全稿分配 4 4 HTML 渲染 4. HTML 渲染 5 5 校验与导出 5. 校验与导出 生产链"
+      },
+      {
+        "slide": 11,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 11,
+        "type": "node-image-fallback-text-extracted",
+        "node": "masked-element",
+        "textCount": 15,
+        "sample": "1 2 重点 2 容量查询 2. 容量查询 3 3 全稿分配 3. 全稿分配 4 4 HTML 渲染 4. HTML 渲染 5"
+      },
+      {
+        "slide": 11,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 11,
+        "type": "node-image-fallback-text-extracted",
+        "node": "masked-element",
+        "textCount": 9,
+        "sample": "2 3 3 全稿分配 3. 全稿分配 4 4 HTML 渲染 4. HTML 渲染"
+      },
+      {
+        "slide": 11,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 11,
+        "type": "node-image-fallback-text-extracted",
+        "node": "masked-element",
+        "textCount": 5,
+        "sample": "3 4 4 HTML 渲染 4. HTML 渲染"
+      },
+      {
+        "slide": 11,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 11,
+        "type": "node-image-fallback-text-extracted",
+        "node": "masked-element",
+        "textCount": 9,
+        "sample": "1 2 3 4 5 5 校验与导出 5. 校验与导出 生产链"
+      },
+      {
+        "slide": 11,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 13,
+        "type": "node-image-fallback-text-extracted",
+        "node": "effect-background",
+        "textCount": 19,
+        "sample": "规模不是质量结论 锁定清单可以复算资产规模；真实适配率、审美与返工量仍需运行实验。 1,020 个 版式页面 套 资产规模已核验，效果仍需实测 12 套 亿 锁定清单复算 1020 个 亿 20 类页面角色 8576 个 亿 覆盖布局与表现参数 4 套 亿 模板候选加定制方案"
+      },
+      {
+        "slide": 13,
+        "type": "node-image-fallback",
+        "node": "effect-background",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 13,
+        "type": "node-image-fallback-text-extracted",
+        "node": "masked-element",
+        "textCount": 21,
+        "sample": "套 主题 12 套 亿 锁定清单复算 个 版式 1020 个 亿 20 类页面角色 个 控件 8576 个 亿 覆盖布局与表现参数 套 方案 4 套 亿 模板候选加定制方案 资产规模已核验，效果仍需实测"
+      },
+      {
+        "slide": 13,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 13,
+        "type": "node-image-fallback-text-extracted",
+        "node": "masked-element",
+        "textCount": 16,
+        "sample": "个 版式 1020 个 亿 20 类页面角色 个 控件 8576 个 亿 覆盖布局与表现参数 套 方案 4 套 亿 模板候选加定制方案 资产规模已核验，效果仍需实测"
+      },
+      {
+        "slide": 13,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 13,
+        "type": "node-image-fallback-text-extracted",
+        "node": "masked-element",
+        "textCount": 11,
+        "sample": "个 控件 8576 个 亿 覆盖布局与表现参数 套 方案 4 套 亿 模板候选加定制方案 资产规模已核验，效果仍需实测"
+      },
+      {
+        "slide": 13,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 14,
+        "type": "node-image-fallback-text-extracted",
+        "node": "effect-background",
+        "textCount": 19,
+        "sample": "版式库规模可量化，但规模不是质量结论 主题：锁定清单复算 1020 个 · 版式｜20 类页面角色 版式：20 类页面角色 12 主题 1020 版式 8576 控件 4 方案 把资产数量当作覆盖面证据，而不是效果保证。 锁定清单复算 12 套 · 主题｜锁定清单复算 锁定清单可以复算资产规模；真实适配率、审美与返工量"
+      },
+      {
+        "slide": 14,
+        "type": "node-image-fallback",
+        "node": "effect-background",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 14,
+        "type": "node-image-fallback-text-extracted",
+        "node": "svg",
+        "textCount": 10,
+        "sample": "12 主题 1020 版式 8576 控件 4 方案 把资产数量当作覆盖面证据，而不是效果保证。 锁定清单复算"
+      },
+      {
+        "slide": 14,
+        "type": "node-image-fallback",
+        "node": "svg",
+        "count": 1
+      },
+      {
+        "slide": 14,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 15,
+        "type": "node-image-fallback-text-extracted",
+        "node": "effect-background",
+        "textCount": 13,
+        "sample": "版式库规模可量化，但规模不是质量结论 12 套 · 主题｜锁定清单复算 4 主题：锁定清单复算 锁定清单复算 12 笔 1020 笔 8576 笔 4 笔"
+      },
+      {
+        "slide": 15,
+        "type": "node-image-fallback",
+        "node": "effect-background",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 15,
+        "type": "node-image-fallback-text-extracted",
+        "node": "masked-element",
+        "textCount": 21,
+        "sample": "主题：锁定清单复算 1 主题 1. 主题 12 笔 2 版式 2. 版式 1020 笔 3 控件 3. 控件 8576 笔 4 方案 4. 方案 4 笔"
+      },
+      {
+        "slide": 15,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 15,
+        "type": "node-image-fallback-text-extracted",
+        "node": "masked-element",
+        "textCount": 16,
+        "sample": "主题：锁定清单复算 2 版式 2. 版式 1020 笔 3 控件 3. 控件 8576 笔 4 方案 4. 方案 4 笔"
+      },
+      {
+        "slide": 15,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 15,
+        "type": "node-image-fallback-text-extracted",
+        "node": "masked-element",
+        "textCount": 10,
+        "sample": "3 控件 3. 控件 8576 笔 4 方案 4. 方案 4 笔"
+      },
+      {
+        "slide": 15,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 16,
+        "type": "node-image-fallback-text-extracted",
+        "node": "masked-element",
+        "textCount": 12,
+        "sample": "“ 12 套 · 视觉主题 锁定清单复算 “ 1,020 · 版式页面 20 类页面角色 “ 8,576 · 可调控件 覆盖布局与表现参数 “ 3+1 · 每页方案 模板候选加定制方案"
+      },
+      {
+        "slide": 16,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 16,
+        "type": "node-image-fallback-text-extracted",
+        "node": "masked-element",
+        "textCount": 6,
+        "sample": "“ 1,020 · 版式页面 20 类页面角色 “ 3+1 · 每页方案 模板候选加定制方案"
+      },
+      {
+        "slide": 16,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 16,
+        "type": "node-image-fallback-text-extracted",
+        "node": "masked-element",
+        "textCount": 6,
+        "sample": "“ 8,576 · 可调控件 覆盖布局与表现参数 “ 3+1 · 每页方案 模板候选加定制方案"
+      },
+      {
+        "slide": 16,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 16,
+        "type": "node-image-fallback-text-extracted",
+        "node": "masked-element",
+        "textCount": 3,
+        "sample": "“ 3+1 · 每页方案 模板候选加定制方案"
+      },
+      {
+        "slide": 16,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 17,
+        "type": "node-image-fallback-text-extracted",
+        "node": "effect-background",
+        "textCount": 2,
+        "sample": "HTML 是主产物，PPTX 是分层映射 HTML：可编辑、可切换方案、可自动保存"
+      },
+      {
+        "slide": 17,
+        "type": "node-image-fallback",
+        "node": "effect-background",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 17,
+        "type": "node-image-fallback",
+        "node": "css-gradient-background",
+        "count": 1
+      },
+      {
+        "slide": 17,
+        "type": "node-image-fallback",
+        "node": "blend-group",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 18,
+        "type": "node-image-fallback-text-extracted",
+        "node": "masked-element",
+        "textCount": 14,
+        "sample": "1 1 HTML 1. HTML 2 2 PDF 2. PDF 3 重点 3 PPTX 3. PPTX 三种格式服务不同任务"
+      },
+      {
+        "slide": 18,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 18,
+        "type": "node-image-fallback-text-extracted",
+        "node": "masked-element",
+        "textCount": 10,
+        "sample": "1 2 2 PDF 2. PDF 3 重点 3 PPTX 3. PPTX"
+      },
+      {
+        "slide": 18,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 18,
+        "type": "node-image-fallback-text-extracted",
+        "node": "masked-element",
+        "textCount": 6,
+        "sample": "2 3 重点 3 PPTX 3. PPTX"
+      },
+      {
+        "slide": 18,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 19,
+        "type": "node-image-fallback-text-extracted",
+        "node": "effect-background",
+        "textCount": 5,
+        "sample": "浏览器保留最多交互；PPTX 优先保留原生文字，复杂区域可能截图回退。 浏览器保留最多交互；PPTX 优先保留原生文字，复杂区域可能截图回退。 PPTX 2. PDF PDF：便于分发与归档，但不承担结构化编辑"
+      },
+      {
+        "slide": 19,
+        "type": "node-image-fallback",
+        "node": "effect-background",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 19,
+        "type": "node-image-fallback-text-extracted",
+        "node": "masked-element",
+        "textCount": 10,
+        "sample": "01 1. HTML HTML：可编辑、可切换方案、可自动保存 02 2. PDF PDF：便于分发与归档，但不承担结构化编辑 03 3. PPTX PPTX：逐节点映射；复杂背景和效果可能回退为截图 HTML｜可编辑、可切换方案、可自动保存"
+      },
+      {
+        "slide": 19,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 19,
+        "type": "node-image-fallback-text-extracted",
+        "node": "masked-element",
+        "textCount": 3,
+        "sample": "02 2. PDF PDF：便于分发与归档，但不承担结构化编辑"
+      },
+      {
+        "slide": 19,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 19,
+        "type": "node-image-fallback-text-extracted",
+        "node": "masked-element",
+        "textCount": 4,
+        "sample": "03 3. PPTX PPTX：逐节点映射；复杂背景和效果可能回退为截图 HTML｜可编辑、可切换方案、可自动保存"
+      },
+      {
+        "slide": 19,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 20,
+        "type": "node-image-fallback-text-extracted",
+        "node": "masked-element",
+        "textCount": 9,
+        "sample": "• HTML 可编辑、可切换方案、可自动保存 • PDF 便于分发与归档，但不承担结构化编辑 • PPTX 逐节点映射；复杂背景和效果可能回退为截图"
+      },
+      {
+        "slide": 20,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 21,
+        "type": "node-image-fallback-text-extracted",
+        "node": "effect-background",
+        "textCount": 2,
+        "sample": "研究团队与方法 AI Capital Lab 专注于 AI 产业的资本流向研究，用横纵分析法把融资数据转化为结构化判断，服务投资人、创业者与产业研究者。"
+      },
+      {
+        "slide": 21,
+        "type": "node-image-fallback",
+        "node": "effect-background",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 21,
+        "type": "node-image-fallback",
+        "node": "css-gradient-background",
+        "count": 1
+      },
+      {
+        "slide": 21,
+        "type": "node-image-fallback",
+        "node": "blend-group",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 22,
+        "type": "node-image-fallback-text-extracted",
+        "node": "masked-element",
+        "textCount": 18,
+        "sample": "1 1 AGPL-3.0 1. AGPL-3.0 2 重点 2 专有导出组件 2. 专有导出组件 3 3 局域网预览 3. 局域网预览 4 4 生成成本 4. 生成成本 采用前要正视四条工程边界"
+      },
+      {
+        "slide": 22,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 22,
+        "type": "node-image-fallback-text-extracted",
+        "node": "masked-element",
+        "textCount": 14,
+        "sample": "1 2 重点 2 专有导出组件 2. 专有导出组件 3 3 局域网预览 3. 局域网预览 4 4 生成成本 4. 生成成本"
+      },
+      {
+        "slide": 22,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 22,
+        "type": "node-image-fallback-text-extracted",
+        "node": "masked-element",
+        "textCount": 9,
+        "sample": "2 3 3 局域网预览 3. 局域网预览 4 4 生成成本 4. 生成成本"
+      },
+      {
+        "slide": 22,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 22,
+        "type": "node-image-fallback-text-extracted",
+        "node": "masked-element",
+        "textCount": 5,
+        "sample": "3 4 4 生成成本 4. 生成成本"
+      },
+      {
+        "slide": 22,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 23,
+        "type": "node-image-fallback-text-extracted",
+        "node": "effect-background",
+        "textCount": 19,
+        "sample": "采用前要正视四条工程边界 “ AGPL-3.0 网络服务与修改分发需要核对源码义务 网络服务与修改分发需要核对源码义务 专有导出组件 专有导出组件 不能脱离本 Skill 单独提取或再分发 不能脱离本 Skill 单独提取或再分发 局域网预览 AGPL-3.0：网络服务与修改分发需要核对源码义务 2 专有导出组件 专有"
+      },
+      {
+        "slide": 23,
+        "type": "node-image-fallback",
+        "node": "effect-background",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 23,
+        "type": "node-image-fallback-text-extracted",
+        "node": "blend-group",
+        "textCount": 2,
+        "sample": "局域网预览 局域网预览｜生成成本：上游自述 10 页约 10 万 Token，仍需独立复测"
+      },
+      {
+        "slide": 23,
+        "type": "node-image-fallback",
+        "node": "blend-group",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 23,
+        "type": "node-image-fallback",
+        "node": "css-gradient-background",
+        "count": 1
+      },
+      {
+        "slide": 23,
+        "type": "node-image-fallback",
+        "node": "css-gradient-background",
+        "count": 1
+      },
+      {
+        "slide": 25,
+        "type": "node-image-fallback-text-extracted",
+        "node": "effect-background",
+        "textCount": 19,
+        "sample": "最小试点先验证四项可量化指标 “ 内容覆盖率 required facts 与关键数字是否完整 required facts 与关键数字是否完整 固定 seed 重复性 固定 seed 重复性 版式分配与内容映射是否稳定 版式分配与内容映射是否稳定 原生对象比例 内容覆盖率：required facts 与关键数字是否"
+      },
+      {
+        "slide": 25,
+        "type": "node-image-fallback",
+        "node": "effect-background",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 25,
+        "type": "node-image-fallback-text-extracted",
+        "node": "blend-group",
+        "textCount": 2,
+        "sample": "原生对象比例 原生对象比例｜兼容性与成本：PowerPoint / WPS 打开效果、耗时与返工量"
+      },
+      {
+        "slide": 25,
+        "type": "node-image-fallback",
+        "node": "blend-group",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 25,
+        "type": "node-image-fallback",
+        "node": "css-gradient-background",
+        "count": 1
+      },
+      {
+        "slide": 25,
+        "type": "node-image-fallback",
+        "node": "css-gradient-background",
+        "count": 1
+      },
+      {
+        "slide": 26,
+        "type": "node-image-fallback-text-extracted",
+        "node": "effect-background",
+        "textCount": 9,
+        "sample": "最小试点先验证四项可量化指标 先证明内容、重复性、可编辑性与兼容性，再讨论组织级接入。 先证明内容、重复性、可编辑性与兼容性，再讨论组织级接入。 原生对象比例 兼容性与成本 2. 固定 seed 重复性 固定 seed 重复性：版式分配与内容映射是否稳定 4. 兼容性与成本 兼容性与成本：PowerPoint / WP"
+      },
+      {
+        "slide": 26,
+        "type": "node-image-fallback",
+        "node": "effect-background",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 26,
+        "type": "node-image-fallback-text-extracted",
+        "node": "masked-element",
+        "textCount": 13,
+        "sample": "01 1. 内容覆盖率 内容覆盖率：required facts 与关键数字是否完整 02 2. 固定 seed 重复性 固定 seed 重复性：版式分配与内容映射是否稳定 03 3. 原生对象比例 原生对象比例：文字、形状和截图回退分别统计 04 4. 兼容性与成本 兼容性与成本：PowerPoint / WPS 打"
+      },
+      {
+        "slide": 26,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 26,
+        "type": "node-image-fallback-text-extracted",
+        "node": "masked-element",
+        "textCount": 6,
+        "sample": "02 2. 固定 seed 重复性 固定 seed 重复性：版式分配与内容映射是否稳定 04 4. 兼容性与成本 兼容性与成本：PowerPoint / WPS 打开效果、耗时与返工量"
+      },
+      {
+        "slide": 26,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 26,
+        "type": "node-image-fallback-text-extracted",
+        "node": "masked-element",
+        "textCount": 7,
+        "sample": "03 3. 原生对象比例 原生对象比例：文字、形状和截图回退分别统计 04 4. 兼容性与成本 兼容性与成本：PowerPoint / WPS 打开效果、耗时与返工量 试点协议"
+      },
+      {
+        "slide": 26,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 26,
+        "type": "node-image-fallback-text-extracted",
+        "node": "masked-element",
+        "textCount": 3,
+        "sample": "04 4. 兼容性与成本 兼容性与成本：PowerPoint / WPS 打开效果、耗时与返工量"
+      },
+      {
+        "slide": 26,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 27,
+        "type": "node-image-fallback-text-extracted",
+        "node": "effect-background",
+        "textCount": 20,
+        "sample": "试点协议 最小试点先验证四项可量化指标 内容覆盖率 用脱敏研究材料完成一轮端到端生成，再决定是否扩大使用。 用脱敏研究材料完成一轮端到端生成，再决定是否扩大使用。 用脱敏研究材料完成一轮端到端生成，再决定是否扩大使用。 用脱敏研究材料完成一轮端到端生成，再决定是否扩大使用。 用脱敏研究材料完成一轮端到端生成，再决定是否"
+      },
+      {
+        "slide": 27,
+        "type": "node-image-fallback",
+        "node": "effect-background",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 27,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 29,
+        "type": "node-image-fallback-text-extracted",
+        "node": "masked-element",
+        "textCount": 14,
+        "sample": "1 1 内容门槛 1. 内容门槛 2 重点 2 导出门槛 2. 导出门槛 3 3 效率门槛 3. 效率门槛 采用建议"
+      },
+      {
+        "slide": 29,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 29,
+        "type": "node-image-fallback-text-extracted",
+        "node": "masked-element",
+        "textCount": 10,
+        "sample": "1 2 重点 2 导出门槛 2. 导出门槛 3 3 效率门槛 3. 效率门槛"
+      },
+      {
+        "slide": 29,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 29,
+        "type": "node-image-fallback-text-extracted",
+        "node": "masked-element",
+        "textCount": 5,
+        "sample": "2 3 3 效率门槛 3. 效率门槛"
+      },
+      {
+        "slide": 29,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 30,
+        "type": "node-image-fallback-text-extracted",
+        "node": "effect-background",
+        "textCount": 3,
+        "sample": "建议：以研究汇报为首个试点 内容门槛｜事实完整且无默认文案残留 它最有价值的不是替你做一页，而是把整稿内容、版式和导出纳入同一条可审查生产线。"
+      },
+      {
+        "slide": 30,
+        "type": "node-image-fallback",
+        "node": "effect-background",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 30,
+        "type": "node-image-fallback",
+        "node": "css-gradient-background",
+        "count": 1
+      },
+      {
+        "slide": 30,
+        "type": "node-image-fallback",
+        "node": "blend-group",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 31,
+        "type": "node-image-fallback-text-extracted",
+        "node": "effect-background",
+        "textCount": 18,
+        "sample": "建议：以研究汇报为首个试点 建议：以研究汇报为首个试点 “ 2026-08-31 内容门槛｜事实完整且无默认文案残留 内容门槛｜事实完整且无默认文案残留 内容门槛：事实完整且无默认文案残留 内容门槛：事实完整且无默认文案残留 1. 内容门槛 内容门槛 内容门槛：事实完整且无默认文案残留 2. 导出门槛 导出门槛 导出门"
+      },
+      {
+        "slide": 31,
+        "type": "node-image-fallback",
+        "node": "effect-background",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 31,
+        "type": "node-image-fallback-text-extracted",
+        "node": "blend-group",
+        "textCount": 4,
+        "sample": "建议：以研究汇报为首个试点 内容门槛：事实完整且无默认文案残留 效率门槛 效率门槛：总耗时与返工优于现有流程"
+      },
+      {
+        "slide": 31,
+        "type": "node-image-fallback",
+        "node": "blend-group",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 31,
+        "type": "node-image-fallback",
+        "node": "css-gradient-background",
+        "count": 1
+      },
+      {
+        "slide": 31,
+        "type": "node-image-fallback",
+        "node": "svg",
+        "count": 1
+      },
+      {
+        "slide": 31,
+        "type": "node-image-fallback",
+        "node": "svg",
+        "count": 1
+      },
+      {
+        "slide": 31,
+        "type": "node-image-fallback",
+        "node": "svg",
+        "count": 1
+      }
+    ]
+  },
+  "note": "Research harness bypassed the upstream HTTPS wrapper after its OpenSSL executable preflight failed. The actual upstream html-deck-to-pptx export engine and browser launcher were used unchanged against the same loopback deck URL."
+}

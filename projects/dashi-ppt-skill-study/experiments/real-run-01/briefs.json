@@ -1,0 +1,163 @@
+[
+  {
+    "role": "cover",
+    "content": {
+      "presentation": {
+        "title": "Dashi PPT Skill",
+        "titleShort": "Dashi PPT Skill",
+        "summary": "从材料到可审计演示的本地生产线",
+        "summaryShort": "本地演示生产线",
+        "takeaway": "锁定版本 0.4.11：检验内容契约、3+1 方案与分层导出",
+        "coverLabels": ["技术采用研究", "2026-08-31"]
+      },
+      "meta": {
+        "brand": "0830 Research Lab",
+        "panelTitle": "技术采用研究",
+        "date": "2026-08-31",
+        "pageLabel": "01"
+      }
+    }
+  },
+  {
+    "role": "context",
+    "content": {
+      "presentation": {
+        "title": "差异不在生成，而在内容与版式解耦",
+        "titleShort": "内容与版式解耦",
+        "summary": "通用生成往往把事实与画面一次性写死；Dashi 先冻结内容，再选择表现方式。",
+        "summaryShort": "先冻结内容，再选择表现方式",
+        "takeaway": "换方案时，核心事实不必跟着重写。",
+        "items": [
+          {"id": "canonical", "label": "Canonical content", "value": 1, "displayValue": "1 份", "unit": "份", "detail": "每个逻辑页只维护一份事实源", "required": true, "priority": 1},
+          {"id": "capacity", "label": "Capacity contract", "detail": "标题、条目、数值与媒体要求参与硬筛选", "required": true, "priority": 1},
+          {"id": "variants", "label": "3+1 variants", "detail": "三个模板候选与一个受主题约束的定制方案", "required": true, "priority": 1}
+        ]
+      },
+      "meta": {"brand": "0830 Research Lab", "panelTitle": "核心差异", "pageLabel": "02"}
+    }
+  },
+  {
+    "role": "process",
+    "content": {
+      "presentation": {
+        "title": "一份内容依次经过五道确定性关卡",
+        "titleShort": "五道确定性关卡",
+        "summary": "Agent 负责理解与叙事，脚本负责筛选、分配、渲染、校验和导出。",
+        "summaryShort": "Agent 决策，脚本执行",
+        "takeaway": "可追踪的中间表示把创作判断与工程执行连接起来。",
+        "items": [
+          {"id": "plan", "label": "内容规划", "detail": "形成逐页 brief 与事实包", "required": true, "priority": 1},
+          {"id": "query", "label": "容量查询", "detail": "淘汰无法承载内容的版式", "required": true, "priority": 1},
+          {"id": "allocate", "label": "全稿分配", "detail": "控制布局与结构家族复用", "required": true, "priority": 1},
+          {"id": "render", "label": "HTML 渲染", "detail": "生成离线编辑器与四方案", "required": true, "priority": 1},
+          {"id": "export", "label": "校验与导出", "detail": "检查内容并生成 PDF / PPTX", "required": true, "priority": 1}
+        ]
+      },
+      "meta": {"brand": "0830 Research Lab", "panelTitle": "生产链", "pageLabel": "03"}
+    }
+  },
+  {
+    "role": "breakdown",
+    "content": {
+      "presentation": {
+        "title": "版式库规模可量化，但规模不是质量结论",
+        "titleShort": "规模不是质量结论",
+        "summary": "锁定清单可以复算资产规模；真实适配率、审美与返工量仍需运行实验。",
+        "summaryShort": "资产规模已核验，效果仍需实测",
+        "takeaway": "把资产数量当作覆盖面证据，而不是效果保证。",
+        "items": [
+          {"id": "themes", "label": "视觉主题", "value": 12, "displayValue": "12 套", "unit": "套", "detail": "锁定清单复算", "required": true, "priority": 1},
+          {"id": "layouts", "label": "版式页面", "value": 1020, "displayValue": "1,020", "unit": "个", "detail": "20 类页面角色", "required": true, "priority": 1},
+          {"id": "controls", "label": "可调控件", "value": 8576, "displayValue": "8,576", "unit": "个", "detail": "覆盖布局与表现参数", "required": true, "priority": 1},
+          {"id": "variants", "label": "每页方案", "value": 4, "displayValue": "3+1", "unit": "套", "detail": "模板候选加定制方案", "required": true, "priority": 1}
+        ],
+        "chartData": [
+          {"id": "themes", "label": "主题", "value": 12, "unit": "套"},
+          {"id": "layouts", "label": "版式", "value": 1020, "unit": "个"},
+          {"id": "controls", "label": "控件", "value": 8576, "unit": "个"},
+          {"id": "variants", "label": "方案", "value": 4, "unit": "套"}
+        ]
+      },
+      "meta": {"brand": "0830 Research Lab", "panelTitle": "资产基线", "pageLabel": "04"}
+    }
+  },
+  {
+    "role": "breakdown",
+    "content": {
+      "presentation": {
+        "title": "HTML 是主产物，PPTX 是分层映射",
+        "titleShort": "HTML 主产物，PPTX 分层映射",
+        "summary": "三种交付格式服务不同任务，不能用同一把尺子评价。",
+        "summaryShort": "三种格式服务不同任务",
+        "takeaway": "浏览器保留最多交互；PPTX 优先保留原生文字，复杂区域可能截图回退。",
+        "items": [
+          {"id": "html", "label": "HTML", "detail": "可编辑、可切换方案、可自动保存", "required": true, "priority": 1},
+          {"id": "pdf", "label": "PDF", "detail": "便于分发与归档，但不承担结构化编辑", "required": true, "priority": 1},
+          {"id": "pptx", "label": "PPTX", "detail": "逐节点映射；复杂背景和效果可能回退为截图", "required": true, "priority": 1}
+        ]
+      },
+      "meta": {"brand": "0830 Research Lab", "panelTitle": "格式边界", "pageLabel": "05"}
+    }
+  },
+  {
+    "role": "risks",
+    "content": {
+      "presentation": {
+        "title": "采用前要正视四条工程边界",
+        "titleShort": "四条工程边界",
+        "summary": "许可证、可编辑性、网络暴露和生成成本都会改变落地方式。",
+        "summaryShort": "边界决定落地方式",
+        "takeaway": "适合内部试点，不等于可以直接嵌入商业 SaaS。",
+        "items": [
+          {"id": "agpl", "label": "AGPL-3.0", "detail": "网络服务与修改分发需要核对源码义务", "required": true, "priority": 1},
+          {"id": "proprietary", "label": "专有导出组件", "detail": "不能脱离本 Skill 单独提取或再分发", "required": true, "priority": 1},
+          {"id": "preview", "label": "局域网预览", "detail": "敏感材料应显式绑定 127.0.0.1", "required": true, "priority": 1},
+          {"id": "cost", "label": "生成成本", "detail": "上游自述 10 页约 10 万 Token，仍需独立复测", "required": true, "priority": 1}
+        ]
+      },
+      "meta": {"brand": "0830 Research Lab", "panelTitle": "采用边界", "pageLabel": "06"}
+    }
+  },
+  {
+    "role": "actions",
+    "content": {
+      "presentation": {
+        "title": "最小试点先验证四项可量化指标",
+        "titleShort": "先验证四项指标",
+        "summary": "用脱敏研究材料完成一轮端到端生成，再决定是否扩大使用。",
+        "summaryShort": "一轮端到端试点后再扩展",
+        "takeaway": "先证明内容、重复性、可编辑性与兼容性，再讨论组织级接入。",
+        "items": [
+          {"id": "coverage", "label": "内容覆盖率", "detail": "required facts 与关键数字是否完整", "required": true, "priority": 1},
+          {"id": "repeatability", "label": "固定 seed 重复性", "detail": "版式分配与内容映射是否稳定", "required": true, "priority": 1},
+          {"id": "editability", "label": "原生对象比例", "detail": "文字、形状和截图回退分别统计", "required": true, "priority": 1},
+          {"id": "compatibility", "label": "兼容性与成本", "detail": "PowerPoint / WPS 打开效果、耗时与返工量", "required": true, "priority": 1}
+        ]
+      },
+      "meta": {"brand": "0830 Research Lab", "panelTitle": "试点协议", "pageLabel": "07"}
+    }
+  },
+  {
+    "role": "closing",
+    "content": {
+      "presentation": {
+        "title": "建议：以研究汇报为首个试点",
+        "titleShort": "从研究汇报开始",
+        "summary": "它最有价值的不是替你做一页，而是把整稿内容、版式和导出纳入同一条可审查生产线。",
+        "summaryShort": "验证整稿生产线，而非单页效果",
+        "takeaway": "通过固定样例验证后，再扩展到经营复盘、培训和方案路演。",
+        "items": [
+          {"id": "gate-content", "label": "内容门槛", "detail": "事实完整且无默认文案残留", "required": true, "priority": 1},
+          {"id": "gate-export", "label": "导出门槛", "detail": "关键文字保持可编辑", "required": true, "priority": 1},
+          {"id": "gate-effort", "label": "效率门槛", "detail": "总耗时与返工优于现有流程", "required": true, "priority": 1}
+        ]
+      },
+      "meta": {
+        "brand": "0830 Research Lab",
+        "panelTitle": "采用建议",
+        "pageLabel": "08",
+        "date": "2026-08-31"
+      }
+    }
+  }
+]

@@ -1,0 +1,9 @@
+/upstream/dashi-ppt-skill/
+/experiments/real-run-01/ppt/
+/experiments/real-run-02-brand-media/ppt/
+/experiments/real-run-02-brand-media/ppt-selected/
+/artifacts/real-run-01/dashi-real-run-01-comparison.pdf
+/artifacts/real-run-01/pptx-montage.png
+/artifacts/real-run-01/selected-v4-montage.png
+/artifacts/real-run-02-brand-media/*-montage.png
+/artifacts/real-run-02-brand-media/*.inspect.ndjson

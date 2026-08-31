@@ -1,0 +1,32 @@
+{
+  "experimentId": "real-run-01",
+  "upstreamVersion": "0.4.11",
+  "upstreamCommit": "7cb23347f91cda1a5519eafc8c040704e389535a",
+  "themePack": "theme07",
+  "randomSeed": "dashi-study-20260831-r03",
+  "workflowRunId": "theme07-20260831-real03",
+  "pageCount": 8,
+  "roles": ["context", "process", "breakdown", "breakdown", "risks", "actions"],
+  "media": "none",
+  "language": "zh-CN",
+  "audience": "评估 AI 演示生产线的技术负责人、研究负责人和设计系统负责人",
+  "purpose": "用锁定上游真实验证 canonical content、3+1 方案、固定 seed 重复性和分层导出边界",
+  "generatedAt": "2026-08-31T05:26:29+08:00",
+  "environment": {
+    "os": "Windows 11",
+    "node": "v24.19.0",
+    "browser": "Google Chrome for Testing 151.0.7922.34 (Playwright headless shell)"
+  },
+  "outputs": {
+    "comparisonPptxSlides": 32,
+    "comparisonPdfPages": 32,
+    "selectedPptxSlides": 8,
+    "selectedPdfPages": 8,
+    "selectedObjects": {
+      "text": 118,
+      "shapes": 76,
+      "images": 6
+    }
+  },
+  "status": "completed-with-documented-validator-limitations"
+}

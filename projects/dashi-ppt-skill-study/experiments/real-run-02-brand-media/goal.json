@@ -1,0 +1,4123 @@
+{
+  "schemaVersion": 2,
+  "variantOutputMode": "comparison",
+  "title": "园区能源协同优化试点",
+  "goal": "为园区管理委员会提供是否批准 72 万元、12 周能源协同优化试点的决策依据",
+  "themePack": "theme03",
+  "pageCount": 8,
+  "randomSeed": "dashi-study-20260831-brand-media-r01",
+  "workflowRunId": "theme03-20260831-brand-media-r01",
+  "slides": [
+    {
+      "content": {
+        "presentation": {
+          "title": "园区能源协同优化试点",
+          "titleShort": "能源协同优化试点",
+          "summary": "以 12 周验证峰值控制、设备协同与可复制运营机制",
+          "summaryShort": "12 周形成可复制机制",
+          "takeaway": "模拟决策样例｜不代表真实客户经营数据",
+          "items": [],
+          "coverLabels": [
+            "GRIDWISE LAB",
+            "投资决策稿",
+            "2026-08-31"
+          ],
+          "chartData": []
+        },
+        "media": [],
+        "meta": {
+          "brand": "GRIDWISE LAB",
+          "pageLabel": "01",
+          "unit": "",
+          "panelTitle": "工业园区能源管理",
+          "date": "2026-08-31",
+          "empty": ""
+        }
+      },
+      "selectedVariant": "v1",
+      "variants": [
+        {
+          "id": "v1",
+          "kind": "template",
+          "layout": "theme03_page004",
+          "props": {
+            "showMeta": false
+          },
+          "contentMap": {
+            "kicker": "presentation.title",
+            "metaLines": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "supplementTextFallback": true,
+              "textFallbackOnly": true,
+              "limit": 1,
+              "select": "labelWithValueAndSupporting"
+            },
+            "metaStrip": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "supplementTextFallback": true,
+              "textFallbackOnly": true,
+              "limit": 1,
+              "select": "labelWithValueAndSupporting"
+            },
+            "eyebrow": "presentation.coverLabels[0]",
+            "titleKicker": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 20,
+              "index": 4,
+              "truncate": true
+            },
+            "titleA": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 5,
+              "truncate": true
+            },
+            "titleAccent": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 6,
+              "truncate": true
+            },
+            "titleC": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 7,
+              "truncate": true
+            },
+            "titleBody": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 35,
+              "index": 8,
+              "truncate": true
+            },
+            "figureLabel": "presentation.coverLabels[1]",
+            "figureValue": "presentation.coverLabels[2]",
+            "figureUnit": "presentation.coverLabels[0]",
+            "figureNote": "presentation.coverLabels[1]",
+            "punchKicker": "presentation.coverLabels[2]",
+            "punchText": "presentation.coverLabels[0]"
+          }
+        },
+        {
+          "id": "v2",
+          "kind": "template",
+          "layout": "theme03_page001",
+          "props": {
+            "showMeta": false,
+            "images": [],
+            "imageCount": 0
+          },
+          "contentMap": {
+            "kicker": "presentation.title",
+            "lead": "presentation.summary",
+            "meta": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "supplementTextFallback": true,
+              "textFallbackOnly": true,
+              "limit": 1,
+              "select": "labelWithValueAndSupporting"
+            },
+            "eyebrow": "presentation.coverLabels[0]",
+            "titlePrefix": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 4,
+              "truncate": true
+            },
+            "titleAccent": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 5,
+              "truncate": true
+            },
+            "titleSuffix": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 6,
+              "truncate": true
+            },
+            "figureValue": "presentation.coverLabels[1]",
+            "figureUnit": "presentation.coverLabels[2]",
+            "figureLabel": "presentation.coverLabels[0]",
+            "figureCaption": "presentation.coverLabels[1]"
+          }
+        },
+        {
+          "id": "v3",
+          "kind": "template",
+          "layout": "theme03_page002",
+          "props": {
+            "itemCount": 0,
+            "stats": [],
+            "showMeta": false,
+            "statCount": 0
+          },
+          "contentMap": {
+            "kicker": "presentation.title",
+            "sub": "presentation.summary",
+            "meta": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "supplementTextFallback": true,
+              "textFallbackOnly": true,
+              "limit": 1,
+              "select": "labelWithValueAndSupporting"
+            },
+            "eyebrow": "presentation.coverLabels[0]",
+            "titleA": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 4,
+              "truncate": true
+            },
+            "titleAccent": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 5,
+              "truncate": true
+            },
+            "titleB": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 6,
+              "truncate": true
+            },
+            "titleC": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 7,
+              "truncate": true
+            }
+          }
+        },
+        {
+          "id": "v4",
+          "kind": "bespoke",
+          "adjustable": false,
+          "composition": {
+            "designIntent": {
+              "objective": "为园区管理委员会提供是否批准 72 万元、12 周能源协同优化试点的决策依据",
+              "audience": "园区管理委员会、运营负责人、财务负责人和能源经理",
+              "narrativeRole": "cover",
+              "emphasis": "模拟决策样例｜不代表真实客户经营数据",
+              "rationale": "以单一主标题和非对称留白建立主张",
+              "compositionFamily": "hero"
+            },
+            "background": "dark",
+            "elements": [
+              {
+                "id": "page-kicker",
+                "type": "text",
+                "grid": {
+                  "column": 1,
+                  "row": 1,
+                  "width": 5,
+                  "height": 1
+                },
+                "role": "kicker",
+                "tone": "accent",
+                "align": "left",
+                "text": ""
+              },
+              {
+                "id": "page-label",
+                "type": "text",
+                "grid": {
+                  "column": 11,
+                  "row": 1,
+                  "width": 2,
+                  "height": 1
+                },
+                "role": "label",
+                "tone": "muted",
+                "align": "right",
+                "text": ""
+              },
+              {
+                "id": "page-title",
+                "type": "text",
+                "grid": {
+                  "column": 1,
+                  "row": 2,
+                  "width": 10,
+                  "height": 3
+                },
+                "role": "title",
+                "tone": "default",
+                "align": "left",
+                "text": ""
+              },
+              {
+                "id": "hero-summary",
+                "type": "text",
+                "grid": {
+                  "column": 1,
+                  "row": 6,
+                  "width": 7,
+                  "height": 2
+                },
+                "role": "subtitle",
+                "tone": "default",
+                "align": "left",
+                "text": ""
+              },
+              {
+                "id": "hero-takeaway",
+                "type": "text",
+                "grid": {
+                  "column": 9,
+                  "row": 6,
+                  "width": 4,
+                  "height": 2
+                },
+                "role": "body",
+                "tone": "accent",
+                "align": "left",
+                "text": ""
+              }
+            ]
+          },
+          "contentMap": {
+            "elements[0].text": "meta.panelTitle",
+            "elements[1].text": "meta.pageLabel",
+            "elements[2].text": "presentation.title",
+            "elements[3].text": "presentation.summary",
+            "elements[4].text": "presentation.takeaway"
+          }
+        }
+      ]
+    },
+    {
+      "content": {
+        "presentation": {
+          "title": "峰值与设备孤岛正在放大能源成本",
+          "titleShort": "峰值与设备孤岛放大成本",
+          "summary": "园区已有光伏、储能与分项计量，但调度仍按设备各自优化，负荷高峰缺少统一策略。",
+          "summaryShort": "设备齐全，协同不足",
+          "takeaway": "先用一个园区验证统一调度，再决定是否复制到其他基地。",
+          "items": [
+            {
+              "id": "electricity",
+              "label": "年用电量",
+              "value": 28.6,
+              "displayValue": "28.6 GWh",
+              "unit": "GWh",
+              "detail": "模拟基线",
+              "required": true,
+              "priority": 1,
+              "emptyText": "",
+              "focus": false,
+              "valueText": "28.6 GWh",
+              "labelWithValue": "28.6 GWh · 年用电量",
+              "labelWithSupporting": "年用电量：模拟基线",
+              "labelWithValueAndSupporting": "28.6 GWh · 年用电量｜模拟基线",
+              "chartValue": 28.6,
+              "chartUnit": "unit:gwh"
+            },
+            {
+              "id": "peak",
+              "label": "最大需量",
+              "value": 8.4,
+              "displayValue": "8.4 MW",
+              "unit": "MW",
+              "detail": "夏季工作日峰值",
+              "required": true,
+              "priority": 1,
+              "emptyText": "",
+              "focus": false,
+              "valueText": "8.4 MW",
+              "labelWithValue": "8.4 MW · 最大需量",
+              "labelWithSupporting": "最大需量：夏季工作日峰值",
+              "labelWithValueAndSupporting": "8.4 MW · 最大需量｜夏季工作日峰值",
+              "chartValue": 8.4,
+              "chartUnit": "unit:mw"
+            },
+            {
+              "id": "assets",
+              "label": "可调资源",
+              "value": 3,
+              "displayValue": "3 类",
+              "unit": "类",
+              "detail": "光伏、储能、柔性负荷",
+              "required": true,
+              "priority": 1,
+              "emptyText": "",
+              "focus": false,
+              "valueText": "3 类",
+              "labelWithValue": "3 类 · 可调资源",
+              "labelWithSupporting": "可调资源：光伏、储能、柔性负荷",
+              "labelWithValueAndSupporting": "3 类 · 可调资源｜光伏、储能、柔性负荷",
+              "chartValue": 3,
+              "chartUnit": "unit:类"
+            }
+          ],
+          "coverLabels": [
+            "现状判断"
+          ],
+          "chartData": [],
+          "mediaAlt": "工业园区能源中控室模拟主视觉"
+        },
+        "media": [
+          "assets/user-media/gridwise-energy-control-room.png"
+        ],
+        "meta": {
+          "brand": "GRIDWISE LAB",
+          "pageLabel": "02",
+          "unit": "",
+          "panelTitle": "现状判断",
+          "date": "",
+          "empty": ""
+        }
+      },
+      "selectedVariant": "v1",
+      "variants": [
+        {
+          "id": "v1",
+          "kind": "template",
+          "layout": "theme03_page076",
+          "props": {
+            "chipCount": 3,
+            "images": [
+              "assets/user-media/gridwise-energy-control-room.png"
+            ],
+            "imageCount": 1
+          },
+          "contentMap": {
+            "kicker": "presentation.title",
+            "lead": "presentation.summary",
+            "chips": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "limit": 3,
+              "select": "labelWithSupporting"
+            },
+            "eyebrow": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 24,
+              "index": 3,
+              "truncate": true
+            },
+            "sectorTag": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 24,
+              "index": 4,
+              "truncate": true
+            },
+            "titlePrefix": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 5,
+              "truncate": true
+            },
+            "titleAccent": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 6,
+              "truncate": true
+            },
+            "titleSuffix": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 7,
+              "truncate": true
+            },
+            "figureValue": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 8,
+              "truncate": true
+            },
+            "figureUnit": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 9,
+              "truncate": true
+            },
+            "figureCaption": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 26,
+              "index": 10,
+              "truncate": true
+            },
+            "calloutLabel": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 11,
+              "truncate": true
+            },
+            "calloutBody": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 42,
+              "index": 12,
+              "truncate": true
+            },
+            "galleryNote": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 26,
+              "index": 13,
+              "truncate": true
+            }
+          }
+        },
+        {
+          "id": "v2",
+          "kind": "template",
+          "layout": "theme03_page018",
+          "props": {
+            "images": [
+              "assets/user-media/gridwise-energy-control-room.png"
+            ],
+            "imageCount": 1
+          },
+          "contentMap": {
+            "title": "presentation.title",
+            "lead": "presentation.summary",
+            "milestones": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "supplementTextFallback": true,
+              "limit": 4,
+              "fields": {
+                "time": "label",
+                "label": "projectionLabel",
+                "detail": "labelWithSupporting"
+              }
+            },
+            "eyebrow": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 3,
+              "truncate": true
+            },
+            "kicker": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 26,
+              "index": 4,
+              "truncate": true
+            },
+            "caseTag": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 20,
+              "index": 5,
+              "truncate": true
+            },
+            "quoteBody": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 42,
+              "index": 6,
+              "truncate": true
+            },
+            "quoteAttribution": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 20,
+              "index": 7,
+              "truncate": true
+            }
+          }
+        },
+        {
+          "id": "v3",
+          "kind": "template",
+          "layout": "theme03_page075",
+          "props": {
+            "chipCount": 3,
+            "images": [
+              "assets/user-media/gridwise-energy-control-room.png"
+            ],
+            "imageCount": 1
+          },
+          "contentMap": {
+            "kicker": "presentation.title",
+            "lead": "presentation.summary",
+            "chips": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "limit": 3,
+              "select": "labelWithSupporting"
+            },
+            "eyebrow": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 24,
+              "index": 3,
+              "truncate": true
+            },
+            "sectorTag": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 4,
+              "truncate": true
+            },
+            "titlePrefix": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 5,
+              "truncate": true
+            },
+            "titleAccent": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 6,
+              "truncate": true
+            },
+            "titleSuffix": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 7,
+              "truncate": true
+            },
+            "figureValue": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 8,
+              "truncate": true
+            },
+            "figureUnit": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 9,
+              "truncate": true
+            },
+            "figureCaption": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 20,
+              "index": 10,
+              "truncate": true
+            },
+            "calloutLabel": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 11,
+              "truncate": true
+            },
+            "calloutBody": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 42,
+              "index": 12,
+              "truncate": true
+            },
+            "galleryNote": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 26,
+              "index": 13,
+              "truncate": true
+            }
+          }
+        },
+        {
+          "id": "v4",
+          "kind": "bespoke",
+          "adjustable": false,
+          "composition": {
+            "designIntent": {
+              "objective": "为园区管理委员会提供是否批准 72 万元、12 周能源协同优化试点的决策依据",
+              "audience": "园区管理委员会、运营负责人、财务负责人和能源经理",
+              "narrativeRole": "image",
+              "emphasis": "先用一个园区验证统一调度，再决定是否复制到其他基地。",
+              "rationale": "以真实场景图建立业务语境，右侧保留三项可审计基线",
+              "compositionFamily": "split"
+            },
+            "background": "dark",
+            "elements": [
+              {
+                "id": "page-kicker",
+                "type": "text",
+                "grid": {
+                  "column": 1,
+                  "row": 1,
+                  "width": 5,
+                  "height": 1
+                },
+                "role": "kicker",
+                "tone": "accent",
+                "align": "left",
+                "text": ""
+              },
+              {
+                "id": "page-label",
+                "type": "text",
+                "grid": {
+                  "column": 11,
+                  "row": 1,
+                  "width": 2,
+                  "height": 1
+                },
+                "role": "label",
+                "tone": "muted",
+                "align": "right",
+                "text": ""
+              },
+              {
+                "id": "page-title",
+                "type": "text",
+                "grid": {
+                  "column": 1,
+                  "row": 2,
+                  "width": 11,
+                  "height": 2
+                },
+                "role": "title",
+                "tone": "default",
+                "align": "left",
+                "text": ""
+              },
+              {
+                "id": "control-room",
+                "type": "media",
+                "grid": {
+                  "column": 1,
+                  "row": 4,
+                  "width": 7,
+                  "height": 5
+                },
+                "src": "",
+                "alt": "",
+                "fit": "cover"
+              },
+              {
+                "id": "baseline-facts",
+                "type": "list",
+                "grid": {
+                  "column": 8,
+                  "row": 4,
+                  "width": 5,
+                  "height": 5
+                },
+                "ordered": false,
+                "tone": "accent",
+                "items": []
+              }
+            ]
+          },
+          "contentMap": {
+            "elements[0].text": "meta.panelTitle",
+            "elements[1].text": "meta.pageLabel",
+            "elements[2].text": "presentation.title",
+            "elements[3].src": "media[0]",
+            "elements[3].alt": "presentation.mediaAlt",
+            "elements[4].items": {
+              "source": "presentation.items",
+              "fields": {
+                "title": "labelWithValue",
+                "body": "detail"
+              },
+              "limit": 3
+            }
+          }
+        }
+      ]
+    },
+    {
+      "content": {
+        "presentation": {
+          "title": "统一数据与控制闭环是试点的核心",
+          "titleShort": "统一数据与控制闭环",
+          "summary": "先把计量、预测、策略与执行串成闭环，不在试点期替换已有设备控制系统。",
+          "summaryShort": "叠加协同层，不替换底层系统",
+          "takeaway": "试点的工程目标是可回退、可审计、可复制。",
+          "items": [
+            {
+              "id": "sense",
+              "label": "采集",
+              "detail": "15 分钟粒度汇聚电表、气象与设备状态",
+              "required": true,
+              "priority": 1,
+              "unit": "",
+              "emptyText": "",
+              "focus": false,
+              "displayValue": "",
+              "valueText": "",
+              "labelWithValue": "采集",
+              "labelWithSupporting": "采集：15 分钟粒度汇聚电表、气象与设备状态",
+              "labelWithValueAndSupporting": "采集｜15 分钟粒度汇聚电表、气象与设备状态"
+            },
+            {
+              "id": "predict",
+              "label": "预测",
+              "detail": "滚动预测次日负荷与光伏出力",
+              "required": true,
+              "priority": 1,
+              "unit": "",
+              "emptyText": "",
+              "focus": false,
+              "displayValue": "",
+              "valueText": "",
+              "labelWithValue": "预测",
+              "labelWithSupporting": "预测：滚动预测次日负荷与光伏出力",
+              "labelWithValueAndSupporting": "预测｜滚动预测次日负荷与光伏出力"
+            },
+            {
+              "id": "optimize",
+              "label": "优化",
+              "detail": "同时约束需量、电价与生产计划",
+              "required": true,
+              "priority": 1,
+              "unit": "",
+              "emptyText": "",
+              "focus": false,
+              "displayValue": "",
+              "valueText": "",
+              "labelWithValue": "优化",
+              "labelWithSupporting": "优化：同时约束需量、电价与生产计划",
+              "labelWithValueAndSupporting": "优化｜同时约束需量、电价与生产计划"
+            },
+            {
+              "id": "execute",
+              "label": "执行",
+              "detail": "下发储能与柔性负荷策略并保留人工接管",
+              "required": true,
+              "priority": 1,
+              "unit": "",
+              "emptyText": "",
+              "focus": false,
+              "displayValue": "",
+              "valueText": "",
+              "labelWithValue": "执行",
+              "labelWithSupporting": "执行：下发储能与柔性负荷策略并保留人工接管",
+              "labelWithValueAndSupporting": "执行｜下发储能与柔性负荷策略并保留人工接管"
+            },
+            {
+              "id": "learn",
+              "label": "复盘",
+              "detail": "按班次解释收益、偏差与异常",
+              "required": true,
+              "priority": 1,
+              "unit": "",
+              "emptyText": "",
+              "focus": false,
+              "displayValue": "",
+              "valueText": "",
+              "labelWithValue": "复盘",
+              "labelWithSupporting": "复盘：按班次解释收益、偏差与异常",
+              "labelWithValueAndSupporting": "复盘｜按班次解释收益、偏差与异常"
+            }
+          ],
+          "coverLabels": [
+            "方案闭环"
+          ],
+          "chartData": []
+        },
+        "media": [],
+        "meta": {
+          "brand": "GRIDWISE LAB",
+          "pageLabel": "03",
+          "unit": "",
+          "panelTitle": "方案闭环",
+          "date": "",
+          "empty": ""
+        }
+      },
+      "selectedVariant": "v1",
+      "variants": [
+        {
+          "id": "v1",
+          "kind": "template",
+          "layout": "theme03_page006",
+          "props": {
+            "itemCount": 5
+          },
+          "contentMap": {
+            "kicker": "presentation.title",
+            "chapters": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "limit": 5,
+              "fields": {
+                "idx": "projectionOrdinal",
+                "title": "label",
+                "en": "projectionLabel"
+              }
+            },
+            "eyebrow": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 3,
+              "truncate": true
+            },
+            "titlePre": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 4,
+              "truncate": true
+            },
+            "titleAccent": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 5,
+              "truncate": true
+            }
+          }
+        },
+        {
+          "id": "v2",
+          "kind": "template",
+          "layout": "theme03_page007",
+          "props": {
+            "cardCount": 3
+          },
+          "contentMap": {
+            "kicker": "presentation.title",
+            "cards": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "group": 3,
+              "limit": 3,
+              "fields": {
+                "idx": "projectionOrdinal",
+                "name": "labelWithValue",
+                "dim": "label",
+                "desc": "labelWithSupporting"
+              }
+            },
+            "diagramStyle": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 3,
+              "truncate": true
+            },
+            "eyebrow": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 4,
+              "truncate": true
+            },
+            "leadTitle": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 5,
+              "truncate": true
+            },
+            "leadBody": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 42,
+              "index": 6,
+              "truncate": true
+            },
+            "leadNote": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 24,
+              "index": 7,
+              "truncate": true
+            }
+          }
+        },
+        {
+          "id": "v3",
+          "kind": "template",
+          "layout": "theme03_page018",
+          "props": {
+            "images": [],
+            "imageCount": 0
+          },
+          "contentMap": {
+            "title": "presentation.title",
+            "lead": "presentation.summary",
+            "milestones": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "group": 4,
+              "limit": 4,
+              "fields": {
+                "time": "labelWithValue",
+                "label": "label",
+                "detail": "labelWithSupporting"
+              }
+            },
+            "eyebrow": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 3,
+              "truncate": true
+            },
+            "kicker": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 26,
+              "index": 4,
+              "truncate": true
+            },
+            "caseTag": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 20,
+              "index": 5,
+              "truncate": true
+            },
+            "quoteBody": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 42,
+              "index": 6,
+              "truncate": true
+            },
+            "quoteAttribution": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 20,
+              "index": 7,
+              "truncate": true
+            }
+          }
+        },
+        {
+          "id": "v4",
+          "kind": "bespoke",
+          "adjustable": false,
+          "composition": {
+            "designIntent": {
+              "objective": "为园区管理委员会提供是否批准 72 万元、12 周能源协同优化试点的决策依据",
+              "audience": "园区管理委员会、运营负责人、财务负责人和能源经理",
+              "narrativeRole": "process",
+              "emphasis": "试点的工程目标是可回退、可审计、可复制。",
+              "rationale": "以垂直时间轴表达先后关系和推进节奏",
+              "compositionFamily": "timeline"
+            },
+            "background": "default",
+            "elements": [
+              {
+                "id": "page-kicker",
+                "type": "text",
+                "grid": {
+                  "column": 1,
+                  "row": 1,
+                  "width": 5,
+                  "height": 1
+                },
+                "role": "kicker",
+                "tone": "accent",
+                "align": "left",
+                "text": ""
+              },
+              {
+                "id": "page-label",
+                "type": "text",
+                "grid": {
+                  "column": 11,
+                  "row": 1,
+                  "width": 2,
+                  "height": 1
+                },
+                "role": "label",
+                "tone": "muted",
+                "align": "right",
+                "text": ""
+              },
+              {
+                "id": "page-title",
+                "type": "text",
+                "grid": {
+                  "column": 1,
+                  "row": 2,
+                  "width": 10,
+                  "height": 2
+                },
+                "role": "title",
+                "tone": "default",
+                "align": "left",
+                "text": ""
+              },
+              {
+                "id": "timeline-items",
+                "type": "list",
+                "grid": {
+                  "column": 1,
+                  "row": 4,
+                  "width": 12,
+                  "height": 5
+                },
+                "ordered": true,
+                "tone": "accent",
+                "items": []
+              }
+            ]
+          },
+          "contentMap": {
+            "elements[0].text": "meta.panelTitle",
+            "elements[1].text": "meta.pageLabel",
+            "elements[2].text": "presentation.title",
+            "elements[3].items": {
+              "source": "presentation.items",
+              "fields": {
+                "title": "labelWithValue",
+                "body": "detail"
+              },
+              "limit": 5
+            }
+          }
+        }
+      ]
+    },
+    {
+      "content": {
+        "presentation": {
+          "title": "两类负荷贡献了 73% 的用电基线",
+          "titleShort": "两类负荷占用电基线 73%",
+          "summary": "工艺设备与空调是优先优化对象；储能用于削峰，而不是替代效率改造。",
+          "summaryShort": "先抓工艺设备与空调",
+          "takeaway": "试点策略优先覆盖工艺排程、冷站联动与储能峰值控制。",
+          "items": [
+            {
+              "id": "process",
+              "label": "工艺设备",
+              "value": 52,
+              "displayValue": "52%",
+              "unit": "%",
+              "detail": "可通过排程与待机策略优化",
+              "required": true,
+              "priority": 1,
+              "emptyText": "",
+              "focus": false,
+              "valueText": "52%",
+              "labelWithValue": "52% · 工艺设备",
+              "labelWithSupporting": "工艺设备：可通过排程与待机策略优化",
+              "labelWithValueAndSupporting": "52% · 工艺设备｜可通过排程与待机策略优化",
+              "chartValue": 52,
+              "chartUnit": "percent"
+            },
+            {
+              "id": "hvac",
+              "label": "暖通空调",
+              "value": 21,
+              "displayValue": "21%",
+              "unit": "%",
+              "detail": "可通过冷站与末端协同优化",
+              "required": true,
+              "priority": 1,
+              "emptyText": "",
+              "focus": false,
+              "valueText": "21%",
+              "labelWithValue": "21% · 暖通空调",
+              "labelWithSupporting": "暖通空调：可通过冷站与末端协同优化",
+              "labelWithValueAndSupporting": "21% · 暖通空调｜可通过冷站与末端协同优化",
+              "chartValue": 21,
+              "chartUnit": "percent"
+            },
+            {
+              "id": "air",
+              "label": "空压系统",
+              "value": 14,
+              "displayValue": "14%",
+              "unit": "%",
+              "detail": "关注泄漏与群控",
+              "required": true,
+              "priority": 1,
+              "emptyText": "",
+              "focus": false,
+              "valueText": "14%",
+              "labelWithValue": "14% · 空压系统",
+              "labelWithSupporting": "空压系统：关注泄漏与群控",
+              "labelWithValueAndSupporting": "14% · 空压系统｜关注泄漏与群控",
+              "chartValue": 14,
+              "chartUnit": "percent"
+            },
+            {
+              "id": "aux",
+              "label": "辅助系统",
+              "value": 9,
+              "displayValue": "9%",
+              "unit": "%",
+              "detail": "照明与通用动力",
+              "required": true,
+              "priority": 1,
+              "emptyText": "",
+              "focus": false,
+              "valueText": "9%",
+              "labelWithValue": "9% · 辅助系统",
+              "labelWithSupporting": "辅助系统：照明与通用动力",
+              "labelWithValueAndSupporting": "9% · 辅助系统｜照明与通用动力",
+              "chartValue": 9,
+              "chartUnit": "percent"
+            },
+            {
+              "id": "loss",
+              "label": "线损与其他",
+              "value": 4,
+              "displayValue": "4%",
+              "unit": "%",
+              "detail": "作为校核项",
+              "required": true,
+              "priority": 1,
+              "emptyText": "",
+              "focus": false,
+              "valueText": "4%",
+              "labelWithValue": "4% · 线损与其他",
+              "labelWithSupporting": "线损与其他：作为校核项",
+              "labelWithValueAndSupporting": "4% · 线损与其他｜作为校核项",
+              "chartValue": 4,
+              "chartUnit": "percent"
+            }
+          ],
+          "chartData": [
+            {
+              "id": "process",
+              "label": "工艺设备",
+              "value": 52,
+              "displayValue": "52%",
+              "unit": "%",
+              "chartUnit": "percent"
+            },
+            {
+              "id": "hvac",
+              "label": "暖通空调",
+              "value": 21,
+              "displayValue": "21%",
+              "unit": "%",
+              "chartUnit": "percent"
+            },
+            {
+              "id": "air",
+              "label": "空压系统",
+              "value": 14,
+              "displayValue": "14%",
+              "unit": "%",
+              "chartUnit": "percent"
+            },
+            {
+              "id": "aux",
+              "label": "辅助系统",
+              "value": 9,
+              "displayValue": "9%",
+              "unit": "%",
+              "chartUnit": "percent"
+            },
+            {
+              "id": "loss",
+              "label": "线损与其他",
+              "value": 4,
+              "displayValue": "4%",
+              "unit": "%",
+              "chartUnit": "percent"
+            }
+          ],
+          "coverLabels": [
+            "负荷结构",
+            "模拟数据"
+          ]
+        },
+        "media": [],
+        "meta": {
+          "brand": "GRIDWISE LAB",
+          "pageLabel": "04",
+          "unit": "模拟数据",
+          "panelTitle": "负荷结构",
+          "date": "",
+          "empty": ""
+        }
+      },
+      "selectedVariant": "v1",
+      "variants": [
+        {
+          "id": "v1",
+          "kind": "template",
+          "layout": "theme03_page060",
+          "props": {
+            "showCallout": false,
+            "copy": {}
+          },
+          "contentMap": {
+            "title": "presentation.title",
+            "data": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "filter": "value-bearing",
+              "group": 4,
+              "limit": 4,
+              "fields": {
+                "label": "labelWithValue",
+                "amt": "chartValue",
+                "cnt": "chartValue"
+              }
+            },
+            "calloutSegments": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "supplementTextFallback": true,
+              "textFallbackOnly": true,
+              "group": 1,
+              "limit": 1,
+              "fields": {
+                "t": "labelWithValue"
+              }
+            },
+            "calloutLabel": {
+              "source": "presentation",
+              "derive": "supporting-summary"
+            },
+            "eyebrow": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 3,
+              "truncate": true
+            },
+            "kicker": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 29,
+              "index": 4,
+              "truncate": true
+            },
+            "titleNote": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 29,
+              "index": 5,
+              "truncate": true
+            },
+            "copy.t001": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 6,
+              "truncate": true
+            }
+          }
+        },
+        {
+          "id": "v2",
+          "kind": "template",
+          "layout": "theme03_page061",
+          "props": {},
+          "contentMap": {
+            "title": "presentation.title",
+            "sectors": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "filter": "value-bearing",
+              "limit": 5,
+              "fields": {
+                "cn": "label",
+                "en": "projectionLabel",
+                "amt": "chartValue",
+                "pct": "displayValue",
+                "firms": "labelWithValue"
+              }
+            },
+            "eyebrow": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 3,
+              "truncate": true
+            },
+            "kicker": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 29,
+              "index": 4,
+              "truncate": true
+            },
+            "titleNote": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 31,
+              "index": 5,
+              "truncate": true
+            },
+            "unit": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 6,
+              "truncate": true
+            },
+            "calloutLabel": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 7,
+              "truncate": true
+            },
+            "calloutBody": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 42,
+              "index": 8,
+              "truncate": true
+            }
+          }
+        },
+        {
+          "id": "v3",
+          "kind": "template",
+          "layout": "theme03_page011",
+          "props": {
+            "itemCount": 5
+          },
+          "contentMap": {
+            "title": "presentation.title",
+            "subtitle": "presentation.summary",
+            "data": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "filter": "value-bearing",
+              "limit": 5,
+              "fields": {
+                "name": "label",
+                "amt": "chartValue",
+                "sector": "projectionLabel"
+              }
+            },
+            "eyebrow": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 3,
+              "truncate": true
+            },
+            "kicker": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 26,
+              "index": 4,
+              "truncate": true
+            },
+            "calloutLabel": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 5,
+              "truncate": true
+            },
+            "calloutBody": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 42,
+              "index": 6,
+              "truncate": true
+            }
+          }
+        },
+        {
+          "id": "v4",
+          "kind": "bespoke",
+          "adjustable": false,
+          "composition": {
+            "designIntent": {
+              "objective": "为园区管理委员会提供是否批准 72 万元、12 周能源协同优化试点的决策依据",
+              "audience": "园区管理委员会、运营负责人、财务负责人和能源经理",
+              "narrativeRole": "breakdown",
+              "emphasis": "试点策略优先覆盖工艺排程、冷站联动与储能峰值控制。",
+              "rationale": "以负荷占比图为主视觉，结论和行动含义置于右侧",
+              "compositionFamily": "chart-led"
+            },
+            "background": "default",
+            "elements": [
+              {
+                "id": "page-kicker",
+                "type": "text",
+                "grid": {
+                  "column": 1,
+                  "row": 1,
+                  "width": 5,
+                  "height": 1
+                },
+                "role": "kicker",
+                "tone": "accent",
+                "align": "left",
+                "text": ""
+              },
+              {
+                "id": "page-label",
+                "type": "text",
+                "grid": {
+                  "column": 11,
+                  "row": 1,
+                  "width": 2,
+                  "height": 1
+                },
+                "role": "label",
+                "tone": "muted",
+                "align": "right",
+                "text": ""
+              },
+              {
+                "id": "page-title",
+                "type": "text",
+                "grid": {
+                  "column": 1,
+                  "row": 2,
+                  "width": 10,
+                  "height": 2
+                },
+                "role": "title",
+                "tone": "default",
+                "align": "left",
+                "text": ""
+              },
+              {
+                "id": "main-chart",
+                "type": "chart",
+                "grid": {
+                  "column": 1,
+                  "row": 4,
+                  "width": 8,
+                  "height": 5
+                },
+                "tone": "accent",
+                "chartType": "bar",
+                "data": [],
+                "showValues": true
+              },
+              {
+                "id": "chart-summary",
+                "type": "text",
+                "grid": {
+                  "column": 9,
+                  "row": 4,
+                  "width": 4,
+                  "height": 2
+                },
+                "role": "subtitle",
+                "tone": "default",
+                "align": "left",
+                "text": ""
+              },
+              {
+                "id": "chart-takeaway",
+                "type": "text",
+                "grid": {
+                  "column": 9,
+                  "row": 7,
+                  "width": 4,
+                  "height": 2
+                },
+                "role": "body",
+                "tone": "accent",
+                "align": "left",
+                "text": ""
+              }
+            ]
+          },
+          "contentMap": {
+            "elements[0].text": "meta.panelTitle",
+            "elements[1].text": "meta.pageLabel",
+            "elements[2].text": "presentation.title",
+            "elements[3].data": {
+              "source": "presentation.chartData",
+              "fields": {
+                "label": "label",
+                "value": "value",
+                "displayValue": "displayValue",
+                "unit": "unit"
+              }
+            },
+            "elements[4].text": "presentation.summary",
+            "elements[5].text": "presentation.takeaway"
+          }
+        }
+      ]
+    },
+    {
+      "content": {
+        "presentation": {
+          "title": "72 万元试点换取三项可验证收益",
+          "titleShort": "72 万元验证三项收益",
+          "summary": "收益采用门槛而非承诺值：只有同时满足节能、削峰和可运营性，才进入规模化。",
+          "summaryShort": "用门槛管理预期",
+          "takeaway": "预计年化收益 235 万元、静态回收期约 3.7 个月；均为模拟测算。",
+          "items": [
+            {
+              "id": "budget",
+              "label": "试点投入",
+              "value": 72,
+              "displayValue": "72 万元",
+              "unit": "万元",
+              "detail": "数据接入、策略引擎与现场服务",
+              "required": true,
+              "priority": 1,
+              "emptyText": "",
+              "focus": false,
+              "valueText": "72 万元",
+              "labelWithValue": "72 万元 · 试点投入",
+              "labelWithSupporting": "试点投入：数据接入、策略引擎与现场服务",
+              "labelWithValueAndSupporting": "72 万元 · 试点投入｜数据接入、策略引擎与现场服务",
+              "chartValue": 72,
+              "chartUnit": "unit:万元"
+            },
+            {
+              "id": "saving",
+              "label": "节电门槛",
+              "value": 8,
+              "displayValue": "≥ 8%",
+              "unit": "%",
+              "detail": "按天气与产量归一化",
+              "required": true,
+              "priority": 1,
+              "emptyText": "",
+              "focus": false,
+              "valueText": "≥ 8%",
+              "labelWithValue": "≥ 8% · 节电门槛",
+              "labelWithSupporting": "节电门槛：按天气与产量归一化",
+              "labelWithValueAndSupporting": "≥ 8% · 节电门槛｜按天气与产量归一化",
+              "chartValue": 8,
+              "chartUnit": "percent"
+            },
+            {
+              "id": "peak-cut",
+              "label": "削峰门槛",
+              "value": 12,
+              "displayValue": "≥ 12%",
+              "unit": "%",
+              "detail": "以最大需量口径核算",
+              "required": true,
+              "priority": 1,
+              "emptyText": "",
+              "focus": false,
+              "valueText": "≥ 12%",
+              "labelWithValue": "≥ 12% · 削峰门槛",
+              "labelWithSupporting": "削峰门槛：以最大需量口径核算",
+              "labelWithValueAndSupporting": "≥ 12% · 削峰门槛｜以最大需量口径核算",
+              "chartValue": 12,
+              "chartUnit": "percent"
+            },
+            {
+              "id": "payback",
+              "label": "回收期门槛",
+              "value": 12,
+              "displayValue": "≤ 12 个月",
+              "unit": "月",
+              "detail": "通过后才复制",
+              "required": true,
+              "priority": 1,
+              "emptyText": "",
+              "focus": false,
+              "valueText": "≤ 12 个月",
+              "labelWithValue": "≤ 12 个月 · 回收期门槛",
+              "labelWithSupporting": "回收期门槛：通过后才复制",
+              "labelWithValueAndSupporting": "≤ 12 个月 · 回收期门槛｜通过后才复制",
+              "chartValue": 12,
+              "chartUnit": "unit:月"
+            }
+          ],
+          "coverLabels": [
+            "经济性门槛",
+            "模拟测算"
+          ],
+          "chartData": []
+        },
+        "media": [],
+        "meta": {
+          "brand": "GRIDWISE LAB",
+          "pageLabel": "05",
+          "unit": "模拟测算",
+          "panelTitle": "经济性门槛",
+          "date": "",
+          "empty": ""
+        }
+      },
+      "selectedVariant": "v1",
+      "variants": [
+        {
+          "id": "v1",
+          "kind": "template",
+          "layout": "theme03_page040",
+          "props": {
+            "stageCount": 4
+          },
+          "contentMap": {
+            "title": "presentation.title",
+            "subtitle": "presentation.summary",
+            "stages": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "limit": 4,
+              "fields": {
+                "L": "label",
+                "cn": "projectionLabel",
+                "en": "labelWithValue",
+                "value": "displayValue",
+                "kpi": "projectionTag",
+                "rate": "projectionValue",
+                "note": "labelWithSupporting"
+              }
+            },
+            "eyebrow": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 3,
+              "truncate": true
+            },
+            "kicker": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 22,
+              "index": 4,
+              "truncate": true
+            },
+            "panelTitle": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "titleShort",
+                "summaryShort",
+                "takeaway"
+              ],
+              "maxChars": 24,
+              "index": 5,
+              "truncate": true
+            },
+            "ratePrefix": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 6,
+              "truncate": true
+            },
+            "annotationLabel": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 7,
+              "truncate": true
+            },
+            "annotationBody": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 42,
+              "index": 8,
+              "truncate": true
+            }
+          }
+        },
+        {
+          "id": "v2",
+          "kind": "template",
+          "layout": "theme03_page031",
+          "props": {},
+          "contentMap": {
+            "title": "presentation.title",
+            "data": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "filter": "value-bearing",
+              "group": 3,
+              "limit": 3,
+              "fields": {
+                "label": "labelWithValue",
+                "en": "label",
+                "val": "chartValue",
+                "raise": "chartValue"
+              }
+            },
+            "calloutBody": {
+              "source": "presentation",
+              "derive": "supporting-summary"
+            },
+            "eyebrow": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 3,
+              "truncate": true
+            },
+            "kicker": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 29,
+              "index": 4,
+              "truncate": true
+            },
+            "primaryLegend": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 5,
+              "truncate": true
+            },
+            "secondaryLegend": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 6,
+              "truncate": true
+            },
+            "focusUnit": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 7,
+              "truncate": true
+            },
+            "focusRaisePre": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 8,
+              "truncate": true
+            },
+            "focusRaiseSuffix": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 9,
+              "truncate": true
+            },
+            "calloutLabel": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 10,
+              "truncate": true
+            }
+          }
+        },
+        {
+          "id": "v3",
+          "kind": "template",
+          "layout": "theme03_page008",
+          "props": {},
+          "contentMap": {
+            "kicker": "presentation.title",
+            "data": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "filter": "value-bearing",
+              "limit": 4,
+              "fields": {
+                "label": "label",
+                "amount": "chartValue",
+                "count": "chartValue"
+              }
+            },
+            "eyebrow": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 3,
+              "truncate": true
+            },
+            "chartTitle": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 4,
+              "truncate": true
+            },
+            "figureValue": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 5,
+              "truncate": true
+            },
+            "figureUnit": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 6,
+              "truncate": true
+            },
+            "figureCaption": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 40,
+              "index": 7,
+              "truncate": true
+            },
+            "annotationLabel": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 8,
+              "truncate": true
+            },
+            "annotationBody": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 42,
+              "index": 9,
+              "truncate": true
+            },
+            "primaryLegend": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 10,
+              "truncate": true
+            },
+            "secondaryLegend": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 11,
+              "truncate": true
+            }
+          }
+        },
+        {
+          "id": "v4",
+          "kind": "bespoke",
+          "adjustable": false,
+          "composition": {
+            "designIntent": {
+              "objective": "为园区管理委员会提供是否批准 72 万元、12 周能源协同优化试点的决策依据",
+              "audience": "园区管理委员会、运营负责人、财务负责人和能源经理",
+              "narrativeRole": "comparison",
+              "emphasis": "预计年化收益 235 万元、静态回收期约 3.7 个月；均为模拟测算。",
+              "rationale": "以左右对照保持两组信息的可比性",
+              "compositionFamily": "comparison"
+            },
+            "background": "default",
+            "elements": [
+              {
+                "id": "page-kicker",
+                "type": "text",
+                "grid": {
+                  "column": 1,
+                  "row": 1,
+                  "width": 5,
+                  "height": 1
+                },
+                "role": "kicker",
+                "tone": "accent",
+                "align": "left",
+                "text": ""
+              },
+              {
+                "id": "page-label",
+                "type": "text",
+                "grid": {
+                  "column": 11,
+                  "row": 1,
+                  "width": 2,
+                  "height": 1
+                },
+                "role": "label",
+                "tone": "muted",
+                "align": "right",
+                "text": ""
+              },
+              {
+                "id": "page-title",
+                "type": "text",
+                "grid": {
+                  "column": 1,
+                  "row": 2,
+                  "width": 10,
+                  "height": 2
+                },
+                "role": "title",
+                "tone": "default",
+                "align": "left",
+                "text": ""
+              },
+              {
+                "id": "comparison-left",
+                "type": "list",
+                "grid": {
+                  "column": 1,
+                  "row": 4,
+                  "width": 6,
+                  "height": 5
+                },
+                "ordered": false,
+                "tone": "accent",
+                "items": []
+              },
+              {
+                "id": "comparison-right",
+                "type": "list",
+                "grid": {
+                  "column": 7,
+                  "row": 4,
+                  "width": 6,
+                  "height": 5
+                },
+                "ordered": false,
+                "tone": "positive",
+                "items": []
+              }
+            ]
+          },
+          "contentMap": {
+            "elements[0].text": "meta.panelTitle",
+            "elements[1].text": "meta.pageLabel",
+            "elements[2].text": "presentation.title",
+            "elements[3].items": {
+              "source": "presentation.items",
+              "fields": {
+                "title": "labelWithValue",
+                "body": "detail"
+              },
+              "limit": 2
+            },
+            "elements[4].items": {
+              "source": "presentation.items",
+              "fields": {
+                "title": "labelWithValue",
+                "body": "detail"
+              },
+              "offset": 2,
+              "limit": 2
+            }
+          }
+        }
+      ]
+    },
+    {
+      "content": {
+        "presentation": {
+          "title": "12 周按四个决策门推进",
+          "titleShort": "12 周四个决策门",
+          "summary": "每个阶段都有可交付证据，任何安全或生产约束不满足都可回退到观察模式。",
+          "summaryShort": "每阶段可验收、可回退",
+          "takeaway": "第 12 周只做一个决定：复制、延长验证，或停止。",
+          "items": [
+            {
+              "id": "w1",
+              "label": "第 1–2 周｜基线",
+              "detail": "数据质量、计量边界与收益口径确认",
+              "required": true,
+              "priority": 1,
+              "unit": "",
+              "emptyText": "",
+              "focus": false,
+              "displayValue": "",
+              "valueText": "",
+              "labelWithValue": "第 1–2 周｜基线",
+              "labelWithSupporting": "第 1–2 周｜基线：数据质量、计量边界与收益口径确认",
+              "labelWithValueAndSupporting": "第 1–2 周｜基线｜数据质量、计量边界与收益口径确认"
+            },
+            {
+              "id": "w2",
+              "label": "第 3–5 周｜影子运行",
+              "detail": "只给建议，不下发控制，验证预测与策略",
+              "required": true,
+              "priority": 1,
+              "unit": "",
+              "emptyText": "",
+              "focus": false,
+              "displayValue": "",
+              "valueText": "",
+              "labelWithValue": "第 3–5 周｜影子运行",
+              "labelWithSupporting": "第 3–5 周｜影子运行：只给建议，不下发控制，验证预测与策略",
+              "labelWithValueAndSupporting": "第 3–5 周｜影子运行｜只给建议，不下发控制，验证预测与策略"
+            },
+            {
+              "id": "w3",
+              "label": "第 6–9 周｜受控执行",
+              "detail": "限定设备与时段，逐步扩大策略覆盖",
+              "required": true,
+              "priority": 1,
+              "unit": "",
+              "emptyText": "",
+              "focus": false,
+              "displayValue": "",
+              "valueText": "",
+              "labelWithValue": "第 6–9 周｜受控执行",
+              "labelWithSupporting": "第 6–9 周｜受控执行：限定设备与时段，逐步扩大策略覆盖",
+              "labelWithValueAndSupporting": "第 6–9 周｜受控执行｜限定设备与时段，逐步扩大策略覆盖"
+            },
+            {
+              "id": "w4",
+              "label": "第 10–12 周｜对照评估",
+              "detail": "按班次和天气归一化，完成复制建议",
+              "required": true,
+              "priority": 1,
+              "unit": "",
+              "emptyText": "",
+              "focus": false,
+              "displayValue": "",
+              "valueText": "",
+              "labelWithValue": "第 10–12 周｜对照评估",
+              "labelWithSupporting": "第 10–12 周｜对照评估：按班次和天气归一化，完成复制建议",
+              "labelWithValueAndSupporting": "第 10–12 周｜对照评估｜按班次和天气归一化，完成复制建议"
+            }
+          ],
+          "coverLabels": [
+            "实施路线"
+          ],
+          "chartData": []
+        },
+        "media": [],
+        "meta": {
+          "brand": "GRIDWISE LAB",
+          "pageLabel": "06",
+          "unit": "",
+          "panelTitle": "实施路线",
+          "date": "",
+          "empty": ""
+        }
+      },
+      "selectedVariant": "v1",
+      "variants": [
+        {
+          "id": "v1",
+          "kind": "template",
+          "layout": "theme03_page007",
+          "props": {
+            "cardCount": 3
+          },
+          "contentMap": {
+            "kicker": "presentation.title",
+            "cards": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "group": 3,
+              "limit": 3,
+              "fields": {
+                "idx": "projectionOrdinal",
+                "name": "labelWithValue",
+                "dim": "label",
+                "desc": "labelWithSupporting"
+              }
+            },
+            "diagramStyle": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 3,
+              "truncate": true
+            },
+            "eyebrow": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 4,
+              "truncate": true
+            },
+            "leadTitle": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 5,
+              "truncate": true
+            },
+            "leadBody": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 42,
+              "index": 6,
+              "truncate": true
+            },
+            "leadNote": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 24,
+              "index": 7,
+              "truncate": true
+            }
+          }
+        },
+        {
+          "id": "v2",
+          "kind": "template",
+          "layout": "theme03_page076",
+          "props": {
+            "chipCount": 3,
+            "images": [],
+            "imageCount": 0
+          },
+          "contentMap": {
+            "kicker": "presentation.title",
+            "lead": "presentation.summary",
+            "chips": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "group": 3,
+              "limit": 3,
+              "select": "labelWithValue"
+            },
+            "calloutBody": {
+              "source": "presentation",
+              "derive": "supporting-summary"
+            },
+            "eyebrow": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 24,
+              "index": 3,
+              "truncate": true
+            },
+            "sectorTag": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 24,
+              "index": 4,
+              "truncate": true
+            },
+            "titlePrefix": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 5,
+              "truncate": true
+            },
+            "titleAccent": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 6,
+              "truncate": true
+            },
+            "titleSuffix": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 7,
+              "truncate": true
+            },
+            "figureValue": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 8,
+              "truncate": true
+            },
+            "figureUnit": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 9,
+              "truncate": true
+            },
+            "figureCaption": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 26,
+              "index": 10,
+              "truncate": true
+            },
+            "calloutLabel": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 11,
+              "truncate": true
+            },
+            "galleryNote": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 26,
+              "index": 12,
+              "truncate": true
+            }
+          }
+        },
+        {
+          "id": "v3",
+          "kind": "template",
+          "layout": "theme03_page006",
+          "props": {
+            "itemCount": 4
+          },
+          "contentMap": {
+            "kicker": "presentation.title",
+            "chapters": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "limit": 4,
+              "fields": {
+                "idx": "projectionOrdinal",
+                "title": "label",
+                "en": "projectionLabel"
+              }
+            },
+            "eyebrow": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 3,
+              "truncate": true
+            },
+            "titlePre": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 4,
+              "truncate": true
+            },
+            "titleAccent": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 5,
+              "truncate": true
+            }
+          }
+        },
+        {
+          "id": "v4",
+          "kind": "bespoke",
+          "adjustable": false,
+          "composition": {
+            "designIntent": {
+              "objective": "为园区管理委员会提供是否批准 72 万元、12 周能源协同优化试点的决策依据",
+              "audience": "园区管理委员会、运营负责人、财务负责人和能源经理",
+              "narrativeRole": "actions",
+              "emphasis": "第 12 周只做一个决定：复制、延长验证，或停止。",
+              "rationale": "以四阶段路径呈现 12 周的检查点与可回退机制",
+              "compositionFamily": "process"
+            },
+            "background": "default",
+            "elements": [
+              {
+                "id": "page-kicker",
+                "type": "text",
+                "grid": {
+                  "column": 1,
+                  "row": 1,
+                  "width": 5,
+                  "height": 1
+                },
+                "role": "kicker",
+                "tone": "accent",
+                "align": "left",
+                "text": ""
+              },
+              {
+                "id": "page-label",
+                "type": "text",
+                "grid": {
+                  "column": 11,
+                  "row": 1,
+                  "width": 2,
+                  "height": 1
+                },
+                "role": "label",
+                "tone": "muted",
+                "align": "right",
+                "text": ""
+              },
+              {
+                "id": "page-title",
+                "type": "text",
+                "grid": {
+                  "column": 1,
+                  "row": 2,
+                  "width": 10,
+                  "height": 2
+                },
+                "role": "title",
+                "tone": "default",
+                "align": "left",
+                "text": ""
+              },
+              {
+                "id": "process-items",
+                "type": "list",
+                "grid": {
+                  "column": 1,
+                  "row": 4,
+                  "width": 12,
+                  "height": 5
+                },
+                "ordered": true,
+                "tone": "accent",
+                "items": []
+              }
+            ]
+          },
+          "contentMap": {
+            "elements[0].text": "meta.panelTitle",
+            "elements[1].text": "meta.pageLabel",
+            "elements[2].text": "presentation.title",
+            "elements[3].items": {
+              "source": "presentation.items",
+              "fields": {
+                "title": "labelWithValue",
+                "body": "detail"
+              },
+              "limit": 4
+            }
+          }
+        }
+      ]
+    },
+    {
+      "content": {
+        "presentation": {
+          "title": "三条护栏让试点不干扰生产",
+          "titleShort": "三条护栏保护生产",
+          "summary": "权限、回退和核算口径在上线前冻结，避免把算法收益建立在不可控风险上。",
+          "summaryShort": "先冻结护栏，再上线策略",
+          "takeaway": "运营负责人拥有最终控制权，自动策略永远不是唯一通道。",
+          "items": [
+            {
+              "id": "authority",
+              "label": "权限护栏",
+              "detail": "只开放白名单设备与限定时段",
+              "required": true,
+              "priority": 1,
+              "unit": "",
+              "emptyText": "",
+              "focus": false,
+              "displayValue": "",
+              "valueText": "",
+              "labelWithValue": "权限护栏",
+              "labelWithSupporting": "权限护栏：只开放白名单设备与限定时段",
+              "labelWithValueAndSupporting": "权限护栏｜只开放白名单设备与限定时段"
+            },
+            {
+              "id": "rollback",
+              "label": "回退护栏",
+              "detail": "异常时 60 秒内切回原控制逻辑",
+              "required": true,
+              "priority": 1,
+              "unit": "",
+              "emptyText": "",
+              "focus": false,
+              "displayValue": "",
+              "valueText": "",
+              "labelWithValue": "回退护栏",
+              "labelWithSupporting": "回退护栏：异常时 60 秒内切回原控制逻辑",
+              "labelWithValueAndSupporting": "回退护栏｜异常时 60 秒内切回原控制逻辑"
+            },
+            {
+              "id": "measurement",
+              "label": "核算护栏",
+              "detail": "天气、产量和班次归一化后再认定收益",
+              "required": true,
+              "priority": 1,
+              "unit": "",
+              "emptyText": "",
+              "focus": false,
+              "displayValue": "",
+              "valueText": "",
+              "labelWithValue": "核算护栏",
+              "labelWithSupporting": "核算护栏：天气、产量和班次归一化后再认定收益",
+              "labelWithValueAndSupporting": "核算护栏｜天气、产量和班次归一化后再认定收益"
+            }
+          ],
+          "coverLabels": [
+            "治理边界"
+          ],
+          "chartData": []
+        },
+        "media": [],
+        "meta": {
+          "brand": "GRIDWISE LAB",
+          "pageLabel": "07",
+          "unit": "",
+          "panelTitle": "治理边界",
+          "date": "",
+          "empty": ""
+        }
+      },
+      "selectedVariant": "v1",
+      "variants": [
+        {
+          "id": "v1",
+          "kind": "template",
+          "layout": "theme03_page018",
+          "props": {
+            "images": [],
+            "imageCount": 0
+          },
+          "contentMap": {
+            "title": "presentation.title",
+            "lead": "presentation.summary",
+            "milestones": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "supplementTextFallback": true,
+              "limit": 4,
+              "fields": {
+                "time": "label",
+                "label": "projectionLabel",
+                "detail": "labelWithSupporting"
+              }
+            },
+            "eyebrow": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 3,
+              "truncate": true
+            },
+            "kicker": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 26,
+              "index": 4,
+              "truncate": true
+            },
+            "caseTag": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 20,
+              "index": 5,
+              "truncate": true
+            },
+            "quoteBody": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 42,
+              "index": 6,
+              "truncate": true
+            },
+            "quoteAttribution": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 20,
+              "index": 7,
+              "truncate": true
+            }
+          }
+        },
+        {
+          "id": "v2",
+          "kind": "template",
+          "layout": "theme03_page075",
+          "props": {
+            "chipCount": 3,
+            "images": [],
+            "imageCount": 0
+          },
+          "contentMap": {
+            "kicker": "presentation.title",
+            "lead": "presentation.summary",
+            "chips": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "limit": 3,
+              "select": "labelWithValue"
+            },
+            "eyebrow": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 24,
+              "index": 3,
+              "truncate": true
+            },
+            "sectorTag": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 4,
+              "truncate": true
+            },
+            "titlePrefix": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 5,
+              "truncate": true
+            },
+            "titleAccent": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 6,
+              "truncate": true
+            },
+            "titleSuffix": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 7,
+              "truncate": true
+            },
+            "figureValue": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 8,
+              "truncate": true
+            },
+            "figureUnit": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 9,
+              "truncate": true
+            },
+            "figureCaption": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 20,
+              "index": 10,
+              "truncate": true
+            },
+            "calloutLabel": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 11,
+              "truncate": true
+            },
+            "calloutBody": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 42,
+              "index": 12,
+              "truncate": true
+            },
+            "galleryNote": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 26,
+              "index": 13,
+              "truncate": true
+            }
+          }
+        },
+        {
+          "id": "v3",
+          "kind": "template",
+          "layout": "theme03_page007",
+          "props": {
+            "cardCount": 3
+          },
+          "contentMap": {
+            "kicker": "presentation.title",
+            "cards": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "limit": 3,
+              "fields": {
+                "idx": "projectionOrdinal",
+                "name": "label",
+                "dim": "projectionLabel",
+                "desc": "labelWithSupporting"
+              }
+            },
+            "diagramStyle": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 3,
+              "truncate": true
+            },
+            "eyebrow": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 4,
+              "truncate": true
+            },
+            "leadTitle": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 5,
+              "truncate": true
+            },
+            "leadBody": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 42,
+              "index": 6,
+              "truncate": true
+            },
+            "leadNote": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 24,
+              "index": 7,
+              "truncate": true
+            }
+          }
+        },
+        {
+          "id": "v4",
+          "kind": "bespoke",
+          "adjustable": false,
+          "composition": {
+            "designIntent": {
+              "objective": "为园区管理委员会提供是否批准 72 万元、12 周能源协同优化试点的决策依据",
+              "audience": "园区管理委员会、运营负责人、财务负责人和能源经理",
+              "narrativeRole": "risks",
+              "emphasis": "运营负责人拥有最终控制权，自动策略永远不是唯一通道。",
+              "rationale": "左侧列出三条护栏，右侧解释上线原则与最终控制权",
+              "compositionFamily": "split"
+            },
+            "background": "default",
+            "elements": [
+              {
+                "id": "page-kicker",
+                "type": "text",
+                "grid": {
+                  "column": 1,
+                  "row": 1,
+                  "width": 5,
+                  "height": 1
+                },
+                "role": "kicker",
+                "tone": "accent",
+                "align": "left",
+                "text": ""
+              },
+              {
+                "id": "page-label",
+                "type": "text",
+                "grid": {
+                  "column": 11,
+                  "row": 1,
+                  "width": 2,
+                  "height": 1
+                },
+                "role": "label",
+                "tone": "muted",
+                "align": "right",
+                "text": ""
+              },
+              {
+                "id": "page-title",
+                "type": "text",
+                "grid": {
+                  "column": 1,
+                  "row": 2,
+                  "width": 10,
+                  "height": 2
+                },
+                "role": "title",
+                "tone": "default",
+                "align": "left",
+                "text": ""
+              },
+              {
+                "id": "guardrail-list",
+                "type": "list",
+                "grid": {
+                  "column": 1,
+                  "row": 4,
+                  "width": 8,
+                  "height": 5
+                },
+                "ordered": true,
+                "tone": "accent",
+                "items": []
+              },
+              {
+                "id": "guardrail-summary",
+                "type": "text",
+                "grid": {
+                  "column": 9,
+                  "row": 4,
+                  "width": 4,
+                  "height": 2
+                },
+                "role": "subtitle",
+                "tone": "default",
+                "align": "left",
+                "text": ""
+              },
+              {
+                "id": "guardrail-takeaway",
+                "type": "text",
+                "grid": {
+                  "column": 9,
+                  "row": 7,
+                  "width": 4,
+                  "height": 2
+                },
+                "role": "body",
+                "tone": "accent",
+                "align": "left",
+                "text": ""
+              }
+            ]
+          },
+          "contentMap": {
+            "elements[0].text": "meta.panelTitle",
+            "elements[1].text": "meta.pageLabel",
+            "elements[2].text": "presentation.title",
+            "elements[3].items": {
+              "source": "presentation.items",
+              "fields": {
+                "title": "labelWithValue",
+                "body": "detail"
+              },
+              "limit": 3
+            },
+            "elements[4].text": "presentation.summary",
+            "elements[5].text": "presentation.takeaway"
+          }
+        }
+      ]
+    },
+    {
+      "content": {
+        "presentation": {
+          "title": "建议批准 72 万元、12 周的受控试点",
+          "titleShort": "批准 72 万元受控试点",
+          "summary": "目标不是一次性做出漂亮看板，而是证明能源协同可以在生产约束内持续运营。",
+          "summaryShort": "验证可持续运营能力",
+          "takeaway": "批准后两周内完成基线确认，第五周提交首个继续/停止决策包。",
+          "items": [
+            {
+              "id": "owner",
+              "label": "业务负责人",
+              "detail": "园区运营总监",
+              "required": true,
+              "priority": 1,
+              "unit": "",
+              "emptyText": "",
+              "focus": false,
+              "displayValue": "",
+              "valueText": "",
+              "labelWithValue": "业务负责人",
+              "labelWithSupporting": "业务负责人：园区运营总监",
+              "labelWithValueAndSupporting": "业务负责人｜园区运营总监"
+            },
+            {
+              "id": "decision",
+              "label": "本次决策",
+              "detail": "批准试点预算与跨部门资源",
+              "required": true,
+              "priority": 1,
+              "unit": "",
+              "emptyText": "",
+              "focus": false,
+              "displayValue": "",
+              "valueText": "",
+              "labelWithValue": "本次决策",
+              "labelWithSupporting": "本次决策：批准试点预算与跨部门资源",
+              "labelWithValueAndSupporting": "本次决策｜批准试点预算与跨部门资源"
+            },
+            {
+              "id": "next",
+              "label": "下一检查点",
+              "detail": "第 5 周影子运行评审",
+              "required": true,
+              "priority": 1,
+              "unit": "",
+              "emptyText": "",
+              "focus": false,
+              "displayValue": "",
+              "valueText": "",
+              "labelWithValue": "下一检查点",
+              "labelWithSupporting": "下一检查点：第 5 周影子运行评审",
+              "labelWithValueAndSupporting": "下一检查点｜第 5 周影子运行评审"
+            }
+          ],
+          "coverLabels": [
+            "决策请求",
+            "2026-08-31"
+          ],
+          "chartData": []
+        },
+        "media": [],
+        "meta": {
+          "brand": "GRIDWISE LAB",
+          "pageLabel": "08",
+          "unit": "",
+          "panelTitle": "决策请求",
+          "date": "2026-08-31",
+          "empty": ""
+        }
+      },
+      "selectedVariant": "v1",
+      "variants": [
+        {
+          "id": "v1",
+          "kind": "template",
+          "layout": "theme03_page075",
+          "props": {
+            "chipCount": 3,
+            "images": [],
+            "imageCount": 0
+          },
+          "contentMap": {
+            "kicker": "presentation.title",
+            "lead": "presentation.summary",
+            "chips": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "limit": 3,
+              "select": "labelWithValueAndSupporting"
+            },
+            "eyebrow": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 24,
+              "index": 3,
+              "truncate": true
+            },
+            "sectorTag": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 4,
+              "truncate": true
+            },
+            "titlePrefix": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 5,
+              "truncate": true
+            },
+            "titleAccent": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 6,
+              "truncate": true
+            },
+            "titleSuffix": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 7,
+              "truncate": true
+            },
+            "figureValue": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 8,
+              "truncate": true
+            },
+            "figureUnit": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 9,
+              "truncate": true
+            },
+            "figureCaption": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 20,
+              "index": 10,
+              "truncate": true
+            },
+            "calloutLabel": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 11,
+              "truncate": true
+            },
+            "calloutBody": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 42,
+              "index": 12,
+              "truncate": true
+            },
+            "galleryNote": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 26,
+              "index": 13,
+              "truncate": true
+            }
+          }
+        },
+        {
+          "id": "v2",
+          "kind": "template",
+          "layout": "theme03_page006",
+          "props": {
+            "itemCount": 4
+          },
+          "contentMap": {
+            "kicker": "presentation.title",
+            "chapters": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "supplementTextFallback": true,
+              "limit": 4,
+              "fields": {
+                "idx": "projectionOrdinal",
+                "title": "label",
+                "en": "projectionLabel"
+              }
+            },
+            "eyebrow": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 3,
+              "truncate": true
+            },
+            "titlePre": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 4,
+              "truncate": true
+            },
+            "titleAccent": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 5,
+              "truncate": true
+            }
+          }
+        },
+        {
+          "id": "v3",
+          "kind": "template",
+          "layout": "theme03_page076",
+          "props": {
+            "chipCount": 3,
+            "images": [],
+            "imageCount": 0
+          },
+          "contentMap": {
+            "kicker": "presentation.title",
+            "lead": "presentation.summary",
+            "chips": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "limit": 3,
+              "select": "labelWithValueAndSupporting"
+            },
+            "eyebrow": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 24,
+              "index": 3,
+              "truncate": true
+            },
+            "sectorTag": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 24,
+              "index": 4,
+              "truncate": true
+            },
+            "titlePrefix": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 5,
+              "truncate": true
+            },
+            "titleAccent": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 6,
+              "truncate": true
+            },
+            "titleSuffix": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 7,
+              "truncate": true
+            },
+            "figureValue": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 8,
+              "truncate": true
+            },
+            "figureUnit": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 9,
+              "truncate": true
+            },
+            "figureCaption": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 26,
+              "index": 10,
+              "truncate": true
+            },
+            "calloutLabel": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 11,
+              "truncate": true
+            },
+            "calloutBody": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 42,
+              "index": 12,
+              "truncate": true
+            },
+            "galleryNote": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 26,
+              "index": 13,
+              "truncate": true
+            }
+          }
+        },
+        {
+          "id": "v4",
+          "kind": "bespoke",
+          "adjustable": false,
+          "composition": {
+            "designIntent": {
+              "objective": "为园区管理委员会提供是否批准 72 万元、12 周能源协同优化试点的决策依据",
+              "audience": "园区管理委员会、运营负责人、财务负责人和能源经理",
+              "narrativeRole": "closing",
+              "emphasis": "批准后两周内完成基线确认，第五周提交首个继续/停止决策包。",
+              "rationale": "以大标题、引语和窄栏列表建立杂志式层级",
+              "compositionFamily": "editorial"
+            },
+            "background": "default",
+            "elements": [
+              {
+                "id": "page-kicker",
+                "type": "text",
+                "grid": {
+                  "column": 1,
+                  "row": 1,
+                  "width": 5,
+                  "height": 1
+                },
+                "role": "kicker",
+                "tone": "accent",
+                "align": "left",
+                "text": ""
+              },
+              {
+                "id": "page-label",
+                "type": "text",
+                "grid": {
+                  "column": 11,
+                  "row": 1,
+                  "width": 2,
+                  "height": 1
+                },
+                "role": "label",
+                "tone": "muted",
+                "align": "right",
+                "text": ""
+              },
+              {
+                "id": "page-title",
+                "type": "text",
+                "grid": {
+                  "column": 1,
+                  "row": 2,
+                  "width": 10,
+                  "height": 2
+                },
+                "role": "title",
+                "tone": "default",
+                "align": "left",
+                "text": ""
+              },
+              {
+                "id": "editorial-takeaway",
+                "type": "quote",
+                "grid": {
+                  "column": 1,
+                  "row": 4,
+                  "width": 7,
+                  "height": 5
+                },
+                "tone": "accent",
+                "quote": ""
+              },
+              {
+                "id": "editorial-items",
+                "type": "list",
+                "grid": {
+                  "column": 9,
+                  "row": 4,
+                  "width": 4,
+                  "height": 5
+                },
+                "ordered": false,
+                "tone": "default",
+                "items": []
+              }
+            ]
+          },
+          "contentMap": {
+            "elements[0].text": "meta.panelTitle",
+            "elements[1].text": "meta.pageLabel",
+            "elements[2].text": "presentation.title",
+            "elements[3].quote": "presentation.takeaway",
+            "elements[4].items": {
+              "source": "presentation.items",
+              "fields": {
+                "title": "labelWithValue",
+                "body": "detail"
+              },
+              "limit": 3
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="R-003：Dashi PPT Skill 的两轮真实生成实验、四类场景样例、工程机制、采用边界与可下载证据。">
+  <meta name="color-scheme" content="light dark">
+  <title>R-003 · Dashi PPT Skill 能力与工程机制研究</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="site-header" data-site-header>
+    <a class="brand" href="#overview" aria-label="Dashi PPT Skill 研究展厅首页">
+      <span class="brand-mark" aria-hidden="true">D/</span>
+      <span><strong>R-003 / Dashi PPT Skill</strong><small>第 3 个研究子项目 · v0.4.11</small></span>
+    </a>
+    <nav class="desktop-nav" aria-label="专题页导航">
+      <a href="#examples">案例</a><a href="#dashi-lab">特性</a><a href="#capabilities">能力</a><a href="#mechanism">原理</a><a href="#outcomes">效果</a><a href="#demo">场景</a><a href="#adoption">评估</a><a href="#extensions">扩展</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切换为深色主题" aria-pressed="false"><span aria-hidden="true">◐</span><span class="button-label">深色</span></button>
+      <button class="menu-button" type="button" data-mobile-menu-toggle aria-expanded="false" aria-controls="mobile-menu"><span aria-hidden="true"></span><span>目录</span></button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" data-mobile-menu hidden>
+    <button class="mobile-menu-backdrop" type="button" data-mobile-menu-close aria-label="关闭目录"></button>
+    <div class="mobile-menu-panel" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-title">
+      <div class="mobile-menu-head"><div><span>RESEARCH / INDEX</span><strong id="mobile-menu-title">研究目录</strong></div><button type="button" data-mobile-menu-close aria-label="关闭目录">×</button></div>
+      <nav aria-label="移动端专题页导航">
+        <a href="#examples"><span>01</span>六个案例</a><a href="#real-run"><span>02</span>真实运行</a><a href="#dashi-lab"><span>03</span>Dashi 特性</a><a href="#capabilities"><span>04</span>能力地图</a><a href="#evidence"><span>05</span>源码证据</a><a href="#mechanism"><span>06</span>工作原理</a><a href="#outcomes"><span>07</span>交付效果</a><a href="#demo"><span>08</span>场景工作台</a><a href="#adoption"><span>09</span>采用评估</a><a href="#extensions"><span>10</span>扩展与边界</a>
+      </nav>
+      <p>ESC 关闭 · 所有研究内容均可离线阅读</p>
+    </div>
+  </div>
+
+  <main id="main">
+    <section class="hero section-shell" id="overview" aria-labelledby="overview-title">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <p class="eyebrow">R-003 · 第 3 个研究子项目 · 2026.08.31</p>
+        <h1 id="overview-title">内容只存一份<br><em>方案生成四套</em></h1>
+        <p class="hero-lead">Dashi 的特色不是“也能生成 PPT”，而是把 <strong>canonical content、容量约束、全稿分配、浏览器编辑和分层导出</strong>连成一条可检查的生产线。</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#examples">查看六个案例 <span aria-hidden="true">↓</span></a>
+          <a class="button button-quiet" href="#dashi-lab">进入机制模拟</a>
+          <a class="button button-quiet" href="../README.md">阅读研究结论</a>
+        </div>
+        <div class="trust-legend" aria-label="证据标签说明">
+          <span class="tag tag-verified">已核验</span><span>源码或测试确认</span>
+          <span class="tag tag-upstream">上游自述</span><span>尚未独立复现</span>
+          <span class="tag tag-simulated">交互模拟</span><span>用于解释工作方式</span>
+          <span class="tag tag-real">本机实测</span><span>实际 HTML / PDF / PPTX</span>
+        </div>
+      </div>
+      <aside class="hero-aside" aria-label="核心判断">
+        <div class="decision-card">
+          <span class="decision-index">00 / POSITION</span>
+          <p class="decision-question">它和通用 AI PPT<br>差在哪？</p>
+          <p class="decision-answer"><strong>通用工具通常从 Prompt 直接得到一个结果。</strong>Dashi 先冻结事实，再让规则筛掉装不下的版式，并同时保留三套模板候选和一套 Agent 定制方案。</p>
+          <div class="hero-compare" aria-label="通用生成与 Dashi 工作流比较"><span>COMMON</span><b>Prompt → 单一成品</b><span>DASHI</span><b>内容契约 → 约束 → 3+1 → DOM 导出</b></div>
+        </div>
+        <dl class="stat-grid">
+          <div><dt>12</dt><dd>主题</dd></div><div><dt>1,020</dt><dd>布局</dd></div><div><dt>8,576</dt><dd>控件</dd></div><div><dt>3+1</dt><dd>生产模式</dd></div>
+        </dl>
+        <p class="source-note"><span class="tag tag-verified">已核验</span> 数量来自固定提交中的 manifest；“3+1”表示三套模板工作流与一条 bespoke 自定义路线。</p>
+      </aside>
+    </section>
+
+    <section class="example-atlas" id="examples" aria-labelledby="examples-title">
+      <div class="section-shell">
+        <header class="section-heading example-heading">
+          <div><p class="section-index">00.2 / EXAMPLE ATLAS</p><h2 id="examples-title">两轮真实实验<br>四类扩展场景</h2></div>
+          <p>先看可下载、可复核的真实产物，再看同一机制如何迁移到研究、经营、培训和方案路演。模拟场景只演示内容组织，不冒充上游实测。</p>
+        </header>
+        <div class="example-grid">
+          <a class="example-card example-real" href="#real-run">
+            <span><i class="tag tag-real">本机实测</i><b>01 / REAL RUN</b></span>
+            <h3>库能力审计稿</h3>
+            <p>8 页 canonical content 生成 32 个 3+1 候选，再精选为 8 页 PPTX/PDF。</p>
+            <dl><div><dt>受众</dt><dd>技术决策者</dd></div><div><dt>重点</dt><dd>复现、越界、对象与回退</dd></div></dl>
+            <strong>查看真实候选与下载 →</strong>
+          </a>
+          <a class="example-card example-real" href="#real-run-02">
+            <span><i class="tag tag-real">本机实测</i><b>02 / BRAND + MEDIA</b></span>
+            <h3>园区能源试点决策稿</h3>
+            <p>带生成媒体、负荷图表和品牌契约，对照 Dashi v4 与直接编程路线。</p>
+            <dl><div><dt>受众</dt><dd>运营、能源、财务</dd></div><div><dt>重点</dt><dd>品牌、媒体、原生图表</dd></div></dl>
+            <strong>进入双路线对比 →</strong>
+          </a>
+          <a class="example-card" href="#demo" data-example-scenario="research">
+            <span><i class="tag tag-simulated">交互模拟</i><b>03 / CONSULTING</b></span>
+            <h3>AI Agent 市场进入研究</h3>
+            <p>从访谈、竞品与场景证据形成进入建议和 90 天验证门槛。</p>
+            <dl><div><dt>受众</dt><dd>CTO、战略、产品</dd></div><div><dt>重点</dt><dd>证据矩阵与路径比较</dd></div></dl>
+            <strong>打开研究咨询场景 →</strong>
+          </a>
+          <a class="example-card" href="#demo" data-example-scenario="business">
+            <span><i class="tag tag-simulated">交互模拟</i><b>04 / BUSINESS</b></span>
+            <h3>AI 内容产品 Q3 复盘</h3>
+            <p>把 ARR、NRR、CAC 与毛利率转化为漏斗诊断、Q4 行动和责任目标。</p>
+            <dl><div><dt>受众</dt><dd>CEO、业务、财务</dd></div><div><dt>重点</dt><dd>指标、偏差与行动</dd></div></dl>
+            <strong>打开经营复盘场景 →</strong>
+          </a>
+          <a class="example-card" href="#demo" data-example-scenario="training">
+            <span><i class="tag tag-simulated">交互模拟</i><b>05 / TRAINING</b></span>
+            <h3>生成式 AI 安全培训</h3>
+            <p>用课程地图、风险案例和情境测验把知识传达转换为行为判断。</p>
+            <dl><div><dt>受众</dt><dd>员工、主管、合规</dd></div><div><dt>重点</dt><dd>目标、案例与测验</dd></div></dl>
+            <strong>打开企业培训场景 →</strong>
+          </a>
+          <a class="example-card" href="#demo" data-example-scenario="pitch">
+            <span><i class="tag tag-simulated">交互模拟</i><b>06 / SOLUTION</b></span>
+            <h3>工业园区数字孪生方案</h3>
+            <p>从业务问题、七层架构和数据边界推进到 12 周试点决策。</p>
+            <dl><div><dt>受众</dt><dd>园区、工厂、IT/OT</dd></div><div><dt>重点</dt><dd>架构、价值与实施</dd></div></dl>
+            <strong>打开方案路演场景 →</strong>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="real-run-section" id="real-run" aria-labelledby="real-run-title" data-real-run>
+      <div class="section-shell">
+        <header class="section-heading heading-inverse real-run-heading">
+          <div><p class="section-index">00.3 / REAL RUN 01</p><h2 id="real-run-title">不是效果图：8 页输入，实际导出 32 个候选</h2></div>
+          <p><span class="tag tag-real">本机实测</span> 锁定上游 v0.4.11、theme07 与固定 seed；未修改上游源码。下面所有画面来自真实 PPTX 的 PowerPoint 级渲染。</p>
+        </header>
+
+        <div class="real-metrics" aria-label="真实实验核心指标">
+          <div><strong>8</strong><span>逻辑页</span><small>同一份 canonical content</small></div>
+          <div><strong>32</strong><span>3+1 候选页</span><small>每页 3 模板 + 1 bespoke</small></div>
+          <div><strong>1,710</strong><span>PPTX 对象</span><small>577 文字 / 1,036 形状 / 97 图像</small></div>
+          <div><strong>0</strong><span>最终越界</span><small>PowerPoint 渲染检查</small></div>
+        </div>
+
+        <div class="real-verdict">
+          <div><span>WHAT IS DISTINCTIVE</span><h3>特色在生产线，不在“看起来更像设计师”</h3><p>固定事实源、容量筛选、3+1 对照、可复现 seed、DOM 到 PPTX 的分层映射，这些构成可审计的工程价值。</p></div>
+          <div><span>WHAT IS GENERIC</span><h3>精选稿仍是一套克制的通用研究模板</h3><p>视觉统一、信息清楚，但没有形成强烈独有风格；定制 v4 也主要是网格、留白和绿黑主题组合。</p></div>
+        </div>
+
+        <div class="real-audit-station">
+          <div class="real-page-rail" aria-label="选择逻辑页">
+            <div class="real-station-label"><span>LOGICAL PAGES</span><strong>选择一页</strong></div>
+            <div class="real-page-tabs" role="tablist" aria-label="真实实验逻辑页" data-real-page-tabs>
+              <button type="button" role="tab" aria-selected="false" tabindex="-1" data-real-page="1"><span>01</span>封面</button>
+              <button type="button" role="tab" aria-selected="false" tabindex="-1" data-real-page="2"><span>02</span>解耦</button>
+              <button type="button" role="tab" aria-selected="false" tabindex="-1" data-real-page="3"><span>03</span>流程</button>
+              <button type="button" role="tab" aria-selected="true" data-real-page="4"><span>04</span>规模</button>
+              <button type="button" role="tab" aria-selected="false" tabindex="-1" data-real-page="5"><span>05</span>导出</button>
+              <button type="button" role="tab" aria-selected="false" tabindex="-1" data-real-page="6"><span>06</span>边界</button>
+              <button type="button" role="tab" aria-selected="false" tabindex="-1" data-real-page="7"><span>07</span>试点</button>
+              <button type="button" role="tab" aria-selected="false" tabindex="-1" data-real-page="8"><span>08</span>建议</button>
+            </div>
+          </div>
+
+          <div class="real-canvas-column">
+            <div class="real-canvas-head"><span>POWERPOINT RENDER / <b data-real-physical>16 of 32</b></span><strong data-real-title>版式库规模可量化，但规模不是质量结论</strong></div>
+            <figure class="real-slide-frame"><img src="../artifacts/real-run-01/dashi-real-run-01-comparison/slide-16.png" alt="第 4 个逻辑页的 v4 定制矩阵真实 PowerPoint 渲染" data-real-image><figcaption>来自真实导出文件，不是本站重绘。</figcaption></figure>
+            <div class="real-variant-tabs" role="tablist" aria-label="真实 3+1 候选" data-real-variant-tabs>
+              <button type="button" role="tab" aria-selected="false" tabindex="-1" data-real-variant="v1"><span>V1</span><strong data-real-label>模板</strong><small data-real-layout>theme07_page035</small></button>
+              <button type="button" role="tab" aria-selected="false" tabindex="-1" data-real-variant="v2"><span>V2</span><strong>模板</strong><small>theme07_page052</small></button>
+              <button type="button" role="tab" aria-selected="false" tabindex="-1" data-real-variant="v3"><span>V3</span><strong>模板</strong><small>theme07_page027</small></button>
+              <button type="button" role="tab" aria-selected="true" data-real-variant="v4"><span>+1</span><strong>Agent 定制</strong><small>matrix</small></button>
+            </div>
+          </div>
+
+          <aside class="real-inspector" aria-label="当前真实候选审计信息">
+            <div class="real-station-label"><span>AUDIT INSPECTOR</span><strong>当前候选</strong></div>
+            <dl>
+              <div><dt>事实指纹</dt><dd data-real-hash>3f941ea76c10</dd></div>
+              <div><dt>必需事实</dt><dd data-real-facts>4 / 4</dd></div>
+              <div><dt>视觉路线</dt><dd data-real-route>bespoke / matrix</dd></div>
+              <div><dt>原生对象</dt><dd data-real-objects>15 文字 · 5 形状</dd></div>
+              <div><dt>截图回退</dt><dd data-real-images>4 图像</dd></div>
+              <div><dt>PPTX QA</dt><dd class="real-pass">0 overflow</dd></div>
+            </dl>
+            <p data-real-note>v4 把四个规模事实放入 2×2 矩阵，视觉最统一；但风格仍属于通用研究汇报。</p>
+            <div class="real-downloads">
+              <a href="../artifacts/real-run-01/dashi-real-run-01-selected-v4.pptx" download>下载 8 页精选 PPTX</a>
+              <a href="../artifacts/real-run-01/dashi-real-run-01-selected-v4.pdf" download>下载 8 页 PDF</a>
+              <a href="../artifacts/real-run-01/dashi-real-run-01-comparison.pptx" download>下载 32 页审计稿</a>
+              <a href="../experiments/real-run-01/ppt-selected/">打开真实 HTML</a>
+              <a href="../experiments/real-run-01/experiment-report.json">查看机器报告</a>
+            </div>
+          </aside>
+        </div>
+
+        <div class="qa-trace" aria-label="真实实验修正轨迹">
+          <div><span>01</span><strong>静态契约通过</strong><p>goal schema、props 与文案检查均通过。</p></div>
+          <div class="qa-fail"><span>02</span><strong>PPTX 抓到 2 页越界</strong><p>第 15、18 物理页在真实渲染中出界。</p></div>
+          <div><span>03</span><strong>换 seed 没解决</strong><p>危险布局集合仍被稳定复现。</p></div>
+          <div><span>04</span><strong>替换 2 个同主题布局</strong><p>内容不变，只替换 page057 与 page026。</p></div>
+          <div class="qa-pass"><span>05</span><strong>最终 0 越界</strong><p>32 页对照稿与 8 页精选稿均通过。</p></div>
+        </div>
+
+        <div class="real-bottom-line"><strong>你的判断成立一半：</strong><p>如果只看最终视觉，它确实像“基础通用 PPT”；如果看可复现、可比较、可导出、能把失败暴露出来的生产过程，它比单次生成器更像一套演示文稿编译与质检工具链。</p><a href="../experiments/real-run-01/goal.json">查看固定输入与 3+1 规格 →</a></div>
+
+        <section class="run02" id="real-run-02" aria-labelledby="run02-title" data-real-run-02>
+          <header class="run02-heading">
+            <div><p class="section-index">00.4 / REAL RUN 02 · BRAND + MEDIA + CHART</p><h3 id="run02-title">用一份真实决策稿，检验它是否还只是“通用 PPT”</h3></div>
+            <p><span class="tag tag-real">本机实测</span> 虚构的 GRIDWISE LAB 园区能源试点；8 页形成完整决策故事。所有业务、运营和财务数字均为模拟数据。</p>
+          </header>
+
+          <div class="run02-brief" aria-label="第二轮样例任务">
+            <div><span>DECISION</span><strong>是否批准 72 万元、12 周的受控试点？</strong></div>
+            <div><span>AUDIENCE</span><strong>园区运营总监 / 能源经理 / 财务 / 生产</strong></div>
+            <div><span>STORY</span><strong>现状 → 闭环 → 负荷 → 经济性 → 路线 → 治理 → 批准</strong></div>
+            <div><span>ASSETS</span><strong>1 张生成媒体 + 1 个负荷图表 + 8 页来源备注</strong></div>
+          </div>
+
+          <div class="run02-result-grid">
+            <article class="run02-result run02-result-dashi">
+              <span>DASHI / THEME03 / 3+1</span>
+              <h4>一次内容建模，得到 32 个可比较候选</h4>
+              <p>优势是候选生产、全稿分配、容量检查和统一导出；精选 v4 有 203 个 PPTX 对象，最终 0 越界。</p>
+              <dl><div><dt>品牌</dt><dd>近似；主题锁定电蓝 + 酸性绿</dd></div><div><dt>图表</dt><dd>SVG/图像回退，10 个标签提取为文字</dd></div><div><dt>代价</dt><dd>4 次艺术指导修订；仍需 PowerPoint QA</dd></div></dl>
+            </article>
+            <article class="run02-result run02-result-direct">
+              <span>DIRECT / PROGRAMMATIC / ONE ROUTE</span>
+              <h4>只做一条路线，但品牌与对象控制更精确</h4>
+              <p>请求的 navy / cyan / lime 被逐项落实；153 个对象，负荷图表为原生可编辑 chart，8 页均含来源备注。</p>
+              <dl><div><dt>品牌</dt><dd>精确；使用请求色值</dd></div><div><dt>图表</dt><dd>1 个原生可编辑柱状图</dd></div><div><dt>代价</dt><dd>没有候选池；布局和 QA 需要显式编程</dd></div></dl>
+            </article>
+          </div>
+
+          <div class="brand-contract" aria-label="品牌契约对照">
+            <div class="brand-contract-title"><span>BRAND CONTRACT</span><strong>视觉方向相近，不等于品牌精确复现</strong></div>
+            <div class="brand-row"><span>请求品牌</span><i style="--swatch:#061B2C"></i><code>#061B2C</code><i style="--swatch:#16D7C8"></i><code>#16D7C8</code><i style="--swatch:#B7F34A"></i><code>#B7F34A</code><b>目标</b></div>
+            <div class="brand-row"><span>Dashi theme03</span><i style="--swatch:#2742EC"></i><code>#2742EC</code><i style="--swatch:#C2F53D"></i><code>#C2F53D</code><i class="swatch-empty"></i><code>—</code><b>近似</b></div>
+            <div class="brand-row"><span>直接编程</span><i style="--swatch:#061B2C"></i><code>#061B2C</code><i style="--swatch:#16D7C8"></i><code>#16D7C8</code><i style="--swatch:#B7F34A"></i><code>#B7F34A</code><b>精确</b></div>
+          </div>
+
+          <div class="run02-viewer">
+            <div class="run02-viewer-head">
+              <div><span>POWERPOINT RENDER</span><strong data-run02-title>园区能源协同优化试点</strong></div>
+              <div class="run02-route-tabs" role="tablist" aria-label="选择生成路线" data-run02-route-tabs>
+                <button type="button" role="tab" aria-selected="true" data-run02-route="dashi">Dashi 精选 v4</button>
+                <button type="button" role="tab" aria-selected="false" tabindex="-1" data-run02-route="direct">直接编程基线</button>
+              </div>
+            </div>
+            <div class="run02-viewer-grid">
+              <div class="run02-stage">
+                <figure><img src="../artifacts/real-run-02-brand-media/dashi-brand-media-selected-v4/slide-1.png" alt="Dashi 精选 v4 的园区能源试点封面 PowerPoint 渲染" data-run02-image><figcaption data-run02-caption>Dashi v4 · slide 1 / 8 · PowerPoint render</figcaption></figure>
+                <div class="run02-page-tabs" role="tablist" aria-label="选择第二轮样例页面" data-run02-page-tabs>
+                  <button type="button" role="tab" aria-selected="true" data-run02-page="1"><span>01</span>封面</button>
+                  <button type="button" role="tab" aria-selected="false" tabindex="-1" data-run02-page="2"><span>02</span>现状</button>
+                  <button type="button" role="tab" aria-selected="false" tabindex="-1" data-run02-page="3"><span>03</span>闭环</button>
+                  <button type="button" role="tab" aria-selected="false" tabindex="-1" data-run02-page="4"><span>04</span>负荷</button>
+                  <button type="button" role="tab" aria-selected="false" tabindex="-1" data-run02-page="5"><span>05</span>经济性</button>
+                  <button type="button" role="tab" aria-selected="false" tabindex="-1" data-run02-page="6"><span>06</span>路线</button>
+                  <button type="button" role="tab" aria-selected="false" tabindex="-1" data-run02-page="7"><span>07</span>治理</button>
+                  <button type="button" role="tab" aria-selected="false" tabindex="-1" data-run02-page="8"><span>08</span>决策</button>
+                </div>
+              </div>
+              <aside class="run02-inspector" aria-live="polite">
+                <span data-run02-route-label>DASHI SELECTED V4</span>
+                <h4 data-run02-verdict>候选生产力更强，品牌精度受主题包约束</h4>
+                <dl>
+                  <div><dt>本页职责</dt><dd data-run02-role>建立场景、周期与决策语境</dd></div>
+                  <div><dt>品牌忠实度</dt><dd data-run02-brand>近似：theme03 电蓝/酸绿</dd></div>
+                  <div><dt>编辑性</dt><dd data-run02-edit>文字与基础形状原生；主题 SVG 回退</dd></div>
+                  <div><dt>全稿对象</dt><dd data-run02-objects>115 文字 · 78 形状 · 10 图像</dd></div>
+                  <div><dt>本机耗时</dt><dd data-run02-time>scaffold 2.1s · render 3.8s · v4 PPTX 8.1s</dd></div>
+                  <div><dt>PowerPoint QA</dt><dd class="real-pass">0 overflow / 8 slides</dd></div>
+                </dl>
+                <p data-run02-note>这条路线的价值不是一次给出唯一答案，而是把同一内容生成 3+1 候选并留下可审计产物。</p>
+              </aside>
+            </div>
+          </div>
+
+          <div class="run02-efficiency">
+            <div><span>01</span><strong>2.1s + 3.8s</strong><p>Dashi scaffold 与首次 HTML render；生成 8×3+1 的结构与画面。</p></div>
+            <div><span>02</span><strong>20.2s / 8.1s</strong><p>32 页对照 PPTX / 8 页 v4 PPTX 导出。本机墙钟时间。</p></div>
+            <div><span>03</span><strong>3.9s</strong><p>直接编程基线构建一条 8 页路线；不包含候选检索能力。</p></div>
+            <div><span>04</span><strong>未测量</strong><p>人工 PowerPoint、通用 AI 服务、模型 token 与人工审阅成本。</p></div>
+          </div>
+
+          <div class="run02-conclusion"><strong>采用结论</strong><p><b>高频、结构重复、需要候选与审计：</b>优先验证 Dashi。<br><b>一次性高价值、品牌严格、图表必须原生：</b>直接编程或先扩展 Dashi 主题与导出 recipe。</p></div>
+
+          <div class="run02-downloads" aria-label="第二轮真实产物下载">
+            <a href="../artifacts/real-run-02-brand-media/dashi-brand-media-selected-v4.pptx" download>Dashi 8 页 v4 PPTX</a>
+            <a href="../artifacts/real-run-02-brand-media/dashi-brand-media-selected-v4.pdf" download>Dashi 8 页 PDF</a>
+            <a href="../artifacts/real-run-02-brand-media/dashi-brand-media-comparison.pptx" download>Dashi 32 页候选稿</a>
+            <a href="../artifacts/real-run-02-brand-media/direct-programmatic-baseline.pptx" download>直接编程基线 PPTX</a>
+            <a href="../experiments/real-run-02-brand-media/experiment-report.json">第二轮机器报告</a>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="dashi-lab-section" id="dashi-lab" aria-labelledby="dashi-lab-title" data-dashi-lab>
+      <div class="section-shell">
+        <header class="section-heading heading-inverse">
+          <div><p class="section-index">00.5 / DASHI COMPILER</p><h2 id="dashi-lab-title">别看成品，直接看它如何作出选择</h2></div>
+          <p><span class="tag tag-simulated">机制模拟</span> 参数与评分用于解释锁定版本的工作方式，不代表本次调用了上游模型或导出器。</p>
+        </header>
+        <div class="compiler-rail" aria-label="Dashi 处理阶段"><span><b>01</b>CANONICAL<br>内容冻结</span><i>→</i><span><b>02</b>CAPACITY<br>容量筛选</span><i>→</i><span><b>03</b>3 + 1<br>全稿分配</span><i>→</i><span><b>04</b>DOM MAP<br>分层导出</span></div>
+        <div class="compiler-workbench">
+          <form class="content-contract" data-content-contract>
+            <div class="compiler-panel-head"><span>INPUT / CONTENT CONTRACT</span><strong>同一份事实输入</strong></div>
+            <div class="lab-presets" role="tablist" aria-label="内容输入预设" data-lab-preset-tabs>
+              <button type="button" role="tab" aria-selected="true" data-lab-preset="research">研究摘要</button><button type="button" role="tab" aria-selected="false" tabindex="-1" data-lab-preset="metrics">经营指标</button><button type="button" role="tab" aria-selected="false" tabindex="-1" data-lab-preset="media">图文方案</button>
+            </div>
+            <div class="contract-code" aria-live="polite"><span>{</span><p><i>"title"</i>: <b data-lab-title>进入哪个 Agent 工具层？</b>,</p><p><i>"facts"</i>: <b data-lab-facts>4 blocks</b>,</p><p><i>"numbers"</i>: <b data-lab-numbers>2 metrics</b>,</p><p><i>"media"</i>: <b data-lab-media>false</b>,</p><p><i>"fingerprint"</i>: <b data-lab-fingerprint>CC-7CB2-042</b></p><span>}</span></div>
+            <label class="lab-range"><span>事实条目 <output data-lab-items-output>4</output></span><input type="range" min="2" max="8" value="4" step="1" data-lab-items></label>
+            <label class="lab-range"><span>数值字段 <output data-lab-numbers-output>2</output></span><input type="range" min="0" max="4" value="2" step="1" data-lab-number-count></label>
+            <label class="lab-switch"><span><strong>需要主媒体</strong><small>图片、产品图或空间示意</small></span><input type="checkbox" data-lab-media-toggle></label>
+          </form>
+
+          <section class="capacity-gate" aria-labelledby="capacity-title">
+            <div class="compiler-panel-head"><span>QUERY / HARD CONSTRAINTS</span><strong id="capacity-title">版式容量门</strong></div>
+            <p class="gate-summary" data-lab-match-summary>3 / 5 个候选通过硬约束</p>
+            <div class="candidate-stack" data-lab-candidates>
+              <article data-status="pass"><span>PASS · 92</span><strong>summary-3</strong><small>条目 2—4 · 数值 ≤ 2 · 无媒体</small></article>
+              <article data-status="pass"><span>PASS · 88</span><strong>metrics-4</strong><small>条目 3—5 · 数值 ≥ 2</small></article>
+              <article data-status="pass"><span>PASS · 82</span><strong>evidence-split</strong><small>条目 ≤ 4 · 至少 1 个数值</small></article>
+              <article data-status="reject"><span>REJECT</span><strong>dense-grid</strong><small>需要至少 5 个条目</small></article>
+              <article data-status="reject"><span>REJECT</span><strong>media-focus</strong><small>需要主媒体</small></article>
+            </div>
+            <p class="gate-note"><b>为什么有特色：</b>先用容量硬条件排除错误版式，再用角色、重点和全稿重复惩罚排序，而不是让模型凭感觉挑一页。</p>
+          </section>
+
+          <section class="variant-compiler" aria-labelledby="variant-compiler-title">
+            <div class="compiler-panel-head"><span>OUTPUT / SHARED CONTENT MAP</span><strong id="variant-compiler-title">3 个模板 + 1 个定制</strong></div>
+            <div class="lab-variant-tabs" role="tablist" aria-label="3+1 方案" data-lab-variant-tabs>
+              <button type="button" role="tab" aria-selected="true" data-lab-variant="template-a"><span>A</span>模板候选</button><button type="button" role="tab" aria-selected="false" tabindex="-1" data-lab-variant="template-b"><span>B</span>模板候选</button><button type="button" role="tab" aria-selected="false" tabindex="-1" data-lab-variant="template-c"><span>C</span>模板候选</button><button type="button" role="tab" aria-selected="false" tabindex="-1" data-lab-variant="bespoke"><span>+1</span>Agent 定制</button>
+            </div>
+            <div class="lab-slide template-a" data-lab-preview aria-label="当前方案预览">
+              <div class="lab-slide-head"><span data-lab-variant-label>TEMPLATE A / summary-3</span><b data-lab-preview-fingerprint>CC-7CB2-042</b></div>
+              <h3 data-lab-preview-title>进入哪个 Agent 工具层？</h3>
+              <div class="lab-fact-grid" data-lab-fact-grid><span>F01</span><span>F02</span><span>F03</span><span>F04</span></div>
+              <div class="lab-media-slot" data-lab-media-slot hidden>MEDIA / 01</div>
+            </div>
+            <div class="integrity-strip"><div><span>CONTENT MAP</span><strong data-lab-integrity>4 / 4 事实块一致</strong></div><div><span>EXPORT HINT</span><strong data-lab-export>文本与形状优先映射为原生对象</strong></div></div>
+          </section>
+        </div>
+        <div class="difference-strip">
+          <div><span>通用 AI PPT</span><strong>“再生成一版”可能连内容一起变化</strong></div><i aria-hidden="true">≠</i><div><span>Dashi 的关键设计</span><strong>内容只存一份，四个方案通过 contentMap 投影</strong></div><p><span class="tag tag-verified">源码已核验</span> schema v2、layout-query 与 layout-allocation 支持这条机制；视觉质量和真实导出仍需独立实验。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell" id="capabilities" aria-labelledby="capabilities-title">
+      <header class="section-heading">
+        <div><p class="section-index">01 / CAPABILITY</p><h2 id="capabilities-title">从一份材料，到可交付演示文稿</h2></div>
+        <p>筛选能力域，观察这套 Skill 在“内容—设计—编辑—交付”链路里的覆盖位置。</p>
+      </header>
+      <div class="filter-bar" role="toolbar" aria-label="能力筛选">
+        <button class="chip is-active" type="button" data-cap-filter="all" aria-pressed="true">全部</button><button class="chip" type="button" data-cap-filter="content" aria-pressed="false">内容</button><button class="chip" type="button" data-cap-filter="visual" aria-pressed="false">视觉</button><button class="chip" type="button" data-cap-filter="delivery" aria-pressed="false">交付</button><button class="chip" type="button" data-cap-filter="governance" aria-pressed="false">治理</button>
+      </div>
+      <div class="capability-grid" data-capability-grid>
+        <article class="cap-card cap-card-featured" data-capability="content visual"><span class="card-number">01</span><span class="tag tag-verified">已核验</span><h3>内容规划 → 版式匹配</h3><p>宿主 Agent 先拆解叙事，再用硬约束与软约束检索合适布局；不是把文字直接塞进固定模版。</p><ul class="mini-list"><li>Canonical JSON</li><li>布局查询</li><li>全局分配</li></ul></article>
+        <article class="cap-card" data-capability="visual"><span class="card-number">02</span><span class="tag tag-verified">已核验</span><h3>12 个主题与千级布局库</h3><p>固定提交中包含 12 个主题、1,020 个布局、8,576 个控件，支持从标准模板快速起稿。</p></article>
+        <article class="cap-card" data-capability="visual content"><span class="card-number">03</span><span class="tag tag-verified">已核验</span><h3>3 套模板 + 1 条自定义路线</h3><p>standard、template、poster 三类既定入口之外，还能走 bespoke 路线制作更自由的页面。</p></article>
+        <article class="cap-card" data-capability="content visual"><span class="card-number">04</span><span class="tag tag-verified">已核验</span><h3>图表、模型与媒体暂存</h3><p>提供图表、结构化模型、媒体 staging 等内容原语，让 Agent 不只会排文本框。</p></article>
+        <article class="cap-card cap-card-dark" data-capability="delivery visual"><span class="card-number">05</span><span class="tag tag-verified">已核验</span><h3>浏览器内编辑与自动保存</h3><p>生成结果不是一次性图片：网页编辑器让用户调整文本、强调和页面，再继续导出。</p></article>
+        <article class="cap-card" data-capability="delivery"><span class="card-number">06</span><span class="tag tag-verified">已核验</span><h3>HTML / PDF / PPTX</h3><p>一份结构化内容可进入三种交付通道，但表达能力、可编辑性和保真方式并不相同。</p></article>
+        <article class="cap-card" data-capability="governance delivery"><span class="card-number">07</span><span class="tag tag-verified">已核验</span><h3>本地优先的输出链路</h3><p>项目生成、预览与导出可在本机完成，适合不愿把内部材料提交给在线 PPT SaaS 的团队。</p></article>
+        <article class="cap-card" data-capability="governance delivery"><span class="card-number">08</span><span class="tag tag-verified">已核验</span><h3>交付前验证</h3><p>仓库包含结构与导出验证脚本；它降低“生成成功但文件不可交付”的概率，不等于自动保证审美。</p></article>
+      </div>
+      <p class="inline-note" data-cap-result aria-live="polite">当前显示 8 项能力。</p>
+    </section>
+
+    <section class="section-shell evidence-section" id="evidence" aria-labelledby="evidence-title">
+      <header class="section-heading">
+        <div><p class="section-index">01.5 / EVIDENCE LEDGER</p><h2 id="evidence-title">每个结论，都能追到一个源码锚点</h2></div>
+        <p>这里不是“功能宣传”。筛选证据状态，查看我们知道什么、根据什么知道，以及这条证据仍不能证明什么。</p>
+      </header>
+      <div class="evidence-summary">
+        <div><strong data-evidence-count>8</strong><span>当前证据</span></div>
+        <p><b>阅读方法</b> 先看证据状态，再看“支持的结论”，最后看“仍不能证明”。静态实现证据不自动等于真实产出质量。</p>
+      </div>
+      <div class="filter-bar" role="toolbar" aria-label="证据状态筛选">
+        <button class="chip is-active" type="button" data-evidence-filter="all" aria-pressed="true">全部证据</button><button class="chip" type="button" data-evidence-filter="verified" aria-pressed="false">已核验</button><button class="chip" type="button" data-evidence-filter="upstream" aria-pressed="false">上游自述</button><button class="chip" type="button" data-evidence-filter="pending" aria-pressed="false">待验证</button>
+      </div>
+      <div class="evidence-ledger" data-evidence-ledger>
+        <article data-evidence-status="verified"><div class="evidence-id"><span>E01</span><i class="tag tag-verified">已核验</i></div><div><code>project/layout-manifest.json</code><h3>12 个主题、1,020 个布局、8,576 个控件</h3><p>支持：上游确有大规模结构化版式资产。</p></div><p class="evidence-limit"><b>仍不能证明</b>每个布局都能被稳定选中、正确填充并通过导出。</p></article>
+        <article data-evidence-status="verified"><div class="evidence-id"><span>E02</span><i class="tag tag-verified">已核验</i></div><div><code>references/goal-spec.schema.json</code><h3>一份 canonical content 对应四个视觉方案</h3><p>支持：内容与视觉方案在 schema v2 中被明确解耦。</p></div><p class="evidence-limit"><b>仍不能证明</b>四个方案都能保持百分之百事实一致。</p></article>
+        <article data-evidence-status="verified"><div class="evidence-id"><span>E03</span><i class="tag tag-verified">已核验</i></div><div><code>scripts/workflow/layout-query.mjs</code><h3>布局选择包含硬约束与软排序</h3><p>支持：标题长度、条目、媒体等容量会参与选择，而非纯随机套模板。</p></div><p class="evidence-limit"><b>仍不能证明</b>评分函数与人的审美选择始终一致。</p></article>
+        <article data-evidence-status="verified"><div class="evidence-id"><span>E04</span><i class="tag tag-verified">已核验</i></div><div><code>scripts/workflow/layout-allocation.mjs</code><h3>全稿分配惩罚重复结构</h3><p>支持：beam search、seed、多样性与复用惩罚共同控制全稿节奏。</p></div><p class="evidence-limit"><b>仍不能证明</b>依赖或浏览器升级后仍完全可复现。</p></article>
+        <article data-evidence-status="verified"><div class="evidence-id"><span>E05</span><i class="tag tag-verified">已核验</i></div><div><code>assets/template-swiss.html</code><h3>浏览器支持就地编辑与保存</h3><p>支持：文本、媒体、页面状态具备本地草稿与服务端自动保存路径。</p></div><p class="evidence-limit"><b>仍不能证明</b>复杂长稿编辑不存在状态冲突或数据丢失。</p></article>
+        <article data-evidence-status="verified"><div class="evidence-id"><span>E06</span><i class="tag tag-verified">已核验</i></div><div><code>scripts/export-pptx.mjs</code><h3>PPTX 导出读取实时 DOM</h3><p>支持：导出不是读取旧快照，复杂区域存在截图回退机制。</p></div><p class="evidence-limit"><b>仍不能证明</b>复杂页面的原生对象比例和跨 Office 保真。</p></article>
+        <article data-evidence-status="upstream"><div class="evidence-id"><span>E07</span><i class="tag tag-upstream">上游自述</i></div><div><code>README.md / package docs</code><h3>作者报告约 10 万 Token / 10 页</h3><p>支持：可以形成一个后续成本实验的比较基线。</p></div><p class="evidence-limit"><b>仍不能证明</b>当前模型、当前材料和当前版本下仍是同一成本。</p></article>
+        <article data-evidence-status="verified"><div class="evidence-id"><span>E08</span><i class="tag tag-verified">已实测</i></div><div><code>experiments/real-run-01</code><h3>8 页内容 → 32 页对照稿 → 8 页精选稿</h3><p>支持：固定 seed 可逐字节复现；最终 PPTX 为 118 个文字、76 个形状和 6 个截图对象。</p></div><p class="evidence-limit"><b>仍不能证明</b>它在其他主题、WPS、复杂媒体和其他 Agent 宿主上同样稳定。</p></article>
+      </div>
+      <div class="evidence-chain" aria-label="证据推理链"><span>源码事实</span><i aria-hidden="true">→</i><span>工程能力</span><i aria-hidden="true">→</i><span>可运行实验</span><i aria-hidden="true">→</i><span>采用结论</span><strong>当前站点已经进入第 3 层；跨主题与跨 Office 结论仍待继续实验</strong></div>
+    </section>
+
+    <section class="section-shell mechanism-section" id="mechanism" aria-labelledby="mechanism-title">
+      <header class="section-heading heading-inverse">
+        <div><p class="section-index">02 / MECHANISM</p><h2 id="mechanism-title">Agent 负责判断，确定性引擎负责落地</h2></div>
+        <p>真正的核心不是一个“生成”按钮，而是两种能力分工后形成的流水线。</p>
+      </header>
+      <div class="role-split" aria-label="职责分工">
+        <div><span>A / AGENT LAYER</span><strong>理解材料、构造叙事、选择信息密度、提出布局意图</strong></div>
+        <div><span>B / DETERMINISTIC LAYER</span><strong>查布局、渲染 HTML、编辑状态、导出、校验</strong></div>
+      </div>
+      <div class="pipeline-layout">
+        <div class="pipeline-rail" role="tablist" aria-label="生成流程步骤" data-pipeline-tabs>
+          <button type="button" role="tab" aria-selected="true" aria-controls="pipeline-panel" tabindex="0" data-pipeline-step="0"><span>01</span>材料输入</button><button type="button" role="tab" aria-selected="false" aria-controls="pipeline-panel" tabindex="-1" data-pipeline-step="1"><span>02</span>内容规划</button><button type="button" role="tab" aria-selected="false" aria-controls="pipeline-panel" tabindex="-1" data-pipeline-step="2"><span>03</span>布局查询</button><button type="button" role="tab" aria-selected="false" aria-controls="pipeline-panel" tabindex="-1" data-pipeline-step="3"><span>04</span>全局分配</button><button type="button" role="tab" aria-selected="false" aria-controls="pipeline-panel" tabindex="-1" data-pipeline-step="4"><span>05</span>HTML 渲染</button><button type="button" role="tab" aria-selected="false" aria-controls="pipeline-panel" tabindex="-1" data-pipeline-step="5"><span>06</span>浏览器编辑</button><button type="button" role="tab" aria-selected="false" aria-controls="pipeline-panel" tabindex="-1" data-pipeline-step="6"><span>07</span>导出验证</button>
+        </div>
+        <article class="pipeline-panel" id="pipeline-panel" role="tabpanel" tabindex="0" data-pipeline-panel>
+          <div class="pipeline-kicker"><span class="tag tag-simulated">交互模拟</span><span data-pipeline-owner>人 + Agent</span></div><p class="pipeline-number" aria-hidden="true" data-pipeline-number>01</p><h3 data-pipeline-title>材料输入</h3><p class="pipeline-summary" data-pipeline-summary>把文档、研究记录、数据和品牌要求交给宿主 Agent，并声明汇报目标与受众。</p>
+          <dl class="io-grid"><div><dt>INPUT</dt><dd data-pipeline-input>文档 / 数据 / 图片 / 目标</dd></div><div><dt>PROCESS</dt><dd data-pipeline-process>识别材料边界与任务约束</dd></div><div><dt>OUTPUT</dt><dd data-pipeline-output>可供规划的上下文</dd></div></dl>
+          <p class="evidence-line"><strong>源码锚点</strong><span data-pipeline-evidence>Skill 工作流与内容输入约定</span></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-shell" id="outcomes" aria-labelledby="outcomes-title">
+      <header class="section-heading"><div><p class="section-index">03 / OUTCOME</p><h2 id="outcomes-title">“能导出”不是同一种效果</h2></div><p>选择交付格式，看表达力、稳定性与后续编辑之间的真实取舍。</p></header>
+      <div class="format-tabs" role="tablist" aria-label="输出格式" data-format-tabs>
+        <button type="button" role="tab" aria-selected="true" aria-controls="format-html" data-format="html">HTML <span>表达优先</span></button><button type="button" role="tab" aria-selected="false" aria-controls="format-pdf" tabindex="-1" data-format="pdf">PDF <span>交付稳定</span></button><button type="button" role="tab" aria-selected="false" aria-controls="format-pptx" tabindex="-1" data-format="pptx">PPTX <span>办公流转</span></button>
+      </div>
+      <div class="format-stage">
+        <article class="format-panel" id="format-html" role="tabpanel" data-format-panel="html"><div class="format-visual html-visual" aria-hidden="true"><span>LIVE</span><i></i><i></i><i></i><b>01—09</b></div><div><span class="tag tag-verified">已核验</span><h3>HTML：最接近原始设计意图</h3><p>保留浏览器布局、可交互编辑与更丰富的动态表达，适合作为本地审阅与在线演示母版。</p><ul class="check-list"><li>表达能力高</li><li>编辑体验完整</li><li>依赖浏览器运行环境</li></ul></div></article>
+        <article class="format-panel" id="format-pdf" role="tabpanel" data-format-panel="pdf" hidden><div class="format-visual pdf-visual" aria-hidden="true"><span>LOCK</span><i></i><i></i><b>A4 / 16:9</b></div><div><span class="tag tag-verified">已核验</span><h3>PDF：视觉稳定，后续编辑弱</h3><p>适合归档、发送、打印或审批。它把页面表达冻结下来，换来跨环境的一致查看。</p><ul class="check-list"><li>视觉交付稳定</li><li>传播门槛低</li><li>内容几乎不可编辑</li></ul></div></article>
+        <article class="format-panel" id="format-pptx" role="tabpanel" data-format-panel="pptx" hidden><div class="format-visual pptx-visual" aria-hidden="true"><span>EDIT?</span><i></i><i></i><i></i><b>NATIVE + FALLBACK</b></div><div><span class="tag tag-verified">已核验</span><h3>PPTX：兼顾流转，但不是所有元素都原生可编辑</h3><p>导出器会把部分元素转换为 PowerPoint 原生对象，并以截图等方式兜底复杂表达。最终可编辑程度取决于页面组成。</p><ul class="check-list"><li>进入企业 Office 工作流</li><li>部分原生可编辑</li><li>复杂元素可能栅格化</li></ul></div></article>
+      </div>
+    </section>
+
+    <section class="section-shell comparison-section" id="comparison" aria-labelledby="comparison-title">
+      <header class="section-heading">
+        <div><p class="section-index">03.5 / ALTERNATIVES</p><h2 id="comparison-title">它不是唯一方案，也不是所有场景的赢家</h2></div>
+        <p>选工具先看你要优化什么：速度、控制力、原生编辑、本地隐私，还是组织级自动化。</p>
+      </header>
+      <div class="comparison-grid">
+        <article class="comparison-card"><div class="comparison-head"><span>A / MANUAL</span><h3>人工 PowerPoint</h3><i>控制优先</i></div><dl><div><dt>内容自动化</dt><dd><meter min="0" max="4" value="0">0/4</meter><span>低</span></dd></div><div><dt>设计控制</dt><dd><meter min="0" max="4" value="4">4/4</meter><span>高</span></dd></div><div><dt>原生编辑</dt><dd><meter min="0" max="4" value="4">4/4</meter><span>高</span></dd></div><div><dt>本地隐私</dt><dd><meter min="0" max="4" value="4">4/4</meter><span>高</span></dd></div></dl><p><b>适合</b>少量、高价值、强艺术指导或复杂原生动画。</p></article>
+        <article class="comparison-card"><div class="comparison-head"><span>B / SAAS</span><h3>在线 AI PPT</h3><i>便捷优先</i></div><dl><div><dt>内容自动化</dt><dd><meter min="0" max="4" value="4">4/4</meter><span>高</span></dd></div><div><dt>设计控制</dt><dd><meter min="0" max="4" value="2">2/4</meter><span>中</span></dd></div><div><dt>原生编辑</dt><dd><meter min="0" max="4" value="2">2/4</meter><span>中</span></dd></div><div><dt>本地隐私</dt><dd><meter min="0" max="4" value="0">0/4</meter><span>低</span></dd></div></dl><p><b>适合</b>快速一次性初稿，且材料允许进入第三方服务。</p></article>
+        <article class="comparison-card"><div class="comparison-head"><span>C / SDK</span><h3>低层 PPTX 库</h3><i>工程优先</i></div><dl><div><dt>内容自动化</dt><dd><meter min="0" max="4" value="1">1/4</meter><span>低</span></dd></div><div><dt>设计控制</dt><dd><meter min="0" max="4" value="3">3/4</meter><span>高</span></dd></div><div><dt>原生编辑</dt><dd><meter min="0" max="4" value="4">4/4</meter><span>高</span></dd></div><div><dt>本地隐私</dt><dd><meter min="0" max="4" value="4">4/4</meter><span>高</span></dd></div></dl><p><b>适合</b>字段固定、版式固定、大批量生成的工程系统。</p></article>
+        <article class="comparison-card comparison-featured"><div class="comparison-head"><span>D / AGENT PIPELINE</span><h3>Dashi PPT Skill</h3><i>生产线优先</i></div><dl><div><dt>内容自动化</dt><dd><meter min="0" max="4" value="4">4/4</meter><span>高</span></dd></div><div><dt>设计控制</dt><dd><meter min="0" max="4" value="3">3/4</meter><span>高</span></dd></div><div><dt>原生编辑</dt><dd><meter min="0" max="4" value="2">2/4</meter><span>分层</span></dd></div><div><dt>本地隐私</dt><dd><meter min="0" max="4" value="3">3/4</meter><span>较高</span></dd></div></dl><p><b>适合</b>研究、复盘、培训等重复性知识工作，并接受 Agent 与人工审阅。</p></article>
+      </div>
+      <p class="comparison-note"><span class="tag tag-simulated">研究判断</span> 上述等级是基于架构特性的定性比较，不是独立性能基准；“原生编辑”尤其需要真实 PPTX 实验校准。</p>
+    </section>
+
+    <section class="demo-section" id="demo" aria-labelledby="demo-title">
+      <div class="section-shell demo-heading-wrap"><header class="section-heading heading-inverse"><div><p class="section-index">04 / SCENARIO LAB</p><h2 id="demo-title">四种实际任务，四份完整九页样例</h2></div><p><span class="tag tag-simulated">场景模拟</span> 所有业务数字均为演示数据；样例用于展示内容结构、版式与交付能力，不冒充真实客户案例或上游导出成品。</p></header></div>
+      <div class="scenario-lab section-shell">
+        <div class="scenario-tabs" role="tablist" aria-label="样例使用场景" data-scenario-tabs>
+          <button type="button" role="tab" aria-selected="true" data-scenario="research"><span>01 / EVIDENCE</span><strong>研究咨询</strong><small>市场进入与竞品判断</small></button>
+          <button type="button" role="tab" aria-selected="false" tabindex="-1" data-scenario="business"><span>02 / METRICS</span><strong>季度经营复盘</strong><small>KPI、诊断与行动</small></button>
+          <button type="button" role="tab" aria-selected="false" tabindex="-1" data-scenario="training"><span>03 / LEARNING</span><strong>企业培训</strong><small>目标、案例与测验</small></button>
+          <button type="button" role="tab" aria-selected="false" tabindex="-1" data-scenario="pitch"><span>04 / SOLUTION</span><strong>项目方案路演</strong><small>架构、价值与实施</small></button>
+        </div>
+        <article class="scenario-brief" data-scenario-brief>
+          <div><p class="section-index" data-scenario-type>RESEARCH / CONSULTING</p><h3 data-scenario-name>企业级 AI Agent 工具链进入策略</h3></div>
+          <dl><div><dt>受众</dt><dd data-scenario-audience>CTO、战略与产品负责人</dd></div><div><dt>交付目标</dt><dd data-scenario-outcome>从分散材料形成有证据的进入建议</dd></div><div><dt>重点能力</dt><dd data-scenario-capabilities>来源归纳 · 竞品矩阵 · 建议路线</dd></div></dl>
+          <p><span class="tag tag-simulated">模拟数据</span><span data-scenario-note>28 次访谈、12 个竞品和细分场景为演示设定。</span></p>
+        </article>
+      </div>
+      <div class="mechanism-trace section-shell" aria-label="当前样例页的 Dashi 机制追踪" data-mechanism-trace>
+        <div class="trace-head"><span class="tag tag-simulated">机制模拟</span><strong>当前页为什么这样生成</strong></div>
+        <dl><div><dt>CONTENT MAP</dt><dd data-trace-content>COVER · 3 个事实块 · HASH 7CB2</dd></div><div><dt>LAYOUT QUERY</dt><dd data-trace-layout>hero-title-02 · 标题与副标题容量通过</dd></div><div><dt>ALLOCATOR</dt><dd data-trace-allocation>第 1 / 9 页 · 全稿结构未复用</dd></div><div><dt>EXPORT HINT</dt><dd data-trace-export>文本/形状优先原生 · 装饰效果可能回退</dd></div></dl>
+      </div>
+      <div class="demo-workbench">
+        <aside class="slide-rail" aria-label="样例页面"><div class="rail-heading"><span>DECK / 09</span><strong data-rail-title>进入策略</strong></div><div class="slide-nav" data-slide-nav></div></aside>
+        <div class="deck-canvas-wrap">
+          <div class="deck-meta"><div><span class="status-dot"></span><span data-deck-status aria-live="polite">研究咨询 · 第 1 页 · 决策封面</span></div><span>16:9 / SCENARIO PREVIEW</span></div>
+          <article class="deck-canvas variant-editorial density-balanced" data-deck-canvas aria-label="样例幻灯片预览"><div class="slide-fallback"><p class="slide-kicker">市场进入研究 / 模拟数据</p><h3>企业级 AI Agent 工具链：<br>应该进入哪一层？</h3><p>从访谈、竞品与场景证据形成进入建议</p></div></article>
+          <div class="deck-progress" aria-hidden="true"><span data-deck-progress></span></div>
+        </div>
+        <aside class="control-panel" aria-label="样例控制台">
+          <div class="control-heading"><span>CONTROL / LIVE</span><strong>编辑参数</strong></div>
+          <fieldset><legend>3 + 1 方案 · 共用同一内容</legend><div class="variant-grid" data-variant-controls><button type="button" class="variant-button is-active" data-variant="editorial" aria-pressed="true"><i></i><span>A</span>模板候选 A</button><button type="button" class="variant-button" data-variant="metrics" aria-pressed="false"><i></i><span>B</span>模板候选 B</button><button type="button" class="variant-button" data-variant="split" aria-pressed="false"><i></i><span>C</span>模板候选 C</button><button type="button" class="variant-button" data-variant="bespoke" aria-pressed="false"><i></i><span>+1</span>Agent 定制</button></div></fieldset>
+          <label class="range-control">信息密度 <output data-density-output>平衡</output><input type="range" min="1" max="3" value="2" step="1" data-density></label>
+          <label class="text-control">汇报标题<input type="text" value="AI Agent 工具链进入策略" maxlength="32" data-deck-title></label>
+          <label class="switch-control"><span><strong>决策强调</strong><small>突出结论与行动</small></span><input type="checkbox" checked data-highlight><i aria-hidden="true"></i></label>
+          <button class="button button-reset" type="button" data-demo-reset>恢复样例默认值</button><p class="control-note">四个方案共享一份模拟内容；参数只影响本网页，用于解释 Dashi 的 contentMap 与浏览器编辑模型。</p>
+        </aside>
+      </div>
+      <div class="section-shell sample-story"><div class="story-summary"><p class="section-index">THE STORY ARC</p><h3>场景变化时，九页的职责和信息结构也随之变化</h3></div><ol data-story-list><li><span>01</span>提出进入决策</li><li><span>02</span>给出研究结论</li><li><span>03</span>量化研究范围</li><li><span>04</span>绘制市场分层</li><li><span>05</span>建立证据矩阵</li><li><span>06</span>比较进入路径</li><li><span>07</span>选择目标场景</li><li><span>08</span>规划 90 天验证</li><li><span>09</span>形成建议与门槛</li></ol></div>
+    </section>
+
+    <section class="section-shell" id="audiences" aria-labelledby="audiences-title">
+      <header class="section-heading"><div><p class="section-index">05 / AUDIENCE & SCENARIO</p><h2 id="audiences-title">谁会真正从它获得价值？</h2></div><p>它不是只服务“会写代码的人”。选择受众，查看目标、价值、风险和最合适的使用方式。</p></header>
+      <div class="audience-layout">
+        <div class="audience-tabs" role="tablist" aria-label="受众类型" data-audience-tabs><button type="button" role="tab" aria-selected="true" data-audience="decision">技术决策者</button><button type="button" role="tab" aria-selected="false" tabindex="-1" data-audience="management">管理层</button><button type="button" role="tab" aria-selected="false" tabindex="-1" data-audience="research">研究 / 咨询</button><button type="button" role="tab" aria-selected="false" tabindex="-1" data-audience="design">产品 / 设计</button><button type="button" role="tab" aria-selected="false" tabindex="-1" data-audience="agent">Agent 开发者</button><button type="button" role="tab" aria-selected="false" tabindex="-1" data-audience="education">教育 / 培训</button><button type="button" role="tab" aria-selected="false" tabindex="-1" data-audience="compliance">合规 / 安全</button></div>
+        <article class="audience-panel" role="tabpanel" tabindex="0" data-audience-panel><p class="audience-number" aria-hidden="true" data-audience-number>01</p><p class="eyebrow" data-audience-label>PRIMARY AUDIENCE</p><h3 data-audience-title>技术决策者</h3><div class="audience-facts"><div><span>目标</span><p data-audience-goal>判断是否值得进入团队工具链，而不是只看一份漂亮 Demo。</p></div><div><span>获得的价值</span><p data-audience-value>快速理解架构、依赖、许可边界与集成成本。</p></div><div><span>主要风险</span><p data-audience-risk>模板质量、导出保真和 Agent 成本仍需用自己的材料复测。</p></div><div><span>建议用法</span><p data-audience-use>以 10 份真实汇报做沙盒试点，建立人工基线和验收门槛。</p></div></div></article>
+      </div>
+      <div class="scenario-block"><div class="subheading"><p class="section-index">FIT MATRIX</p><h3>适配度取决于任务，不取决于宣传</h3></div><div class="scenario-table" role="table" aria-label="使用场景适配矩阵"><div class="scenario-row table-head" role="row"><span role="columnheader">场景</span><span role="columnheader">适配度</span><span role="columnheader">理由</span><span role="columnheader">控制点</span></div><div class="scenario-row" role="row"><strong role="cell">研究报告 / 咨询汇报</strong><span role="cell"><i class="fit high">高</i></span><span role="cell">结构化材料多，叙事可复用</span><span role="cell">人工核验来源与结论</span></div><div class="scenario-row" role="row"><strong role="cell">内部季度评审</strong><span role="cell"><i class="fit high">高</i></span><span role="cell">格式稳定、更新频繁</span><span role="cell">接入可信数据源</span></div><div class="scenario-row" role="row"><strong role="cell">教学课件 / 培训包</strong><span role="cell"><i class="fit high">高</i></span><span role="cell">章节化、批量化需求明确</span><span role="cell">无障碍与版权检查</span></div><div class="scenario-row" role="row"><strong role="cell">品牌发布 / 高端路演</strong><span role="cell"><i class="fit medium">条件适合</i></span><span role="cell">需要 bespoke 与设计师介入</span><span role="cell">品牌组件与像素级复核</span></div><div class="scenario-row" role="row"><strong role="cell">强监管对外披露</strong><span role="cell"><i class="fit medium">条件适合</i></span><span role="cell">本地处理有优势，内容风险更高</span><span role="cell">审批、留痕、版本锁定</span></div><div class="scenario-row" role="row"><strong role="cell">一分钟即兴、零审阅</strong><span role="cell"><i class="fit low">低</i></span><span role="cell">生产链路与质量控制并非零成本</span><span role="cell">不要跳过人工审阅</span></div></div></div>
+    </section>
+
+    <section class="section-shell adoption-section" id="adoption" aria-labelledby="adoption-title">
+      <header class="section-heading">
+        <div><p class="section-index">05.5 / ADOPTION CHECK</p><h2 id="adoption-title">它对你的意义，用六个条件来判断</h2></div>
+        <p>拖动六个维度，得到一条可解释的采用建议。这个工具评估“是否值得试点”，不替代采购、法务或安全审查。</p>
+      </header>
+      <div class="adoption-workbench">
+        <form class="adoption-form" id="adoption-form" data-adoption-form>
+          <div class="adoption-form-head"><span>YOUR CONTEXT / 0—4</span><strong>组织条件</strong></div>
+          <label class="adoption-control"><span><b>01</b><strong>重复汇报频率</strong><small>季度复盘、研究报告是否反复出现？</small></span><output data-adoption-output="frequency">一般</output><input type="range" min="0" max="4" step="1" value="2" data-adoption-factor="frequency"></label>
+          <label class="adoption-control"><span><b>02</b><strong>材料结构化程度</strong><small>输入是否有稳定文档、数据和章节？</small></span><output data-adoption-output="structure">一般</output><input type="range" min="0" max="4" step="1" value="2" data-adoption-factor="structure"></label>
+          <label class="adoption-control"><span><b>03</b><strong>本地与隐私需求</strong><small>是否希望避开在线 PPT SaaS？</small></span><output data-adoption-output="privacy">较高</output><input type="range" min="0" max="4" step="1" value="3" data-adoption-factor="privacy"></label>
+          <label class="adoption-control"><span><b>04</b><strong>人工审阅能力</strong><small>是否有人对事实、结构和设计终审？</small></span><output data-adoption-output="review">较高</output><input type="range" min="0" max="4" step="1" value="3" data-adoption-factor="review"></label>
+          <label class="adoption-control"><span><b>05</b><strong>HTML / PDF 接受度</strong><small>是否不要求所有页面都原生 PPTX？</small></span><output data-adoption-output="format">一般</output><input type="range" min="0" max="4" step="1" value="2" data-adoption-factor="format"></label>
+          <label class="adoption-control"><span><b>06</b><strong>Agent 工具维护能力</strong><small>团队能否维护 Node、浏览器和 Skill？</small></span><output data-adoption-output="maintenance">一般</output><input type="range" min="0" max="4" step="1" value="2" data-adoption-factor="maintenance"></label>
+        </form>
+        <article class="adoption-result" data-adoption-result aria-live="polite">
+          <div class="adoption-score"><span>SCORE</span><strong data-adoption-score>14</strong><small>/ 24</small></div>
+          <div class="adoption-meter" aria-hidden="true"><span data-adoption-meter></span><i></i><i></i></div>
+          <p class="eyebrow" data-adoption-level>CONDITIONAL PILOT</p>
+          <h3 data-adoption-title>建议有条件试点</h3>
+          <p data-adoption-summary>已经具备部分价值条件，但应先用固定材料验证导出质量和维护成本，再决定是否扩大。</p>
+          <div class="adoption-reasons"><strong>当前最关键的判断</strong><ul data-adoption-reasons><li>本地与隐私需求支持采用</li><li>人工审阅能力支持受控生产</li><li>需要继续提高材料结构化和维护能力</li></ul></div>
+          <div class="adoption-actions"><button class="button button-primary" type="button" data-copy-decision>复制决策摘要</button><button class="button button-quiet" type="reset" form="adoption-form" data-adoption-reset>恢复默认</button></div>
+          <p class="copy-status" data-copy-status role="status"></p>
+        </article>
+      </div>
+      <div class="pilot-protocol">
+        <div><p class="section-index">MINIMUM PILOT</p><h3>如果进入试点，最小实验不是“做一页看看”</h3></div>
+        <ol><li><span>01</span><p><strong>10 份真实材料</strong>覆盖研究、复盘、培训三类任务。</p></li><li><span>02</span><p><strong>三种交付物</strong>同时检查 HTML、PDF、PPTX。</p></li><li><span>03</span><p><strong>五项量化指标</strong>首稿时间、事实修改、设计修改、原生编辑率、总成本。</p></li><li><span>04</span><p><strong>一个退出条件</strong>关键场景未过门槛时，不进入正式流程。</p></li></ol>
+      </div>
+    </section>
+
+    <section class="section-shell extensions-section" id="extensions" aria-labelledby="extensions-title">
+      <header class="section-heading heading-inverse"><div><p class="section-index">06 / EXTENSION</p><h2 id="extensions-title">从“生成器”扩展为组织级演示基础设施</h2></div><p>按建设周期筛选方向。真正有价值的扩展，优先解决证据、治理和协作，而不只是再加一批模板。</p></header>
+      <div class="filter-bar filter-inverse" role="toolbar" aria-label="扩展周期筛选"><button class="chip is-active" type="button" data-extension-filter="all" aria-pressed="true">全部方向</button><button class="chip" type="button" data-extension-filter="near" aria-pressed="false">近期 / 0—3 月</button><button class="chip" type="button" data-extension-filter="mid" aria-pressed="false">中期 / 3—9 月</button><button class="chip" type="button" data-extension-filter="long" aria-pressed="false">长期 / 9 月+</button></div>
+      <div class="extension-grid" data-extension-grid><article data-horizon="near"><span>01 / NEAR</span><h3>证据感知的 Deck</h3><p>为每条事实保留来源、时间和置信度，导出前提示无证据结论。</p><b>优先级 A</b></article><article data-horizon="near"><span>02 / NEAR</span><h3>品牌设计系统</h3><p>把品牌字体、色板、图表、页脚和可用布局封装为可测试资产。</p><b>优先级 A</b></article><article data-horizon="near"><span>03 / NEAR</span><h3>独立质量基准</h3><p>建立可复现的 PPTX 保真、溢出、可编辑率、耗时与成本测试。</p><b>优先级 A</b></article><article data-horizon="mid"><span>04 / MID</span><h3>开放导出适配器</h3><p>降低对专有导出器的锁定，并允许按行业接入不同交付通道。</p><b>优先级 B</b></article><article data-horizon="mid"><span>05 / MID</span><h3>输入连接器</h3><p>连接知识库、表格、BI、代码仓库与引用管理系统，保留来源血缘。</p><b>优先级 B</b></article><article data-horizon="mid"><span>06 / MID</span><h3>协作与版本化</h3><p>让 Canonical JSON 进入审阅、差异对比、评论和回滚工作流。</p><b>优先级 B</b></article><article data-horizon="long"><span>07 / LONG</span><h3>治理与可观测性</h3><p>记录模型、提示、素材、渲染器、导出器版本和每次生产成本。</p><b>优先级 C</b></article><article data-horizon="long"><span>08 / LONG</span><h3>本地化与无障碍</h3><p>处理多语言排版、阅读顺序、对比度、替代文本与演讲者辅助。</p><b>优先级 C</b></article></div>
+      <div class="supplement-grid"><article><p class="section-index">LICENSE</p><h3>许可不是一句“开源”</h3><p>主仓库是 AGPL-3.0；其中 <code>html-deck-to-pptx</code> 导出器标注为专有许可。商用或分发前需要分别审视。</p><span class="tag tag-verified">已核验</span></article><article><p class="section-index">PRIVACY</p><h3>本地优先也要看监听地址</h3><p>预览服务默认配置可能监听 <code>0.0.0.0</code>。处理敏感材料时建议明确绑定 <code>127.0.0.1</code> 并检查网络边界。</p><span class="tag tag-verified">已核验</span></article><article><p class="section-index">CLAIMS</p><h3>成本与效果要自己复测</h3><p>上游关于 token 成本和效果的数字属于作者自述；本站没有把它们当成独立基准结论。</p><span class="tag tag-upstream">上游自述</span></article></div>
+      <div class="decision-gate"><div><p class="section-index">ADOPTION GATE</p><h3>对你的意义：它值得成为一个“可控的 PPT 生产实验场”</h3></div><ol><li><span>01</span><p><strong>先验证内容效率</strong> 同一材料，比较人工与 Agent 的首稿时间和结构质量。</p></li><li><span>02</span><p><strong>再验证交付质量</strong> 检查 PDF 保真、PPTX 可编辑率、字体和复杂元素。</p></li><li><span>03</span><p><strong>最后决定组织化</strong> 只有当品牌、合规、成本和维护都过门槛，再接入正式流程。</p></li></ol></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div><strong>R-003 / Dashi PPT Skill</strong><p>第 3 个研究子项目；独立研究站点，不代表上游项目立场。</p></div><nav aria-label="研究资料"><a href="../README.md">完整研究</a><a href="../experiments/real-run-01/experiment-report.json">实测 01</a><a href="../experiments/real-run-02-brand-media/experiment-report.json">实测 02</a><a href="https://github.com/chuspeeism/dashi-ppt-skill/tree/7cb23347f91cda1a5519eafc8c040704e389535a">固定上游版本</a></nav><span>Updated / 2026.08.31</span></footer>
+  <noscript><section class="noscript-note"><h2>无 JavaScript 阅读提示</h2><p>真实实验已完成：8 个逻辑页生成 32 个 3+1 候选页，再导出 8 页 v4 精选稿。固定 seed 与同一修正规则可逐字节复现 goal.json；初始 PowerPoint 渲染捕获 2 个越界候选，替换 2 个同主题布局后最终为 0 越界。</p><p><a href="../artifacts/real-run-01/dashi-real-run-01-selected-v4.pptx">下载 8 页精选 PPTX</a> · <a href="../artifacts/real-run-01/dashi-real-run-01-selected-v4.pdf">下载 PDF</a> · <a href="../experiments/real-run-01/experiment-report.json">机器审计报告</a></p><p>Dashi 的差异化机制仍可直接阅读：同一份 canonical content 先通过版式容量约束，再映射到三套模板候选和一套 Agent 定制方案；PPTX 导出按对象能力采用原生映射与截图回退。</p><p>四份扩展场景样例的目录如下，启用 JavaScript 后可切换并预览每一页。</p><h3>研究咨询</h3><ol><li>决策封面</li><li>结论摘要</li><li>研究范围</li><li>市场分层</li><li>证据矩阵</li><li>路径比较</li><li>目标场景</li><li>90 天验证</li><li>建议与门槛</li></ol><h3>季度经营复盘</h3><ol><li>季度封面</li><li>经营摘要</li><li>核心指标</li><li>增长漏斗</li><li>偏差诊断</li><li>产品线比较</li><li>Q4 行动</li><li>Q4 路线</li><li>责任与目标</li></ol><h3>企业培训</h3><ol><li>课程封面</li><li>学习成果</li><li>课程地图</li><li>判断流程</li><li>风险案例</li><li>情境测验</li><li>岗位场景</li><li>推广计划</li><li>行为承诺</li></ol><h3>项目方案路演</h3><ol><li>方案封面</li><li>价值主张</li><li>目标范围</li><li>方案架构</li><li>数据边界</li><li>目标收益</li><li>应用场景</li><li>实施路线</li><li>试点决策</li></ol></section></noscript>
+  <script src="./app.js" defer></script>
+</body>
+</html>

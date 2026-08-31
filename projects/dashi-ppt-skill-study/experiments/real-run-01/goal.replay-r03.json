@@ -1,0 +1,3607 @@
+{
+  "schemaVersion": 2,
+  "variantOutputMode": "comparison",
+  "title": "Dashi PPT Skill 真实采用研究",
+  "goal": "面向技术决策者解释 Dashi 的差异化生产机制、证据边界与最小试点方法",
+  "themePack": "theme07",
+  "pageCount": 8,
+  "randomSeed": "dashi-study-20260831-r03",
+  "workflowRunId": "theme07-20260831-real03",
+  "slides": [
+    {
+      "content": {
+        "presentation": {
+          "title": "Dashi PPT Skill",
+          "titleShort": "Dashi PPT Skill",
+          "summary": "从材料到可审计演示的本地生产线",
+          "summaryShort": "本地演示生产线",
+          "takeaway": "锁定版本 0.4.11：检验内容契约、3+1 方案与分层导出",
+          "items": [],
+          "coverLabels": [
+            "技术采用研究",
+            "2026-08-31"
+          ],
+          "chartData": []
+        },
+        "media": [],
+        "meta": {
+          "brand": "0830 Research Lab",
+          "pageLabel": "01",
+          "unit": "",
+          "panelTitle": "技术采用研究",
+          "date": "2026-08-31",
+          "empty": ""
+        }
+      },
+      "selectedVariant": "v1",
+      "variants": [
+        {
+          "id": "v1",
+          "kind": "template",
+          "layout": "theme07_page002",
+          "props": {
+            "showTimeline": false,
+            "images": [],
+            "imageCount": 0
+          },
+          "contentMap": {
+            "kicker": "presentation.title",
+            "summary": "presentation.summary",
+            "timeline": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "supplementTextFallback": true,
+              "textFallbackOnly": true,
+              "limit": 1,
+              "select": "labelWithValueAndSupporting"
+            },
+            "phaseLeft": "presentation.coverLabels[0]",
+            "phaseRight": "presentation.coverLabels[1]",
+            "titleL1": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 5,
+              "truncate": true
+            },
+            "titleL2": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 6,
+              "truncate": true
+            },
+            "subPre": "presentation.coverLabels[0]",
+            "years": "presentation.coverLabels[1]",
+            "subPost": "presentation.coverLabels[0]",
+            "logo": "presentation.coverLabels[1]",
+            "photoLabel": "presentation.coverLabels[0]"
+          }
+        },
+        {
+          "id": "v2",
+          "kind": "template",
+          "layout": "theme07_page003",
+          "props": {
+            "showCrumbs": false
+          },
+          "contentMap": {
+            "slogan": "presentation.title",
+            "sub": "presentation.summary",
+            "crumbs": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "supplementTextFallback": true,
+              "textFallbackOnly": true,
+              "limit": 1,
+              "select": "labelWithValueAndSupporting"
+            },
+            "logo": "presentation.coverLabels[0]",
+            "phase": "presentation.coverLabels[1]",
+            "titleL1": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 5,
+              "truncate": true
+            },
+            "titleL2": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 6,
+              "truncate": true
+            }
+          }
+        },
+        {
+          "id": "v3",
+          "kind": "template",
+          "layout": "theme07_page001",
+          "props": {
+            "showTags": false
+          },
+          "contentMap": {
+            "kicker": "presentation.title",
+            "sub": "presentation.summary",
+            "tags": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "supplementTextFallback": true,
+              "textFallbackOnly": true,
+              "limit": 1,
+              "select": "labelWithValueAndSupporting"
+            },
+            "logo": "presentation.coverLabels[0]",
+            "phase": "presentation.coverLabels[1]",
+            "titleL1": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 5,
+              "truncate": true
+            },
+            "titleL2": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 6,
+              "truncate": true
+            },
+            "year": "presentation.coverLabels[0]"
+          }
+        },
+        {
+          "id": "v4",
+          "kind": "bespoke",
+          "adjustable": false,
+          "composition": {
+            "designIntent": {
+              "objective": "面向技术决策者解释 Dashi 的差异化生产机制、证据边界与最小试点方法",
+              "audience": "技术负责人、研究负责人、设计系统负责人",
+              "narrativeRole": "cover",
+              "emphasis": "锁定版本 0.4.11：检验内容契约、3+1 方案与分层导出",
+              "rationale": "以单一主标题和非对称留白建立主张",
+              "compositionFamily": "hero"
+            },
+            "background": "dark",
+            "elements": [
+              {
+                "id": "page-kicker",
+                "type": "text",
+                "grid": {
+                  "column": 1,
+                  "row": 1,
+                  "width": 5,
+                  "height": 1
+                },
+                "role": "kicker",
+                "tone": "accent",
+                "align": "left",
+                "text": ""
+              },
+              {
+                "id": "page-label",
+                "type": "text",
+                "grid": {
+                  "column": 11,
+                  "row": 1,
+                  "width": 2,
+                  "height": 1
+                },
+                "role": "label",
+                "tone": "muted",
+                "align": "right",
+                "text": ""
+              },
+              {
+                "id": "page-title",
+                "type": "text",
+                "grid": {
+                  "column": 1,
+                  "row": 2,
+                  "width": 10,
+                  "height": 3
+                },
+                "role": "title",
+                "tone": "default",
+                "align": "left",
+                "text": ""
+              },
+              {
+                "id": "hero-summary",
+                "type": "text",
+                "grid": {
+                  "column": 1,
+                  "row": 6,
+                  "width": 7,
+                  "height": 2
+                },
+                "role": "subtitle",
+                "tone": "default",
+                "align": "left",
+                "text": ""
+              },
+              {
+                "id": "hero-takeaway",
+                "type": "text",
+                "grid": {
+                  "column": 9,
+                  "row": 6,
+                  "width": 4,
+                  "height": 2
+                },
+                "role": "body",
+                "tone": "accent",
+                "align": "left",
+                "text": ""
+              }
+            ]
+          },
+          "contentMap": {
+            "elements[0].text": "meta.panelTitle",
+            "elements[1].text": "meta.pageLabel",
+            "elements[2].text": "presentation.title",
+            "elements[3].text": "presentation.summary",
+            "elements[4].text": "presentation.takeaway"
+          }
+        }
+      ]
+    },
+    {
+      "content": {
+        "presentation": {
+          "title": "差异不在生成，而在内容与版式解耦",
+          "titleShort": "内容与版式解耦",
+          "summary": "通用生成往往把事实与画面一次性写死；Dashi 先冻结内容，再选择表现方式。",
+          "summaryShort": "先冻结内容，再选择表现方式",
+          "takeaway": "换方案时，核心事实不必跟着重写。",
+          "items": [
+            {
+              "id": "canonical",
+              "label": "Canonical content",
+              "value": 1,
+              "displayValue": "1 份",
+              "unit": "份",
+              "detail": "每个逻辑页只维护一份事实源",
+              "required": true,
+              "priority": 1,
+              "emptyText": "",
+              "focus": false,
+              "valueText": "1 份",
+              "labelWithValue": "1 份 · Canonical content",
+              "labelWithSupporting": "Canonical content：每个逻辑页只维护一份事实源",
+              "labelWithValueAndSupporting": "1 份 · Canonical content｜每个逻辑页只维护一份事实源",
+              "chartValue": 1,
+              "chartUnit": "unit:份"
+            },
+            {
+              "id": "capacity",
+              "label": "Capacity contract",
+              "detail": "标题、条目、数值与媒体要求参与硬筛选",
+              "required": true,
+              "priority": 1,
+              "unit": "",
+              "emptyText": "",
+              "focus": false,
+              "displayValue": "",
+              "valueText": "",
+              "labelWithValue": "Capacity contract",
+              "labelWithSupporting": "Capacity contract：标题、条目、数值与媒体要求参与硬筛选",
+              "labelWithValueAndSupporting": "Capacity contract｜标题、条目、数值与媒体要求参与硬筛选"
+            },
+            {
+              "id": "variants",
+              "label": "3+1 variants",
+              "detail": "三个模板候选与一个受主题约束的定制方案",
+              "required": true,
+              "priority": 1,
+              "unit": "",
+              "emptyText": "",
+              "focus": false,
+              "displayValue": "",
+              "valueText": "",
+              "labelWithValue": "3+1 variants",
+              "labelWithSupporting": "3+1 variants：三个模板候选与一个受主题约束的定制方案",
+              "labelWithValueAndSupporting": "3+1 variants｜三个模板候选与一个受主题约束的定制方案"
+            }
+          ],
+          "coverLabels": [
+            "核心差异"
+          ],
+          "chartData": []
+        },
+        "media": [],
+        "meta": {
+          "brand": "0830 Research Lab",
+          "pageLabel": "02",
+          "unit": "",
+          "panelTitle": "核心差异",
+          "date": "",
+          "empty": ""
+        }
+      },
+      "selectedVariant": "v1",
+      "variants": [
+        {
+          "id": "v1",
+          "kind": "template",
+          "layout": "theme07_page026",
+          "props": {
+            "images": [],
+            "imageCount": 0
+          },
+          "contentMap": {
+            "title": "presentation.title",
+            "lead": "presentation.summary",
+            "slots": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "supplementTextFallback": true,
+              "limit": 4,
+              "fields": {
+                "name": "label",
+                "role": "projectionLabel"
+              }
+            },
+            "eyebrow": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 3,
+              "truncate": true
+            },
+            "titleTail": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 4,
+              "truncate": true
+            },
+            "anchorLead": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 5,
+              "truncate": true
+            },
+            "anchorUnit": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 6,
+              "truncate": true
+            },
+            "anchorNote": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 24,
+              "index": 7,
+              "truncate": true
+            },
+            "closing": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 36,
+              "index": 8,
+              "truncate": true
+            }
+          }
+        },
+        {
+          "id": "v2",
+          "kind": "template",
+          "layout": "theme07_page015",
+          "props": {
+            "itemCount": 3,
+            "conclusionCount": 3
+          },
+          "contentMap": {
+            "kicker": "presentation.title",
+            "conclusions": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "limit": 3,
+              "fields": {
+                "idx": "projectionOrdinal",
+                "title": "label",
+                "note": "labelWithSupporting"
+              }
+            },
+            "eyebrow": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 3,
+              "truncate": true
+            },
+            "quoteLead": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 4,
+              "truncate": true
+            },
+            "quoteEm1": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 5,
+              "truncate": true
+            },
+            "quoteMid": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 6,
+              "truncate": true
+            },
+            "quoteEm2": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 7,
+              "truncate": true
+            },
+            "quoteTail": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 8,
+              "truncate": true
+            },
+            "source": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 42,
+              "index": 9,
+              "truncate": true
+            }
+          }
+        },
+        {
+          "id": "v3",
+          "kind": "template",
+          "layout": "theme07_page071",
+          "props": {
+            "cardCount": 3,
+            "showContact": false,
+            "images": [],
+            "imageCount": 0
+          },
+          "contentMap": {
+            "title": "presentation.title",
+            "lead": "presentation.summary",
+            "cards": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "limit": 3,
+              "fields": {
+                "label": "label",
+                "note": "labelWithSupporting"
+              }
+            },
+            "contacts": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "supplementTextFallback": true,
+              "textFallbackOnly": true,
+              "group": 1,
+              "limit": 1,
+              "select": "labelWithValue"
+            },
+            "eyebrow": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 3,
+              "truncate": true
+            },
+            "segment": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 4,
+              "truncate": true
+            },
+            "titleTail": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 5,
+              "truncate": true
+            },
+            "statLine": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 29,
+              "index": 6,
+              "truncate": true
+            },
+            "closing": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 31,
+              "index": 7,
+              "truncate": true
+            },
+            "badge": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 8,
+              "truncate": true
+            },
+            "listTitle": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 9,
+              "truncate": true
+            },
+            "contactTitle": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 10,
+              "truncate": true
+            }
+          }
+        },
+        {
+          "id": "v4",
+          "kind": "bespoke",
+          "adjustable": false,
+          "composition": {
+            "designIntent": {
+              "objective": "面向技术决策者解释 Dashi 的差异化生产机制、证据边界与最小试点方法",
+              "audience": "技术负责人、研究负责人、设计系统负责人",
+              "narrativeRole": "context",
+              "emphasis": "换方案时，核心事实不必跟着重写。",
+              "rationale": "以大标题、引语和窄栏列表建立杂志式层级",
+              "compositionFamily": "editorial"
+            },
+            "background": "default",
+            "elements": [
+              {
+                "id": "page-kicker",
+                "type": "text",
+                "grid": {
+                  "column": 1,
+                  "row": 1,
+                  "width": 5,
+                  "height": 1
+                },
+                "role": "kicker",
+                "tone": "accent",
+                "align": "left",
+                "text": ""
+              },
+              {
+                "id": "page-label",
+                "type": "text",
+                "grid": {
+                  "column": 11,
+                  "row": 1,
+                  "width": 2,
+                  "height": 1
+                },
+                "role": "label",
+                "tone": "muted",
+                "align": "right",
+                "text": ""
+              },
+              {
+                "id": "page-title",
+                "type": "text",
+                "grid": {
+                  "column": 1,
+                  "row": 2,
+                  "width": 10,
+                  "height": 2
+                },
+                "role": "title",
+                "tone": "default",
+                "align": "left",
+                "text": ""
+              },
+              {
+                "id": "editorial-takeaway",
+                "type": "quote",
+                "grid": {
+                  "column": 1,
+                  "row": 4,
+                  "width": 7,
+                  "height": 5
+                },
+                "tone": "accent",
+                "quote": ""
+              },
+              {
+                "id": "editorial-items",
+                "type": "list",
+                "grid": {
+                  "column": 9,
+                  "row": 4,
+                  "width": 4,
+                  "height": 5
+                },
+                "ordered": false,
+                "tone": "default",
+                "items": []
+              }
+            ]
+          },
+          "contentMap": {
+            "elements[0].text": "meta.panelTitle",
+            "elements[1].text": "meta.pageLabel",
+            "elements[2].text": "presentation.title",
+            "elements[3].quote": "presentation.takeaway",
+            "elements[4].items": {
+              "source": "presentation.items",
+              "fields": {
+                "title": "labelWithValue",
+                "body": "detail"
+              },
+              "limit": 3
+            }
+          }
+        }
+      ]
+    },
+    {
+      "content": {
+        "presentation": {
+          "title": "一份内容依次经过五道确定性关卡",
+          "titleShort": "五道确定性关卡",
+          "summary": "Agent 负责理解与叙事，脚本负责筛选、分配、渲染、校验和导出。",
+          "summaryShort": "Agent 决策，脚本执行",
+          "takeaway": "可追踪的中间表示把创作判断与工程执行连接起来。",
+          "items": [
+            {
+              "id": "plan",
+              "label": "内容规划",
+              "detail": "形成逐页 brief 与事实包",
+              "required": true,
+              "priority": 1,
+              "unit": "",
+              "emptyText": "",
+              "focus": false,
+              "displayValue": "",
+              "valueText": "",
+              "labelWithValue": "内容规划",
+              "labelWithSupporting": "内容规划：形成逐页 brief 与事实包",
+              "labelWithValueAndSupporting": "内容规划｜形成逐页 brief 与事实包"
+            },
+            {
+              "id": "query",
+              "label": "容量查询",
+              "detail": "淘汰无法承载内容的版式",
+              "required": true,
+              "priority": 1,
+              "unit": "",
+              "emptyText": "",
+              "focus": false,
+              "displayValue": "",
+              "valueText": "",
+              "labelWithValue": "容量查询",
+              "labelWithSupporting": "容量查询：淘汰无法承载内容的版式",
+              "labelWithValueAndSupporting": "容量查询｜淘汰无法承载内容的版式"
+            },
+            {
+              "id": "allocate",
+              "label": "全稿分配",
+              "detail": "控制布局与结构家族复用",
+              "required": true,
+              "priority": 1,
+              "unit": "",
+              "emptyText": "",
+              "focus": false,
+              "displayValue": "",
+              "valueText": "",
+              "labelWithValue": "全稿分配",
+              "labelWithSupporting": "全稿分配：控制布局与结构家族复用",
+              "labelWithValueAndSupporting": "全稿分配｜控制布局与结构家族复用"
+            },
+            {
+              "id": "render",
+              "label": "HTML 渲染",
+              "detail": "生成离线编辑器与四方案",
+              "required": true,
+              "priority": 1,
+              "unit": "",
+              "emptyText": "",
+              "focus": false,
+              "displayValue": "",
+              "valueText": "",
+              "labelWithValue": "HTML 渲染",
+              "labelWithSupporting": "HTML 渲染：生成离线编辑器与四方案",
+              "labelWithValueAndSupporting": "HTML 渲染｜生成离线编辑器与四方案"
+            },
+            {
+              "id": "export",
+              "label": "校验与导出",
+              "detail": "检查内容并生成 PDF / PPTX",
+              "required": true,
+              "priority": 1,
+              "unit": "",
+              "emptyText": "",
+              "focus": false,
+              "displayValue": "",
+              "valueText": "",
+              "labelWithValue": "校验与导出",
+              "labelWithSupporting": "校验与导出：检查内容并生成 PDF / PPTX",
+              "labelWithValueAndSupporting": "校验与导出｜检查内容并生成 PDF / PPTX"
+            }
+          ],
+          "coverLabels": [
+            "生产链"
+          ],
+          "chartData": []
+        },
+        "media": [],
+        "meta": {
+          "brand": "0830 Research Lab",
+          "pageLabel": "03",
+          "unit": "",
+          "panelTitle": "生产链",
+          "date": "",
+          "empty": ""
+        }
+      },
+      "selectedVariant": "v1",
+      "variants": [
+        {
+          "id": "v1",
+          "kind": "template",
+          "layout": "theme07_page013",
+          "props": {
+            "cardCount": 5,
+            "images": [],
+            "imageCount": 0
+          },
+          "contentMap": {
+            "title": "presentation.title",
+            "lead": "presentation.summary",
+            "sub": "presentation.takeaway",
+            "risks": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "limit": 5,
+              "fields": {
+                "node": "label",
+                "title": "projectionLabel",
+                "desc": "labelWithSupporting"
+              }
+            },
+            "eyebrow": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 3,
+              "truncate": true
+            },
+            "chainTitle": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 4,
+              "truncate": true
+            },
+            "closing": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 29,
+              "index": 5,
+              "truncate": true
+            },
+            "imageRatio": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 6,
+              "truncate": true
+            }
+          }
+        },
+        {
+          "id": "v2",
+          "kind": "template",
+          "layout": "theme07_page055",
+          "props": {
+            "pillarCount": 3
+          },
+          "contentMap": {
+            "kicker": "presentation.title",
+            "pillars": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "group": 3,
+              "limit": 3,
+              "fields": {
+                "glyph": "labelWithValue",
+                "zh": "label",
+                "en": "labelWithValue",
+                "note": "labelWithSupporting"
+              }
+            },
+            "eyebrow": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 24,
+              "index": 3,
+              "truncate": true
+            },
+            "quoteLead": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 4,
+              "truncate": true
+            },
+            "quoteEm": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 5,
+              "truncate": true
+            },
+            "quoteTail": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 6,
+              "truncate": true
+            },
+            "source": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 42,
+              "index": 7,
+              "truncate": true
+            }
+          }
+        },
+        {
+          "id": "v3",
+          "kind": "template",
+          "layout": "theme07_page007",
+          "props": {
+            "cardCount": 5
+          },
+          "contentMap": {
+            "title": "presentation.title",
+            "lead": "presentation.summary",
+            "sub": "presentation.takeaway",
+            "chapters": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "limit": 5,
+              "fields": {
+                "no": "projectionOrdinal",
+                "zh": "label",
+                "en": "projectionLabel"
+              }
+            },
+            "eyebrow": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 3,
+              "truncate": true
+            },
+            "closing": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 27,
+              "index": 4,
+              "truncate": true
+            }
+          }
+        },
+        {
+          "id": "v4",
+          "kind": "bespoke",
+          "adjustable": false,
+          "composition": {
+            "designIntent": {
+              "objective": "面向技术决策者解释 Dashi 的差异化生产机制、证据边界与最小试点方法",
+              "audience": "技术负责人、研究负责人、设计系统负责人",
+              "narrativeRole": "process",
+              "emphasis": "可追踪的中间表示把创作判断与工程执行连接起来。",
+              "rationale": "以非对称双栏分离结论与支撑信息",
+              "compositionFamily": "split"
+            },
+            "background": "default",
+            "elements": [
+              {
+                "id": "page-kicker",
+                "type": "text",
+                "grid": {
+                  "column": 1,
+                  "row": 1,
+                  "width": 5,
+                  "height": 1
+                },
+                "role": "kicker",
+                "tone": "accent",
+                "align": "left",
+                "text": ""
+              },
+              {
+                "id": "page-label",
+                "type": "text",
+                "grid": {
+                  "column": 11,
+                  "row": 1,
+                  "width": 2,
+                  "height": 1
+                },
+                "role": "label",
+                "tone": "muted",
+                "align": "right",
+                "text": ""
+              },
+              {
+                "id": "page-title",
+                "type": "text",
+                "grid": {
+                  "column": 1,
+                  "row": 2,
+                  "width": 10,
+                  "height": 2
+                },
+                "role": "title",
+                "tone": "default",
+                "align": "left",
+                "text": ""
+              },
+              {
+                "id": "split-summary",
+                "type": "text",
+                "grid": {
+                  "column": 1,
+                  "row": 4,
+                  "width": 5,
+                  "height": 2
+                },
+                "role": "subtitle",
+                "tone": "default",
+                "align": "left",
+                "text": ""
+              },
+              {
+                "id": "split-takeaway",
+                "type": "text",
+                "grid": {
+                  "column": 1,
+                  "row": 7,
+                  "width": 5,
+                  "height": 2
+                },
+                "role": "body",
+                "tone": "accent",
+                "align": "left",
+                "text": ""
+              },
+              {
+                "id": "split-items",
+                "type": "list",
+                "grid": {
+                  "column": 6,
+                  "row": 4,
+                  "width": 7,
+                  "height": 5
+                },
+                "ordered": false,
+                "tone": "default",
+                "items": []
+              }
+            ]
+          },
+          "contentMap": {
+            "elements[0].text": "meta.panelTitle",
+            "elements[1].text": "meta.pageLabel",
+            "elements[2].text": "presentation.title",
+            "elements[3].text": "presentation.summary",
+            "elements[4].text": "presentation.takeaway",
+            "elements[5].items": {
+              "source": "presentation.items",
+              "fields": {
+                "title": "labelWithValue",
+                "body": "detail"
+              },
+              "limit": 5
+            }
+          }
+        }
+      ]
+    },
+    {
+      "content": {
+        "presentation": {
+          "title": "版式库规模可量化，但规模不是质量结论",
+          "titleShort": "规模不是质量结论",
+          "summary": "锁定清单可以复算资产规模；真实适配率、审美与返工量仍需运行实验。",
+          "summaryShort": "资产规模已核验，效果仍需实测",
+          "takeaway": "把资产数量当作覆盖面证据，而不是效果保证。",
+          "items": [
+            {
+              "id": "themes",
+              "label": "视觉主题",
+              "value": 12,
+              "displayValue": "12 套",
+              "unit": "套",
+              "detail": "锁定清单复算",
+              "required": true,
+              "priority": 1,
+              "emptyText": "",
+              "focus": false,
+              "valueText": "12 套",
+              "labelWithValue": "12 套 · 视觉主题",
+              "labelWithSupporting": "视觉主题：锁定清单复算",
+              "labelWithValueAndSupporting": "12 套 · 视觉主题｜锁定清单复算",
+              "chartValue": 12,
+              "chartUnit": "unit:套"
+            },
+            {
+              "id": "layouts",
+              "label": "版式页面",
+              "value": 1020,
+              "displayValue": "1,020",
+              "unit": "个",
+              "detail": "20 类页面角色",
+              "required": true,
+              "priority": 1,
+              "emptyText": "",
+              "focus": false,
+              "valueText": "1,020",
+              "labelWithValue": "1,020 · 版式页面",
+              "labelWithSupporting": "版式页面：20 类页面角色",
+              "labelWithValueAndSupporting": "1,020 · 版式页面｜20 类页面角色",
+              "chartValue": 1020,
+              "chartUnit": "unit:个"
+            },
+            {
+              "id": "controls",
+              "label": "可调控件",
+              "value": 8576,
+              "displayValue": "8,576",
+              "unit": "个",
+              "detail": "覆盖布局与表现参数",
+              "required": true,
+              "priority": 1,
+              "emptyText": "",
+              "focus": false,
+              "valueText": "8,576",
+              "labelWithValue": "8,576 · 可调控件",
+              "labelWithSupporting": "可调控件：覆盖布局与表现参数",
+              "labelWithValueAndSupporting": "8,576 · 可调控件｜覆盖布局与表现参数",
+              "chartValue": 8576,
+              "chartUnit": "unit:个"
+            },
+            {
+              "id": "variants",
+              "label": "每页方案",
+              "value": 4,
+              "displayValue": "3+1",
+              "unit": "套",
+              "detail": "模板候选加定制方案",
+              "required": true,
+              "priority": 1,
+              "emptyText": "",
+              "focus": false,
+              "valueText": "3+1",
+              "labelWithValue": "3+1 · 每页方案",
+              "labelWithSupporting": "每页方案：模板候选加定制方案",
+              "labelWithValueAndSupporting": "3+1 · 每页方案｜模板候选加定制方案",
+              "chartValue": 4,
+              "chartUnit": "unit:套"
+            }
+          ],
+          "chartData": [
+            {
+              "id": "themes",
+              "label": "主题",
+              "value": 12,
+              "unit": "套",
+              "displayValue": "12 套",
+              "chartUnit": "unit:套"
+            },
+            {
+              "id": "layouts",
+              "label": "版式",
+              "value": 1020,
+              "unit": "个",
+              "displayValue": "1020 个",
+              "chartUnit": "unit:个"
+            },
+            {
+              "id": "controls",
+              "label": "控件",
+              "value": 8576,
+              "unit": "个",
+              "displayValue": "8576 个",
+              "chartUnit": "unit:个"
+            },
+            {
+              "id": "variants",
+              "label": "方案",
+              "value": 4,
+              "unit": "套",
+              "displayValue": "4 套",
+              "chartUnit": "unit:套"
+            }
+          ],
+          "coverLabels": [
+            "资产基线"
+          ]
+        },
+        "media": [],
+        "meta": {
+          "brand": "0830 Research Lab",
+          "pageLabel": "04",
+          "unit": "",
+          "panelTitle": "资产基线",
+          "date": "",
+          "empty": ""
+        }
+      },
+      "selectedVariant": "v1",
+      "variants": [
+        {
+          "id": "v1",
+          "kind": "template",
+          "layout": "theme07_page035",
+          "props": {
+            "rowCount": 4,
+            "showShare": false,
+            "showJudgment": true,
+            "focusEnabled": true,
+            "focusIndex": 1,
+            "colHeads": {}
+          },
+          "contentMap": {
+            "title": "presentation.titleShort",
+            "lead": "presentation.summary",
+            "rows": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "filter": "value-bearing",
+              "limit": 4,
+              "fields": {
+                "dim": "label",
+                "tier": "unit",
+                "val": "displayValue",
+                "note": "detail"
+              }
+            },
+            "eyebrow": "meta.panelTitle",
+            "marker": "meta.pageLabel",
+            "segment": "presentation.summaryShort",
+            "titleTail": "presentation.titleShort",
+            "statLine": "presentation.takeaway",
+            "anchorValue": "presentation.items[1].displayValue",
+            "anchorUnit": "presentation.items[1].unit",
+            "anchorLabel": "presentation.items[1].label",
+            "closing": "presentation.summaryShort",
+            "colHeads.dim": "meta.panelTitle",
+            "colHeads.val": "presentation.items[0].unit",
+            "colHeads.share": "presentation.items[1].unit",
+            "colHeads.note": "presentation.summaryShort"
+          }
+        },
+        {
+          "id": "v2",
+          "kind": "template",
+          "layout": "theme07_page052",
+          "props": {
+            "segmentCount": 4,
+            "images": [],
+            "imageCount": 0,
+            "hub": {}
+          },
+          "contentMap": {
+            "title": "presentation.title",
+            "lead": "presentation.summary",
+            "hub.lead": "presentation.takeaway",
+            "nodes": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "filter": "value-bearing",
+              "limit": 4,
+              "fields": {
+                "label": "label",
+                "value": "chartValue"
+              }
+            },
+            "eyebrow": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 3,
+              "truncate": true
+            },
+            "segment": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 4,
+              "truncate": true
+            },
+            "titleTail": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 5,
+              "truncate": true
+            },
+            "statLine": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 22,
+              "index": 6,
+              "truncate": true
+            },
+            "closing": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 27,
+              "index": 7,
+              "truncate": true
+            },
+            "badge": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 8,
+              "truncate": true
+            },
+            "panelTitle": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "titleShort",
+                "summaryShort",
+                "takeaway"
+              ],
+              "maxChars": 18,
+              "index": 9,
+              "truncate": true
+            },
+            "hub.sub": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 36,
+              "index": 10,
+              "truncate": true
+            },
+            "legend": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 31,
+              "index": 11,
+              "truncate": true
+            }
+          }
+        },
+        {
+          "id": "v3",
+          "kind": "template",
+          "layout": "theme07_page027",
+          "props": {
+            "rowCount": 4
+          },
+          "contentMap": {
+            "title": "presentation.title",
+            "lead": "presentation.summary",
+            "rows": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "filter": "value-bearing",
+              "limit": 4,
+              "fields": {
+                "name": "label",
+                "tag": "projectionLabel",
+                "val": "chartValue"
+              }
+            },
+            "eyebrow": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 3,
+              "truncate": true
+            },
+            "titleTail": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 4,
+              "truncate": true
+            },
+            "anchorLead": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 5,
+              "truncate": true
+            },
+            "anchorNote": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 27,
+              "index": 6,
+              "truncate": true
+            },
+            "closing": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 29,
+              "index": 7,
+              "truncate": true
+            },
+            "axisLabel": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 8,
+              "truncate": true
+            }
+          }
+        },
+        {
+          "id": "v4",
+          "kind": "bespoke",
+          "adjustable": false,
+          "composition": {
+            "designIntent": {
+              "objective": "面向技术决策者解释 Dashi 的差异化生产机制、证据边界与最小试点方法",
+              "audience": "技术负责人、研究负责人、设计系统负责人",
+              "narrativeRole": "breakdown",
+              "emphasis": "把资产数量当作覆盖面证据，而不是效果保证。",
+              "rationale": "以二维分区并列展示同层级信息",
+              "compositionFamily": "matrix"
+            },
+            "background": "default",
+            "elements": [
+              {
+                "id": "page-kicker",
+                "type": "text",
+                "grid": {
+                  "column": 1,
+                  "row": 1,
+                  "width": 5,
+                  "height": 1
+                },
+                "role": "kicker",
+                "tone": "accent",
+                "align": "left",
+                "text": ""
+              },
+              {
+                "id": "page-label",
+                "type": "text",
+                "grid": {
+                  "column": 11,
+                  "row": 1,
+                  "width": 2,
+                  "height": 1
+                },
+                "role": "label",
+                "tone": "muted",
+                "align": "right",
+                "text": ""
+              },
+              {
+                "id": "page-title",
+                "type": "text",
+                "grid": {
+                  "column": 1,
+                  "row": 2,
+                  "width": 10,
+                  "height": 2
+                },
+                "role": "title",
+                "tone": "default",
+                "align": "left",
+                "text": ""
+              },
+              {
+                "id": "matrix-cell-1",
+                "type": "quote",
+                "grid": {
+                  "column": 1,
+                  "row": 4,
+                  "width": 6,
+                  "height": 2
+                },
+                "tone": "accent",
+                "quote": ""
+              },
+              {
+                "id": "matrix-cell-2",
+                "type": "quote",
+                "grid": {
+                  "column": 7,
+                  "row": 4,
+                  "width": 6,
+                  "height": 2
+                },
+                "tone": "default",
+                "quote": ""
+              },
+              {
+                "id": "matrix-cell-3",
+                "type": "quote",
+                "grid": {
+                  "column": 1,
+                  "row": 7,
+                  "width": 6,
+                  "height": 2
+                },
+                "tone": "default",
+                "quote": ""
+              },
+              {
+                "id": "matrix-cell-4",
+                "type": "quote",
+                "grid": {
+                  "column": 7,
+                  "row": 7,
+                  "width": 6,
+                  "height": 2
+                },
+                "tone": "default",
+                "quote": ""
+              }
+            ]
+          },
+          "contentMap": {
+            "elements[0].text": "meta.panelTitle",
+            "elements[1].text": "meta.pageLabel",
+            "elements[2].text": "presentation.title",
+            "elements[3].quote": "presentation.items[0].labelWithValue",
+            "elements[3].attribution": "presentation.items[0].detail",
+            "elements[4].quote": "presentation.items[1].labelWithValue",
+            "elements[4].attribution": "presentation.items[1].detail",
+            "elements[5].quote": "presentation.items[2].labelWithValue",
+            "elements[5].attribution": "presentation.items[2].detail",
+            "elements[6].quote": "presentation.items[3].labelWithValue",
+            "elements[6].attribution": "presentation.items[3].detail"
+          }
+        }
+      ]
+    },
+    {
+      "content": {
+        "presentation": {
+          "title": "HTML 是主产物，PPTX 是分层映射",
+          "titleShort": "HTML 主产物，PPTX 分层映射",
+          "summary": "三种交付格式服务不同任务，不能用同一把尺子评价。",
+          "summaryShort": "三种格式服务不同任务",
+          "takeaway": "浏览器保留最多交互；PPTX 优先保留原生文字，复杂区域可能截图回退。",
+          "items": [
+            {
+              "id": "html",
+              "label": "HTML",
+              "detail": "可编辑、可切换方案、可自动保存",
+              "required": true,
+              "priority": 1,
+              "unit": "",
+              "emptyText": "",
+              "focus": false,
+              "displayValue": "",
+              "valueText": "",
+              "labelWithValue": "HTML",
+              "labelWithSupporting": "HTML：可编辑、可切换方案、可自动保存",
+              "labelWithValueAndSupporting": "HTML｜可编辑、可切换方案、可自动保存"
+            },
+            {
+              "id": "pdf",
+              "label": "PDF",
+              "detail": "便于分发与归档，但不承担结构化编辑",
+              "required": true,
+              "priority": 1,
+              "unit": "",
+              "emptyText": "",
+              "focus": false,
+              "displayValue": "",
+              "valueText": "",
+              "labelWithValue": "PDF",
+              "labelWithSupporting": "PDF：便于分发与归档，但不承担结构化编辑",
+              "labelWithValueAndSupporting": "PDF｜便于分发与归档，但不承担结构化编辑"
+            },
+            {
+              "id": "pptx",
+              "label": "PPTX",
+              "detail": "逐节点映射；复杂背景和效果可能回退为截图",
+              "required": true,
+              "priority": 1,
+              "unit": "",
+              "emptyText": "",
+              "focus": false,
+              "displayValue": "",
+              "valueText": "",
+              "labelWithValue": "PPTX",
+              "labelWithSupporting": "PPTX：逐节点映射；复杂背景和效果可能回退为截图",
+              "labelWithValueAndSupporting": "PPTX｜逐节点映射；复杂背景和效果可能回退为截图"
+            }
+          ],
+          "coverLabels": [
+            "格式边界"
+          ],
+          "chartData": []
+        },
+        "media": [],
+        "meta": {
+          "brand": "0830 Research Lab",
+          "pageLabel": "05",
+          "unit": "",
+          "panelTitle": "格式边界",
+          "date": "",
+          "empty": ""
+        }
+      },
+      "selectedVariant": "v1",
+      "variants": [
+        {
+          "id": "v1",
+          "kind": "template",
+          "layout": "theme07_page071",
+          "props": {
+            "cardCount": 3,
+            "showContact": false,
+            "images": [],
+            "imageCount": 0
+          },
+          "contentMap": {
+            "title": "presentation.title",
+            "lead": "presentation.summary",
+            "cards": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "limit": 3,
+              "fields": {
+                "label": "label",
+                "note": "labelWithSupporting"
+              }
+            },
+            "contacts": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "supplementTextFallback": true,
+              "textFallbackOnly": true,
+              "group": 1,
+              "limit": 1,
+              "select": "labelWithValue"
+            },
+            "eyebrow": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 3,
+              "truncate": true
+            },
+            "segment": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 4,
+              "truncate": true
+            },
+            "titleTail": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 5,
+              "truncate": true
+            },
+            "statLine": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 29,
+              "index": 6,
+              "truncate": true
+            },
+            "closing": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 31,
+              "index": 7,
+              "truncate": true
+            },
+            "badge": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 8,
+              "truncate": true
+            },
+            "listTitle": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 9,
+              "truncate": true
+            },
+            "contactTitle": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 10,
+              "truncate": true
+            }
+          }
+        },
+        {
+          "id": "v2",
+          "kind": "template",
+          "layout": "theme07_page007",
+          "props": {
+            "cardCount": 3,
+            "columns": 3,
+            "focusEnabled": true,
+            "focusIndex": 2
+          },
+          "contentMap": {
+            "title": "presentation.titleShort",
+            "lead": "presentation.summary",
+            "sub": "presentation.takeaway",
+            "chapters": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "limit": 3,
+              "fields": {
+                "no": "projectionOrdinal",
+                "zh": "label",
+                "en": "projectionLabel"
+              }
+            },
+            "eyebrow": "meta.panelTitle",
+            "closing": "presentation.summaryShort"
+          }
+        },
+        {
+          "id": "v3",
+          "kind": "template",
+          "layout": "theme07_page013",
+          "props": {
+            "cardCount": 3,
+            "images": [],
+            "imageCount": 0
+          },
+          "contentMap": {
+            "title": "presentation.title",
+            "lead": "presentation.summary",
+            "sub": "presentation.takeaway",
+            "risks": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "limit": 3,
+              "fields": {
+                "node": "label",
+                "title": "projectionLabel",
+                "desc": "labelWithSupporting"
+              }
+            },
+            "eyebrow": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 3,
+              "truncate": true
+            },
+            "chainTitle": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 4,
+              "truncate": true
+            },
+            "closing": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 29,
+              "index": 5,
+              "truncate": true
+            },
+            "imageRatio": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 6,
+              "truncate": true
+            }
+          }
+        },
+        {
+          "id": "v4",
+          "kind": "bespoke",
+          "adjustable": false,
+          "composition": {
+            "designIntent": {
+              "objective": "面向技术决策者解释 Dashi 的差异化生产机制、证据边界与最小试点方法",
+              "audience": "技术负责人、研究负责人、设计系统负责人",
+              "narrativeRole": "breakdown",
+              "emphasis": "浏览器保留最多交互；PPTX 优先保留原生文字，复杂区域可能截图回退。",
+              "rationale": "以大标题、引语和窄栏列表建立杂志式层级",
+              "compositionFamily": "editorial"
+            },
+            "background": "default",
+            "elements": [
+              {
+                "id": "page-kicker",
+                "type": "text",
+                "grid": {
+                  "column": 1,
+                  "row": 1,
+                  "width": 5,
+                  "height": 1
+                },
+                "role": "kicker",
+                "tone": "accent",
+                "align": "left",
+                "text": ""
+              },
+              {
+                "id": "page-label",
+                "type": "text",
+                "grid": {
+                  "column": 11,
+                  "row": 1,
+                  "width": 2,
+                  "height": 1
+                },
+                "role": "label",
+                "tone": "muted",
+                "align": "right",
+                "text": ""
+              },
+              {
+                "id": "page-title",
+                "type": "text",
+                "grid": {
+                  "column": 1,
+                  "row": 2,
+                  "width": 10,
+                  "height": 2
+                },
+                "role": "title",
+                "tone": "default",
+                "align": "left",
+                "text": ""
+              },
+              {
+                "id": "editorial-takeaway",
+                "type": "quote",
+                "grid": {
+                  "column": 1,
+                  "row": 4,
+                  "width": 7,
+                  "height": 5
+                },
+                "tone": "accent",
+                "quote": ""
+              },
+              {
+                "id": "editorial-items",
+                "type": "list",
+                "grid": {
+                  "column": 9,
+                  "row": 4,
+                  "width": 4,
+                  "height": 5
+                },
+                "ordered": false,
+                "tone": "default",
+                "items": []
+              }
+            ]
+          },
+          "contentMap": {
+            "elements[0].text": "meta.panelTitle",
+            "elements[1].text": "meta.pageLabel",
+            "elements[2].text": "presentation.title",
+            "elements[3].quote": "presentation.takeaway",
+            "elements[4].items": {
+              "source": "presentation.items",
+              "fields": {
+                "title": "labelWithValue",
+                "body": "detail"
+              },
+              "limit": 3
+            }
+          }
+        }
+      ]
+    },
+    {
+      "content": {
+        "presentation": {
+          "title": "采用前要正视四条工程边界",
+          "titleShort": "四条工程边界",
+          "summary": "许可证、可编辑性、网络暴露和生成成本都会改变落地方式。",
+          "summaryShort": "边界决定落地方式",
+          "takeaway": "适合内部试点，不等于可以直接嵌入商业 SaaS。",
+          "items": [
+            {
+              "id": "agpl",
+              "label": "AGPL-3.0",
+              "detail": "网络服务与修改分发需要核对源码义务",
+              "required": true,
+              "priority": 1,
+              "unit": "",
+              "emptyText": "",
+              "focus": false,
+              "displayValue": "",
+              "valueText": "",
+              "labelWithValue": "AGPL-3.0",
+              "labelWithSupporting": "AGPL-3.0：网络服务与修改分发需要核对源码义务",
+              "labelWithValueAndSupporting": "AGPL-3.0｜网络服务与修改分发需要核对源码义务"
+            },
+            {
+              "id": "proprietary",
+              "label": "专有导出组件",
+              "detail": "不能脱离本 Skill 单独提取或再分发",
+              "required": true,
+              "priority": 1,
+              "unit": "",
+              "emptyText": "",
+              "focus": false,
+              "displayValue": "",
+              "valueText": "",
+              "labelWithValue": "专有导出组件",
+              "labelWithSupporting": "专有导出组件：不能脱离本 Skill 单独提取或再分发",
+              "labelWithValueAndSupporting": "专有导出组件｜不能脱离本 Skill 单独提取或再分发"
+            },
+            {
+              "id": "preview",
+              "label": "局域网预览",
+              "detail": "敏感材料应显式绑定 127.0.0.1",
+              "required": true,
+              "priority": 1,
+              "unit": "",
+              "emptyText": "",
+              "focus": false,
+              "displayValue": "",
+              "valueText": "",
+              "labelWithValue": "局域网预览",
+              "labelWithSupporting": "局域网预览：敏感材料应显式绑定 127.0.0.1",
+              "labelWithValueAndSupporting": "局域网预览｜敏感材料应显式绑定 127.0.0.1"
+            },
+            {
+              "id": "cost",
+              "label": "生成成本",
+              "detail": "上游自述 10 页约 10 万 Token，仍需独立复测",
+              "required": true,
+              "priority": 1,
+              "unit": "",
+              "emptyText": "",
+              "focus": false,
+              "displayValue": "",
+              "valueText": "",
+              "labelWithValue": "生成成本",
+              "labelWithSupporting": "生成成本：上游自述 10 页约 10 万 Token，仍需独立复测",
+              "labelWithValueAndSupporting": "生成成本｜上游自述 10 页约 10 万 Token，仍需独立复测"
+            }
+          ],
+          "coverLabels": [
+            "采用边界"
+          ],
+          "chartData": []
+        },
+        "media": [],
+        "meta": {
+          "brand": "0830 Research Lab",
+          "pageLabel": "06",
+          "unit": "",
+          "panelTitle": "采用边界",
+          "date": "",
+          "empty": ""
+        }
+      },
+      "selectedVariant": "v1",
+      "variants": [
+        {
+          "id": "v1",
+          "kind": "template",
+          "layout": "theme07_page055",
+          "props": {
+            "pillarCount": 3
+          },
+          "contentMap": {
+            "kicker": "presentation.title",
+            "pillars": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "group": 3,
+              "limit": 3,
+              "fields": {
+                "glyph": "labelWithValue",
+                "zh": "label",
+                "en": "labelWithValue",
+                "note": "labelWithSupporting"
+              }
+            },
+            "eyebrow": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 24,
+              "index": 3,
+              "truncate": true
+            },
+            "quoteLead": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 4,
+              "truncate": true
+            },
+            "quoteEm": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 5,
+              "truncate": true
+            },
+            "quoteTail": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 6,
+              "truncate": true
+            },
+            "source": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 42,
+              "index": 7,
+              "truncate": true
+            }
+          }
+        },
+        {
+          "id": "v2",
+          "kind": "template",
+          "layout": "theme07_page007",
+          "props": {
+            "cardCount": 4
+          },
+          "contentMap": {
+            "title": "presentation.title",
+            "lead": "presentation.summary",
+            "sub": "presentation.takeaway",
+            "chapters": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "limit": 4,
+              "fields": {
+                "no": "projectionOrdinal",
+                "zh": "label",
+                "en": "projectionLabel"
+              }
+            },
+            "eyebrow": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 3,
+              "truncate": true
+            },
+            "closing": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 27,
+              "index": 4,
+              "truncate": true
+            }
+          }
+        },
+        {
+          "id": "v3",
+          "kind": "template",
+          "layout": "theme07_page015",
+          "props": {
+            "itemCount": 3,
+            "conclusionCount": 3
+          },
+          "contentMap": {
+            "kicker": "presentation.title",
+            "conclusions": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "group": 3,
+              "limit": 3,
+              "fields": {
+                "idx": "projectionOrdinal",
+                "title": "labelWithValue",
+                "note": "labelWithSupporting"
+              }
+            },
+            "eyebrow": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 3,
+              "truncate": true
+            },
+            "quoteLead": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 4,
+              "truncate": true
+            },
+            "quoteEm1": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 5,
+              "truncate": true
+            },
+            "quoteMid": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 6,
+              "truncate": true
+            },
+            "quoteEm2": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 7,
+              "truncate": true
+            },
+            "quoteTail": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 8,
+              "truncate": true
+            },
+            "source": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 42,
+              "index": 9,
+              "truncate": true
+            }
+          }
+        },
+        {
+          "id": "v4",
+          "kind": "bespoke",
+          "adjustable": false,
+          "composition": {
+            "designIntent": {
+              "objective": "面向技术决策者解释 Dashi 的差异化生产机制、证据边界与最小试点方法",
+              "audience": "技术负责人、研究负责人、设计系统负责人",
+              "narrativeRole": "risks",
+              "emphasis": "适合内部试点，不等于可以直接嵌入商业 SaaS。",
+              "rationale": "以左右对照保持两组信息的可比性",
+              "compositionFamily": "comparison"
+            },
+            "background": "default",
+            "elements": [
+              {
+                "id": "page-kicker",
+                "type": "text",
+                "grid": {
+                  "column": 1,
+                  "row": 1,
+                  "width": 5,
+                  "height": 1
+                },
+                "role": "kicker",
+                "tone": "accent",
+                "align": "left",
+                "text": ""
+              },
+              {
+                "id": "page-label",
+                "type": "text",
+                "grid": {
+                  "column": 11,
+                  "row": 1,
+                  "width": 2,
+                  "height": 1
+                },
+                "role": "label",
+                "tone": "muted",
+                "align": "right",
+                "text": ""
+              },
+              {
+                "id": "page-title",
+                "type": "text",
+                "grid": {
+                  "column": 1,
+                  "row": 2,
+                  "width": 10,
+                  "height": 2
+                },
+                "role": "title",
+                "tone": "default",
+                "align": "left",
+                "text": ""
+              },
+              {
+                "id": "comparison-left",
+                "type": "list",
+                "grid": {
+                  "column": 1,
+                  "row": 4,
+                  "width": 6,
+                  "height": 5
+                },
+                "ordered": false,
+                "tone": "accent",
+                "items": []
+              },
+              {
+                "id": "comparison-right",
+                "type": "list",
+                "grid": {
+                  "column": 7,
+                  "row": 4,
+                  "width": 6,
+                  "height": 5
+                },
+                "ordered": false,
+                "tone": "positive",
+                "items": []
+              }
+            ]
+          },
+          "contentMap": {
+            "elements[0].text": "meta.panelTitle",
+            "elements[1].text": "meta.pageLabel",
+            "elements[2].text": "presentation.title",
+            "elements[3].items": {
+              "source": "presentation.items",
+              "fields": {
+                "title": "labelWithValue",
+                "body": "detail"
+              },
+              "limit": 2
+            },
+            "elements[4].items": {
+              "source": "presentation.items",
+              "fields": {
+                "title": "labelWithValue",
+                "body": "detail"
+              },
+              "offset": 2,
+              "limit": 2
+            }
+          }
+        }
+      ]
+    },
+    {
+      "content": {
+        "presentation": {
+          "title": "最小试点先验证四项可量化指标",
+          "titleShort": "先验证四项指标",
+          "summary": "用脱敏研究材料完成一轮端到端生成，再决定是否扩大使用。",
+          "summaryShort": "一轮端到端试点后再扩展",
+          "takeaway": "先证明内容、重复性、可编辑性与兼容性，再讨论组织级接入。",
+          "items": [
+            {
+              "id": "coverage",
+              "label": "内容覆盖率",
+              "detail": "required facts 与关键数字是否完整",
+              "required": true,
+              "priority": 1,
+              "unit": "",
+              "emptyText": "",
+              "focus": false,
+              "displayValue": "",
+              "valueText": "",
+              "labelWithValue": "内容覆盖率",
+              "labelWithSupporting": "内容覆盖率：required facts 与关键数字是否完整",
+              "labelWithValueAndSupporting": "内容覆盖率｜required facts 与关键数字是否完整"
+            },
+            {
+              "id": "repeatability",
+              "label": "固定 seed 重复性",
+              "detail": "版式分配与内容映射是否稳定",
+              "required": true,
+              "priority": 1,
+              "unit": "",
+              "emptyText": "",
+              "focus": false,
+              "displayValue": "",
+              "valueText": "",
+              "labelWithValue": "固定 seed 重复性",
+              "labelWithSupporting": "固定 seed 重复性：版式分配与内容映射是否稳定",
+              "labelWithValueAndSupporting": "固定 seed 重复性｜版式分配与内容映射是否稳定"
+            },
+            {
+              "id": "editability",
+              "label": "原生对象比例",
+              "detail": "文字、形状和截图回退分别统计",
+              "required": true,
+              "priority": 1,
+              "unit": "",
+              "emptyText": "",
+              "focus": false,
+              "displayValue": "",
+              "valueText": "",
+              "labelWithValue": "原生对象比例",
+              "labelWithSupporting": "原生对象比例：文字、形状和截图回退分别统计",
+              "labelWithValueAndSupporting": "原生对象比例｜文字、形状和截图回退分别统计"
+            },
+            {
+              "id": "compatibility",
+              "label": "兼容性与成本",
+              "detail": "PowerPoint / WPS 打开效果、耗时与返工量",
+              "required": true,
+              "priority": 1,
+              "unit": "",
+              "emptyText": "",
+              "focus": false,
+              "displayValue": "",
+              "valueText": "",
+              "labelWithValue": "兼容性与成本",
+              "labelWithSupporting": "兼容性与成本：PowerPoint / WPS 打开效果、耗时与返工量",
+              "labelWithValueAndSupporting": "兼容性与成本｜PowerPoint / WPS 打开效果、耗时与返工量"
+            }
+          ],
+          "coverLabels": [
+            "试点协议"
+          ],
+          "chartData": []
+        },
+        "media": [],
+        "meta": {
+          "brand": "0830 Research Lab",
+          "pageLabel": "07",
+          "unit": "",
+          "panelTitle": "试点协议",
+          "date": "",
+          "empty": ""
+        }
+      },
+      "selectedVariant": "v1",
+      "variants": [
+        {
+          "id": "v1",
+          "kind": "template",
+          "layout": "theme07_page015",
+          "props": {
+            "itemCount": 3,
+            "conclusionCount": 3
+          },
+          "contentMap": {
+            "kicker": "presentation.title",
+            "conclusions": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "group": 3,
+              "limit": 3,
+              "fields": {
+                "idx": "projectionOrdinal",
+                "title": "labelWithValue",
+                "note": "labelWithSupporting"
+              }
+            },
+            "eyebrow": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 3,
+              "truncate": true
+            },
+            "quoteLead": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 4,
+              "truncate": true
+            },
+            "quoteEm1": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 5,
+              "truncate": true
+            },
+            "quoteMid": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 6,
+              "truncate": true
+            },
+            "quoteEm2": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 7,
+              "truncate": true
+            },
+            "quoteTail": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 8,
+              "truncate": true
+            },
+            "source": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 42,
+              "index": 9,
+              "truncate": true
+            }
+          }
+        },
+        {
+          "id": "v2",
+          "kind": "template",
+          "layout": "theme07_page013",
+          "props": {
+            "cardCount": 4,
+            "images": [],
+            "imageCount": 0
+          },
+          "contentMap": {
+            "title": "presentation.title",
+            "lead": "presentation.summary",
+            "sub": "presentation.takeaway",
+            "risks": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "limit": 4,
+              "fields": {
+                "node": "label",
+                "title": "projectionLabel",
+                "desc": "labelWithSupporting"
+              }
+            },
+            "eyebrow": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 3,
+              "truncate": true
+            },
+            "chainTitle": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 4,
+              "truncate": true
+            },
+            "closing": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 29,
+              "index": 5,
+              "truncate": true
+            },
+            "imageRatio": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 6,
+              "truncate": true
+            }
+          }
+        },
+        {
+          "id": "v3",
+          "kind": "template",
+          "layout": "theme07_page026",
+          "props": {
+            "images": [],
+            "imageCount": 0
+          },
+          "contentMap": {
+            "title": "presentation.title",
+            "lead": "presentation.summary",
+            "slots": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "limit": 4,
+              "fields": {
+                "name": "label",
+                "role": "projectionLabel"
+              }
+            },
+            "eyebrow": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 3,
+              "truncate": true
+            },
+            "titleTail": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 4,
+              "truncate": true
+            },
+            "anchorLead": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 5,
+              "truncate": true
+            },
+            "anchorUnit": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 6,
+              "truncate": true
+            },
+            "anchorNote": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 24,
+              "index": 7,
+              "truncate": true
+            },
+            "closing": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 36,
+              "index": 8,
+              "truncate": true
+            }
+          }
+        },
+        {
+          "id": "v4",
+          "kind": "bespoke",
+          "adjustable": false,
+          "composition": {
+            "designIntent": {
+              "objective": "面向技术决策者解释 Dashi 的差异化生产机制、证据边界与最小试点方法",
+              "audience": "技术负责人、研究负责人、设计系统负责人",
+              "narrativeRole": "actions",
+              "emphasis": "先证明内容、重复性、可编辑性与兼容性，再讨论组织级接入。",
+              "rationale": "以横向路径串联步骤和行动顺序",
+              "compositionFamily": "process"
+            },
+            "background": "default",
+            "elements": [
+              {
+                "id": "page-kicker",
+                "type": "text",
+                "grid": {
+                  "column": 1,
+                  "row": 1,
+                  "width": 5,
+                  "height": 1
+                },
+                "role": "kicker",
+                "tone": "accent",
+                "align": "left",
+                "text": ""
+              },
+              {
+                "id": "page-label",
+                "type": "text",
+                "grid": {
+                  "column": 11,
+                  "row": 1,
+                  "width": 2,
+                  "height": 1
+                },
+                "role": "label",
+                "tone": "muted",
+                "align": "right",
+                "text": ""
+              },
+              {
+                "id": "page-title",
+                "type": "text",
+                "grid": {
+                  "column": 1,
+                  "row": 2,
+                  "width": 10,
+                  "height": 2
+                },
+                "role": "title",
+                "tone": "default",
+                "align": "left",
+                "text": ""
+              },
+              {
+                "id": "process-items",
+                "type": "list",
+                "grid": {
+                  "column": 1,
+                  "row": 4,
+                  "width": 12,
+                  "height": 5
+                },
+                "ordered": true,
+                "tone": "accent",
+                "items": []
+              }
+            ]
+          },
+          "contentMap": {
+            "elements[0].text": "meta.panelTitle",
+            "elements[1].text": "meta.pageLabel",
+            "elements[2].text": "presentation.title",
+            "elements[3].items": {
+              "source": "presentation.items",
+              "fields": {
+                "title": "labelWithValue",
+                "body": "detail"
+              },
+              "limit": 4
+            }
+          }
+        }
+      ]
+    },
+    {
+      "content": {
+        "presentation": {
+          "title": "建议：以研究汇报为首个试点",
+          "titleShort": "从研究汇报开始",
+          "summary": "它最有价值的不是替你做一页，而是把整稿内容、版式和导出纳入同一条可审查生产线。",
+          "summaryShort": "验证整稿生产线，而非单页效果",
+          "takeaway": "通过固定样例验证后，再扩展到经营复盘、培训和方案路演。",
+          "items": [
+            {
+              "id": "gate-content",
+              "label": "内容门槛",
+              "detail": "事实完整且无默认文案残留",
+              "required": true,
+              "priority": 1,
+              "unit": "",
+              "emptyText": "",
+              "focus": false,
+              "displayValue": "",
+              "valueText": "",
+              "labelWithValue": "内容门槛",
+              "labelWithSupporting": "内容门槛：事实完整且无默认文案残留",
+              "labelWithValueAndSupporting": "内容门槛｜事实完整且无默认文案残留"
+            },
+            {
+              "id": "gate-export",
+              "label": "导出门槛",
+              "detail": "关键文字保持可编辑",
+              "required": true,
+              "priority": 1,
+              "unit": "",
+              "emptyText": "",
+              "focus": false,
+              "displayValue": "",
+              "valueText": "",
+              "labelWithValue": "导出门槛",
+              "labelWithSupporting": "导出门槛：关键文字保持可编辑",
+              "labelWithValueAndSupporting": "导出门槛｜关键文字保持可编辑"
+            },
+            {
+              "id": "gate-effort",
+              "label": "效率门槛",
+              "detail": "总耗时与返工优于现有流程",
+              "required": true,
+              "priority": 1,
+              "unit": "",
+              "emptyText": "",
+              "focus": false,
+              "displayValue": "",
+              "valueText": "",
+              "labelWithValue": "效率门槛",
+              "labelWithSupporting": "效率门槛：总耗时与返工优于现有流程",
+              "labelWithValueAndSupporting": "效率门槛｜总耗时与返工优于现有流程"
+            }
+          ],
+          "coverLabels": [
+            "采用建议",
+            "2026-08-31"
+          ],
+          "chartData": []
+        },
+        "media": [],
+        "meta": {
+          "brand": "0830 Research Lab",
+          "pageLabel": "08",
+          "unit": "",
+          "panelTitle": "采用建议",
+          "date": "2026-08-31",
+          "empty": ""
+        }
+      },
+      "selectedVariant": "v1",
+      "variants": [
+        {
+          "id": "v1",
+          "kind": "template",
+          "layout": "theme07_page007",
+          "props": {
+            "cardCount": 3
+          },
+          "contentMap": {
+            "title": "presentation.title",
+            "lead": "presentation.summary",
+            "sub": "presentation.takeaway",
+            "chapters": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "limit": 3,
+              "fields": {
+                "no": "projectionOrdinal",
+                "zh": "label",
+                "en": "projectionLabel"
+              }
+            },
+            "eyebrow": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 3,
+              "truncate": true
+            },
+            "closing": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 27,
+              "index": 4,
+              "truncate": true
+            }
+          }
+        },
+        {
+          "id": "v2",
+          "kind": "template",
+          "layout": "theme07_page071",
+          "props": {
+            "cardCount": 3,
+            "showContact": false,
+            "images": [],
+            "imageCount": 0
+          },
+          "contentMap": {
+            "title": "presentation.title",
+            "lead": "presentation.summary",
+            "cards": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "limit": 3,
+              "fields": {
+                "label": "label",
+                "note": "labelWithSupporting"
+              }
+            },
+            "contacts": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "supplementTextFallback": true,
+              "textFallbackOnly": true,
+              "group": 1,
+              "limit": 1,
+              "select": "labelWithValue"
+            },
+            "eyebrow": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 3,
+              "truncate": true
+            },
+            "segment": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 4,
+              "truncate": true
+            },
+            "titleTail": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 5,
+              "truncate": true
+            },
+            "statLine": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 29,
+              "index": 6,
+              "truncate": true
+            },
+            "closing": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 31,
+              "index": 7,
+              "truncate": true
+            },
+            "badge": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 8,
+              "truncate": true
+            },
+            "listTitle": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 9,
+              "truncate": true
+            },
+            "contactTitle": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 18,
+              "index": 10,
+              "truncate": true
+            }
+          }
+        },
+        {
+          "id": "v3",
+          "kind": "template",
+          "layout": "theme07_page055",
+          "props": {
+            "pillarCount": 3
+          },
+          "contentMap": {
+            "kicker": "presentation.title",
+            "pillars": {
+              "source": "presentation",
+              "derive": "template-items",
+              "includeTextFallback": true,
+              "limit": 3,
+              "fields": {
+                "glyph": "label",
+                "zh": "projectionLabel",
+                "en": "labelWithValue",
+                "note": "labelWithSupporting"
+              }
+            },
+            "eyebrow": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "title",
+                "titleShort",
+                "takeaway",
+                "summaryShort"
+              ],
+              "maxChars": 24,
+              "index": 3,
+              "truncate": true
+            },
+            "quoteLead": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "summary",
+                "summaryShort",
+                "takeaway",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 4,
+              "truncate": true
+            },
+            "quoteEm": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 5,
+              "truncate": true
+            },
+            "quoteTail": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 18,
+              "index": 6,
+              "truncate": true
+            },
+            "source": {
+              "source": "presentation",
+              "derive": "projection-text",
+              "preferred": [
+                "takeaway",
+                "summaryShort",
+                "summary",
+                "titleShort"
+              ],
+              "maxChars": 42,
+              "index": 7,
+              "truncate": true
+            }
+          }
+        },
+        {
+          "id": "v4",
+          "kind": "bespoke",
+          "adjustable": false,
+          "composition": {
+            "designIntent": {
+              "objective": "面向技术决策者解释 Dashi 的差异化生产机制、证据边界与最小试点方法",
+              "audience": "技术负责人、研究负责人、设计系统负责人",
+              "narrativeRole": "closing",
+              "emphasis": "通过固定样例验证后，再扩展到经营复盘、培训和方案路演。",
+              "rationale": "以非对称双栏分离结论与支撑信息",
+              "compositionFamily": "split"
+            },
+            "background": "default",
+            "elements": [
+              {
+                "id": "page-kicker",
+                "type": "text",
+                "grid": {
+                  "column": 1,
+                  "row": 1,
+                  "width": 5,
+                  "height": 1
+                },
+                "role": "kicker",
+                "tone": "accent",
+                "align": "left",
+                "text": ""
+              },
+              {
+                "id": "page-label",
+                "type": "text",
+                "grid": {
+                  "column": 11,
+                  "row": 1,
+                  "width": 2,
+                  "height": 1
+                },
+                "role": "label",
+                "tone": "muted",
+                "align": "right",
+                "text": ""
+              },
+              {
+                "id": "page-title",
+                "type": "text",
+                "grid": {
+                  "column": 1,
+                  "row": 2,
+                  "width": 10,
+                  "height": 2
+                },
+                "role": "title",
+                "tone": "default",
+                "align": "left",
+                "text": ""
+              },
+              {
+                "id": "split-summary",
+                "type": "text",
+                "grid": {
+                  "column": 1,
+                  "row": 4,
+                  "width": 5,
+                  "height": 2
+                },
+                "role": "subtitle",
+                "tone": "default",
+                "align": "left",
+                "text": ""
+              },
+              {
+                "id": "split-takeaway",
+                "type": "text",
+                "grid": {
+                  "column": 1,
+                  "row": 7,
+                  "width": 5,
+                  "height": 2
+                },
+                "role": "body",
+                "tone": "accent",
+                "align": "left",
+                "text": ""
+              },
+              {
+                "id": "split-items",
+                "type": "list",
+                "grid": {
+                  "column": 6,
+                  "row": 4,
+                  "width": 7,
+                  "height": 5
+                },
+                "ordered": false,
+                "tone": "default",
+                "items": []
+              }
+            ]
+          },
+          "contentMap": {
+            "elements[0].text": "meta.panelTitle",
+            "elements[1].text": "meta.pageLabel",
+            "elements[2].text": "presentation.title",
+            "elements[3].text": "presentation.summary",
+            "elements[4].text": "presentation.takeaway",
+            "elements[5].items": {
+              "source": "presentation.items",
+              "fields": {
+                "title": "labelWithValue",
+                "body": "detail"
+              },
+              "limit": 3
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

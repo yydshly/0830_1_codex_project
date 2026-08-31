@@ -1,0 +1,7 @@
+[Sources]
+- Dashi PPT Skill README at locked commit 7cb23347f91cda1a5519eafc8c040704e389535a: product workflow, supported formats, upstream token-cost claim.
+- skills/dashi-ppt/SKILL.md at the same commit: canonical content, 3 template + 1 bespoke contract, layout querying, full-deck allocation, validation and export flow.
+- skills/dashi-ppt/project/layout-manifest.json at the same commit: 12 themes, 1020 layouts and 8576 controls, independently recomputed by this study.
+- Root LICENSE and skills/dashi-ppt/project/packages/html-deck-to-pptx/LICENSE at the same commit: AGPL-3.0 project license and proprietary export-component exception.
+
+All visible claims in this experimental deck are limited to the locked version or explicitly labelled as upstream claims. No external images or datasets are used.

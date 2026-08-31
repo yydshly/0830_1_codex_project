@@ -1,0 +1,616 @@
+{
+  "schemaVersion": 1,
+  "runId": "theme07-20260831-real03",
+  "goalPath": "E:\\0830_1_codex_project\\projects\\dashi-ppt-skill-study\\experiments\\real-run-01\\goal.candidate-r03.json",
+  "workflowStartedAt": "2026-08-30T21:08:27.500Z",
+  "workflowFinishedAt": "2026-08-30T21:28:29.951Z",
+  "wallClockDurationMs": 1202451,
+  "commandDurationMs": 12174,
+  "stageGapDurationMs": 1190756,
+  "updatedAt": "2026-08-30T21:28:29.955Z",
+  "stages": {
+    "scaffold": {
+      "stage": "scaffold",
+      "kind": "scaffold",
+      "command": "goal:scaffold",
+      "attempts": [
+        {
+          "sequence": 1,
+          "command": "goal:scaffold",
+          "kind": "scaffold",
+          "runId": "theme07-20260831-real03",
+          "status": "passed",
+          "retry": false,
+          "startedAt": "2026-08-30T21:08:27.500Z",
+          "finishedAt": "2026-08-30T21:08:28.561Z",
+          "durationMs": 1061,
+          "gapSincePreviousMs": 0,
+          "metrics": {
+            "layoutQueryCount": 8,
+            "allocation": {
+              "candidateCounts": [
+                {
+                  "slide": 1,
+                  "role": "cover",
+                  "compatible": 3,
+                  "eligible": 3
+                },
+                {
+                  "slide": 2,
+                  "role": "context",
+                  "compatible": 6,
+                  "eligible": 6
+                },
+                {
+                  "slide": 3,
+                  "role": "process",
+                  "compatible": 6,
+                  "eligible": 6
+                },
+                {
+                  "slide": 4,
+                  "role": "breakdown",
+                  "compatible": 20,
+                  "eligible": 20
+                },
+                {
+                  "slide": 5,
+                  "role": "breakdown",
+                  "compatible": 6,
+                  "eligible": 6
+                },
+                {
+                  "slide": 6,
+                  "role": "risks",
+                  "compatible": 6,
+                  "eligible": 6
+                },
+                {
+                  "slide": 7,
+                  "role": "actions",
+                  "compatible": 6,
+                  "eligible": 6
+                },
+                {
+                  "slide": 8,
+                  "role": "closing",
+                  "compatible": 6,
+                  "eligible": 6
+                }
+              ],
+              "uniqueLayoutCount": 12,
+              "maximumReuse": 3,
+              "familyDiversity": {
+                "uniqueCount": 5,
+                "families": [
+                  "cards",
+                  "case-study",
+                  "chart",
+                  "hero",
+                  "metrics"
+                ],
+                "perSlide": [
+                  {
+                    "slide": 1,
+                    "uniqueCount": 2
+                  },
+                  {
+                    "slide": 2,
+                    "uniqueCount": 3
+                  },
+                  {
+                    "slide": 3,
+                    "uniqueCount": 1
+                  },
+                  {
+                    "slide": 4,
+                    "uniqueCount": 3
+                  },
+                  {
+                    "slide": 5,
+                    "uniqueCount": 2
+                  },
+                  {
+                    "slide": 6,
+                    "uniqueCount": 2
+                  },
+                  {
+                    "slide": 7,
+                    "uniqueCount": 3
+                  },
+                  {
+                    "slide": 8,
+                    "uniqueCount": 1
+                  }
+                ]
+              },
+              "compositionDiversity": {
+                "uniqueCount": 11,
+                "perSlide": [
+                  {
+                    "slide": 1,
+                    "uniqueCount": 2
+                  },
+                  {
+                    "slide": 2,
+                    "uniqueCount": 3
+                  },
+                  {
+                    "slide": 3,
+                    "uniqueCount": 3
+                  },
+                  {
+                    "slide": 4,
+                    "uniqueCount": 3
+                  },
+                  {
+                    "slide": 5,
+                    "uniqueCount": 3
+                  },
+                  {
+                    "slide": 6,
+                    "uniqueCount": 3
+                  },
+                  {
+                    "slide": 7,
+                    "uniqueCount": 3
+                  },
+                  {
+                    "slide": 8,
+                    "uniqueCount": 3
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "sequence": 12,
+          "command": "goal:scaffold",
+          "kind": "scaffold",
+          "runId": "theme07-20260831-real03",
+          "status": "passed",
+          "retry": false,
+          "startedAt": "2026-08-30T21:28:26.007Z",
+          "finishedAt": "2026-08-30T21:28:27.240Z",
+          "durationMs": 1233,
+          "gapSincePreviousMs": 477005,
+          "metrics": {
+            "layoutQueryCount": 8,
+            "allocation": {
+              "candidateCounts": [
+                {
+                  "slide": 1,
+                  "role": "cover",
+                  "compatible": 3,
+                  "eligible": 3
+                },
+                {
+                  "slide": 2,
+                  "role": "context",
+                  "compatible": 6,
+                  "eligible": 6
+                },
+                {
+                  "slide": 3,
+                  "role": "process",
+                  "compatible": 6,
+                  "eligible": 6
+                },
+                {
+                  "slide": 4,
+                  "role": "breakdown",
+                  "compatible": 20,
+                  "eligible": 20
+                },
+                {
+                  "slide": 5,
+                  "role": "breakdown",
+                  "compatible": 6,
+                  "eligible": 6
+                },
+                {
+                  "slide": 6,
+                  "role": "risks",
+                  "compatible": 6,
+                  "eligible": 6
+                },
+                {
+                  "slide": 7,
+                  "role": "actions",
+                  "compatible": 6,
+                  "eligible": 6
+                },
+                {
+                  "slide": 8,
+                  "role": "closing",
+                  "compatible": 6,
+                  "eligible": 6
+                }
+              ],
+              "uniqueLayoutCount": 12,
+              "maximumReuse": 3,
+              "familyDiversity": {
+                "uniqueCount": 5,
+                "families": [
+                  "cards",
+                  "case-study",
+                  "chart",
+                  "hero",
+                  "metrics"
+                ],
+                "perSlide": [
+                  {
+                    "slide": 1,
+                    "uniqueCount": 2
+                  },
+                  {
+                    "slide": 2,
+                    "uniqueCount": 3
+                  },
+                  {
+                    "slide": 3,
+                    "uniqueCount": 1
+                  },
+                  {
+                    "slide": 4,
+                    "uniqueCount": 3
+                  },
+                  {
+                    "slide": 5,
+                    "uniqueCount": 2
+                  },
+                  {
+                    "slide": 6,
+                    "uniqueCount": 2
+                  },
+                  {
+                    "slide": 7,
+                    "uniqueCount": 3
+                  },
+                  {
+                    "slide": 8,
+                    "uniqueCount": 1
+                  }
+                ]
+              },
+              "compositionDiversity": {
+                "uniqueCount": 11,
+                "perSlide": [
+                  {
+                    "slide": 1,
+                    "uniqueCount": 2
+                  },
+                  {
+                    "slide": 2,
+                    "uniqueCount": 3
+                  },
+                  {
+                    "slide": 3,
+                    "uniqueCount": 3
+                  },
+                  {
+                    "slide": 4,
+                    "uniqueCount": 3
+                  },
+                  {
+                    "slide": 5,
+                    "uniqueCount": 3
+                  },
+                  {
+                    "slide": 6,
+                    "uniqueCount": 3
+                  },
+                  {
+                    "slide": 7,
+                    "uniqueCount": 3
+                  },
+                  {
+                    "slide": 8,
+                    "uniqueCount": 3
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "commandCount": 2,
+      "successCount": 2,
+      "failureCount": 0,
+      "retryCount": 0,
+      "totalDurationMs": 2294,
+      "lastDurationMs": 1233,
+      "lastFailureReason": null
+    },
+    "props-safe": {
+      "stage": "props-safe",
+      "kind": "normalize",
+      "command": "props:safe",
+      "attempts": [
+        {
+          "sequence": 2,
+          "command": "props:safe",
+          "kind": "normalize",
+          "runId": "theme07-20260831-real03",
+          "status": "passed",
+          "retry": false,
+          "startedAt": "2026-08-30T21:08:29.084Z",
+          "finishedAt": "2026-08-30T21:08:29.468Z",
+          "durationMs": 384,
+          "gapSincePreviousMs": 523,
+          "metrics": {
+            "layoutChangeCount": 0,
+            "propErrorCount": 0,
+            "goalSpecErrorCount": 0
+          }
+        },
+        {
+          "sequence": 3,
+          "command": "props:safe",
+          "kind": "normalize",
+          "runId": "theme07-20260831-real03",
+          "status": "passed",
+          "retry": false,
+          "startedAt": "2026-08-30T21:09:59.217Z",
+          "finishedAt": "2026-08-30T21:09:59.538Z",
+          "durationMs": 321,
+          "gapSincePreviousMs": 89749,
+          "metrics": {
+            "layoutChangeCount": 0,
+            "propErrorCount": 0,
+            "goalSpecErrorCount": 0
+          }
+        },
+        {
+          "sequence": 13,
+          "command": "props:safe",
+          "kind": "normalize",
+          "runId": "theme07-20260831-real03",
+          "status": "passed",
+          "retry": false,
+          "startedAt": "2026-08-30T21:28:27.513Z",
+          "finishedAt": "2026-08-30T21:28:28.016Z",
+          "durationMs": 503,
+          "gapSincePreviousMs": 273,
+          "metrics": {
+            "layoutChangeCount": 0,
+            "propErrorCount": 0,
+            "goalSpecErrorCount": 0
+          }
+        },
+        {
+          "sequence": 14,
+          "command": "props:safe",
+          "kind": "normalize",
+          "runId": "theme07-20260831-real03",
+          "status": "passed",
+          "retry": false,
+          "startedAt": "2026-08-30T21:28:28.329Z",
+          "finishedAt": "2026-08-30T21:28:28.972Z",
+          "durationMs": 643,
+          "gapSincePreviousMs": 313,
+          "metrics": {
+            "layoutChangeCount": 0,
+            "propErrorCount": 0,
+            "goalSpecErrorCount": 0
+          }
+        }
+      ],
+      "commandCount": 4,
+      "successCount": 4,
+      "failureCount": 0,
+      "retryCount": 0,
+      "totalDurationMs": 1851,
+      "lastDurationMs": 643,
+      "lastFailureReason": null
+    },
+    "validate-goal-spec": {
+      "stage": "validate-goal-spec",
+      "kind": "validate",
+      "command": "validate:goal-spec",
+      "attempts": [
+        {
+          "sequence": 4,
+          "command": "validate:goal-spec",
+          "kind": "validate",
+          "runId": "theme07-20260831-real03",
+          "status": "passed",
+          "retry": false,
+          "startedAt": "2026-08-30T21:09:59.959Z",
+          "finishedAt": "2026-08-30T21:10:00.203Z",
+          "durationMs": 244,
+          "gapSincePreviousMs": 421
+        },
+        {
+          "sequence": 5,
+          "command": "validate:goal-spec",
+          "kind": "validate",
+          "runId": "theme07-20260831-real03",
+          "status": "passed",
+          "retry": false,
+          "startedAt": "2026-08-30T21:10:13.076Z",
+          "finishedAt": "2026-08-30T21:10:13.299Z",
+          "durationMs": 223,
+          "gapSincePreviousMs": 12873
+        },
+        {
+          "sequence": 8,
+          "command": "validate:goal-spec",
+          "kind": "validate",
+          "runId": "theme07-20260831-real03",
+          "status": "passed",
+          "retry": false,
+          "startedAt": "2026-08-30T21:19:11.272Z",
+          "finishedAt": "2026-08-30T21:19:11.511Z",
+          "durationMs": 239,
+          "gapSincePreviousMs": 520048
+        },
+        {
+          "sequence": 9,
+          "command": "validate:goal-spec",
+          "kind": "validate",
+          "runId": "theme07-20260831-real03",
+          "status": "passed",
+          "retry": false,
+          "startedAt": "2026-08-30T21:19:13.137Z",
+          "finishedAt": "2026-08-30T21:19:13.390Z",
+          "durationMs": 253,
+          "gapSincePreviousMs": 1626
+        },
+        {
+          "sequence": 11,
+          "command": "validate:goal-spec",
+          "kind": "validate",
+          "runId": "theme07-20260831-real03",
+          "status": "passed",
+          "retry": false,
+          "startedAt": "2026-08-30T21:20:28.728Z",
+          "finishedAt": "2026-08-30T21:20:29.002Z",
+          "durationMs": 274,
+          "gapSincePreviousMs": 75072
+        },
+        {
+          "sequence": 15,
+          "command": "validate:goal-spec",
+          "kind": "validate",
+          "runId": "theme07-20260831-real03",
+          "status": "passed",
+          "retry": false,
+          "startedAt": "2026-08-30T21:28:29.343Z",
+          "finishedAt": "2026-08-30T21:28:29.951Z",
+          "durationMs": 608,
+          "gapSincePreviousMs": 371
+        }
+      ],
+      "commandCount": 6,
+      "successCount": 6,
+      "failureCount": 0,
+      "retryCount": 0,
+      "totalDurationMs": 1841,
+      "lastDurationMs": 608,
+      "lastFailureReason": null
+    },
+    "render": {
+      "stage": "render",
+      "kind": "render",
+      "command": "render:goal",
+      "attempts": [
+        {
+          "sequence": 6,
+          "command": "render:goal",
+          "kind": "render",
+          "runId": "theme07-20260831-real03",
+          "status": "passed",
+          "retry": false,
+          "startedAt": "2026-08-30T21:10:13.074Z",
+          "finishedAt": "2026-08-30T21:10:13.511Z",
+          "durationMs": 437,
+          "gapSincePreviousMs": 0
+        },
+        {
+          "sequence": 10,
+          "command": "render:goal",
+          "kind": "render",
+          "runId": "theme07-20260831-real03",
+          "status": "passed",
+          "retry": false,
+          "startedAt": "2026-08-30T21:19:13.136Z",
+          "finishedAt": "2026-08-30T21:19:13.656Z",
+          "durationMs": 520,
+          "gapSincePreviousMs": 0
+        }
+      ],
+      "commandCount": 2,
+      "successCount": 2,
+      "failureCount": 0,
+      "retryCount": 0,
+      "totalDurationMs": 957,
+      "lastDurationMs": 520,
+      "lastFailureReason": null
+    },
+    "validate-four-variant-quality": {
+      "stage": "validate-four-variant-quality",
+      "kind": "validate",
+      "command": "validate:four-variant-quality",
+      "attempts": [
+        {
+          "sequence": 7,
+          "command": "validate:four-variant-quality",
+          "kind": "validate",
+          "runId": "theme07-20260831-real03",
+          "status": "failed",
+          "retry": false,
+          "startedAt": "2026-08-30T21:10:25.993Z",
+          "finishedAt": "2026-08-30T21:10:31.224Z",
+          "durationMs": 5231,
+          "gapSincePreviousMs": 12482,
+          "failureReason": "group=0, bespokeClip=8, dependency=0, browser=0, hydrated=8/8"
+        }
+      ],
+      "commandCount": 1,
+      "successCount": 0,
+      "failureCount": 1,
+      "retryCount": 0,
+      "totalDurationMs": 5231,
+      "lastDurationMs": 5231,
+      "lastFailureReason": "group=0, bespokeClip=8, dependency=0, browser=0, hydrated=8/8"
+    }
+  },
+  "commandCounts": {
+    "scaffold": 2,
+    "normalize": 4,
+    "validate": 7,
+    "render": 2
+  },
+  "failureCount": 1,
+  "retryCount": 0,
+  "failures": [
+    {
+      "sequence": 7,
+      "stage": "validate-four-variant-quality",
+      "kind": "validate",
+      "reason": "group=0, bespokeClip=8, dependency=0, browser=0, hydrated=8/8"
+    }
+  ],
+  "repeatedStages": [
+    {
+      "stage": "scaffold",
+      "kind": "scaffold",
+      "command": "goal:scaffold",
+      "commandCount": 2,
+      "failureCount": 0,
+      "retryCount": 0
+    },
+    {
+      "stage": "props-safe",
+      "kind": "normalize",
+      "command": "props:safe",
+      "commandCount": 4,
+      "failureCount": 0,
+      "retryCount": 0
+    },
+    {
+      "stage": "validate-goal-spec",
+      "kind": "validate",
+      "command": "validate:goal-spec",
+      "commandCount": 6,
+      "failureCount": 0,
+      "retryCount": 0
+    },
+    {
+      "stage": "render",
+      "kind": "render",
+      "command": "render:goal",
+      "commandCount": 2,
+      "failureCount": 0,
+      "retryCount": 0
+    }
+  ],
+  "metrics": {
+    "layoutQueryCount": 16,
+    "layoutChangeCount": 0,
+    "propErrorCount": 0,
+    "goalSpecErrorCount": 0
+  }
+}

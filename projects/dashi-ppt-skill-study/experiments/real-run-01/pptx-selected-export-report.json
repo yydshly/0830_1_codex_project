@@ -1,0 +1,227 @@
+{
+  "format": "pptx",
+  "url": "http://127.0.0.1:4175/projects/dashi-ppt-skill-study/experiments/real-run-01/ppt-selected/",
+  "outFile": "E:\\0830_1_codex_project\\projects\\dashi-ppt-skill-study\\artifacts\\real-run-01\\dashi-real-run-01-selected-v4.pptx",
+  "startedAt": "2026-08-30T21:26:18.386Z",
+  "finishedAt": "2026-08-30T21:26:23.240Z",
+  "durationMs": 4850,
+  "variantOutputMode": "selected-only",
+  "result": {
+    "outFile": "E:\\0830_1_codex_project\\projects\\dashi-ppt-skill-study\\artifacts\\real-run-01\\dashi-real-run-01-selected-v4.pptx",
+    "reportFile": null,
+    "captureMode": "captured-tree",
+    "slideCount": 8,
+    "textObjects": 118,
+    "shapeObjects": 76,
+    "imageObjects": 6,
+    "slideSummaries": [
+      {
+        "index": 1,
+        "key": "slide-1::v4",
+        "capturedNodes": 24,
+        "maxDepth": 6,
+        "textNodes": 6,
+        "backgroundImages": 0,
+        "svgImages": 0,
+        "canvasImages": 0,
+        "imageNodes": 0,
+        "shapeCandidates": 5,
+        "renderedTextObjects": 6,
+        "renderedShapeObjects": 5,
+        "renderedImageObjects": 0
+      },
+      {
+        "index": 2,
+        "key": "slide-2::v4",
+        "capturedNodes": 32,
+        "maxDepth": 6,
+        "textNodes": 14,
+        "backgroundImages": 0,
+        "svgImages": 0,
+        "canvasImages": 0,
+        "imageNodes": 0,
+        "shapeCandidates": 7,
+        "renderedTextObjects": 14,
+        "renderedShapeObjects": 7,
+        "renderedImageObjects": 1
+      },
+      {
+        "index": 3,
+        "key": "slide-3::v4",
+        "capturedNodes": 66,
+        "maxDepth": 9,
+        "textNodes": 21,
+        "backgroundImages": 0,
+        "svgImages": 0,
+        "canvasImages": 0,
+        "imageNodes": 0,
+        "shapeCandidates": 10,
+        "renderedTextObjects": 21,
+        "renderedShapeObjects": 15,
+        "renderedImageObjects": 0
+      },
+      {
+        "index": 4,
+        "key": "slide-4::v4",
+        "capturedNodes": 33,
+        "maxDepth": 6,
+        "textNodes": 15,
+        "backgroundImages": 0,
+        "svgImages": 0,
+        "canvasImages": 0,
+        "imageNodes": 0,
+        "shapeCandidates": 9,
+        "renderedTextObjects": 15,
+        "renderedShapeObjects": 5,
+        "renderedImageObjects": 4
+      },
+      {
+        "index": 5,
+        "key": "slide-5::v4",
+        "capturedNodes": 33,
+        "maxDepth": 6,
+        "textNodes": 15,
+        "backgroundImages": 0,
+        "svgImages": 0,
+        "canvasImages": 0,
+        "imageNodes": 0,
+        "shapeCandidates": 7,
+        "renderedTextObjects": 15,
+        "renderedShapeObjects": 7,
+        "renderedImageObjects": 1
+      },
+      {
+        "index": 6,
+        "key": "slide-6::v4",
+        "capturedNodes": 53,
+        "maxDepth": 9,
+        "textNodes": 15,
+        "backgroundImages": 0,
+        "svgImages": 0,
+        "canvasImages": 0,
+        "imageNodes": 0,
+        "shapeCandidates": 9,
+        "renderedTextObjects": 15,
+        "renderedShapeObjects": 13,
+        "renderedImageObjects": 0
+      },
+      {
+        "index": 7,
+        "key": "slide-7::v4",
+        "capturedNodes": 51,
+        "maxDepth": 9,
+        "textNodes": 15,
+        "backgroundImages": 0,
+        "svgImages": 0,
+        "canvasImages": 0,
+        "imageNodes": 0,
+        "shapeCandidates": 9,
+        "renderedTextObjects": 15,
+        "renderedShapeObjects": 13,
+        "renderedImageObjects": 0
+      },
+      {
+        "index": 8,
+        "key": "slide-8::v4",
+        "capturedNodes": 52,
+        "maxDepth": 9,
+        "textNodes": 17,
+        "backgroundImages": 0,
+        "svgImages": 0,
+        "canvasImages": 0,
+        "imageNodes": 0,
+        "shapeCandidates": 8,
+        "renderedTextObjects": 17,
+        "renderedShapeObjects": 11,
+        "renderedImageObjects": 0
+      }
+    ],
+    "warnings": [
+      {
+        "slide": 2,
+        "type": "node-image-fallback-text-extracted",
+        "node": "masked-element",
+        "textCount": 9,
+        "sample": "• 1 份 · Canonical content 每个逻辑页只维护一份事实源 • Capacity contract 标题、条目、数值与媒体要求参与硬筛选 • 3+1 variants 三个模板候选与一个受主题约束的定制方案"
+      },
+      {
+        "slide": 2,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 4,
+        "type": "node-image-fallback-text-extracted",
+        "node": "masked-element",
+        "textCount": 12,
+        "sample": "“ 12 套 · 视觉主题 锁定清单复算 “ 1,020 · 版式页面 20 类页面角色 “ 8,576 · 可调控件 覆盖布局与表现参数 “ 3+1 · 每页方案 模板候选加定制方案"
+      },
+      {
+        "slide": 4,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 4,
+        "type": "node-image-fallback-text-extracted",
+        "node": "masked-element",
+        "textCount": 6,
+        "sample": "“ 1,020 · 版式页面 20 类页面角色 “ 3+1 · 每页方案 模板候选加定制方案"
+      },
+      {
+        "slide": 4,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 4,
+        "type": "node-image-fallback-text-extracted",
+        "node": "masked-element",
+        "textCount": 6,
+        "sample": "“ 8,576 · 可调控件 覆盖布局与表现参数 “ 3+1 · 每页方案 模板候选加定制方案"
+      },
+      {
+        "slide": 4,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 4,
+        "type": "node-image-fallback-text-extracted",
+        "node": "masked-element",
+        "textCount": 3,
+        "sample": "“ 3+1 · 每页方案 模板候选加定制方案"
+      },
+      {
+        "slide": 4,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      },
+      {
+        "slide": 5,
+        "type": "node-image-fallback-text-extracted",
+        "node": "masked-element",
+        "textCount": 9,
+        "sample": "• HTML 可编辑、可切换方案、可自动保存 • PDF 便于分发与归档，但不承担结构化编辑 • PPTX 逐节点映射；复杂背景和效果可能回退为截图"
+      },
+      {
+        "slide": 5,
+        "type": "node-image-fallback",
+        "node": "masked-element",
+        "count": 1,
+        "source": "browser-visual-effect"
+      }
+    ]
+  },
+  "note": "Research harness bypassed the upstream HTTPS wrapper after its OpenSSL executable preflight failed. The actual upstream html-deck-to-pptx export engine and browser launcher were used unchanged against the same loopback deck URL."
+}

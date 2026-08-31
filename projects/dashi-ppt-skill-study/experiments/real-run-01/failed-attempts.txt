@@ -1,0 +1,27 @@
+2026-08-31 scaffold attempt 1
+Command role sequence: statement,process,metrics,comparison,risks,actions
+Seed: dashi-study-20260831-r01
+Result: failed before writing goal.json.
+Failure: slide 2 variant v2 layout theme07_page026 repeated visible copy "Canonicalcontent" in four props fields.
+Interpretation: the scaffold correctly rejected a low-quality projection, but the statement role plus this fixed content/seed could not produce a valid 3-layout set without changing the role or seed.
+Action: changed only slide 2 semantic role from statement to context; content, theme, seed and workflow run id remain fixed.
+
+2026-08-31 scaffold attempt 2
+Command role sequence: context,process,metrics,comparison,risks,actions
+Seed: dashi-study-20260831-r01
+Result: failed before writing goal.json.
+Failure: the same layout theme07_page026 remained eligible and repeated "Canonicalcontent" in four visible fields.
+Interpretation: changing the semantic role alone did not remove the projection collision because the candidate pool still admitted the image-capable layout with media suppressed.
+Action: preserved the fact but made its quantitative meaning explicit as "1 份 canonical content", giving anchor fields a distinct value/unit source.
+
+2026-08-31 upstream export CLI attempt 1
+Result: failed before browser launch.
+Failure: serve-preview-https.mjs required an OpenSSL executable, and none was available on PATH or in the bundled workspace runtime.
+Interpretation: the Windows CLI wrapper has an undocumented executable dependency beyond Node, npm and Chrome/Edge in this environment.
+Action: kept the upstream source unchanged and used a research harness that imports the same html-deck-to-pptx export engine and launchExportBrowser module against the already running loopback HTTP deck URL.
+
+2026-08-31 r01 PowerPoint render inspection
+Result: PPTX export succeeded with 32 physical slides, but slides 15 and 18 overflowed the canvas.
+Failure: slide 4 v3 used theme07_page057, turning the first metric label into a giant background word; slide 5 v2 used theme07_page026, projecting a format comparison into an image/investor layout with oversized copy.
+Interpretation: schema, prop and goal-copy validation all passed, so static capacity compatibility did not guarantee visual fitness after PPTX export.
+Action: retained r01 outputs as failure evidence and changed only the two page roles from metrics/comparison to breakdown so the allocator queries safer information-structure layouts; canonical facts are unchanged.

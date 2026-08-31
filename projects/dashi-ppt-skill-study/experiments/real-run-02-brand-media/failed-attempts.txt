@@ -1,0 +1,5 @@
+2026-08-31 — npm run goal:scaffold forwarded only argument values and stripped the --flag names in this Windows shell, causing "Missing --theme". Re-ran the upstream Node entry point directly with the same arguments; scaffold completed successfully in 2,097 ms.
+
+2026-08-31 — The first image-led v4 composition failed `props:safe` and `validate:goal-spec` because its visible image `src` and `alt` were authored directly rather than mapped from canonical slide content. Added canonical media fields plus explicit contentMap entries, then both checks passed. Workflow telemetry records two failures and two retries.
+
+2026-08-31 — The first selected-only export used the comparison HTML whose persisted `selectedVariant` was still v1. Regenerated a dedicated `goal.selected-v4.json` and `ppt-selected/` deck, exported the correct v4 PPTX/PDF, and removed the misleading v1 files from final artifacts. The original export reports remain here as failed-attempt evidence.

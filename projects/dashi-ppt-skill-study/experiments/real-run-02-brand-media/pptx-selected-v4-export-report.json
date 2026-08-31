@@ -1,0 +1,204 @@
+{
+  "format": "pptx",
+  "url": "http://127.0.0.1:4175/projects/dashi-ppt-skill-study/experiments/real-run-02-brand-media/ppt-selected/",
+  "outFile": "E:\\0830_1_codex_project\\projects\\dashi-ppt-skill-study\\artifacts\\real-run-02-brand-media\\dashi-brand-media-selected-v4.pptx",
+  "startedAt": "2026-08-30T22:21:16.427Z",
+  "finishedAt": "2026-08-30T22:21:24.561Z",
+  "durationMs": 8122,
+  "variantOutputMode": "selected-only",
+  "result": {
+    "outFile": "E:\\0830_1_codex_project\\projects\\dashi-ppt-skill-study\\artifacts\\real-run-02-brand-media\\dashi-brand-media-selected-v4.pptx",
+    "reportFile": null,
+    "captureMode": "captured-tree",
+    "slideCount": 8,
+    "textObjects": 115,
+    "shapeObjects": 78,
+    "imageObjects": 10,
+    "slideSummaries": [
+      {
+        "index": 1,
+        "key": "slide-1::v4",
+        "capturedNodes": 20,
+        "maxDepth": 6,
+        "textNodes": 5,
+        "backgroundImages": 0,
+        "svgImages": 1,
+        "canvasImages": 0,
+        "imageNodes": 1,
+        "shapeCandidates": 4,
+        "renderedTextObjects": 5,
+        "renderedShapeObjects": 3,
+        "renderedImageObjects": 1
+      },
+      {
+        "index": 2,
+        "key": "slide-2::v4",
+        "capturedNodes": 43,
+        "maxDepth": 9,
+        "textNodes": 12,
+        "backgroundImages": 0,
+        "svgImages": 1,
+        "canvasImages": 0,
+        "imageNodes": 2,
+        "shapeCandidates": 8,
+        "renderedTextObjects": 12,
+        "renderedShapeObjects": 11,
+        "renderedImageObjects": 2
+      },
+      {
+        "index": 3,
+        "key": "slide-3::v4",
+        "capturedNodes": 56,
+        "maxDepth": 8,
+        "textNodes": 18,
+        "backgroundImages": 0,
+        "svgImages": 1,
+        "canvasImages": 0,
+        "imageNodes": 1,
+        "shapeCandidates": 19,
+        "renderedTextObjects": 18,
+        "renderedShapeObjects": 17,
+        "renderedImageObjects": 1
+      },
+      {
+        "index": 4,
+        "key": "slide-4::v4",
+        "capturedNodes": 36,
+        "maxDepth": 7,
+        "textNodes": 18,
+        "backgroundImages": 0,
+        "svgImages": 2,
+        "canvasImages": 0,
+        "imageNodes": 2,
+        "shapeCandidates": 5,
+        "renderedTextObjects": 18,
+        "renderedShapeObjects": 6,
+        "renderedImageObjects": 2
+      },
+      {
+        "index": 5,
+        "key": "slide-5::v4",
+        "capturedNodes": 50,
+        "maxDepth": 9,
+        "textNodes": 15,
+        "backgroundImages": 0,
+        "svgImages": 1,
+        "canvasImages": 0,
+        "imageNodes": 1,
+        "shapeCandidates": 8,
+        "renderedTextObjects": 15,
+        "renderedShapeObjects": 11,
+        "renderedImageObjects": 1
+      },
+      {
+        "index": 6,
+        "key": "slide-6::v4",
+        "capturedNodes": 49,
+        "maxDepth": 8,
+        "textNodes": 15,
+        "backgroundImages": 0,
+        "svgImages": 1,
+        "canvasImages": 0,
+        "imageNodes": 1,
+        "shapeCandidates": 14,
+        "renderedTextObjects": 15,
+        "renderedShapeObjects": 9,
+        "renderedImageObjects": 1
+      },
+      {
+        "index": 7,
+        "key": "slide-7::v4",
+        "capturedNodes": 49,
+        "maxDepth": 9,
+        "textNodes": 17,
+        "backgroundImages": 0,
+        "svgImages": 1,
+        "canvasImages": 0,
+        "imageNodes": 1,
+        "shapeCandidates": 7,
+        "renderedTextObjects": 17,
+        "renderedShapeObjects": 10,
+        "renderedImageObjects": 1
+      },
+      {
+        "index": 8,
+        "key": "slide-8::v4",
+        "capturedNodes": 46,
+        "maxDepth": 9,
+        "textNodes": 15,
+        "backgroundImages": 0,
+        "svgImages": 1,
+        "canvasImages": 0,
+        "imageNodes": 1,
+        "shapeCandidates": 8,
+        "renderedTextObjects": 15,
+        "renderedShapeObjects": 11,
+        "renderedImageObjects": 1
+      }
+    ],
+    "warnings": [
+      {
+        "slide": 1,
+        "type": "node-image-fallback",
+        "node": "svg",
+        "count": 1
+      },
+      {
+        "slide": 2,
+        "type": "node-image-fallback",
+        "node": "svg",
+        "count": 1
+      },
+      {
+        "slide": 3,
+        "type": "node-image-fallback",
+        "node": "svg",
+        "count": 1
+      },
+      {
+        "slide": 4,
+        "type": "node-image-fallback",
+        "node": "svg",
+        "count": 1
+      },
+      {
+        "slide": 4,
+        "type": "node-image-fallback-text-extracted",
+        "node": "svg",
+        "textCount": 10,
+        "sample": "52% 工艺设备 21% 暖通空调 14% 空压系统 9% 辅助系统 4% 线损与其他"
+      },
+      {
+        "slide": 4,
+        "type": "node-image-fallback",
+        "node": "svg",
+        "count": 1
+      },
+      {
+        "slide": 5,
+        "type": "node-image-fallback",
+        "node": "svg",
+        "count": 1
+      },
+      {
+        "slide": 6,
+        "type": "node-image-fallback",
+        "node": "svg",
+        "count": 1
+      },
+      {
+        "slide": 7,
+        "type": "node-image-fallback",
+        "node": "svg",
+        "count": 1
+      },
+      {
+        "slide": 8,
+        "type": "node-image-fallback",
+        "node": "svg",
+        "count": 1
+      }
+    ]
+  },
+  "note": "Research harness bypassed the upstream HTTPS wrapper after its OpenSSL executable preflight failed. The actual upstream html-deck-to-pptx export engine and browser launcher were used unchanged against the same loopback deck URL."
+}

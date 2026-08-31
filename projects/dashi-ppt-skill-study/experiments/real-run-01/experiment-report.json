@@ -1,0 +1,634 @@
+{
+  "schemaVersion": 1,
+  "experimentId": "real-run-01",
+  "generatedAt": "2026-08-30T21:51:08.073Z",
+  "upstream": {
+    "version": "0.4.11",
+    "commit": "7cb23347f91cda1a5519eafc8c040704e389535a",
+    "modified": false
+  },
+  "input": {
+    "themePack": "theme07",
+    "randomSeed": "dashi-study-20260831-r03",
+    "workflowRunId": "theme07-20260831-real03",
+    "logicalSlides": 8,
+    "variantsPerSlide": 4,
+    "templateVariantsPerSlide": 3,
+    "bespokeVariantsPerSlide": 1,
+    "requiredFacts": 26
+  },
+  "contracts": {
+    "goalSchema": "passed",
+    "comparisonSwissDeck": "passed",
+    "goalCopy": "passed",
+    "selectedV4GoalCopy": "passed",
+    "selectedV4SwissDeck": {
+      "status": "not-applicable",
+      "reason": "The upstream Swiss validator requires data-layout, while selected bespoke v4 slides intentionally have no template layout."
+    },
+    "selectedV4RequiredFacts": true,
+    "contentMapCanonicalRoots": true,
+    "bespokeVisualValidator": {
+      "status": "failed-heuristic",
+      "checked": 8,
+      "clipFlags": 8,
+      "browserErrors": 0,
+      "interpretation": "All v4 screenshots hydrated and PowerPoint QA passed; the heuristic flags the theme decorative ring/bleed rather than cropped authored copy."
+    }
+  },
+  "reproducibility": {
+    "goalSha256": "0e9763469d0fb017b414285587c300c93e849b721d93ce1df1d4b727815b4be4",
+    "replaySha256": "0e9763469d0fb017b414285587c300c93e849b721d93ce1df1d4b727815b4be4",
+    "byteIdentical": true,
+    "method": "Same briefs, theme07, role sequence, seed and workflow id; then the same two deterministic layout substitutions."
+  },
+  "exports": {
+    "comparison": {
+      "variantOutputMode": "comparison",
+      "slideCount": 32,
+      "objects": {
+        "text": 577,
+        "shapes": 1036,
+        "images": 97,
+        "total": 1710
+      },
+      "warnings": {
+        "records": 160,
+        "byType": {
+          "decorative-pseudo-border-skipped": 3,
+          "node-image-fallback": 97,
+          "node-image-fallback-text-extracted": 60
+        }
+      },
+      "durationsMs": {
+        "pptx": 25253,
+        "pdf": 20730
+      },
+      "pdfPages": 32
+    },
+    "selectedV4": {
+      "variantOutputMode": "selected-only",
+      "slideCount": 8,
+      "objects": {
+        "text": 118,
+        "shapes": 76,
+        "images": 6,
+        "total": 200
+      },
+      "warnings": {
+        "records": 12,
+        "byType": {
+          "node-image-fallback-text-extracted": 6,
+          "node-image-fallback": 6
+        }
+      },
+      "durationsMs": {
+        "pptx": 4850,
+        "pdf": 5269
+      },
+      "pdfPages": 8
+    }
+  },
+  "presentationQa": {
+    "initialComparison": {
+      "status": "failed",
+      "overflowSlides": [
+        15,
+        18
+      ],
+      "interpretation": "Static goal and copy validation passed, but PowerPoint rendering exposed two off-canvas candidates."
+    },
+    "finalComparison": {
+      "status": "passed",
+      "overflowSlides": [],
+      "commandResult": "Test passed. No overflow detected."
+    },
+    "selectedV4": {
+      "status": "passed",
+      "overflowSlides": [],
+      "commandResult": "Test passed. No overflow detected."
+    }
+  },
+  "interventions": [
+    {
+      "physicalSlide": 15,
+      "logicalSlide": 4,
+      "from": "theme07_page057",
+      "to": "theme07_page035",
+      "reason": "Oversized ghost metric label overflowed after PPTX mapping."
+    },
+    {
+      "physicalSlide": 18,
+      "logicalSlide": 5,
+      "from": "theme07_page026",
+      "to": "theme07_page007",
+      "reason": "Image/investor composition enlarged comparison copy beyond the slide canvas."
+    }
+  ],
+  "conclusions": [
+    "The distinctive capability is an auditable content-to-layout-to-export pipeline, not a uniquely recognizable visual style.",
+    "Fixed-seed allocation is reproducible, but deterministic output can reproduce a poor candidate; visual QA remains necessary.",
+    "PPTX preserves many native text and shape objects, while complex masked/effect regions fall back to images.",
+    "The selected v4 deck is structurally clean and consistent, but visually resembles a restrained general-purpose research deck."
+  ],
+  "slides": [
+    {
+      "slide": 1,
+      "title": "Dashi PPT Skill",
+      "role": "cover",
+      "requiredFactCount": 0,
+      "requiredFactIds": [],
+      "canonicalHash": "d546832ab0c442fd3632a738629982b2483977166ec8295f38e6bf7bd549375f",
+      "variants": [
+        {
+          "id": "v1",
+          "kind": "template",
+          "layout": "theme07_page002",
+          "compositionFamily": null,
+          "selectorCount": 12,
+          "selectorsUseCanonicalRoots": true,
+          "explicitSourcesUseCanonicalRoots": true,
+          "selectedRequiredFacts": null
+        },
+        {
+          "id": "v2",
+          "kind": "template",
+          "layout": "theme07_page003",
+          "compositionFamily": null,
+          "selectorCount": 7,
+          "selectorsUseCanonicalRoots": true,
+          "explicitSourcesUseCanonicalRoots": true,
+          "selectedRequiredFacts": null
+        },
+        {
+          "id": "v3",
+          "kind": "template",
+          "layout": "theme07_page001",
+          "compositionFamily": null,
+          "selectorCount": 8,
+          "selectorsUseCanonicalRoots": true,
+          "explicitSourcesUseCanonicalRoots": true,
+          "selectedRequiredFacts": null
+        },
+        {
+          "id": "v4",
+          "kind": "bespoke",
+          "layout": null,
+          "compositionFamily": "hero",
+          "selectorCount": 5,
+          "selectorsUseCanonicalRoots": true,
+          "explicitSourcesUseCanonicalRoots": true,
+          "selectedRequiredFacts": {
+            "passed": true,
+            "coveredIndexes": [],
+            "requiredCount": 0
+          }
+        }
+      ]
+    },
+    {
+      "slide": 2,
+      "title": "差异不在生成，而在内容与版式解耦",
+      "role": "context",
+      "requiredFactCount": 3,
+      "requiredFactIds": [
+        "canonical",
+        "capacity",
+        "variants"
+      ],
+      "canonicalHash": "f7e27340571c00d9961bc61c1273849aade86fa7bd73edcae661a8a019e02738",
+      "variants": [
+        {
+          "id": "v1",
+          "kind": "template",
+          "layout": "theme07_page026",
+          "compositionFamily": null,
+          "selectorCount": 9,
+          "selectorsUseCanonicalRoots": true,
+          "explicitSourcesUseCanonicalRoots": true,
+          "selectedRequiredFacts": null
+        },
+        {
+          "id": "v2",
+          "kind": "template",
+          "layout": "theme07_page015",
+          "compositionFamily": null,
+          "selectorCount": 9,
+          "selectorsUseCanonicalRoots": true,
+          "explicitSourcesUseCanonicalRoots": true,
+          "selectedRequiredFacts": null
+        },
+        {
+          "id": "v3",
+          "kind": "template",
+          "layout": "theme07_page071",
+          "compositionFamily": null,
+          "selectorCount": 12,
+          "selectorsUseCanonicalRoots": true,
+          "explicitSourcesUseCanonicalRoots": true,
+          "selectedRequiredFacts": null
+        },
+        {
+          "id": "v4",
+          "kind": "bespoke",
+          "layout": null,
+          "compositionFamily": "editorial",
+          "selectorCount": 5,
+          "selectorsUseCanonicalRoots": true,
+          "explicitSourcesUseCanonicalRoots": true,
+          "selectedRequiredFacts": {
+            "passed": true,
+            "coveredIndexes": [
+              0,
+              1,
+              2
+            ],
+            "requiredCount": 3
+          }
+        }
+      ]
+    },
+    {
+      "slide": 3,
+      "title": "一份内容依次经过五道确定性关卡",
+      "role": "process",
+      "requiredFactCount": 5,
+      "requiredFactIds": [
+        "plan",
+        "query",
+        "allocate",
+        "render",
+        "export"
+      ],
+      "canonicalHash": "a96a6afb0bcfda963e20452cc0b76ea905c18b333f8505c545dcbc2784a4fcc0",
+      "variants": [
+        {
+          "id": "v1",
+          "kind": "template",
+          "layout": "theme07_page013",
+          "compositionFamily": null,
+          "selectorCount": 8,
+          "selectorsUseCanonicalRoots": true,
+          "explicitSourcesUseCanonicalRoots": true,
+          "selectedRequiredFacts": null
+        },
+        {
+          "id": "v2",
+          "kind": "template",
+          "layout": "theme07_page055",
+          "compositionFamily": null,
+          "selectorCount": 7,
+          "selectorsUseCanonicalRoots": true,
+          "explicitSourcesUseCanonicalRoots": true,
+          "selectedRequiredFacts": null
+        },
+        {
+          "id": "v3",
+          "kind": "template",
+          "layout": "theme07_page007",
+          "compositionFamily": null,
+          "selectorCount": 6,
+          "selectorsUseCanonicalRoots": true,
+          "explicitSourcesUseCanonicalRoots": true,
+          "selectedRequiredFacts": null
+        },
+        {
+          "id": "v4",
+          "kind": "bespoke",
+          "layout": null,
+          "compositionFamily": "split",
+          "selectorCount": 6,
+          "selectorsUseCanonicalRoots": true,
+          "explicitSourcesUseCanonicalRoots": true,
+          "selectedRequiredFacts": {
+            "passed": true,
+            "coveredIndexes": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "requiredCount": 5
+          }
+        }
+      ]
+    },
+    {
+      "slide": 4,
+      "title": "版式库规模可量化，但规模不是质量结论",
+      "role": "breakdown",
+      "requiredFactCount": 4,
+      "requiredFactIds": [
+        "themes",
+        "layouts",
+        "controls",
+        "variants"
+      ],
+      "canonicalHash": "3f941ea76c100eee9c3b64eee93f5f09e70c6dbeef28da34e51fb0002b9c4dd8",
+      "variants": [
+        {
+          "id": "v1",
+          "kind": "template",
+          "layout": "theme07_page035",
+          "compositionFamily": null,
+          "selectorCount": 16,
+          "selectorsUseCanonicalRoots": true,
+          "explicitSourcesUseCanonicalRoots": true,
+          "selectedRequiredFacts": null
+        },
+        {
+          "id": "v2",
+          "kind": "template",
+          "layout": "theme07_page052",
+          "compositionFamily": null,
+          "selectorCount": 13,
+          "selectorsUseCanonicalRoots": true,
+          "explicitSourcesUseCanonicalRoots": true,
+          "selectedRequiredFacts": null
+        },
+        {
+          "id": "v3",
+          "kind": "template",
+          "layout": "theme07_page027",
+          "compositionFamily": null,
+          "selectorCount": 9,
+          "selectorsUseCanonicalRoots": true,
+          "explicitSourcesUseCanonicalRoots": true,
+          "selectedRequiredFacts": null
+        },
+        {
+          "id": "v4",
+          "kind": "bespoke",
+          "layout": null,
+          "compositionFamily": "matrix",
+          "selectorCount": 11,
+          "selectorsUseCanonicalRoots": true,
+          "explicitSourcesUseCanonicalRoots": true,
+          "selectedRequiredFacts": {
+            "passed": true,
+            "coveredIndexes": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "requiredCount": 4
+          }
+        }
+      ]
+    },
+    {
+      "slide": 5,
+      "title": "HTML 是主产物，PPTX 是分层映射",
+      "role": "breakdown",
+      "requiredFactCount": 3,
+      "requiredFactIds": [
+        "html",
+        "pdf",
+        "pptx"
+      ],
+      "canonicalHash": "d371004e3a6a3d0bd58076564b97bc22c51711a6d25833c54ca8c13bc02f646b",
+      "variants": [
+        {
+          "id": "v1",
+          "kind": "template",
+          "layout": "theme07_page071",
+          "compositionFamily": null,
+          "selectorCount": 12,
+          "selectorsUseCanonicalRoots": true,
+          "explicitSourcesUseCanonicalRoots": true,
+          "selectedRequiredFacts": null
+        },
+        {
+          "id": "v2",
+          "kind": "template",
+          "layout": "theme07_page007",
+          "compositionFamily": null,
+          "selectorCount": 6,
+          "selectorsUseCanonicalRoots": true,
+          "explicitSourcesUseCanonicalRoots": true,
+          "selectedRequiredFacts": null
+        },
+        {
+          "id": "v3",
+          "kind": "template",
+          "layout": "theme07_page013",
+          "compositionFamily": null,
+          "selectorCount": 8,
+          "selectorsUseCanonicalRoots": true,
+          "explicitSourcesUseCanonicalRoots": true,
+          "selectedRequiredFacts": null
+        },
+        {
+          "id": "v4",
+          "kind": "bespoke",
+          "layout": null,
+          "compositionFamily": "editorial",
+          "selectorCount": 5,
+          "selectorsUseCanonicalRoots": true,
+          "explicitSourcesUseCanonicalRoots": true,
+          "selectedRequiredFacts": {
+            "passed": true,
+            "coveredIndexes": [
+              0,
+              1,
+              2
+            ],
+            "requiredCount": 3
+          }
+        }
+      ]
+    },
+    {
+      "slide": 6,
+      "title": "采用前要正视四条工程边界",
+      "role": "risks",
+      "requiredFactCount": 4,
+      "requiredFactIds": [
+        "agpl",
+        "proprietary",
+        "preview",
+        "cost"
+      ],
+      "canonicalHash": "43b357b7ede4c154f9ce2935dc22a1a2bff534254061f95b9ccf9f3b2e829727",
+      "variants": [
+        {
+          "id": "v1",
+          "kind": "template",
+          "layout": "theme07_page055",
+          "compositionFamily": null,
+          "selectorCount": 7,
+          "selectorsUseCanonicalRoots": true,
+          "explicitSourcesUseCanonicalRoots": true,
+          "selectedRequiredFacts": null
+        },
+        {
+          "id": "v2",
+          "kind": "template",
+          "layout": "theme07_page007",
+          "compositionFamily": null,
+          "selectorCount": 6,
+          "selectorsUseCanonicalRoots": true,
+          "explicitSourcesUseCanonicalRoots": true,
+          "selectedRequiredFacts": null
+        },
+        {
+          "id": "v3",
+          "kind": "template",
+          "layout": "theme07_page015",
+          "compositionFamily": null,
+          "selectorCount": 9,
+          "selectorsUseCanonicalRoots": true,
+          "explicitSourcesUseCanonicalRoots": true,
+          "selectedRequiredFacts": null
+        },
+        {
+          "id": "v4",
+          "kind": "bespoke",
+          "layout": null,
+          "compositionFamily": "comparison",
+          "selectorCount": 5,
+          "selectorsUseCanonicalRoots": true,
+          "explicitSourcesUseCanonicalRoots": true,
+          "selectedRequiredFacts": {
+            "passed": true,
+            "coveredIndexes": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "requiredCount": 4
+          }
+        }
+      ]
+    },
+    {
+      "slide": 7,
+      "title": "最小试点先验证四项可量化指标",
+      "role": "actions",
+      "requiredFactCount": 4,
+      "requiredFactIds": [
+        "coverage",
+        "repeatability",
+        "editability",
+        "compatibility"
+      ],
+      "canonicalHash": "6334a5e77716ad0c4642e31430c9aa2239baf1c935beb48697b2b1011bd6cbdc",
+      "variants": [
+        {
+          "id": "v1",
+          "kind": "template",
+          "layout": "theme07_page015",
+          "compositionFamily": null,
+          "selectorCount": 9,
+          "selectorsUseCanonicalRoots": true,
+          "explicitSourcesUseCanonicalRoots": true,
+          "selectedRequiredFacts": null
+        },
+        {
+          "id": "v2",
+          "kind": "template",
+          "layout": "theme07_page013",
+          "compositionFamily": null,
+          "selectorCount": 8,
+          "selectorsUseCanonicalRoots": true,
+          "explicitSourcesUseCanonicalRoots": true,
+          "selectedRequiredFacts": null
+        },
+        {
+          "id": "v3",
+          "kind": "template",
+          "layout": "theme07_page026",
+          "compositionFamily": null,
+          "selectorCount": 9,
+          "selectorsUseCanonicalRoots": true,
+          "explicitSourcesUseCanonicalRoots": true,
+          "selectedRequiredFacts": null
+        },
+        {
+          "id": "v4",
+          "kind": "bespoke",
+          "layout": null,
+          "compositionFamily": "process",
+          "selectorCount": 4,
+          "selectorsUseCanonicalRoots": true,
+          "explicitSourcesUseCanonicalRoots": true,
+          "selectedRequiredFacts": {
+            "passed": true,
+            "coveredIndexes": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "requiredCount": 4
+          }
+        }
+      ]
+    },
+    {
+      "slide": 8,
+      "title": "建议：以研究汇报为首个试点",
+      "role": "closing",
+      "requiredFactCount": 3,
+      "requiredFactIds": [
+        "gate-content",
+        "gate-export",
+        "gate-effort"
+      ],
+      "canonicalHash": "3bc2a2091ad710f103f919f039d7d865c9ab79f9f1837e7462d8fa30cc44af8f",
+      "variants": [
+        {
+          "id": "v1",
+          "kind": "template",
+          "layout": "theme07_page007",
+          "compositionFamily": null,
+          "selectorCount": 6,
+          "selectorsUseCanonicalRoots": true,
+          "explicitSourcesUseCanonicalRoots": true,
+          "selectedRequiredFacts": null
+        },
+        {
+          "id": "v2",
+          "kind": "template",
+          "layout": "theme07_page071",
+          "compositionFamily": null,
+          "selectorCount": 12,
+          "selectorsUseCanonicalRoots": true,
+          "explicitSourcesUseCanonicalRoots": true,
+          "selectedRequiredFacts": null
+        },
+        {
+          "id": "v3",
+          "kind": "template",
+          "layout": "theme07_page055",
+          "compositionFamily": null,
+          "selectorCount": 7,
+          "selectorsUseCanonicalRoots": true,
+          "explicitSourcesUseCanonicalRoots": true,
+          "selectedRequiredFacts": null
+        },
+        {
+          "id": "v4",
+          "kind": "bespoke",
+          "layout": null,
+          "compositionFamily": "split",
+          "selectorCount": 6,
+          "selectorsUseCanonicalRoots": true,
+          "explicitSourcesUseCanonicalRoots": true,
+          "selectedRequiredFacts": {
+            "passed": true,
+            "coveredIndexes": [
+              0,
+              1,
+              2
+            ],
+            "requiredCount": 3
+          }
+        }
+      ]
+    }
+  ]
+}
