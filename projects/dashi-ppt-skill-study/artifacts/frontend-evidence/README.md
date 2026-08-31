@@ -1,6 +1,6 @@
 # 浏览器视觉证据
 
-以下截图由本地 Chromium 在固定路由上生成，用于核对最终响应式页面：
+以下截图由 Chromium 在固定路由上生成，用于核对最终响应式页面；R-003 release 三张截图和机器报告为 GitHub Pages 上线后的在线复验，其余为本地迭代证据：
 
 - `desktop-demo.png`：1440 × 1000，研究咨询场景的证据矩阵页。
 - `desktop-scenarios.png`：1440 × 1000，四场景选择器与经营复盘指标页。
@@ -19,6 +19,8 @@
 - `desktop-r003-release.png`：1440 × 1000，R-003 六案例公开索引。
 - `tablet-r003-release.png`：768 × 1024，双列六案例索引与响应式状态。
 - `mobile-r003-release.png`：390 × 844，单列案例索引与 reduced-motion 状态。
-- `real-run-browser-report.json`：R-003 本地发布候选的三档视口、第二轮路线/页面、场景跳转和下载链接检查。
+- `real-run-browser-report.json`：R-003 canonical GitHub Pages 的三档视口、第二轮路线/页面、场景跳转和下载链接检查。
 
-路由：`http://127.0.0.1:4175/projects/dashi-ppt-skill-study/showcase/`
+本地路由：`http://127.0.0.1:4175/projects/dashi-ppt-skill-study/showcase/`
+
+公开路由：`https://yydshly.github.io/0830_1_codex_project/projects/dashi-ppt-skill-study/showcase/`

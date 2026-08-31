@@ -2,6 +2,16 @@
 
 实验记录按时间倒序排列。每次记录说明目标、环境、执行、观察、证据、判断和下一步；失败实验保留在记录中。
 
+## 2026-08-31 · R-003 GitHub 公开发布与线上验收
+
+- **目标：** 把锁定源码分析、两轮真实实验和四类模拟场景整理成第 3 个研究子项目，并让根索引、项目摘要、源库与在线 Web 形成可公开追溯的入口。
+- **执行：** 统一使用 `R-003`；Web 增加 2 个真实实验 + 4 个模拟场景的六案例索引；发布候选保留被页面直接引用的 PPTX/PDF/render，排除上游 checkout、缓存、重复中间 HTML、montage 和临时对象检查文件。首次公开提交为 `e916b29f45d0de738205d5195d96a3448a05db13`。
+- **质量：** 能力契约 8/8、专题页契约 14/14、仓库结构验证通过。本地和 GitHub Pages 均在 1440×1000、768×1024、390×844 验证 HTTP 200、0 overflow、0 console error；手机 reduced-motion 生效。第二轮 5 个 PPTX/PDF/报告链接在线均为 HTTP 200。
+- **发布：** Repository checks run `33371746745` 与 Deploy research site run `33371746832` 通过；根索引、R-003 研究页和 canonical Web 均公开可达。
+- **判断：** 当前子项目已从“是否分析”进入“源码分析、实跑、对照、演示与公开部署均完成”的状态。后续研究空间仍包括跨主题、PowerPoint/WPS/LibreOffice 兼容性、Token 与人工审阅时间；这些是新增研究，不是本次发布缺口。
+- **证据：** `docs/frontend-coverage.md`、`artifacts/frontend-verification.md`、`artifacts/frontend-evidence/real-run-browser-report.json`、GitHub commit 与两条 Actions runs。
+- **下一步：** 仅在有新的实际采用问题时追加实验；现有 R-003 版本作为公开研究基线维护。
+
 ## 2026-08-31 · REAL RUN 02：品牌、媒体、图表与直接编程基线
 
 - **目标：** 在第一轮“视觉仍偏通用”的结论上继续验证：加入明确品牌契约、生成媒体和负荷图表后，Dashi 能否形成更接近真实业务决策的完整演示；同时用同一输入的直接编程 PPTX 作为控制组。

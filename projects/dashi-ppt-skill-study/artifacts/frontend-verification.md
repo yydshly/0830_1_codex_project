@@ -217,4 +217,13 @@
 - [手机 R-003 案例索引](frontend-evidence/mobile-r003-release.png)
 - [机器可读浏览器报告](frontend-evidence/real-run-browser-report.json)
 
-线上 GitHub Pages 的 workflow、HTTP、交互和下载链接在推送后单独复验，不以本地 HTTP 结果替代。
+### GitHub Pages 线上复验
+
+- 首次公开提交：`e916b29f45d0de738205d5195d96a3448a05db13`，已推送至 `origin/main`。
+- Repository checks：run `33371746745`，通过。
+- Deploy research site：run `33371746832`，Jekyll build 与 Pages deploy 均通过。
+- 线上根索引、R-003 研究页、GitHub 源码索引均为 HTTP 200。
+- 对 canonical 在线 Web 重新运行同一浏览器矩阵；三档视口均为 HTTP 200、六案例、`training` 场景、direct / slide 4、0 overflow、0 console error，390px 的 reduced-motion 为 true。
+- Dashi v4 PPTX/PDF、32 页候选稿、直接编程基线 PPTX、第二轮机器报告共 5 个线上链接在三档浏览器上下文中均为 HTTP 200。
+
+机器可读报告中的 URL 已更新为 canonical GitHub Pages 地址，本地结果没有被当作线上发布证据。

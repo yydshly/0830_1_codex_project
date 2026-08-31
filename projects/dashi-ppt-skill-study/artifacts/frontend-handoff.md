@@ -22,6 +22,13 @@ python -m http.server 4175 --bind 127.0.0.1 --directory .
 
 页面无构建步骤、无包管理器、无外部运行依赖，可由 GitHub Pages 直接托管。
 
+## 发布状态
+
+- 首次公开提交：`e916b29f45d0de738205d5195d96a3448a05db13`
+- Repository checks：GitHub Actions run `33371746745` 通过
+- Deploy research site：GitHub Actions run `33371746832` 通过
+- 线上验收：根索引、研究页、六案例 Web、第二轮 5 个下载/报告链接均为 HTTP 200；1440 / 768 / 390 浏览器矩阵无横向溢出和控制台错误
+
 ## 内容维护
 
 - 页面研究叙事、六案例索引、两轮真实运行审计台、Dashi Compiler 静态结构、8 条证据、4 类替代方案和无脚本说明在 `showcase/index.html`。
@@ -35,7 +42,7 @@ python -m http.server 4175 --bind 127.0.0.1 --directory .
 - 样例追踪条由页面类型映射生成，说明当前页面采用了哪类内容和布局约束；它不是本次上游导出的运行日志。
 - 分栏版式使用左侧深色论证带并把正文约束在右侧内容区；调整通用版式时必须复验卡片、指标、流程、路线和决策五类页面。
 - 采用评估器是试点筛选工具，不是性能 benchmark；调整评分阈值时必须同步更新测试与浏览器验收。
-- GitHub Pages 由根仓库 `.github/workflows/pages.yml` 在 `main` 推送后部署；公开索引、Web 和下载链接必须在 Actions 完成后重新检查。
+- GitHub Pages 由根仓库 `.github/workflows/pages.yml` 在 `main` 推送后部署；本次已完成 Actions 与 canonical 在线 URL 复验，后续修改仍需重复此检查。
 - 发布文件范围见 `artifacts/README.md`；上游 checkout、重复中间 HTML、comparison PDF、montage 和临时对象检查文件保持忽略。最大的公开二进制是第二轮 32 页候选稿，约 21 MB，因网页下载入口直接用于复核 3+1 结论而保留。
 
 ## 验收命令

@@ -67,5 +67,5 @@
 | 第二轮公开归档 | README/日志/实验矩阵纳入品牌媒体与直接编程基线结果 | 文档与机器报告 | 对象、品牌、耗时、QA 数字与报告一致 | pass |
 | 发布文件范围 | 排除 upstream/缓存/重复中间文件，保留网页依赖产物 | Git staging candidate | 356 个候选文件 / 65,405,831 bytes；最大公开文件 22,170,805 bytes；上游 checkout、缓存和重复中间 HTML 均未进入候选 | pass |
 | 发布候选浏览器 | 修复 1440px overflow，并复验主题/键盘/reduced-motion | 1440、768、390px | 三档 HTTP 200、overflow 0、console 0；主题往返与 mobile reduce 通过 | pass |
-| GitHub 远端提交 | 意图明确的 R-003 文件提交并推送 `origin/main` | main branch | commit SHA 与远端分支 | continue |
-| GitHub Pages 上线 | Actions 成功，研究索引/Web/下载公开可达 | canonical online URL | workflow run 与在线 HTTP/浏览器证据 | continue |
+| GitHub 远端提交 | 意图明确的 R-003 文件提交并推送 `origin/main` | main branch | 首次公开提交 `e916b29f45d0de738205d5195d96a3448a05db13` 已推送 `origin/main`；未纳入并行的 R-006 工作区变更 | pass |
+| GitHub Pages 上线 | Actions 成功，研究索引/Web/下载公开可达 | canonical online URL | Repository checks `33371746745`、Deploy research site `33371746832` 通过；在线三视口与 5 个下载链接均 HTTP 200 | pass |
