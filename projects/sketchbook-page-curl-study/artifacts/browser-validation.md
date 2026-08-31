@@ -7,9 +7,48 @@
 | Date / timezone | 2026-08-30–31 · Asia/Shanghai |
 | Canonical start command | `python -m http.server 4173 --bind 127.0.0.1 --directory projects\sketchbook-page-curl-study` |
 | Canonical URL | 实际效果 `http://127.0.0.1:4173/demo/`；技术拆分 `http://127.0.0.1:4173/showcase/` |
-| Browser route | Revision 1/2：Chromium via agent-browser 0.27.0；Revision 3/4/5/6：Chromium via Playwright |
+| Browser route | Revision 1/2：Chromium via agent-browser 0.27.0；Revision 3/4/5/6/7：Chromium via bundled Playwright |
 | Viewports | 1440×1000、768×900、390×844；浏览器滚动条后的 layout widths 为 1425、753、375 |
-| Themes / states | light、dark、idle、28%/50% turn、commit、cancel、independent magnifier、zoom、auto、eight scenarios、four scene-specific effects、three shared extensions、eighteen creative book forms、six-axis atlas、36 directions、12 cross-axis combinations、reduced-motion、fallback |
+| Themes / states | light、dark、idle、28%/50% turn、commit、cancel、independent magnifier、zoom、auto、eight scenarios、four scene-specific effects、three shared extensions、eighteen creative book forms、twelve deformable surfaces、five material presets、480 addressable combinations、six-axis atlas、36 directions、12 cross-axis combinations、reduced-motion、fallback |
+
+## Revision 7 · twelve non-book deformable surfaces
+
+### Scope
+
+- **User correction:** 书只是包装；要核对此前列举的扩展是否真的在网页中运行，并把非书形态与更多扩展做成可操作演示。
+- **Strict baseline:** Revision 6 的创意书型 10/10 已有独立 renderer，但原列举 8 种非书形态按严格口径为 0/8；邻近书型、纸角或说明文字不计完成。
+- **Intervention:** 新增 12 个独立 surface renderer、五材质和共享条带链；8 个既有内容上下文、surface、material 三项正交选择，形成 480 个可寻址状态组合。
+- **Originality boundary:** 12 个 surface、五材质、视觉与控制均为本项目原创扩展，不代表 MengTo/sketchbook 原生能力。织物、金属与 portal 分别是 CSS 视觉/响应、反射和空间阈值近似，不是物理布料、PBR 或 WebGL 连续场景。
+
+### Executable browser evidence
+
+| 检查 | 触发与观察 | 结果 |
+| --- | --- | --- |
+| 十二种独立结构 | 标签/地图/幕布/百叶/时间轴/材质墙/盒网/portal/卷轴/径向扇/票券/丝带分别为 14/8/20/18/7/8/6/6/12/10/16 holes/8 nodes | pass |
+| 共享条带能力 | 标签 14 条=28 faces；幕布左右各 10 条；卷轴 12 条=24 faces；progress 改变逐带 transform 与光照 | pass |
+| 原描述补齐 | 原列举的 8 项均拥有独立 `.deformable-surface--<id>`、不同直属几何和具名状态，不再借用书型 | pass |
+| 更多扩展 | 卷轴、径向扇、穿孔票券和数据丝带分别验证顶边卷起、径向锚点、真实 detached 状态与 8 节点路径 | pass |
+| 三维正交状态 | surface 保持不变时切换 8 内容与 5 材质；context/material 数据集和 URL 同步，480 为可寻址组合空间 | pass |
+| 五材质可见性 | 每个 surface 的 paper/card/vellum/textile/foil 舞台截图均得到 5 个不同 SHA-256 前缀；computed 变量也不同 | pass |
+| Cycle 深链 | 数据丝带 `progress=.43` 刷新前后均为 step=3、节点 4/8；地图、时间轴、材质墙、扇和丝带均由 progress 恢复 step | pass |
+| 定向手势 | 标签右下→左上、幕布从起点半区向外、盒网向下、portal/卷轴向上、票券向右均增加 progress；票券可得到 `detached=1` | pass |
+| 统一输入与恢复 | range/action/reset、舞台键盘、radio 方向键、左右导航与 Escape 可用；退出后 URL=`panel=experience`、surface=0、classic halves=2 | pass |
+| Radio / 状态输出 | 12 个 surface 只有当前项 `tabIndex=0/aria-checked=true`；状态同时包含 surface、material、progress/step 和内容上下文 | pass |
+| Desktop/tablet/mobile | 1440×1000、768×900、390×844 均 `scrollWidth===clientWidth`；390px 舞台先于完整控制台 | pass |
+| Reduced motion / fallback | reduced-motion 过渡时长 `1e-06s`；fallback 静态终态可辨，action/range disabled，内容/表面/材质仍可选 | pass |
+| Console/network/performance | console/page/request errors=[]；8 个本地资源、0 external、decoded≈387KB、DOM=478、navigation≈235ms | pass |
+| Static tests | `node --test projects/sketchbook-page-curl-study/tests/*.test.mjs`：35/35 | pass |
+
+### Revision 7 evidence set
+
+| Capture | State |
+| --- | --- |
+| `browser-r7-label-peel.png` | 14 条双面带、角点 grip、底层揭示与产品发布内容 |
+| `browser-r7-curtain.png` | 左右 20 条镜像幕带、中央舞台和织物近似边界 |
+| `browser-r7-fold-map.png` | 8 个山/谷折面、跨面路线、5 个站点与卡纸材质 |
+| `browser-r7-box-net.png` | 六面盒体向十字 net 展开与金属薄片视觉预设 |
+| `browser-r7-coupon-detached.png` | 16 个穿孔、保留存根和真正独立的 detached 票券 |
+| `browser-r7-mobile-fan.png` | 390px 下 10 个径向扇片、胶片材质与完整控制台 |
 
 ## Revision 6 · eighteen live forms and a six-axis creative atlas
 

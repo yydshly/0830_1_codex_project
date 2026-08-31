@@ -4,20 +4,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#141a1b">
-  <title>R-001 · FOLD / 18 · 柔性翻页实际效果</title>
+  <title>R-001 · FOLD / SURFACE · 可变形界面实验</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="deformable-surfaces.css">
 </head>
 <body>
-  <a class="skip-link" href="#book">跳到互动书本</a>
+  <a class="skip-link" href="#book">跳到互动舞台</a>
   <header class="topbar">
     <a class="brand" href="./" aria-label="返回实际效果首页">
-      <span class="brand__mark">18</span>
-      <span><strong>FOLD / LIVE</strong><small>R-001 · 柔性纸张实际效果</small></span>
+      <span class="brand__mark">18+12</span>
+      <span><strong>FOLD / SURFACE</strong><small>R-001 · 柔性纸张与可变形表面</small></span>
     </a>
     <nav class="view-tabs" aria-label="演示面板">
       <button type="button" data-view="experience" aria-pressed="true">实际效果</button>
       <button type="button" data-view="scenes" aria-pressed="false">场景</button>
       <button type="button" data-view="forms" aria-pressed="false">书型 18</button>
+      <button type="button" data-view="surfaces" aria-pressed="false">可变表面 12</button>
       <button type="button" data-view="explore" aria-pressed="false">创意图谱</button>
       <button type="button" data-view="extensions" aria-pressed="false">扩展效果</button>
     </nav>
@@ -34,9 +36,9 @@
       <p id="scene-dek">拖动右页。纸面会沿宽度连续弯曲，而不是像硬卡片一样整体旋转。</p>
     </section>
 
-    <section class="book-workspace" aria-label="柔性翻页实际效果舞台">
+    <section class="book-workspace" aria-label="柔性翻页与可变形表面实际效果舞台">
       <div class="book-shell" id="book-shell">
-        <div class="book" id="book" tabindex="0" role="application" aria-label="可拖动的柔性画册。点击或拖动左右页，也可使用方向键翻页。">
+        <div class="book" id="book" tabindex="0" role="application" aria-label="可拖动的可变形表面舞台。点击、拖动或使用方向键改变当前对象。">
           <div class="book-placeholder"><strong>FOLD / 18</strong><span>正在准备纸张</span></div>
         </div>
 
@@ -169,6 +171,97 @@
         </div>
       </section>
 
+      <section class="deck-panel deck-panel--surfaces" data-panel="surfaces" aria-labelledby="surfaces-heading" hidden>
+        <header class="surface-intro">
+          <p class="surface-eyebrow">DEFORMABLE SURFACES · 12 LIVE TOPOLOGIES</p>
+          <h2 id="surfaces-heading">把书脊拿掉，留下形变。</h2>
+          <p>内容、几何与材质互相独立。选择后直接拖动中央对象，比较锚点、切片方向、拓扑与释放行为。</p>
+          <div class="surface-metrics" aria-label="可变表面规模">
+            <span><strong>12</strong><small>真实表面</small></span>
+            <span><strong>5</strong><small>材质预设</small></span>
+            <span><strong>480</strong><small>可寻址组合</small></span>
+          </div>
+        </header>
+
+        <label class="surface-context" for="surface-context">
+          <span><strong>CONTENT CONTEXT</strong><small>内容上下文不改变几何选择</small></span>
+          <select id="surface-context">
+            <option value="portfolio">视觉画册</option>
+            <option value="atlas">自然图鉴</option>
+            <option value="launch">产品发布</option>
+            <option value="kiosk">展览导览</option>
+            <option value="travel">旅行路线</option>
+            <option value="recipe">食谱步骤</option>
+            <option value="comic">互动分镜</option>
+            <option value="catalog">商品目录</option>
+          </select>
+        </label>
+
+        <div class="surface-groups" role="radiogroup" aria-label="可变表面形态">
+          <section class="surface-set" aria-labelledby="strip-surfaces-label">
+            <p class="surface-group-label" id="strip-surfaces-label"><span>STRIP &amp; REVEAL</span> 条带与揭示</p>
+            <div class="surface-picker">
+              <button type="button" role="radio" data-surface="label-peel" aria-checked="false"><span>01</span><strong>标签剥离</strong><small>角锚 · 双面条带</small></button>
+              <button type="button" role="radio" data-surface="split-curtain" aria-checked="false"><span>03</span><strong>双向幕布</strong><small>中央开场 · 镜像条带</small></button>
+              <button type="button" role="radio" data-surface="comparison-blind" aria-checked="false"><span>04</span><strong>对比百叶屏</strong><small>双面叶片 · 时间对照</small></button>
+              <button type="button" role="radio" data-surface="rollup-poster" aria-checked="false"><span>09</span><strong>卷轴海报</strong><small>顶边锚定 · 横向卷起</small></button>
+            </div>
+          </section>
+          <section class="surface-set" aria-labelledby="topology-surfaces-label">
+            <p class="surface-group-label" id="topology-surfaces-label"><span>FOLD &amp; TOPOLOGY</span> 折叠与拓扑</p>
+            <div class="surface-picker">
+              <button type="button" role="radio" data-surface="fold-map" aria-checked="false"><span>02</span><strong>折叠地图</strong><small>八折面 · 跨面路线</small></button>
+              <button type="button" role="radio" data-surface="accordion-timeline" aria-checked="false"><span>05</span><strong>手风琴时间轴</strong><small>七事件 · 多铰链</small></button>
+              <button type="button" role="radio" data-surface="box-net" aria-checked="false"><span>07</span><strong>包装盒展开</strong><small>六面体 · 十字网格</small></button>
+              <button type="button" role="radio" data-surface="radial-fan" aria-checked="false"><span>10</span><strong>径向样本扇</strong><small>中心铆点 · 十扇片</small></button>
+            </div>
+          </section>
+          <section class="surface-set" aria-labelledby="release-surfaces-label">
+            <p class="surface-group-label" id="release-surfaces-label"><span>MATERIAL &amp; RELEASE</span> 材质与释放</p>
+            <div class="surface-picker">
+              <button type="button" role="radio" data-surface="material-wall" aria-checked="false"><span>06</span><strong>材质样本墙</strong><small>八样本 · 光泽比较</small></button>
+              <button type="button" role="radio" data-surface="portal" aria-checked="false"><span>08</span><strong>层叠传送门</strong><small>六框层 · 双场景阈值</small></button>
+              <button type="button" role="radio" data-surface="tearoff-coupon" aria-checked="false"><span>11</span><strong>撕取优惠券</strong><small>穿孔 · 吸附与脱离</small></button>
+              <button type="button" role="radio" data-surface="data-ribbon" aria-checked="false"><span>12</span><strong>数据丝带</strong><small>八节点 · 路径传播</small></button>
+            </div>
+          </section>
+        </div>
+
+        <section class="material-lab" aria-labelledby="material-label">
+          <p class="surface-group-label" id="material-label"><span>MATERIAL PRESET</span> 视觉／力学近似</p>
+          <div class="material-picker" role="radiogroup" aria-label="表面材质">
+            <button type="button" role="radio" data-material="paper" aria-checked="true"><i></i><strong>纸张</strong></button>
+            <button type="button" role="radio" data-material="card" aria-checked="false"><i></i><strong>硬卡</strong></button>
+            <button type="button" role="radio" data-material="vellum" aria-checked="false"><i></i><strong>胶片</strong></button>
+            <button type="button" role="radio" data-material="textile" aria-checked="false"><i></i><strong>织物*</strong></button>
+            <button type="button" role="radio" data-material="foil" aria-checked="false"><i></i><strong>金属*</strong></button>
+          </div>
+          <p class="material-boundary" id="material-boundary">* 织物与金属为 CSS 视觉／刚度近似，不包含真实物理、自碰撞或反射着色器。</p>
+        </section>
+
+        <article class="surface-spec">
+          <div><span>ANCHOR</span><strong id="surface-anchor">角落</strong></div>
+          <div><span>SLICING</span><strong id="surface-slicing">定向条带</strong></div>
+          <div><span>DEFORMATION</span><strong id="surface-deformation">剥离</strong></div>
+          <div><span>TOPOLOGY</span><strong id="surface-topology">单片双面</strong></div>
+          <div><span>RELEASE</span><strong id="surface-release">回弹／吸附／脱离</strong></div>
+          <p id="surface-boundary">固定方向角点剥离；任意方向褶皱需要网格模型。</p>
+        </article>
+
+        <div class="surface-control-dock">
+          <div class="surface-dock-heading"><span>SURFACE CONTROL</span><output id="surface-state-output">选择一种可变表面</output></div>
+          <div class="surface-actions">
+            <button class="action action--primary" id="surface-action" type="button">执行表面动作</button>
+            <button class="action" id="surface-reset" type="button" aria-label="复位当前可变表面">↺</button>
+          </div>
+          <label class="range-control range-control--compact" for="surface-progress">
+            <span><strong id="surface-progress-label">形变进度</strong><output id="surface-progress-output">0%</output></span>
+            <input id="surface-progress" type="range" min="0" max="100" value="0" step="1">
+          </label>
+          <button class="surface-exit" id="surface-exit" type="button">恢复传统柔性跨页</button>
+        </div>
+      </section>
+
       <section class="deck-panel deck-panel--explore" data-panel="explore" aria-labelledby="explore-heading" hidden>
         <header class="explore-intro">
           <p class="explore-eyebrow">CREATIVE ATLAS · 6 AXES / 36 DIRECTIONS</p>
@@ -222,7 +315,7 @@
 
       <footer class="deck-footer">
         <span id="render-label">CURVED · 18 STRIPS</span>
-        <span>R-001 / CSS 3D / ORIGINAL ART</span>
+        <span>R-001 / CSS 3D / ORIGINAL SYSTEM</span>
       </footer>
     </aside>
   </main>

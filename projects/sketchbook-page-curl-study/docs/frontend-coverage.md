@@ -1,8 +1,24 @@
-# Sketchbook 柔性翻页实际效果展厅 · Coverage manifest · Revision 6
+# Sketchbook 柔性翻页实际效果展厅 · Coverage manifest · Revision 7
 
-状态词仅使用：`continue`、`pass`、`defer`、`blocked`。下表是 Revision 6 的活动范围；Revision 5 及更早证据保留在后表，仅作为未受影响基线。
+状态词仅使用：`continue`、`pass`、`defer`、`blocked`。下表是 Revision 7 的活动范围；Revision 6 及更早证据保留在后表，仅作为未受影响基线。
 
-## Revision 6 active coverage
+## Revision 7 active coverage
+
+| 用户阶段 | 要求或产物 | Surface / state | Evidence needed | Owning stage | Status | Next action |
+| --- | --- | --- | --- | --- | --- | --- |
+| 第一：覆盖盘点 | 区分 10/10 已实现创意书型与 0/8 独立非书 renderer，不把邻近机制算完成 | docs / baseline | 源码映射、线上浏览器五入口/18 form/0 surface 证据 | Stage 0/1 | pass | 已闭合 |
+| 第二：核心非书形态 | 标签剥离、双向幕布、折叠地图拥有独立条带/铰链 renderer | surfaces / progress | 标签 14 strips/28 faces；幕布 20 strips；地图 8 panels + route + 5 stops；逐项 transform 改变 | Stage 3/5/6 | pass | 已闭合 |
+| 第二：其余原描述 | 对比百叶、时间轴、材质墙、包装盒、portal 均在中央舞台实际运行 | surfaces / progress/step | 18 slats、7 events、8 samples、6 box panels、6 portal frames | Stage 3/5/6 | pass | 已闭合 |
+| 第三：更多扩展 | 卷轴海报、径向扇、撕取券、数据丝带拥有不同拓扑与释放行为 | surfaces / action | 12 bands/24 faces、10 wedges、16 holes + detached、8 nodes/7 segments | Stage 3/5/6 | pass | 已闭合 |
+| 第四：正交组合 | 8 内容上下文 × 12 surface × 5 material 独立选择且互不重置 | surface controls / URL | context/surface/material 数据集与 URL 分别同步；cycle 刷新 step 保真；480 为可寻址空间 | Stage 4/5/6 | pass | 已闭合 |
+| 第四：统一操作 | 中央拖动、range、主动作、左右导航、键盘、Escape 驱动 12 项 | pointer/range/action/nav/key | 具名方向手势、progress/step/detached/status/transform、radio roving tabindex 与退出清理均通过 | Stage 4/5/6 | pass | 已闭合 |
+| 第四：材质边界 | paper/card/vellum/textile/foil 实际改变表面变量与外观，物理边界诚实 | material / five presets | 12 项各有 5 个不同舞台截图哈希；computed vars/data-material/边界文案完整 | Stage 3/6 | pass | 已闭合 |
+| 第五：跨表面 | 1440/768/390、键盘、reduced-motion、fallback、直达 URL 保持可达可解释 | viewport/input/motion/capability | 三档 overflow=false；cycle reload 保真；reduce=`1e-06s`；fallback static/action-range disabled | Stage 7/8 | pass | 已闭合 |
+| Performance | 12 renderer 与材质不引入外部资源或明显加载退化 | 1440px runtime | 8 local/0 external、decoded≈387KB、DOM=478、navigation≈235ms、errors=[] | Stage 8 | pass | 已闭合 |
+| 研究记录与边界 | README、日志、根索引解释从翻页到通用表面及 CSS/WebGL 边界 | project/root docs | README/E14/contract/validation/handoff 均明确独立实现与布料/材质/portal 边界 | Stage 9 | pass | 已闭合 |
+| 工程与交付 | 自动测试、浏览器证据、handoff、GitHub Pages 完整 | Node/repository/browser/pages | tests、validator、≤6 张最终证据、Actions/HTTP、无 continue | Stage 9 | continue | 完成测试后发布 |
+
+## Revision 6 retained baseline
 
 | 用户阶段 | 要求或产物 | Surface / state | Evidence needed | Owning stage | Status | Next action |
 | --- | --- | --- | --- | --- | --- | --- |

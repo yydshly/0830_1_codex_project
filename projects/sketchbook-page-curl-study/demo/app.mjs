@@ -8,6 +8,16 @@ import {
   formStatusText
 } from './book-form-demos.mjs';
 import {
+  MATERIAL_DEFINITIONS,
+  MATERIAL_ORDER,
+  SURFACE_DEFINITIONS,
+  SURFACE_ORDER,
+  applyDeformableSurfaceState,
+  createDeformableSurface,
+  surfaceActionLabel,
+  surfaceStatusText
+} from './deformable-surface-demos.mjs';
+import {
   AXES,
   COMBINATIONS,
   DIRECTIONS,
@@ -23,14 +33,17 @@ const MAGNIFICATION = 2.05;
 const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 const params = new URLSearchParams(window.location.search);
 const initialDirection = getDirectionById(params.get('direction')) || DIRECTIONS[0];
-const initialPanel = ['experience', 'scenes', 'forms', 'explore', 'extensions'].includes(params.get('panel'))
+const initialPanel = ['experience', 'scenes', 'forms', 'surfaces', 'explore', 'extensions'].includes(params.get('panel'))
   ? params.get('panel')
   : 'experience';
 const explicitForm = FORM_DEFINITIONS[params.get('form')] ? params.get('form') : null;
-const initialForm = explicitForm
+const initialForm = initialPanel === 'surfaces' ? 'classic' : explicitForm
   || (initialPanel === 'forms' ? FORM_ORDER[0] : null)
   || (initialPanel === 'explore' && FORM_DEFINITIONS[initialDirection.form] ? initialDirection.form : null)
   || 'classic';
+const explicitSurface = SURFACE_DEFINITIONS[params.get('surface')] ? params.get('surface') : null;
+const initialSurface = explicitSurface || SURFACE_ORDER[0];
+const initialMaterial = MATERIAL_DEFINITIONS[params.get('material')] ? params.get('material') : MATERIAL_ORDER[0];
 
 const SCENES = {
   portfolio: {
@@ -185,6 +198,23 @@ const refs = {
   sceneDek: document.querySelector('#scene-dek'),
   sceneButtons: [...document.querySelectorAll('.scene-picker [data-scene]')],
   formButtons: [...document.querySelectorAll('.form-picker [data-form]')],
+  surfaceButtons: [...document.querySelectorAll('.surface-picker [data-surface]')],
+  materialButtons: [...document.querySelectorAll('.material-picker [data-material]')],
+  surfaceContext: document.querySelector('#surface-context'),
+  surfaceAction: document.querySelector('#surface-action'),
+  surfaceReset: document.querySelector('#surface-reset'),
+  surfaceExit: document.querySelector('#surface-exit'),
+  surfaceProgress: document.querySelector('#surface-progress'),
+  surfaceProgressLabel: document.querySelector('#surface-progress-label'),
+  surfaceProgressOutput: document.querySelector('#surface-progress-output'),
+  surfaceStateOutput: document.querySelector('#surface-state-output'),
+  surfaceAnchor: document.querySelector('#surface-anchor'),
+  surfaceSlicing: document.querySelector('#surface-slicing'),
+  surfaceDeformation: document.querySelector('#surface-deformation'),
+  surfaceTopology: document.querySelector('#surface-topology'),
+  surfaceRelease: document.querySelector('#surface-release'),
+  surfaceBoundary: document.querySelector('#surface-boundary'),
+  materialBoundary: document.querySelector('#material-boundary'),
   axisFilter: document.querySelector('#axis-filter'),
   tierFilter: document.querySelector('#tier-filter'),
   atlasResultCount: document.querySelector('#atlas-result-count'),
@@ -238,6 +268,14 @@ const state = {
   formTurn: 0,
   formDrag: null,
   formTimer: null,
+  surface: initialSurface,
+  lastSurface: initialSurface,
+  material: initialMaterial,
+  surfaceProgress: 0,
+  surfaceStep: 0,
+  surfaceTurn: 0,
+  surfaceDetached: false,
+  surfaceDrag: null,
   index: 0,
   strips: 18,
   peakCurl: 0.67,
@@ -272,10 +310,17 @@ function sceneAccent() {
 
 function isFormMode() { return state.form !== 'classic' && Boolean(FORM_DEFINITIONS[state.form]); }
 function formDefinition() { return isFormMode() ? FORM_DEFINITIONS[state.form] : null; }
+function isSurfaceMode() { return refs.root.dataset.panel === 'surfaces' && Boolean(SURFACE_DEFINITIONS[state.surface]); }
+function surfaceDefinition() { return isSurfaceMode() ? SURFACE_DEFINITIONS[state.surface] : null; }
+function isSpatialMode() { return isFormMode() || isSurfaceMode(); }
 function activeAccent() { return isFormMode() ? formDefinition().accent : sceneAccent(); }
 function selectedDirection() { return getDirectionById(state.direction) || DIRECTIONS[0]; }
 function isExploreMode() { return refs.root.dataset.panel === 'explore'; }
 function directionIndex() { return Math.max(0, DIRECTIONS.findIndex((direction) => direction.id === state.direction)); }
+function setNodeText(node, value) {
+  const next = String(value);
+  if (node.textContent !== next) node.textContent = next;
+}
 
 const TIER_COPY = Object.freeze({
   ALL: Object.freeze({ label: '全部', note: '全部成熟度' }),
@@ -577,6 +622,202 @@ function selectAdjacentForm(delta) {
   selectForm(FORM_ORDER[target]);
 }
 
+function surfaceContextData() {
+  const selected = scene();
+  return {
+    id: state.scene,
+    kicker: selected.kicker,
+    title: selected.title,
+    dek: selected.dek,
+    pages: selected.pages,
+    labels: selected.stops || selected.steps || selected.frames?.map((frame) => frame.label) || selected.pages.map((page) => page[1])
+  };
+}
+
+function currentSurfaceState() {
+  return {
+    progress: state.surfaceProgress,
+    step: state.surfaceStep,
+    turn: state.surfaceTurn,
+    detached: state.surfaceDetached,
+    fallback: state.fallback,
+    material: state.material,
+    context: state.scene
+  };
+}
+
+function syncSurfaceUrl() {
+  if (!isSurfaceMode()) return;
+  const url = new URL(window.location.href);
+  url.searchParams.set('rev', '7');
+  url.searchParams.set('panel', 'surfaces');
+  url.searchParams.set('surface', state.surface);
+  url.searchParams.set('material', state.material);
+  url.searchParams.set('scene', state.scene);
+  url.searchParams.set('progress', state.surfaceProgress.toFixed(2));
+  url.searchParams.set('intro', '0');
+  if (state.surfaceDetached) url.searchParams.set('detached', '1');
+  else url.searchParams.delete('detached');
+  url.searchParams.delete('form');
+  url.searchParams.delete('direction');
+  window.history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`);
+}
+
+function syncPanelUrl(name) {
+  const url = new URL(window.location.href);
+  url.searchParams.set('rev', '7');
+  url.searchParams.set('panel', name);
+  url.searchParams.set('scene', state.scene);
+  url.searchParams.set('intro', '0');
+  url.searchParams.delete('surface');
+  url.searchParams.delete('material');
+  url.searchParams.delete('detached');
+  if (name === 'forms') {
+    url.searchParams.set('form', state.form);
+    url.searchParams.set('progress', state.formProgress.toFixed(2));
+    url.searchParams.delete('direction');
+  } else if (name === 'explore') {
+    url.searchParams.set('direction', state.direction);
+    url.searchParams.delete('form');
+    url.searchParams.delete('progress');
+  } else {
+    url.searchParams.delete('form');
+    url.searchParams.delete('direction');
+    url.searchParams.delete('progress');
+  }
+  window.history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`);
+}
+
+function releaseSurfaceDrag() {
+  const pointerId = state.surfaceDrag?.pointerId;
+  if (pointerId !== undefined && refs.book.hasPointerCapture?.(pointerId)) {
+    try { refs.book.releasePointerCapture(pointerId); } catch { /* capture may already be gone */ }
+  }
+  state.surfaceDrag = null;
+  state.surfaceTurn = 0;
+  refs.book.classList.remove('is-dragging');
+}
+
+function surfacePointerDelta(event, drag) {
+  const definition = surfaceDefinition();
+  const deltaX = (event.clientX - drag.startX) / Math.max(1, drag.width);
+  const deltaY = (event.clientY - drag.startY) / Math.max(1, drag.height);
+  if (definition.dragAxis === 'diagonal') return -(deltaX + deltaY) / 1.35;
+  if (definition.dragAxis === 'split') return deltaX * drag.outwardDirection;
+  if (definition.dragAxis === 'y') return deltaY * definition.dragDirection;
+  return deltaX * definition.dragDirection;
+}
+
+function syncSurface({ announce = false, syncUrl = false } = {}) {
+  if (!isSurfaceMode()) return;
+  const surface = refs.book.querySelector('.deformable-surface');
+  if (surface) applyDeformableSurfaceState(surface, state.surface, currentSurfaceState());
+  if (announce) setStatus(surfaceStatusText(state.surface, currentSurfaceState()));
+  if (syncUrl) syncSurfaceUrl();
+}
+
+function setSurfaceProgress(value, { announce = true, syncUrl = true } = {}) {
+  if (!isSurfaceMode() || state.fallback) return;
+  state.surfaceProgress = clamp(Number(value) || 0);
+  if (surfaceDefinition().kind === 'cycle') {
+    state.surfaceStep = Math.round(state.surfaceProgress * (surfaceDefinition().maxStep ?? 0));
+  }
+  if (state.surfaceProgress < .98) state.surfaceDetached = false;
+  syncSurface({ announce, syncUrl });
+  updateControls();
+}
+
+function resetSurface({ announce = true } = {}) {
+  if (!isSurfaceMode()) return;
+  releaseSurfaceDrag();
+  state.surfaceProgress = state.fallback ? (surfaceDefinition().fallbackProgress ?? 1) : 0;
+  state.surfaceStep = 0;
+  state.surfaceTurn = 0;
+  state.surfaceDetached = false;
+  syncSurface({ syncUrl: true });
+  updateControls();
+  if (announce) setStatus(`${surfaceDefinition().name} 已复位`);
+}
+
+function selectSurface(name, { announce = true } = {}) {
+  if (!SURFACE_DEFINITIONS[name]) return;
+  stopIntro();
+  stopAuto();
+  stopFormPlayback();
+  releaseFormDrag();
+  releaseSurfaceDrag();
+  cancelAnimation();
+  state.turn = null;
+  state.drag = null;
+  state.form = 'classic';
+  state.cornerOn = false;
+  state.loupeOn = false;
+  state.surface = name;
+  state.lastSurface = name;
+  state.surfaceProgress = state.fallback ? (SURFACE_DEFINITIONS[name].fallbackProgress ?? 1) : 0;
+  state.surfaceStep = 0;
+  state.surfaceTurn = 0;
+  state.surfaceDetached = false;
+  render();
+  syncSurfaceUrl();
+  if (announce) setStatus(`${SURFACE_DEFINITIONS[name].name} · 拖动中央表面体验`);
+}
+
+function selectAdjacentSurface(delta) {
+  if (!isSurfaceMode()) return;
+  const index = SURFACE_ORDER.indexOf(state.surface);
+  const target = clamp(index + delta, 0, SURFACE_ORDER.length - 1);
+  if (target === index) {
+    setStatus(delta < 0 ? '已是第一种可变表面' : '已是最后一种可变表面');
+    return;
+  }
+  selectSurface(SURFACE_ORDER[target]);
+}
+
+function selectSurfaceMaterial(name) {
+  if (!MATERIAL_DEFINITIONS[name] || name === state.material) return;
+  state.material = name;
+  render();
+  syncSurfaceUrl();
+  setStatus(`${MATERIAL_DEFINITIONS[name].name} · ${MATERIAL_DEFINITIONS[name].boundary}`);
+}
+
+function selectSurfaceContext(name) {
+  if (!SCENES[name] || name === state.scene) return;
+  state.scene = name;
+  state.sceneAction = false;
+  state.effectStep = 0;
+  render();
+  syncSurfaceUrl();
+  setStatus(`${scene().title} 已作为当前表面内容`);
+}
+
+function performSurfaceAction() {
+  if (!isSurfaceMode() || state.fallback) return;
+  const definition = surfaceDefinition();
+  if (definition.kind === 'release') {
+    if (state.surfaceDetached || state.surfaceProgress >= .98) {
+      state.surfaceDetached = false;
+      state.surfaceProgress = 0;
+    } else if (state.surfaceProgress < .42) {
+      state.surfaceProgress = .62;
+    } else {
+      state.surfaceProgress = 1;
+      state.surfaceDetached = true;
+    }
+  } else if (definition.kind === 'cycle') {
+    const maxStep = definition.maxStep ?? 0;
+    state.surfaceStep = state.surfaceStep >= maxStep ? 0 : state.surfaceStep + 1;
+    state.surfaceProgress = state.surfaceStep === 0 ? 0 : state.surfaceStep / Math.max(1, maxStep);
+    state.surfaceDetached = false;
+  } else {
+    state.surfaceProgress = state.surfaceProgress >= .5 ? 0 : 1;
+    state.surfaceDetached = false;
+  }
+  syncSurface({ announce: true, syncUrl: true });
+  updateControls();
+}
+
 function selectAdjacentDirection(delta) {
   const index = directionIndex();
   const target = clamp(index + delta, 0, DIRECTIONS.length - 1);
@@ -797,42 +1038,52 @@ function performFormAction() {
 function updateControls() {
   const selected = scene();
   const formMode = isFormMode();
+  const surfaceMode = isSurfaceMode();
+  const spatialMode = formMode || surfaceMode;
   const exploreMode = isExploreMode();
   const selectedForm = formDefinition();
+  const selectedSurface = surfaceDefinition();
   const formIndex = formMode ? FORM_ORDER.indexOf(state.form) : -1;
+  const surfaceIndex = surfaceMode ? SURFACE_ORDER.indexOf(state.surface) : -1;
   const atlasDirection = selectedDirection();
   const atlasAxis = getAxisById(atlasDirection.axis);
   const atlasIndex = directionIndex();
   refs.stage.dataset.scene = state.scene;
   refs.stage.dataset.form = formMode ? state.form : 'classic';
+  refs.stage.dataset.surface = surfaceMode ? state.surface : '';
+  refs.stage.dataset.material = surfaceMode ? state.material : '';
   refs.stage.dataset.tier = exploreMode ? atlasDirection.tier.toLowerCase() : '';
   refs.stage.style.setProperty('--scene-accent', activeAccent());
   if (exploreMode) {
-    refs.sceneKicker.textContent = `${atlasAxis.index} · ${atlasDirection.tier} · ${atlasDirection.englishName}`;
-    refs.sceneTitle.textContent = atlasDirection.name;
-    refs.sceneDek.textContent = atlasDirection.tier === 'LIVE'
+    setNodeText(refs.sceneKicker, `${atlasAxis.index} · ${atlasDirection.tier} · ${atlasDirection.englishName}`);
+    setNodeText(refs.sceneTitle, atlasDirection.name);
+    setNodeText(refs.sceneDek, atlasDirection.tier === 'LIVE'
       ? atlasDirection.primaryAction
-      : `邻近机制演示 · ${atlasDirection.primaryAction}`;
+      : `邻近机制演示 · ${atlasDirection.primaryAction}`);
+  } else if (surfaceMode) {
+    setNodeText(refs.sceneKicker, `${selectedSurface.kicker} · ${MATERIAL_DEFINITIONS[state.material].name}`);
+    setNodeText(refs.sceneTitle, selectedSurface.title);
+    setNodeText(refs.sceneDek, `${selectedSurface.dek} 当前内容：${selected.title}`);
   } else {
-    refs.sceneKicker.textContent = formMode ? selectedForm.kicker : selected.kicker;
-    refs.sceneTitle.textContent = formMode ? selectedForm.title : selected.title;
-    refs.sceneDek.textContent = formMode ? selectedForm.dek : selected.dek;
+    setNodeText(refs.sceneKicker, formMode ? selectedForm.kicker : selected.kicker);
+    setNodeText(refs.sceneTitle, formMode ? selectedForm.title : selected.title);
+    setNodeText(refs.sceneDek, formMode ? selectedForm.dek : selected.dek);
   }
-  refs.current.textContent = String(exploreMode ? atlasIndex + 1 : formMode ? formIndex + 1 : state.index + 1).padStart(2, '0');
-  refs.total.textContent = String(exploreMode ? DIRECTIONS.length : formMode ? FORM_ORDER.length : selected.pages.length).padStart(2, '0');
+  refs.current.textContent = String(exploreMode ? atlasIndex + 1 : surfaceMode ? surfaceIndex + 1 : formMode ? formIndex + 1 : state.index + 1).padStart(2, '0');
+  refs.total.textContent = String(exploreMode ? DIRECTIONS.length : surfaceMode ? SURFACE_ORDER.length : formMode ? FORM_ORDER.length : selected.pages.length).padStart(2, '0');
   refs.prev.disabled = exploreMode
     ? atlasIndex <= 0
-    : formMode ? formIndex <= 0 : state.fallback || !canTurn('prev') || Boolean(state.turn);
+    : surfaceMode ? surfaceIndex <= 0 : formMode ? formIndex <= 0 : state.fallback || !canTurn('prev') || Boolean(state.turn);
   refs.next.disabled = exploreMode
     ? atlasIndex >= DIRECTIONS.length - 1
-    : formMode ? formIndex >= FORM_ORDER.length - 1 : state.fallback || !canTurn('next') || Boolean(state.turn);
-  refs.prev.setAttribute('aria-label', exploreMode ? '上一个创意方向' : formMode ? '上一种书型' : '上一页');
-  refs.next.setAttribute('aria-label', exploreMode ? '下一个创意方向' : formMode ? '下一种书型' : '下一页');
+    : surfaceMode ? surfaceIndex >= SURFACE_ORDER.length - 1 : formMode ? formIndex >= FORM_ORDER.length - 1 : state.fallback || !canTurn('next') || Boolean(state.turn);
+  refs.prev.setAttribute('aria-label', exploreMode ? '上一个创意方向' : surfaceMode ? '上一种可变表面' : formMode ? '上一种书型' : '上一页');
+  refs.next.setAttribute('aria-label', exploreMode ? '下一个创意方向' : surfaceMode ? '下一种可变表面' : formMode ? '下一种书型' : '下一页');
   refs.auto.setAttribute('aria-pressed', String(state.autoTimer !== null));
   refs.auto.innerHTML = state.autoTimer === null ? '<span aria-hidden="true">▶</span> 播放翻页' : '<span aria-hidden="true">■</span> 暂停播放';
-  refs.auto.disabled = formMode || state.fallback;
+  refs.auto.disabled = spatialMode || state.fallback;
   refs.loupeToggle.setAttribute('aria-pressed', String(state.loupeOn));
-  refs.loupeToggle.disabled = formMode || state.fallback;
+  refs.loupeToggle.disabled = spatialMode || state.fallback;
   refs.loupe.setAttribute('aria-hidden', String(!state.loupeOn));
   refs.loupe.tabIndex = state.loupeOn ? 0 : -1;
   refs.loupe.classList.toggle('is-on', state.loupeOn);
@@ -841,13 +1092,24 @@ function updateControls() {
     button.setAttribute('aria-checked', String(button.dataset.form === state.form));
     button.disabled = false;
   });
+  refs.surfaceButtons.forEach((button) => {
+    button.setAttribute('aria-checked', String(button.dataset.surface === state.surface));
+    button.tabIndex = button.dataset.surface === state.surface ? 0 : -1;
+    button.disabled = false;
+  });
+  refs.materialButtons.forEach((button) => {
+    button.setAttribute('aria-checked', String(button.dataset.material === state.material));
+    button.tabIndex = button.dataset.material === state.material ? 0 : -1;
+    button.disabled = false;
+  });
+  refs.surfaceContext.value = state.scene;
   refs.sceneAction.textContent = sceneActionLabel(selected);
   refs.sceneAction.dataset.actionKind = selected.actionKind;
-  refs.sceneAction.disabled = formMode || state.fallback;
+  refs.sceneAction.disabled = spatialMode || state.fallback;
   if (selected.actionKind === 'toggle') refs.sceneAction.setAttribute('aria-pressed', String(state.sceneAction));
   else refs.sceneAction.removeAttribute('aria-pressed');
   refs.sceneNote.textContent = selected.note || '';
-  refs.sceneNote.hidden = formMode || !state.sceneAction || selected.behavior !== 'note';
+  refs.sceneNote.hidden = spatialMode || !state.sceneAction || selected.behavior !== 'note';
   if (formMode) {
     const formState = currentFormState();
     refs.formProgress.value = String(Math.round(state.formProgress * 100));
@@ -860,28 +1122,59 @@ function updateControls() {
     else if (selectedForm.kind === 'play') refs.formAction.setAttribute('aria-pressed', String(state.formTimer !== null));
     else refs.formAction.removeAttribute('aria-pressed');
   }
-  refs.formAction.disabled = state.fallback;
-  refs.formReset.disabled = state.fallback;
-  refs.formProgress.disabled = state.fallback;
+  refs.formAction.disabled = !formMode || state.fallback;
+  refs.formReset.disabled = !formMode || state.fallback;
+  refs.formProgress.disabled = !formMode || state.fallback;
+  if (surfaceMode) {
+    const surfaceState = currentSurfaceState();
+    const material = MATERIAL_DEFINITIONS[state.material];
+    refs.surfaceProgress.value = String(Math.round(state.surfaceProgress * 100));
+    refs.surfaceProgressOutput.textContent = `${Math.round(state.surfaceProgress * 100)}%`;
+    refs.surfaceProgressLabel.textContent = selectedSurface.progressLabel;
+    refs.surfaceStateOutput.textContent = `${surfaceStatusText(state.surface, surfaceState)} · 内容：${selected.title}`;
+    refs.surfaceAction.textContent = surfaceActionLabel(state.surface, surfaceState);
+    refs.surfaceAction.dataset.actionKind = selectedSurface.kind;
+    if (selectedSurface.kind === 'toggle' || selectedSurface.kind === 'release') {
+      refs.surfaceAction.setAttribute('aria-pressed', String(state.surfaceProgress >= .5));
+    } else {
+      refs.surfaceAction.removeAttribute('aria-pressed');
+    }
+    refs.surfaceAnchor.textContent = selectedSurface.anchor;
+    refs.surfaceSlicing.textContent = selectedSurface.slicing;
+    refs.surfaceDeformation.textContent = selectedSurface.deformation;
+    refs.surfaceTopology.textContent = selectedSurface.topology;
+    refs.surfaceRelease.textContent = selectedSurface.release;
+    refs.surfaceBoundary.textContent = selectedSurface.boundary;
+    refs.materialBoundary.textContent = material.boundary;
+  }
+  refs.surfaceAction.disabled = !surfaceMode || state.fallback;
+  refs.surfaceReset.disabled = !surfaceMode || state.fallback;
+  refs.surfaceProgress.disabled = !surfaceMode || state.fallback;
+  refs.surfaceContext.disabled = !surfaceMode;
   refs.quality.value = String(state.strips);
-  refs.quality.disabled = formMode || state.fallback;
+  refs.quality.disabled = spatialMode || state.fallback;
   refs.qualityOutput.textContent = `${state.strips} strips`;
   refs.softness.value = String(Math.round((state.peakCurl - .2) / .75 * 100));
-  refs.softness.disabled = formMode || state.fallback;
+  refs.softness.disabled = spatialMode || state.fallback;
   refs.softnessOutput.textContent = state.peakCurl < .45 ? '硬卡纸' : state.peakCurl > .78 ? '柔软纸' : '柔性纸';
   refs.light.value = String(Math.round(state.light * 100));
-  refs.light.disabled = formMode || state.fallback;
+  refs.light.disabled = spatialMode || state.fallback;
   refs.lightOutput.textContent = `${Math.round(state.light * 100)}%`;
   refs.cornerToggle.setAttribute('aria-pressed', String(state.cornerOn));
-  refs.cornerToggle.disabled = formMode || state.fallback;
+  refs.cornerToggle.disabled = spatialMode || state.fallback;
   refs.cornerToggle.querySelector('b').textContent = state.cornerOn ? 'ON' : 'OFF';
-  refs.cornerGrip.hidden = formMode || !state.cornerOn || state.fallback;
-  refs.gestureHint.innerHTML = formMode ? '<span aria-hidden="true">↔</span> 拖动形态' : '<span aria-hidden="true">↔</span> 拖动纸页';
+  refs.cornerGrip.hidden = spatialMode || !state.cornerOn || state.fallback;
+  refs.gestureHint.innerHTML = surfaceMode
+    ? `<span aria-hidden="true">↔</span> ${selectedSurface.gesture}`
+    : formMode ? '<span aria-hidden="true">↔</span> 拖动形态' : '<span aria-hidden="true">↔</span> 拖动纸页';
   refs.renderLabel.textContent = exploreMode
     ? `ATLAS · ${atlasDirection.tier} · ${selectedForm?.name || 'CONCEPT'}`
-    : formMode ? `FORM · ${selectedForm.name}` : `CURVED · ${state.strips} STRIPS`;
+    : surfaceMode ? `SURFACE · ${selectedSurface.name} · ${MATERIAL_DEFINITIONS[state.material].name}`
+      : formMode ? `FORM · ${selectedForm.name}` : `CURVED · ${state.strips} STRIPS`;
   refs.book.setAttribute('aria-label', exploreMode
     ? `${atlasDirection.name}，${atlasDirection.tier} 创意方向的${selectedForm ? selectedForm.name : '概念'}舞台。水平拖动当前几何；上下一个按钮切换方向。`
+    : surfaceMode
+      ? `${selectedSurface.name}交互模型，当前内容${selected.title}，材质${MATERIAL_DEFINITIONS[state.material].name}。${selectedSurface.gesture}，也可使用方向键或右侧控件改变表面。`
     : formMode
       ? `${selectedForm.name}交互模型。水平拖动、使用方向键或右侧控件改变形态。`
       : '可拖动的柔性画册。点击或拖动左右页，也可使用方向键翻页。');
@@ -893,12 +1186,26 @@ function render() {
   const height = width / (SVG_W / SVG_H);
   refs.book.replaceChildren();
   refs.book.classList.toggle('is-form-demo', isFormMode());
+  refs.book.classList.toggle('is-surface-demo', isSurfaceMode());
   refs.book.dataset.form = isFormMode() ? state.form : 'classic';
+  refs.book.dataset.surface = isSurfaceMode() ? state.surface : '';
+  refs.book.dataset.material = isSurfaceMode() ? state.material : '';
 
   if (isFormMode()) {
     refs.book.append(createFormSurface(state.form, { accent: activeAccent() }));
     updateControls();
     syncFormSurface();
+    return;
+  }
+
+  if (isSurfaceMode()) {
+    refs.book.append(createDeformableSurface(state.surface, {
+      accent: activeAccent(),
+      material: state.material,
+      context: surfaceContextData()
+    }));
+    updateControls();
+    syncSurface();
     return;
   }
 
@@ -956,7 +1263,7 @@ function applyProgress(progress) {
 function setStatus(message) { refs.status.textContent = message; }
 
 function beginTurn(direction, progress = 0) {
-  if (isFormMode()) return false;
+  if (isSpatialMode()) return false;
   cancelAnimation();
   if (!canTurn(direction)) {
     setStatus(direction === 'next' ? '已到最后一页' : '已到第一页');
@@ -1036,7 +1343,7 @@ function autoStep() {
 }
 
 function toggleAuto() {
-  if (isFormMode()) return;
+  if (isSpatialMode()) return;
   if (state.autoTimer !== null) {
     stopAuto('自动翻页已暂停');
     return;
@@ -1062,7 +1369,7 @@ function stopIntro() {
 }
 
 function startIntroPreview() {
-  if (isFormMode() || params.get('intro') === '0' || motionQuery.matches || state.fallback || state.cornerOn || !canTurn('next')) return;
+  if (isSpatialMode() || params.get('intro') === '0' || motionQuery.matches || state.fallback || state.cornerOn || !canTurn('next')) return;
   state.introRunning = true;
   if (!beginTurn('next')) return;
   state.introRunning = true;
@@ -1093,7 +1400,7 @@ function scheduleLoupeSync() {
 }
 
 function syncLoupe() {
-  if (isFormMode() && state.loupeOn) state.loupeOn = false;
+  if (isSpatialMode() && state.loupeOn) state.loupeOn = false;
   refs.loupe.classList.toggle('is-on', state.loupeOn);
   if (!state.loupeOn) {
     refs.loupeContent.replaceChildren();
@@ -1129,21 +1436,40 @@ function syncLoupe() {
 }
 
 function setLoupe(on) {
-  if (isFormMode()) return;
+  if (isSpatialMode()) return;
   state.loupeOn = Boolean(on);
   updateControls();
   syncLoupe();
   setStatus(state.loupeOn ? '观察镜可独立拖动' : '观察镜已收起');
 }
 
-function switchView(name) {
-  const titles = { experience: '实际效果', scenes: '场景', forms: '书型 18', explore: '创意图谱', extensions: '扩展效果' };
+function switchView(name, { syncUrl = true } = {}) {
+  const titles = { experience: '实际效果', scenes: '场景', forms: '书型 18', surfaces: '可变表面 12', explore: '创意图谱', extensions: '扩展效果' };
   if (!titles[name]) return;
-  const spatialView = name === 'forms' || name === 'explore';
+  const formView = name === 'forms' || name === 'explore';
   const wasFormMode = isFormMode();
+  const wasSurfaceMode = isSurfaceMode();
   refs.root.dataset.panel = name;
 
-  if (spatialView) {
+  if (name === 'surfaces') {
+    stopIntro();
+    stopAuto();
+    stopFormPlayback();
+    releaseFormDrag();
+    state.form = 'classic';
+    state.cornerOn = false;
+    state.sceneAction = false;
+    if (state.loupeOn) {
+      state.loupeOn = false;
+      syncLoupe();
+    }
+    if (!wasSurfaceMode) selectSurface(state.lastSurface, { announce: false });
+    else {
+      render();
+      syncSurfaceUrl();
+    }
+  } else if (formView) {
+    if (wasSurfaceMode) releaseSurfaceDrag();
     const direction = selectedDirection();
     const target = name === 'explore' && direction.form && FORM_DEFINITIONS[direction.form]
       ? direction.form
@@ -1162,12 +1488,13 @@ function switchView(name) {
       }
       updateControls();
     }
-  } else if (wasFormMode) {
+  } else if (wasFormMode || wasSurfaceMode) {
     stopFormPlayback();
     releaseFormDrag();
+    releaseSurfaceDrag();
     state.form = 'classic';
     render();
-    setStatus('已恢复传统柔性跨页');
+    setStatus(wasSurfaceMode ? '已退出可变表面，恢复传统柔性跨页' : '已恢复传统柔性跨页');
   }
   refs.deckTitle.textContent = titles[name];
   refs.viewTabs.forEach((tab) => tab.setAttribute('aria-pressed', String(tab.dataset.view === name)));
@@ -1177,13 +1504,15 @@ function switchView(name) {
     panel.classList.toggle('is-active', active);
   });
   if (name === 'explore') renderCreativeAtlas();
+  if (syncUrl && name !== 'surfaces') syncPanelUrl(name);
 }
 
 function selectScene(name) {
-  if (!SCENES[name] || (name === state.scene && !isFormMode())) return;
+  if (!SCENES[name] || (name === state.scene && !isSpatialMode())) return;
   stopIntro();
   stopAuto();
   stopFormPlayback();
+  releaseSurfaceDrag();
   cancelAnimation();
   state.form = 'classic';
   state.scene = name;
@@ -1255,7 +1584,7 @@ const SCENE_ACTIONS = {
 };
 
 function toggleSceneAction() {
-  if (isFormMode()) return;
+  if (isSpatialMode()) return;
   const action = SCENE_ACTIONS[scene().behavior];
   if (!action) return;
   action();
@@ -1271,7 +1600,7 @@ function applyCornerPosition() {
 }
 
 function toggleCorner() {
-  if (isFormMode()) switchView('extensions');
+  if (isSpatialMode()) switchView('extensions');
   stopIntro();
   if (state.turn) finishTurn(state.turn.progress >= .5 ? 1 : 0);
   if (!state.cornerOn && !canTurn('next')) state.index = 0;
@@ -1281,9 +1610,31 @@ function toggleCorner() {
   setStatus(state.cornerOn ? '拖动右下角揭示下一页' : '二维纸角已关闭');
 }
 
+function bindRadioNavigation(buttons, selectValue, dataKey) {
+  buttons.forEach((button, index) => button.addEventListener('keydown', (event) => {
+    const keyDelta = event.key === 'ArrowRight' || event.key === 'ArrowDown'
+      ? 1
+      : event.key === 'ArrowLeft' || event.key === 'ArrowUp' ? -1 : 0;
+    if (!keyDelta && event.key !== 'Home' && event.key !== 'End') return;
+    event.preventDefault();
+    const targetIndex = event.key === 'Home'
+      ? 0
+      : event.key === 'End' ? buttons.length - 1 : (index + keyDelta + buttons.length) % buttons.length;
+    const target = buttons[targetIndex];
+    selectValue(target.dataset[dataKey]);
+    target.focus();
+  }));
+}
+
+bindRadioNavigation(refs.surfaceButtons, selectSurface, 'surface');
+bindRadioNavigation(refs.materialButtons, selectSurfaceMaterial, 'material');
+
 refs.viewTabs.forEach((tab) => tab.addEventListener('click', () => switchView(tab.dataset.view)));
 refs.sceneButtons.forEach((button) => button.addEventListener('click', () => selectScene(button.dataset.scene)));
 refs.formButtons.forEach((button) => button.addEventListener('click', () => selectForm(button.dataset.form)));
+refs.surfaceButtons.forEach((button) => button.addEventListener('click', () => selectSurface(button.dataset.surface)));
+refs.materialButtons.forEach((button) => button.addEventListener('click', () => selectSurfaceMaterial(button.dataset.material)));
+refs.surfaceContext.addEventListener('change', () => selectSurfaceContext(refs.surfaceContext.value));
 refs.axisFilter?.addEventListener('click', (event) => {
   const button = event.target.closest('[data-axis]');
   if (button) applyDirectionFilter('axis', button.dataset.axis);
@@ -1312,6 +1663,11 @@ refs.formAction.addEventListener('click', performFormAction);
 refs.formReset.addEventListener('click', () => resetForm());
 refs.formExit.addEventListener('click', () => switchView('experience'));
 refs.formProgress.addEventListener('input', () => setFormProgress(Number(refs.formProgress.value) / 100));
+refs.surfaceAction.addEventListener('click', performSurfaceAction);
+refs.surfaceReset.addEventListener('click', () => resetSurface());
+refs.surfaceExit.addEventListener('click', () => switchView('experience'));
+refs.surfaceProgress.addEventListener('input', () => setSurfaceProgress(Number(refs.surfaceProgress.value) / 100, { announce: false, syncUrl: false }));
+refs.surfaceProgress.addEventListener('change', () => syncSurface({ announce: true, syncUrl: true }));
 refs.auto.addEventListener('click', toggleAuto);
 refs.loupeToggle.addEventListener('click', () => {
   const next = !state.loupeOn;
@@ -1320,6 +1676,7 @@ refs.loupeToggle.addEventListener('click', () => {
 });
 refs.prev.addEventListener('click', () => {
   if (isExploreMode()) return selectAdjacentDirection(-1);
+  if (isSurfaceMode()) return selectAdjacentSurface(-1);
   if (isFormMode()) return selectAdjacentForm(-1);
   stopIntro();
   stopAuto();
@@ -1327,6 +1684,7 @@ refs.prev.addEventListener('click', () => {
 });
 refs.next.addEventListener('click', () => {
   if (isExploreMode()) return selectAdjacentDirection(1);
+  if (isSurfaceMode()) return selectAdjacentSurface(1);
   if (isFormMode()) return selectAdjacentForm(1);
   stopIntro();
   stopAuto();
@@ -1347,6 +1705,7 @@ refs.zoomIn.addEventListener('click', () => {
   setStatus(`画册缩放 ${Math.round(state.view.zoom * 100)}%`);
 });
 refs.reset.addEventListener('click', () => {
+  if (isSurfaceMode()) return resetSurface();
   if (isFormMode()) return resetForm();
   stopAuto();
   stopIntro();
@@ -1386,6 +1745,23 @@ refs.light.addEventListener('input', () => {
 
 refs.book.addEventListener('pointerdown', (event) => {
   if (state.fallback || event.button !== 0) return;
+  if (isSurfaceMode()) {
+    const rect = refs.book.getBoundingClientRect();
+    refs.book.setPointerCapture(event.pointerId);
+    refs.book.classList.add('is-dragging');
+    state.surfaceDrag = {
+      pointerId: event.pointerId,
+      startX: event.clientX,
+      startY: event.clientY,
+      startProgress: state.surfaceProgress,
+      width: rect.width,
+      height: rect.height,
+      outwardDirection: event.clientX < rect.left + rect.width / 2 ? -1 : 1
+    };
+    refs.gestureHint.hidden = true;
+    event.preventDefault();
+    return;
+  }
   if (isFormMode()) {
     stopFormPlayback();
     const rect = refs.book.getBoundingClientRect();
@@ -1424,6 +1800,12 @@ refs.book.addEventListener('pointerdown', (event) => {
 });
 
 refs.book.addEventListener('pointermove', (event) => {
+  if (state.surfaceDrag && isSurfaceMode() && event.pointerId === state.surfaceDrag.pointerId) {
+    const delta = surfacePointerDelta(event, state.surfaceDrag);
+    state.surfaceTurn = clamp(delta * 1.6, -1, 1);
+    setSurfaceProgress(state.surfaceDrag.startProgress + delta * 1.35, { announce: false, syncUrl: false });
+    return;
+  }
   if (state.formDrag && isFormMode() && event.pointerId === state.formDrag.pointerId) {
     const delta = (event.clientX - state.formDrag.startX) / Math.max(1, state.formDrag.width);
     state.formTurn = clamp(delta * 1.6, -1, 1);
@@ -1444,6 +1826,27 @@ refs.book.addEventListener('pointermove', (event) => {
 });
 
 function endBookDrag(event) {
+  if (state.surfaceDrag && event.pointerId === state.surfaceDrag.pointerId) {
+    state.surfaceDrag = null;
+    state.surfaceTurn = 0;
+    refs.book.classList.remove('is-dragging');
+    const definition = surfaceDefinition();
+    if (definition?.kind === 'release') {
+      if (state.surfaceProgress >= .74) {
+        state.surfaceProgress = 1;
+        state.surfaceDetached = true;
+      } else if (state.surfaceProgress >= .3) {
+        state.surfaceProgress = .58;
+        state.surfaceDetached = false;
+      } else {
+        state.surfaceProgress = 0;
+        state.surfaceDetached = false;
+      }
+    }
+    syncSurface({ announce: true, syncUrl: true });
+    updateControls();
+    return;
+  }
   if (state.formDrag && event.pointerId === state.formDrag.pointerId) {
     state.formDrag = null;
     state.formTurn = 0;
@@ -1463,6 +1866,19 @@ refs.book.addEventListener('pointerup', endBookDrag);
 refs.book.addEventListener('pointercancel', endBookDrag);
 refs.book.addEventListener('dragstart', (event) => event.preventDefault());
 refs.book.addEventListener('keydown', (event) => {
+  if (isSurfaceMode()) {
+    if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+      event.preventDefault();
+      setSurfaceProgress(state.surfaceProgress + (event.key === 'ArrowRight' ? .1 : -.1));
+    } else if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      performSurfaceAction();
+    } else if (event.key === 'Escape' || event.key === 'Home') {
+      event.preventDefault();
+      resetSurface();
+    }
+    return;
+  }
   if (isFormMode()) {
     if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
       event.preventDefault();
@@ -1561,7 +1977,7 @@ refs.cornerGrip.addEventListener('keydown', (event) => {
 });
 
 refs.stage.addEventListener('pointermove', (event) => {
-  if (state.drag || state.formDrag || state.loupeDrag || state.cornerDrag || event.pointerType === 'touch') return;
+  if (state.drag || state.formDrag || state.surfaceDrag || state.loupeDrag || state.cornerDrag || event.pointerType === 'touch') return;
   const rect = refs.book.getBoundingClientRect();
   if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) return;
   const x = (event.clientX - rect.left) / rect.width - .5;
@@ -1571,7 +1987,7 @@ refs.stage.addEventListener('pointermove', (event) => {
   applyView();
 });
 refs.stage.addEventListener('pointerleave', () => {
-  if (state.drag || state.formDrag || state.loupeDrag || state.cornerDrag) return;
+  if (state.drag || state.formDrag || state.surfaceDrag || state.loupeDrag || state.cornerDrag) return;
   state.view.tiltX = 2;
   state.view.tiltY = 0;
   applyView();
@@ -1582,7 +1998,7 @@ window.addEventListener('resize', () => {
   if (resizeFrame !== null) cancelAnimationFrame(resizeFrame);
   resizeFrame = requestAnimationFrame(() => {
     resizeFrame = null;
-    if (state.drag || state.formDrag || state.loupeDrag || state.cornerDrag) return;
+    if (state.drag || state.formDrag || state.surfaceDrag || state.loupeDrag || state.cornerDrag) return;
     render();
     if (isExploreMode()) renderCreativeAtlas();
   });
@@ -1605,24 +2021,42 @@ window.addEventListener('pagehide', () => {
   stopAuto();
   stopFormPlayback();
   releaseFormDrag();
+  releaseSurfaceDrag();
 });
 
 if (state.fallback) {
   refs.root.classList.add('is-fallback');
   if (isFormMode()) state.formProgress = 1;
-  [refs.sceneAction, refs.formAction, refs.formReset, refs.formProgress, refs.auto, refs.loupeToggle,
+  if (initialPanel === 'surfaces') state.surfaceProgress = SURFACE_DEFINITIONS[state.surface].fallbackProgress ?? 1;
+  [refs.sceneAction, refs.formAction, refs.formReset, refs.formProgress,
+    refs.surfaceAction, refs.surfaceReset, refs.surfaceProgress,
+    refs.auto, refs.loupeToggle,
     refs.zoomOut, refs.zoomIn, refs.reset, refs.cornerToggle,
     refs.quality, refs.softness, refs.light].forEach((control) => { control.disabled = true; });
-  setStatus('静态预览 · 可继续切换书型与阅读创意图谱');
+  setStatus('静态预览 · 可继续切换书型、可变表面与创意图谱');
 }
-switchView(initialPanel);
+switchView(initialPanel, { syncUrl: false });
 render();
 
-const fixedProgress = clamp(Number(params.get('progress')) || 0, 0, .98);
-if (!isFormMode() && fixedProgress > 0 && canTurn('next')) {
+const fixedProgress = clamp(Number(params.get('progress')) || 0, 0, 1);
+if (isSurfaceMode()) {
+  state.surfaceProgress = state.fallback ? (surfaceDefinition().fallbackProgress ?? 1) : fixedProgress;
+  if (surfaceDefinition().kind === 'cycle') {
+    state.surfaceStep = Math.round(state.surfaceProgress * (surfaceDefinition().maxStep ?? 0));
+  }
+  state.surfaceDetached = params.get('detached') === '1' && state.surfaceProgress >= .98;
+  syncSurface({ syncUrl: true });
+  updateControls();
+  setStatus(`${surfaceDefinition().name} · 固定形变 ${Math.round(state.surfaceProgress * 100)}%`);
+} else if (isFormMode() && fixedProgress > 0) {
+  state.formProgress = fixedProgress;
+  syncFormSurface();
+  updateControls();
+  setStatus(`${formDefinition().name} · 固定形态 ${Math.round(fixedProgress * 100)}%`);
+} else if (!isSpatialMode() && fixedProgress > 0 && canTurn('next')) {
   beginTurn('next', fixedProgress);
   applyProgress(fixedProgress);
   setStatus(`固定弯曲 ${Math.round(fixedProgress * 100)}%`);
-} else if (!isFormMode()) {
+} else if (!isSpatialMode()) {
   window.setTimeout(startIntroPreview, 650);
 }

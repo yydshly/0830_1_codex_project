@@ -267,11 +267,11 @@ test("action and status copy reflects toggle, cycle, playback, and loop state", 
   assert.match(formStatusText("flipbook", { step: 2, playing: true }), /FRAME 03 \/ 12 · 播放中/);
 });
 
-test("Revision 6 form panel exposes eighteen choices, an atlas, and a unified operation dock", async () => {
+test("Revision 7 keeps eighteen book choices and adds the independent surface panel", async () => {
   const html = await readFile(new URL("../demo/index.html", import.meta.url), "utf8");
   const formButtons = html.match(/<button[^>]+data-form="[^"]+"/g) || [];
 
-  assert.equal((html.match(/class="deck-panel/g) || []).length, 5);
+  assert.equal((html.match(/class="deck-panel/g) || []).length, 6);
   assert.equal(formButtons.length, EXPECTED_FORMS.length);
   for (const formName of EXPECTED_FORMS) {
     assert.match(html, new RegExp(`data-form=["']${formName}["']`));
@@ -283,6 +283,8 @@ test("Revision 6 form panel exposes eighteen choices, an atlas, and a unified op
   assert.match(html, /data-panel="forms"/);
   assert.match(html, /data-view="explore"/);
   assert.match(html, /data-panel="explore"/);
+  assert.match(html, /data-view="surfaces"/);
+  assert.match(html, /data-panel="surfaces"/);
   for (const id of ["axis-filter", "tier-filter", "direction-list", "direction-detail", "combination-list"]) {
     assert.match(html, new RegExp(`id=["']${id}["']`));
   }

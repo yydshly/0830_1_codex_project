@@ -102,19 +102,20 @@ test("scenario and extension demonstrations are implemented as independent modul
   assert.match(extensions, /dataAdapter|dataset\.adapter/);
 });
 
-test("dedicated demo route keeps the book as the operating surface", async () => {
+test("dedicated demo route retains the book while exposing independent deformable surfaces", async () => {
   const html = await readFile(new URL("../demo/index.html", import.meta.url), "utf8");
   const script = await readFile(new URL("../demo/app.mjs", import.meta.url), "utf8");
 
   for (const id of ["book", "loupe", "auto-play", "quality-range", "softness-range", "light-range", "corner-toggle", "corner-grip"]) {
     assert.match(html, new RegExp(`id=["']${id}["']`));
   }
-  assert.equal((html.match(/class="deck-panel/g) || []).length, 5);
+  assert.equal((html.match(/class="deck-panel/g) || []).length, 6);
   assert.equal((html.match(/<button[^>]+data-scene="(?:portfolio|atlas|launch|kiosk)"/g) || []).length, 4);
   assert.match(html, /href="\.\.\/showcase\/"/);
   assert.doesNotMatch(html, /metric-progress|comparison-table|research-grid/);
   assert.match(script, /createCurvedLeaf/);
   assert.match(script, /createCornerPage/);
+  assert.match(script, /createDeformableSurface/);
   assert.match(script, /startIntroPreview/);
 });
 

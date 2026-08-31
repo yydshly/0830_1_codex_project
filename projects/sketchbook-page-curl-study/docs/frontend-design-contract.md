@@ -1,27 +1,62 @@
-# Sketchbook 柔性翻页研究展厅 · 前端设计契约
+# Sketchbook 柔性翻页与可变表面研究展厅 · 前端设计契约
 
 ## Contract
 
 | 字段 | 决策 |
 | --- | --- |
-| Entry mode | Revision-led implementation：Revision 5 已完成 10 种实际书型；用户要求更详细、更大量、更具创意地描述与探索书籍形态 |
-| Request revision | 6 |
+| Entry mode | Revision-led implementation：Revision 6 已完成 18 种书型与 36 方向图谱；用户指出“书只是包装”，要求核对并继续扩展真正的非书可变形表面 |
+| Request revision | 7 |
 | Target user and context | 想快速判断该效果能做什么、如何实现、何时值得采用的前端开发者、交互设计师与创意技术人员 |
-| Desired first impression | 第一眼仍是可操作的中央物体；进入“书型”可比较 18 种真实几何，进入“创意图谱”可沿六条研究轴浏览 36 个方向，并清楚区分实作、可信模拟与远期概念 |
+| Desired first impression | 第一眼仍是可操作的中央物体；“可变表面”入口直接显示标签、幕布、地图、包装与传送门等非书对象，用户无需把它们理解成书型别名 |
 | Visual ambition | Immersive |
 | Experience architecture | Spatial Stage（独立 demo 入口）+ 次级研究报告入口 |
-| Visual constraints | 保留核心柔性翻页与 Spatial Stage；新增书型继续使用原创 HTML/CSS/SVG、3D transform、mask 与渐变构造可辨认实体；18 种 LIVE 原型不得只换标题或贴图；暖纸张/深墨视觉统一；零外部字体、图片、Canvas 或 WebGL |
-| Information constraints | 详细内容采用“六轴导航 → 方向列表 → 单项深读”的渐进披露，不在首屏堆研究卡片；每个方向必须给出结构、动作、场景、机制、风险、成熟度和可组合方向；上游事实与本项目独立扩展继续分开 |
-| Operation constraints | “书型”面板扩展到 18 个实际效果；新增“创意图谱”面板提供 36 个方向、六轴筛选、三种成熟度筛选与详情选择；LIVE 项可一键把对应模型送到中央舞台，REMIX/HORIZON 只能以明确标注的交互假设展示，不冒充完整实现 |
-| State constraints | 保留既有状态并新增 direction axis/tier/selected、atlas→form deep link；书型切换仍需清理旧计时器和几何；图谱筛选不破坏选中项的可解释性；URL 可固定 panel/form/direction 以便验收与分享 |
+| Visual constraints | 保留核心柔性翻页、18 书型、36 方向与 Spatial Stage；新增表面使用原创 HTML/CSS/SVG、3D transform、mask 与渐变构造独立轮廓；不得用换标题、静态截图或书本外框冒充非书 renderer；零外部字体、图片、Canvas 或 WebGL |
+| Information constraints | 表面选择器先呈现实际几何，详情再说明锚点、切片、形变、拓扑、释放方式、场景和技术边界；明确区分 CSS 3D 条带近似与布料/WebGL 物理，不把 portal 过渡冒充真实三维场景连续性 |
+| Operation constraints | 新增“可变表面 12”面板：8 个用户列举形态 + 4 个新增形态；内容上下文、surface、material 三项独立选择；中央对象、拖动、滑杆、专属动作、左右导航和键盘共同驱动真实几何 |
+| State constraints | 保留既有状态并新增 surface/material/surfaceProgress/surfaceStep/surfaceTurn；表面切换必须清理拖动和旧节点；内容上下文与材质不重置几何选择；URL 可固定 panel/surface/material/scene/progress 以便验收与分享 |
 | Environment constraints | 项目内零依赖静态 HTML/CSS/ES modules；兼容 GitHub Pages；本地通过 `python -m http.server` 或等价静态服务运行 |
-| Primary journey | 打开 demo → 在“书型”直接操作 18 种物理逻辑 → 进入“创意图谱”按阅读拓扑、纸上机关、材料显影、组合叙事、身体环境、数据生成筛选 → 阅读选中方向的完整推演 → LIVE 项一键回到对应中央原型 → 继续用拖动、滑杆、专属动作和左右导航比较 |
-| User-defined phases | 第一：新增 8 种与既有十种明显不同的真实书型；第二：把 36 个创意方向组织成可筛选、可深读、可回到舞台的图谱；第三：补足组合场景、边界、风险和下一步实验；第四：保证跨视口、键盘、reduced-motion、fallback 与旧场景不回归 |
-| Required artifacts | `demo/` 18 种原创 LIVE renderer、36 方向六轴数据、图谱筛选/详情/舞台跳转、组合场景建议、更新后的设计/覆盖/测试/研究记录与桌面/390px/关键模型浏览器证据 |
-| Autonomy authorization | 用户明确要求“以提到过的这些不同的形态进行扩展，演示他们的效果”，授权当前子项目内的可逆实现、视觉选择与浏览器验证 |
-| User-decision boundary | 不重新分发无许可证的上游源码/素材，不修改上游仓库，不调用付费服务，不部署公网，不把推断写成已验证事实 |
-| Observable completion criteria | Revision 2–5 已通过标准继续有效；Revision 6 追加 14 条创意探索标准 |
+| Primary journey | 打开 demo → 进入“可变表面 12” → 选择内容上下文、非书表面与材质 → 在中央对象直接拖动/吸附/循环 → 用详情理解锚点、切片、拓扑与边界 → 深链分享当前组合 → 返回既有书型/图谱不回归 |
+| User-defined phases | 第一：诚实盘点描述项是否真正 LIVE；第二：把标签、地图、幕布、百叶、时间轴、材质墙、包装盒、传送门做成独立表面；第三：追加卷轴海报、径向扇、撕取券、数据丝带；第四：拆分内容/几何/材质并接入统一控制；第五：跨视口、键盘、reduced-motion、fallback、测试和发布闭环 |
+| Required artifacts | `demo/` 12 种原创非书 renderer、5 种材质预设、8 个内容上下文、surface 深链与真实状态反馈、更新后的设计/覆盖/测试/README/研究记录，以及桌面/390px/关键表面的浏览器证据 |
+| Autonomy authorization | 用户在连续实现语境中明确指出“也可以更多扩展”；结合此前“网页中实现效果、根据场景构建演示、扩展场景也要演示”的授权，允许当前子项目内可逆实现、测试、文档、提交与既有 GitHub Pages 发布 |
+| User-decision boundary | 不重新分发无许可证的上游源码/素材，不修改上游仓库，不调用付费服务；不把 CSS 视觉材质称为真实物理，不把无自碰撞的幕布称为布料仿真，不把 CSS portal 称为 WebGL 场景连续穿越 |
+| Observable completion criteria | Revision 2–6 已通过标准继续有效；Revision 7 追加 16 条通用可变表面标准 |
 | Coverage record | `docs/frontend-coverage.md` |
+
+## Revision 7 baseline and scope correction
+
+- **2026-08-31 browser baseline:** 线上 `?rev=6&panel=forms&form=venetian&intro=0` 在 1440×1000 Chromium 中显示五个顶部入口、18 个书型和 `data-form=venetian`，但没有 `surface` 入口或 `data-surface` 控件；全页无横向溢出且 errors=[]。
+- **Truthful coverage:** 用户列举的 10 种创意书型 10/10 为真实 renderer；用户列举的 8 种非书形态按“独立具名非书 renderer”严格计为 0/8。百叶、手风琴、纸角和隧道只提供邻近机制，不能替代独立表面。
+- **Combination gap:** 现状是“8 场景传统跨页 / 18 固定内容书型 / 参数扩展”三套互斥展示，不是可自由组合的 `scene × geometry × material`。Revision 7 的 surface API 必须把内容、几何与材质分离。
+
+## Revision 7 spatial-stage boundary
+
+- **Preserved operating surface:** 中央 Spatial Stage 保持第一焦点；新增顶部“可变表面 12”，不把 12 项放成舞台外的说明卡。
+- **Twelve live surfaces:** 标签剥离、折叠地图、双向条带幕布、对比百叶屏、手风琴时间轴、材质样本墙、包装盒展开、层叠传送门、卷轴海报、径向样本扇、撕取优惠券和数据丝带全部拥有独立 DOM 轮廓与状态映射。
+- **Orthogonal choices:** 8 个既有场景作为内容上下文；12 个表面负责拓扑与形变；paper/card/vellum/textile/foil 五个材质预设负责可见厚度、透明度、纹理、反射与曲率响应。材质是 CSS 视觉/力学近似，不是物理仿真。
+- **Shared strip capability:** 标签、幕布与卷轴复用一套条带链创建与逐带曲率/光照逻辑；地图/时间轴使用多铰链；百叶使用独立双面叶片；包装盒使用六面铰接拓扑；portal 使用六层空间框与双场景阈值过渡。
+- **Foreground controls:** surface、内容和材质互不重置；中央拖动与 range 使用连续进度，主动作处理吸附/循环/释放，左右导航比较 12 项，Escape 复位。
+- **Truthful capability boundary:** `textile` 仅表达织物视觉和低刚度；幕布不模拟连续布料、自碰撞或任意褶皱；portal 只验证 CSS 空间阈值和背面场景揭示；真实穿越、任意方向形变与碰撞留给 WebGL 网格/物理。
+- **Mobile/fallback:** 390px 仍先显示完整对象；选择器可局部滚动/紧凑网格但页面不横溢；fallback 显示每个对象可理解的静态终态并禁用动态控制；reduced-motion 不连续播放。
+
+## Revision 7 observable completion criteria
+
+1. 顶部出现“可变表面 12”，选择任一项都在中央舞台生成独立 `data-surface` 根节点，不复用书本外框。
+2. 标签剥离至少包含 12 条双面条带、角点 grip、底层内容与 attached/snapped/detached 状态；进度改变真实 transform 和揭示面积。
+3. 双向幕布至少有左右各 10 条镜像条带，进度同时改变中心 gap、条带曲率和底层舞台可见度。
+4. 折叠地图至少有 8 个山/谷交替面及跨面路线/站点；手风琴时间轴至少有 7 个事件折面且当前事件随 step 改变。
+5. 对比百叶至少有 18 条双面叶片；材质样本墙至少显示 8 个具有不同可见纹理/高光的样本。
+6. 包装盒至少有 6 个铰接面并从立体盒体展开为十字 net；层叠传送门至少有 6 个空间框层并在阈值后显示第二场景。
+7. 卷轴海报至少有 12 条横向带并从边缘卷起；径向扇至少有 10 个扇片；撕取券具备穿孔、释放与 detached 状态；数据丝带至少有 8 个路径节点。
+8. 内容上下文、surface 和 material 是三个独立控件；改变任一项不重置另外两项，当前组合进入 URL 与状态输出。
+9. 五种材质预设实际改变 CSS 变量/属性和可见外观；textile/foil 的文案明确属于视觉近似而非真实物理。
+10. 12 种表面均支持主动作和状态文本；连续形态支持中央拖动与 range；cycle 形态支持离散 step；释放行为具体说明回弹、吸附、循环或脱离。
+11. `?rev=7&panel=surfaces&surface=...&material=...&scene=...&progress=...&intro=0` 可复现当前组合。
+12. 切换表面、退出面板、resize、Escape 和 pagehide 不残留旧节点、拖动或播放状态；既有传统翻页、8 场景、18 书型与 36 图谱不回归。
+13. 1440、768、390 三档无全页横向溢出；选择器、材质、滑杆和动作键盘可达且焦点可见。
+14. reduced-motion 不运行连续动画；fallback 保留可辨认终态和边界文案，并禁用不可用动态控件。
+15. 12 个 renderer 的几何计数、状态映射、clamp、材质、深链和结构固化为自动测试；真实浏览器无 console/page/request error。
+16. README、研究日志、coverage、handoff、项目测试与 repository validator 更新；最终无 `continue`，发布后 GitHub Pages 在线深链通过。
 
 ## Revision 6 spatial-stage boundary
 

@@ -2,6 +2,23 @@
 
 实验记录按时间倒序排列。失败和证据不足的实验不会删除。
 
+## 2026-08-31 · E14 从翻页到通用可变表面
+
+- **用户纠偏：** “书只是包装”。目标不是继续给传统跨页换内容，而是把“刚性平面切成连续条带、曲率随拖拽传播、正反面完成空间过渡”抽象成可变形界面，并让原列举的非书形态在网页中真实演示。
+- **严格基线：** Revision 6 中用户列举的 10 种创意书型已有 10/10 独立 renderer；但标签、地图、幕布、百叶、时间轴、材质墙、包装盒、portal 按“脱离书本外框的具名非书 renderer”严格计为 0/8。既有纸角、手风琴、百叶书和隧道书只能算邻近机制，不能冒充完成项。
+- **实现：** 新增独立 `surface` 模式和共享双面条带引擎。12 项为标签剥离、折叠地图、双向条带幕布、对比百叶屏、手风琴时间轴、材质样本墙、包装盒展开、层叠传送门、卷轴海报、径向样本扇、撕取优惠券、数据丝带；五材质为 paper/card/vellum/textile/foil。
+- **正交状态：** 8 个既有内容上下文、12 个表面和 5 个材质互不重置，形成 480 个可寻址组合。480 表示状态组合空间，不表示逐一人工验收了 480 个成品。深链固定 `panel/surface/material/scene/progress/detached`；cycle 形态由 progress 恢复 step。
+- **几何证据：** 12 项直属结构依次为 14 条标签/28 faces、8 个地图面、左右各 10 条幕布、18 片百叶、7 个事件面、8 个材质样本、6 个盒面、6 层 portal、12 条卷带/24 faces、10 个扇片、16 个穿孔、8 个数据节点/7 段路径。逐项 progress/step 后 transform/state 均改变。
+- **交互证据：** 标签使用右下→左上、地图/时间轴/样本/扇片/丝带使用横向、幕布按起始半区向外、盒网向下、portal/卷轴向上、票券沿穿孔向右；主动作、range、左右导航、舞台键盘、Escape、radio 方向键和复位共同驱动状态。票券达到阈值后进入 `detached=1`。
+- **材质证据：** 初次审计发现百叶、portal、数据丝带以及材质墙的部分预设虽然写入变量，截图却完全相同；这与“480 个可寻址组合”的可见性标准冲突。修正所有 primitive 对 `surface-fill / thickness / opacity / reflection / texture` 的消费后，12 个表面各自的五材质舞台截图均得到 5 个不同哈希。该证据只证明可见预设生效，不证明真实材料物理。
+- **深链失败与修正：** 初版数据丝带在 step=3/progress=.43 刷新后退回 step=0；原因是 URL 只恢复连续进度。改为 cycle 状态统一由 progress 推导 step 后，刷新前后均为节点 4/8。退出 surface 初版也残留 `panel=surfaces`，现已切到 `panel=experience` 并清理 surface/material/progress/detached。
+- **自动测试：** 首轮因新增第六个 panel 触发两项旧断言 `6 !== 5`；更新保留书型基线并显式断言独立 surface panel 后，`node --test projects/sketchbook-page-curl-study/tests/*.test.mjs` 为 35/35。新增测试覆盖 12 定义、五材质、共享条带、全部几何计数、状态 clamp、动作文案、单一 radiogroup、深链/方向手势控制器契约与材质消费。
+- **浏览器验收：** 1440×1000、768×900、390×844 均 `scrollWidth===clientWidth`；12 项与五材质逐一切换、8 内容上下文、深链刷新、定向拖动、radio roving tabindex、退出恢复、reduced-motion 和 fallback 均通过。reduced-motion 的过渡为 `1e-06s`；fallback 显示静态终态并禁用 action/range，但保留表面、内容和材质选择。
+- **运行时观察：** 标签深链请求 8 个本地资源、0 个外部资源，decoded body 约 387KB，DOM 478，navigation 约 235ms，console/page/request errors=[]。这是本机静态加载观察，不是持续帧时、热量或功耗结论。
+- **证据图：** `artifacts/browser-r7-label-peel.png`、`browser-r7-curtain.png`、`browser-r7-fold-map.png`、`browser-r7-box-net.png`、`browser-r7-coupon-detached.png`、`browser-r7-mobile-fan.png`。最多保留这 6 张最终证据，临时调试图不提交。
+- **来源与边界：** 12 个非书表面、五材质、文案和视觉均为本项目独立实现，不是 MengTo/sketchbook 原生能力。织物没有连续布料、自碰撞或任意褶皱；金属没有 PBR/塑性形变；portal 只验证 CSS 层叠空间和阈值揭示。
+- **发布状态：** 本地实现与浏览器闭环已完成；新 commit、Actions run、Pages HTTP 200 和线上 Chromium 深链证据在推送后补录。
+
 ## 2026-08-31 · E13 GitHub 公开发布与可访问性闭环
 
 - **发布目标：** 将本项目固定为公开研究编号 `R-001 / 第 1 个研究子项目`，在仓库外部入口提供摘要、上游固定版本、GitHub 源码目录、在线研究页、实际 Demo、技术展厅与可复现深链，而不是只把本地文件推到远端。
