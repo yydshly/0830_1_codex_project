@@ -2,6 +2,17 @@
 
 实验记录按时间倒序排列。每次记录说明目标、环境、执行、观察、证据、判断和下一步；失败实验保留在记录中。
 
+## 2026-08-31 · R-002 GitHub 与 GitHub Pages 公开发布
+
+- **目标：** 将 Backpass 研究固定为 `R-002 / 第 2 个研究子项目`，让仓库外部读者可以从摘要追溯锁定上游、研究源码与在线交互 Web，并实际完成能力演示。
+- **公开摘要：** 根 README 用一行说明“项目记忆优化器、不是模型训练”、Tier 1 精确归属、`99.5%` 字节缩减与 `1 < 2 · HOLD` 边界；项目 README 同时索引固定源库、GitHub 研究目录、在线研究页和在线 Web。
+- **版本证据：** 公开基线提交为 [`afdddbd6c1999440c6e4e5136b41b93b93527fdc`](https://github.com/yydshly/0830_1_codex_project/commit/afdddbd6c1999440c6e4e5136b41b93b93527fdc)（`research: publish R-002 Backpass study`），远端 `main` 精确指向该提交；上游固定到 [`d8cbdb68ca20a9ad6626810e0c24a576e43223c7`](https://github.com/kunchenguid/backpass/tree/d8cbdb68ca20a9ad6626810e0c24a576e43223c7)，没有改用不稳定分支入口。
+- **自动化证据：** GitHub Actions [`Repository checks` run `33369455904`](https://github.com/yydshly/0830_1_codex_project/actions/runs/33369455904) 成功；[`Deploy research site` run `33369455942`](https://github.com/yydshly/0830_1_codex_project/actions/runs/33369455942) 的 Jekyll build 与 Pages deploy 均成功。
+- **HTTP 证据：** [GitHub 研究目录](https://github.com/yydshly/0830_1_codex_project/tree/main/projects/backpass-study)、[在线研究页](https://yydshly.github.io/0830_1_codex_project/projects/backpass-study/)、[在线 Web](https://yydshly.github.io/0830_1_codex_project/projects/backpass-study/demo/)、`styles.css` 与 `app.js` 均返回 HTTP 200；研究页与 Web 同时包含 R-002、序号、锁定提交和公开索引。
+- **真实浏览器证据：** 1440×1200 Chromium 中，线上 Web 标题、品牌和页脚统一显示 R-002；真实历史到达 `HOLD` 且 `externalModelCalled=false / filesWritten=0`，场景筛选为 `adjacent 4/12`，合成闭环分别完成 `REVIEW → ACCEPTED` 与 `REVIEW → REJECTED`。390×844 手机下文档与五阶段 tab 均无横向溢出，深色切换成功，console/page errors 为空；同尺寸在线研究页也无页面级溢出。
+- **隔离边界：** 发布提交只包含 `projects/backpass-study/**` 与根 README 的一条 R-002 索引，没有混入 Dashi、Selector、Solo 或并行 Sketchbook 工作；锁定上游 checkout 仍由 `.gitignore` 排除。
+- **结果：** R-002 已完成“外部摘要可读、固定源库可追溯、研究源码可查、在线能力可操作、发布证据可复核”的公开闭环。发布不改变研究边界：真实 LLM 分析、规则因果效果和多项目隔离仍未被本次实验证实。
+
 ## 2026-08-31 · 单条真实 Codex 历史确定性处理
 
 - **目标：** 从本机大量 Codex 历史中只选择一条属于当前仓库的顶层会话，实际演示 Backpass 在语义模型调用之前能完成什么，并验证单样本是否会被错误提升为规则。

@@ -2,7 +2,7 @@
 
 ## 验收结论
 
-通过。网页已加入一条真实、严格归属于当前仓库的 Codex 历史实测，并把能力边界拆成五步：发现、归属、压缩、研究者候选信号、证据门槛。最终状态为 `1 < 2 · HOLD`，未调用外部模型、未生成规则提案、未写项目文件。原有 12 场景地图与三条合成会话闭环无回归；桌面、深色、平板、390px 手机、键盘与减弱动态均有浏览器证据，页面无控制台错误或整页横向溢出。
+通过。网页已加入一条真实、严格归属于当前仓库的 Codex 历史实测，并把能力边界拆成五步：发现、归属、压缩、研究者候选信号、证据门槛。最终状态为 `1 < 2 · HOLD`，未调用外部模型、未生成规则提案、未写项目文件。原有 12 场景地图与三条合成会话闭环无回归；桌面、深色、平板、390px 手机、键盘与减弱动态均有浏览器证据，页面无控制台错误或整页横向溢出。R-002 公开版本已经由 GitHub Pages 部署并完成线上复验。
 
 ## 环境与启动
 
@@ -14,6 +14,19 @@
 - 验收 URL：<http://127.0.0.1:49173/#real-session>
 
 默认端口仍为 4173；验收与当前用户预览使用显式端口 49173。网页代码与响应内容不依赖端口。
+
+## GitHub Pages 发布复验
+
+| 项目 | 线上证据 |
+| --- | --- |
+| 发布提交 | [`afdddbd6c1999440c6e4e5136b41b93b93527fdc`](https://github.com/yydshly/0830_1_codex_project/commit/afdddbd6c1999440c6e4e5136b41b93b93527fdc)；`origin/main` 精确一致 |
+| 仓库检查 | [`Repository checks` run `33369455904`](https://github.com/yydshly/0830_1_codex_project/actions/runs/33369455904)，`success` |
+| Pages 部署 | [`Deploy research site` run `33369455942`](https://github.com/yydshly/0830_1_codex_project/actions/runs/33369455942)，build 与 deploy 均为 `success` |
+| GitHub 目录 | [公开研究目录](https://github.com/yydshly/0830_1_codex_project/tree/main/projects/backpass-study) 返回 200，包含 R-002 与 Backpass |
+| 在线研究页 | [R-002 研究页](https://yydshly.github.io/0830_1_codex_project/projects/backpass-study/) 返回 200，包含序号、锁定提交与 Web 入口 |
+| 在线 Web | [R-002 交互演示](https://yydshly.github.io/0830_1_codex_project/projects/backpass-study/demo/) 及 CSS/JS 返回 200；页脚四个索引正确 |
+
+线上 1440×1200 Chromium 已完成真实历史 `READY → HOLD`、场景 `adjacent 4/12`、合成建议 `REVIEW → ACCEPTED` 与 `REVIEW → REJECTED`；390×844 下页面和五阶段 tab 均无横向溢出，深色切换正常。两档视口的 `window.__consoleErrors` 与浏览器错误列表均为空。在线研究页在 390×844 下同样无页面级溢出。
 
 ## 真实历史证据边界
 

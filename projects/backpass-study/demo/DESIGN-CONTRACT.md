@@ -57,7 +57,7 @@ Observable completion criteria: 一条当前仓库历史经上游 Codex adapter�
 | 交付 | 文档、派生证据与最终截图 | 文件 | README/research-log/VALIDATION、派生 JSON 与五张截图 | 9 | pass | 已完成 |
 | R-002 公开身份 | 根 README、项目 README/index、在线 Web 使用同一编号 | 本地公开表面 | `R-002` 与“第 2 个研究子项目”DOM/文件断言 | 3/9 | pass | 已完成 |
 | 外部索引 | 固定源库、GitHub 目录、在线研究页、在线 Web 可达 | README、页脚、根索引 | 精确 URL 与发布契约测试 4/4 | 3/9 | pass | 已完成 |
-| 隔离提交 | 只提交 Backpass 与根索引单行 | Git index / `main` | cached diff、路径审计、commit SHA | 9 | continue | 精确暂存并推送 |
-| GitHub Pages | 现有 Jekyll workflow 构建部署成功 | Actions / Pages | workflow run URL、success | 9 | continue | 推送后等待部署 |
-| 线上复验 | 研究页和 Web 返回 200 且包含 R-002 | GitHub Pages / Chromium | HTTP、DOM、交互、errors=[] | 7/9 | continue | 部署后真实浏览器验证 |
-| 发布证据回写 | 远端 commit、workflow、公开 URL 可追溯 | research-log / VALIDATION | 第二次文档提交与最终 Pages 复验 | 9 | continue | 首次发布验证后回写 |
+| 隔离提交 | 只提交 Backpass 与根索引单行 | Git index / `main` | `afdddbd6c1999440c6e4e5136b41b93b93527fdc`；27 个目标文件；无其他项目 | 9 | pass | 已完成 |
+| GitHub Pages | 现有 Jekyll workflow 构建部署成功 | Actions / Pages | quality `33369455904`、Pages `33369455942` 均 success | 9 | pass | 已完成 |
+| 线上复验 | 研究页和 Web 返回 200 且包含 R-002 | GitHub Pages / Chromium | 目录/研究页/Web/CSS/JS 200；桌面与手机 DOM、交互、errors=[] | 7/9 | pass | 已完成 |
+| 发布证据回写 | 远端 commit、workflow、公开 URL 可追溯 | research-log / VALIDATION | 发布记录、Actions 链接、HTTP 与浏览器证据均已写入 | 9 | pass | 已完成 |
