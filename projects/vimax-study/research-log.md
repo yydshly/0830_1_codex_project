@@ -2,6 +2,17 @@
 
 实验记录按时间倒序排列。失败实验保留，不以重写历史的方式删除。
 
+## 2026-08-31 · R-004 发布到 GitHub 与 GitHub Pages
+
+- **目标：** 把 ViMax 研究结论、固定源库索引和交互展厅发布为公开、可追溯的研究子项目。
+- **研究编号：** `R-004`，表示当前根研究索引的第 4 项；作为稳定标识，不随表格排序变化，也不声称是可由 Git 历史证明的创建顺序。
+- **提交：** `8577a6d`（`research: publish R-004 ViMax study`）已推送到 `yydshly/0830_1_codex_project` 的 `main`。提交范围仅包含根 README 的 ViMax 单行索引和 `projects/vimax-study/`，未带入工作区中其他未跟踪研究。
+- **自动化：** Repository checks [run 33363677741](https://github.com/yydshly/0830_1_codex_project/actions/runs/33363677741) 通过；Deploy research site [run 33363677872](https://github.com/yydshly/0830_1_codex_project/actions/runs/33363677872) 的 Jekyll build 与 Pages deploy 均通过。
+- **HTTP 验证：** [仓库研究站首页](https://yydshly.github.io/0830_1_codex_project/)、[R-004 研究页](https://yydshly.github.io/0830_1_codex_project/projects/vimax-study/)、[在线展厅](https://yydshly.github.io/0830_1_codex_project/projects/vimax-study/showcase/)和 [GitHub 研究目录](https://github.com/yydshly/0830_1_codex_project/tree/main/projects/vimax-study) 均返回 200，并包含 `R-004`。
+- **浏览器验证：** 线上展厅加载 6 张能力卡、4 个真实案例、6 个实现节点和 3 个官方演示入口；切换到厨房案例得到 14 个镜头，运行类筛选得到“Agent 工作区”和“模型调度与恢复”。CSS、`case-data.js`、`app.js` 和上游 Web UI 图均正常加载，无横向溢出、错误遮罩、控制台错误或页面错误。
+- **公开摘要：** 根 README 与项目 README 同时提供固定上游 commit、GitHub 研究目录、在线研究页和在线展厅入口，并明确真实成片质量、成本和 best-of-k 主流程闭环仍待实测。
+- **限制：** 官方视频和上游 Web UI 图片仍是外部热链；页面保留延迟加载与错误回退，但不能控制 GitHub 附件未来的可用性。
+
 ## 2026-08-31 · GitHub 发布前检查发现旧文案断言
 
 - **目标：** 在把 R-004 研究页与交互展厅发布到 GitHub Pages 前，重新执行项目与仓库验证。
