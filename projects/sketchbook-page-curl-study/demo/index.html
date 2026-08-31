@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="zh-CN" data-panel="experience">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#141a1b">
+  <title>R-001 · FOLD / 18 · 柔性翻页实际效果</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#book">跳到互动书本</a>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="返回实际效果首页">
+      <span class="brand__mark">18</span>
+      <span><strong>FOLD / LIVE</strong><small>R-001 · 柔性纸张实际效果</small></span>
+    </a>
+    <nav class="view-tabs" aria-label="演示面板">
+      <button type="button" data-view="experience" aria-pressed="true">实际效果</button>
+      <button type="button" data-view="scenes" aria-pressed="false">场景</button>
+      <button type="button" data-view="forms" aria-pressed="false">书型 18</button>
+      <button type="button" data-view="explore" aria-pressed="false">创意图谱</button>
+      <button type="button" data-view="extensions" aria-pressed="false">扩展效果</button>
+    </nav>
+    <a class="research-link" href="../showcase/">技术拆分 <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main class="demo-stage" id="demo-stage" data-scene="portfolio">
+    <div class="ambient ambient--one" aria-hidden="true"></div>
+    <div class="ambient ambient--two" aria-hidden="true"></div>
+
+    <section class="scene-copy" aria-live="polite">
+      <p class="live-label"><i aria-hidden="true"></i><span id="scene-kicker">CURATED PORTFOLIO</span></p>
+      <h1 id="scene-title">把作品交给纸张。</h1>
+      <p id="scene-dek">拖动右页。纸面会沿宽度连续弯曲，而不是像硬卡片一样整体旋转。</p>
+    </section>
+
+    <section class="book-workspace" aria-label="柔性翻页实际效果舞台">
+      <div class="book-shell" id="book-shell">
+        <div class="book" id="book" tabindex="0" role="application" aria-label="可拖动的柔性画册。点击或拖动左右页，也可使用方向键翻页。">
+          <div class="book-placeholder"><strong>FOLD / 18</strong><span>正在准备纸张</span></div>
+        </div>
+
+        <div class="loupe" id="loupe" aria-hidden="true" tabindex="-1" role="group" aria-label="可拖动观察镜；方向键可微调位置">
+          <div class="loupe__glass"><div class="loupe__content" id="loupe-content"></div></div>
+          <span class="loupe__handle" aria-hidden="true"></span>
+        </div>
+
+        <button class="corner-grip" id="corner-grip" type="button" hidden aria-label="拖动右下纸角；方向键也可调整">
+          <span aria-hidden="true">↖</span>
+        </button>
+
+        <p class="gesture-hint" id="gesture-hint"><span aria-hidden="true">↔</span> 拖动纸页</p>
+        <div class="scene-note" id="scene-note" hidden></div>
+      </div>
+
+      <div class="book-navigation">
+        <button id="prev-page" type="button" aria-label="上一页">←</button>
+        <p><span id="page-current">01</span><i></i><span id="page-total">04</span></p>
+        <button id="next-page" type="button" aria-label="下一页">→</button>
+      </div>
+    </section>
+
+    <aside class="control-deck" aria-label="效果控制台">
+      <header class="deck-header">
+        <div><span>LIVE CONTROL</span><strong id="deck-title">实际效果</strong></div>
+        <output id="status-output" aria-live="polite">等待拖动</output>
+      </header>
+
+      <section class="deck-panel is-active" data-panel="experience" aria-labelledby="experience-heading">
+        <h2 id="experience-heading">直接操作这本书</h2>
+        <p>所有控制都会作用在中央画册，不跳转到解释页面。</p>
+        <div class="primary-actions">
+          <button class="action action--primary" id="auto-play" type="button" aria-pressed="false"><span aria-hidden="true">▶</span> 播放翻页</button>
+          <button class="action" id="loupe-toggle" type="button" aria-pressed="false"><span aria-hidden="true">⌕</span> 观察镜</button>
+        </div>
+        <div class="mini-actions" role="group" aria-label="视图控制">
+          <button id="zoom-out" type="button" aria-label="缩小画册">−</button>
+          <output id="zoom-output">100%</output>
+          <button id="zoom-in" type="button" aria-label="放大画册">＋</button>
+          <button id="reset-demo" type="button">复位</button>
+        </div>
+        <div class="feature-list" aria-label="当前效果能力">
+          <span><i></i>18 段连续曲面</span>
+          <span><i></i>正反面与逐带光照</span>
+          <span><i></i>拖拽、速度与回弹</span>
+        </div>
+      </section>
+
+      <section class="deck-panel" data-panel="scenes" aria-labelledby="scenes-heading" hidden>
+        <h2 id="scenes-heading">换一种真实用途</h2>
+        <p>不是换旁边的说明，而是替换整本书的页稿、色彩和专属行为。</p>
+        <div class="scene-groups">
+          <section class="scene-set" aria-labelledby="base-scenes-label">
+            <p class="scene-group-label" id="base-scenes-label"><span>BASE SCENES</span> 已验证用途</p>
+            <div class="scene-picker" role="group" aria-label="基础演示场景">
+              <button type="button" data-scene="portfolio" aria-pressed="true"><span>01</span><strong>视觉画册</strong><small>作品与策展字幕</small></button>
+              <button type="button" data-scene="atlas" aria-pressed="false"><span>02</span><strong>自然图鉴</strong><small>探索与局部观察</small></button>
+              <button type="button" data-scene="launch" aria-pressed="false"><span>03</span><strong>产品发布</strong><small>章节式揭晓</small></button>
+              <button type="button" data-scene="kiosk" aria-pressed="false"><span>04</span><strong>展览导览</strong><small>循环自动播放</small></button>
+            </div>
+          </section>
+          <section class="scene-set scene-set--extended" aria-labelledby="extended-scenes-label">
+            <p class="scene-group-label" id="extended-scenes-label"><span>EXTENDED SCENES</span> 可扩展效果</p>
+            <div class="scene-picker" role="group" aria-label="扩展演示场景">
+              <button type="button" data-scene="travel" aria-pressed="false"><span>05</span><strong>旅行手账</strong><small>路线与站点热点</small></button>
+              <button type="button" data-scene="recipe" aria-pressed="false"><span>06</span><strong>食谱步骤</strong><small>流程推进与完成态</small></button>
+              <button type="button" data-scene="comic" aria-pressed="false"><span>07</span><strong>互动分镜</strong><small>逐格聚焦叙事</small></button>
+              <button type="button" data-scene="catalog" aria-pressed="false"><span>08</span><strong>商品图册</strong><small>配色变体与重绘</small></button>
+            </div>
+          </section>
+        </div>
+        <button class="action action--wide" id="scene-action" type="button" aria-pressed="false">显示策展字幕</button>
+      </section>
+
+      <section class="deck-panel deck-panel--forms" data-panel="forms" aria-labelledby="forms-heading" hidden>
+        <h2 id="forms-heading">十八种真实书体</h2>
+        <p>每一种都重构中央对象，而不是替换贴图。拖动书面、调节进度或执行专属动作，比较连接拓扑、机关与隐藏面。</p>
+        <div class="form-groups">
+          <section class="form-set" aria-labelledby="folding-forms-label">
+            <p class="form-group-label" id="folding-forms-label"><span>FOLD &amp; ENTRY</span> 折叠与入口</p>
+            <div class="form-picker" role="radiogroup" aria-label="开合折叠书型">
+              <button type="button" role="radio" data-form="gatefold" aria-checked="false"><span>01</span><strong>对开门书</strong><small>双门揭晓</small></button>
+              <button type="button" role="radio" data-form="accordion" aria-checked="false"><span>02</span><strong>手风琴书</strong><small>六折长卷</small></button>
+              <button type="button" role="radio" data-form="dosados" aria-checked="false"><span>16</span><strong>双首背靠背</strong><small>相反入口</small></button>
+            </div>
+          </section>
+          <section class="form-set" aria-labelledby="spatial-forms-label">
+            <p class="form-group-label" id="spatial-forms-label"><span>SPACE &amp; LAYER</span> 空间与显露</p>
+            <div class="form-picker" role="radiogroup" aria-label="空间层次书型">
+              <button type="button" role="radio" data-form="popup" aria-checked="false"><span>03</span><strong>立体书</strong><small>纸景升起</small></button>
+              <button type="button" role="radio" data-form="diecut" aria-checked="false"><span>04</span><strong>镂空书</strong><small>开窗窥层</small></button>
+              <button type="button" role="radio" data-form="layers" aria-checked="false"><span>05</span><strong>透明叠层</strong><small>胶片合成</small></button>
+              <button type="button" role="radio" data-form="tunnel" aria-checked="false"><span>06</span><strong>隧道书</strong><small>四层纵深</small></button>
+              <button type="button" role="radio" data-form="iris" aria-checked="false"><span>13</span><strong>虹膜快门</strong><small>八叶孔径</small></button>
+            </div>
+          </section>
+          <section class="form-set" aria-labelledby="mechanical-forms-label">
+            <p class="form-group-label" id="mechanical-forms-label"><span>MOTION &amp; CYCLE</span> 运动与循环</p>
+            <div class="form-picker" role="radiogroup" aria-label="机关循环书型">
+              <button type="button" role="radio" data-form="volvelle" aria-checked="false"><span>07</span><strong>旋转轮盘</strong><small>八档纸轮</small></button>
+              <button type="button" role="radio" data-form="flipbook" aria-checked="false"><span>08</span><strong>翻动画册</strong><small>十二帧动画</small></button>
+              <button type="button" role="radio" data-form="carousel" aria-checked="false"><span>09</span><strong>星形木马</strong><small>六叶围合</small></button>
+              <button type="button" role="radio" data-form="infinite" aria-checked="false"><span>10</span><strong>无限循环</strong><small>首尾纸环</small></button>
+            </div>
+          </section>
+          <section class="form-set" aria-labelledby="transform-forms-label">
+            <p class="form-group-label" id="transform-forms-label"><span>MECHANISM</span> 组合与变换</p>
+            <div class="form-picker" role="radiogroup" aria-label="组合变换书型">
+              <button type="button" role="radio" data-form="mixmatch" aria-checked="false"><span>11</span><strong>分栏组合书</strong><small>三栏重组</small></button>
+              <button type="button" role="radio" data-form="pulltab" aria-checked="false"><span>12</span><strong>拉条联动书</strong><small>一拉三动</small></button>
+              <button type="button" role="radio" data-form="waterfall" aria-checked="false"><span>14</span><strong>瀑布翻片书</strong><small>六步连翻</small></button>
+              <button type="button" role="radio" data-form="venetian" aria-checked="false"><span>15</span><strong>百叶交错书</strong><small>双图渐变</small></button>
+              <button type="button" role="radio" data-form="jacob" aria-checked="false"><span>17</span><strong>雅各布梯书</strong><small>翻转传播</small></button>
+              <button type="button" role="radio" data-form="flexagon" aria-checked="false"><span>18</span><strong>万花折面书</strong><small>三组隐藏面</small></button>
+            </div>
+          </section>
+        </div>
+        <div class="form-control-dock">
+          <div class="form-dock-heading"><span>FORM CONTROL</span><output id="form-state-output">选择一种书型</output></div>
+          <div class="form-actions">
+            <button class="action action--primary" id="form-action" type="button">执行书型动作</button>
+            <button class="action" id="form-reset" type="button" aria-label="复位当前书型">↺</button>
+          </div>
+          <label class="range-control range-control--compact" for="form-progress">
+            <span><strong id="form-progress-label">形态进度</strong><output id="form-progress-output">0%</output></span>
+            <input id="form-progress" type="range" min="0" max="100" value="0" step="1">
+          </label>
+          <button class="form-exit" id="form-exit" type="button">恢复传统柔性跨页</button>
+        </div>
+      </section>
+
+      <section class="deck-panel deck-panel--explore" data-panel="explore" aria-labelledby="explore-heading" hidden>
+        <header class="explore-intro">
+          <p class="explore-eyebrow">CREATIVE ATLAS · 6 AXES / 36 DIRECTIONS</p>
+          <h2 id="explore-heading">书不只是一叠页面。</h2>
+          <p>沿六条轴探索连接方式、施力方式、显影方式、叙事逻辑、身体尺度与生成系统。选择任一方向查看完整推演。</p>
+          <div class="atlas-metrics" aria-label="图谱规模">
+            <span><strong id="atlas-result-count">36</strong><small>当前方向</small></span>
+            <span><strong>18</strong><small>实际书型</small></span>
+            <span><strong>12</strong><small>组合场景</small></span>
+          </div>
+        </header>
+
+        <div class="explore-filter-block">
+          <p class="explore-filter-label"><span>AXIS</span> 研究轴</p>
+          <div class="axis-filter" id="axis-filter" role="group" aria-label="按研究轴筛选"></div>
+        </div>
+        <div class="explore-filter-block">
+          <p class="explore-filter-label"><span>MATURITY</span> 成熟度</p>
+          <div class="tier-filter" id="tier-filter" role="group" aria-label="按成熟度筛选"></div>
+        </div>
+
+        <div class="direction-list" id="direction-list" role="listbox" aria-label="创意方向"></div>
+        <article class="direction-detail" id="direction-detail" aria-live="polite"></article>
+
+        <details class="combination-lab" open>
+          <summary><span>COMBINATION LAB</span><strong>十二个跨轴组合场景</strong><small>把结构、材料、叙事与系统交叉</small></summary>
+          <div class="combination-list" id="combination-list"></div>
+        </details>
+      </section>
+
+      <section class="deck-panel" data-panel="extensions" aria-labelledby="extensions-heading" hidden>
+        <h2 id="extensions-heading">扩展直接作用于纸面</h2>
+        <p>调节后再拖页，几何、光照和局部折角都会真实变化。</p>
+        <label class="range-control" for="quality-range">
+          <span><strong>曲面精度</strong><output id="quality-output">18 strips</output></span>
+          <input id="quality-range" type="range" min="8" max="24" value="18" step="1">
+        </label>
+        <label class="range-control" for="softness-range">
+          <span><strong>纸张柔软度</strong><output id="softness-output">柔性纸</output></span>
+          <input id="softness-range" type="range" min="20" max="95" value="62" step="1">
+        </label>
+        <label class="range-control" for="light-range">
+          <span><strong>曲面光照</strong><output id="light-output">72%</output></span>
+          <input id="light-range" type="range" min="0" max="100" value="72" step="1">
+        </label>
+        <button class="corner-toggle" id="corner-toggle" type="button" aria-pressed="false">
+          <span><i aria-hidden="true"></i><strong>二维纸角</strong><small>拖动右下角揭示下一页</small></span>
+          <b>OFF</b>
+        </button>
+      </section>
+
+      <footer class="deck-footer">
+        <span id="render-label">CURVED · 18 STRIPS</span>
+        <span>R-001 / CSS 3D / ORIGINAL ART</span>
+      </footer>
+    </aside>
+  </main>
+
+  <noscript><p class="noscript">需要启用 JavaScript 才能体验柔性翻页；<a href="../showcase/">仍可阅读技术拆分</a>。</p></noscript>
+  <script type="module" src="app.mjs"></script>
+</body>
+</html>

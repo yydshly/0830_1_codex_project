@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="zh-CN" class="no-js" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="用可交互实验理解 MengTo/sketchbook 的柔性条带翻页、适用场景与扩展方向。">
+  <title>R-001 · Sketchbook Page Curl Lab · 柔性翻页研究</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script>document.documentElement.classList.remove('no-js');</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到研究正文</a>
+
+  <header class="site-header">
+    <a class="brand" href="#lab" aria-label="返回实验台顶部">
+      <span class="brand__mark" aria-hidden="true">S/18</span>
+      <span><strong>Page Curl Lab</strong><small>R-001 · 固定源码研究 · c1e4778</small></span>
+    </a>
+    <nav class="site-nav" aria-label="研究章节">
+      <a href="../demo/">实际效果 ↗</a>
+      <a href="#mechanism">原理</a>
+      <a href="#scenarios">场景</a>
+      <a href="#extensions">扩展</a>
+      <a href="#evidence">证据</a>
+    </nav>
+    <button class="icon-button" id="theme-toggle" type="button" aria-pressed="false" aria-label="切换深色主题">
+      <span aria-hidden="true">◐</span><span class="theme-label">深色</span>
+    </button>
+  </header>
+
+  <main id="main">
+    <section class="hero section-shell" id="lab" aria-labelledby="hero-title">
+      <div class="hero__intro">
+        <p class="eyebrow"><span>完整复刻 02</span> PAGE CURL · LOUPE · PARALLAX</p>
+        <h1 id="hero-title">让纸张<br><em>真正弯起来。</em></h1>
+        <p class="hero__dek">这不是一张讲原理的静态卡片：拖动纸页观察 18 段曲率，拿起桌上的放大镜，移动指针改变书本视角，或播放完整演示。刚性页仍保留为我们旧实现的对照组。</p>
+        <div class="hero__links">
+          <a class="text-link" href="https://github.com/MengTo/sketchbook/tree/c1e477814c4c9e204452ebf9b298aa13629cbfc2" target="_blank" rel="noreferrer">查看固定上游 <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="../README.md">阅读项目记录 <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+
+      <div class="lab-workspace" aria-label="翻页机制交互实验">
+        <div class="lab-toolbar" aria-label="实验参数">
+          <div class="control-group" aria-label="页面模型">
+            <span class="control-label">模型</span>
+            <div class="segmented" role="group" aria-label="选择翻页模型">
+              <button type="button" data-mode="rigid" aria-pressed="false">刚性页</button>
+              <button type="button" data-mode="curved" aria-pressed="true">柔性条带</button>
+            </div>
+          </div>
+          <label class="select-control" for="strip-count">
+            <span class="control-label">条带</span>
+            <select id="strip-count">
+              <option value="8">8 · 粗</option>
+              <option value="12">12</option>
+              <option value="18" selected>18 · 上游</option>
+              <option value="24">24 · 细</option>
+            </select>
+          </label>
+          <button class="tool-button" id="magnifier-toggle" type="button" aria-pressed="false">
+            <span aria-hidden="true">⌕</span> 放大镜
+          </button>
+          <div class="zoom-control" role="group" aria-label="书本缩放">
+            <button type="button" id="zoom-out" aria-label="缩小书本">−</button>
+            <output id="zoom-readout" aria-live="polite">100%</output>
+            <button type="button" id="zoom-in" aria-label="放大书本">＋</button>
+          </div>
+          <button class="tool-button tool-button--accent" id="auto-demo" type="button" aria-pressed="false">
+            <span aria-hidden="true">▶</span> 播放演示
+          </button>
+          <button class="tool-button tool-button--quiet" id="reset-button" type="button">重置</button>
+        </div>
+
+        <div class="stage" id="stage">
+          <div class="stage__label"><span class="live-dot" aria-hidden="true"></span><span id="model-label">CURVED · 18 STRIPS</span></div>
+          <div class="book-shell" id="book-shell">
+            <div class="book" id="book" tabindex="0" role="application" aria-label="交互式翻页实验。拖动左页或右页，或使用方向键翻页。">
+              <div class="static-page static-page--left">
+                <span class="folio">00 / BASELINE</span>
+                <strong>刚性页</strong>
+                <small>一个平面<br>一个铰链</small>
+              </div>
+              <div class="static-page static-page--right">
+                <span class="folio">01 / CURL</span>
+                <strong>拖动纸角</strong>
+                <small>观察宽度方向<br>连续变化的切线</small>
+              </div>
+            </div>
+            <div class="magnifier" id="magnifier" aria-hidden="true" tabindex="-1" role="group" aria-label="可拖动放大镜">
+              <div class="magnifier__glass"><div class="magnifier__content" id="magnifier-content"></div></div>
+              <span class="magnifier__handle" aria-hidden="true"></span>
+            </div>
+          </div>
+          <p class="drag-hint" id="drag-hint"><span aria-hidden="true">↔</span> 拖纸页 · 拖放大镜 · 移动指针看视差 · 方向键翻页</p>
+          <div class="pager">
+            <button class="pager__button" id="prev-button" type="button"><span aria-hidden="true">←</span> 上一页</button>
+            <p><span id="page-number">01</span> / <span id="page-total">04</span><small id="page-title">结构差异</small></p>
+            <button class="pager__button" id="next-button" type="button">下一页 <span aria-hidden="true">→</span></button>
+          </div>
+          <noscript><p class="noscript-note">JavaScript 未启用：当前保留静态展开页；下方研究结论仍可完整阅读。</p></noscript>
+        </div>
+
+        <aside class="telemetry" aria-label="实时几何指标">
+          <p class="telemetry__status"><span>状态</span><strong id="turn-status" aria-live="polite">等待拖动</strong></p>
+          <dl>
+            <div><dt>进度 <code>t</code></dt><dd id="metric-progress">0.00</dd></div>
+            <div><dt>基础翻角 <code>θ</code></dt><dd id="metric-theta">0.0°</dd></div>
+            <div><dt>隆起 <code>β</code></dt><dd id="metric-beta">0.0°</dd></div>
+            <div><dt>可见面</dt><dd id="metric-faces">36</dd></div>
+          </dl>
+          <div class="telemetry__curve" aria-hidden="true">
+            <svg viewBox="0 0 260 62" preserveAspectRatio="none">
+              <path class="curve-grid" d="M2 50H258M2 31H258M2 12H258"/>
+              <path id="curve-path" d="M2 50 C70 50 190 50 258 50"/>
+            </svg>
+            <span>曲率沿页宽传播</span>
+          </div>
+          <p class="threshold-note">释放规则：<code>t &gt; 0.42</code> 或 <code>v &gt; 1.1</code> 时提交，否则回弹。</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="finding-strip" aria-label="核心研究结论">
+      <div><span>01</span><p><strong>本体能力</strong>连续可拖拽的柔性翻页</p></div>
+      <div><span>02</span><p><strong>实现关键</strong>嵌套条带 + 分布式旋转</p></div>
+      <div><span>03</span><p><strong>增强层</strong>放大镜、视差、纸张光照</p></div>
+      <div><span>04</span><p><strong>主要代价</strong>DOM 数、切片与调试复杂度</p></div>
+    </section>
+
+    <section class="content-section section-shell" id="capabilities" aria-labelledby="capabilities-title">
+      <div class="section-heading">
+        <p class="eyebrow"><span>能力地图</span> WHAT IT CAN DO</p>
+        <h2 id="capabilities-title">它把“看一页”变成<br>一段可操纵的物理叙事。</h2>
+        <p>上游的能力可以拆成三层：翻页本体、交互控制和氛围增强。只有第一层决定它是不是“柔性纸张”。</p>
+      </div>
+      <div class="capability-grid">
+        <article class="capability-card capability-card--primary">
+          <span class="status-chip status-chip--verified">上游事实</span>
+          <p class="card-index">01 / CORE</p>
+          <h3>柔性页面曲率</h3>
+          <p>翻动页由 18 条嵌套竖条组成。每条都继承前一条的位置，再增加一小段旋转，于是整页不再像门板绕轴转动。</p>
+          <ul><li>正反面可见性</li><li>逐条明暗</li><li>双向翻页</li></ul>
+        </article>
+        <article class="capability-card">
+          <span class="status-chip status-chip--verified">上游事实</span>
+          <p class="card-index">02 / INPUT</p>
+          <h3>连续拖拽与甩页</h3>
+          <p>水平位移直接映射进度；释放时把翻过多少与末端速度结合，决定完成还是回弹。</p>
+        </article>
+        <article class="capability-card">
+          <span class="status-chip status-chip--verified">上游事实</span>
+          <p class="card-index">03 / OPTICS</p>
+          <h3>纸张光照反馈</h3>
+          <p>每个条带用当前切线方向估算明暗与高光，让曲率不仅改变轮廓，也改变材质读感。</p>
+        </article>
+        <article class="capability-card">
+          <span class="status-chip status-chip--addon">独立增强</span>
+          <p class="card-index">04 / LOUPE</p>
+          <h3>圆形放大镜</h3>
+          <p>复制当前书本，围绕镜下坐标放大并裁成圆形。它位于书本倾斜层之外，因此可以像桌上的真实物件一样保持独立。</p>
+        </article>
+        <article class="capability-card">
+          <span class="status-chip status-chip--addon">体验增强</span>
+          <p class="card-index">05 / SPACE</p>
+          <h3>指针视差与缩放</h3>
+          <p>整本书随指针轻微俯仰，工具栏提供缩放；翻页时暂时稳定视角，避免多个自由度互相抢夺。</p>
+        </article>
+        <article class="capability-card">
+          <span class="status-chip status-chip--verified">可访问意图</span>
+          <p class="card-index">06 / FALLBACK</p>
+          <h3>多输入与减弱动效</h3>
+          <p>方向键、Pointer、触控回退与 <code>prefers-reduced-motion</code> 让同一内容不依赖单一手势或长动画。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="mechanism-section" id="mechanism" aria-labelledby="mechanism-title">
+      <div class="section-shell mechanism-layout">
+        <div class="section-heading section-heading--sticky">
+          <p class="eyebrow"><span>机制拆解</span> HOW IT WORKS</p>
+          <h2 id="mechanism-title">一条公式，<br>分成十八小步。</h2>
+          <p>把翻页进度记作 <code>t</code>。基础翻角决定页面从右到左走了多远，正弦隆起只在中段出现，保证起点和终点都重新摊平。</p>
+          <div class="formula" aria-label="页面曲率公式">
+            <p><span>θ</span> = πt</p>
+            <p><span>β</span> = 0.60 sin(πt)</p>
+            <p><span>δ</span> = 2β / N</p>
+          </div>
+        </div>
+        <ol class="mechanism-steps">
+          <li>
+            <span class="step-number">01</span>
+            <div><h3>先把整页切成 N 条</h3><p>每条只展示原图的一段，并拥有 front/back 两面。背景偏移在开始翻页时计算一次，拖动过程中不再改切片。</p></div>
+            <div class="strip-diagram" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          </li>
+          <li>
+            <span class="step-number">02</span>
+            <div><h3>让条带首尾嵌套</h3><p>第 i+1 条相对第 i 条平移一个条宽，再旋转一个小角度。父级变换会沿 DOM 链累积，形成连续切线。</p></div>
+            <div class="chain-diagram" aria-hidden="true"><b>0</b><i></i><b>1</b><i></i><b>2</b><i></i><b>…</b><i></i><b>N</b></div>
+          </li>
+          <li>
+            <span class="step-number">03</span>
+            <div><h3>用隆起控制“软”</h3><p><code>β</code> 在半翻时最大，两端为零。刚性模式相当于始终令 <code>β = 0</code>：所有点共享一个法线。</p></div>
+            <div class="bend-diagram" aria-hidden="true"><span>rigid</span><i></i><span>curved</span><b></b></div>
+          </li>
+          <li>
+            <span class="step-number">04</span>
+            <div><h3>把切线转成明暗</h3><p>每条带用法线与光线夹角近似纸面受光，叠加边缘阴影与高光。形状和材质一起变化，纸感才成立。</p></div>
+            <div class="light-diagram" aria-hidden="true"></div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="comparison-section section-shell" aria-labelledby="comparison-title">
+      <div class="section-heading section-heading--wide">
+        <p class="eyebrow"><span>对照结论</span> OLD LAB × NEW STUDY</p>
+        <h2 id="comparison-title">不是推翻旧实现，<br>而是增加一个更贵的渲染档位。</h2>
+      </div>
+      <div class="comparison-table" role="table" aria-label="刚性翻页与柔性条带翻页对比">
+        <div class="comparison-row comparison-row--head" role="row"><span role="columnheader">维度</span><span role="columnheader">既有刚性翻页</span><span role="columnheader">Sketchbook 柔性条带</span></div>
+        <div class="comparison-row" role="row"><strong role="rowheader">几何</strong><span>一个临时 flap，整体 <code>rotateY</code></span><span>N 条嵌套平面，旋转逐段累积</span></div>
+        <div class="comparison-row" role="row"><strong role="rowheader">运动</strong><span>分阶段关键帧，强调书脊起转</span><span>拖拽直接控制连续进度，弹簧结算</span></div>
+        <div class="comparison-row" role="row"><strong role="rowheader">视觉</strong><span>干净、利落、像硬卡纸</span><span>柔软、有重量、适合近景主视觉</span></div>
+        <div class="comparison-row" role="row"><strong role="rowheader">成本</strong><span>DOM 少，内容和调试简单</span><span>2N 个面 + 光照层，切片和层叠更复杂</span></div>
+        <div class="comparison-row" role="row"><strong role="rowheader">选择</strong><span>默认档：阅读、目录、产品流程</span><span>高保真档：作品集、展览、品牌叙事</span></div>
+      </div>
+    </section>
+
+    <section class="scenarios-section" id="scenarios" aria-labelledby="scenarios-title">
+      <div class="section-shell">
+        <div class="section-heading section-heading--wide">
+          <p class="eyebrow"><span>场景演示</span> USE IT, DON'T JUST DESCRIBE IT</p>
+          <h2 id="scenarios-title">同一个曲面引擎，<br>四种完全不同的产品行为。</h2>
+          <p>切换场景并直接操作。每个实例都拥有独立页稿、翻页节奏和专属动作；下面的适配结论由演示本身支撑。</p>
+        </div>
+        <div class="scenario-tabs" role="tablist" aria-label="选择场景演示">
+          <button type="button" role="tab" aria-selected="true" data-scene="portfolio"><span>01</span>作品集</button>
+          <button type="button" role="tab" aria-selected="false" data-scene="atlas"><span>02</span>教学图鉴</button>
+          <button type="button" role="tab" aria-selected="false" data-scene="launch"><span>03</span>产品发布</button>
+          <button type="button" role="tab" aria-selected="false" data-scene="kiosk"><span>04</span>展览导览</button>
+        </div>
+        <div class="scenario-experience">
+          <div class="scenario-stage" id="scenario-stage" data-scene="portfolio">
+            <div class="scenario-stage__meta"><span id="scene-kicker">CURATED PORTFOLIO</span><span id="scene-counter">01 / 03</span></div>
+            <div class="scene-book-shell">
+              <div class="scene-book" id="scene-book" tabindex="0" aria-label="场景演示画册，可点击左右半页或使用方向键翻页">
+                <div class="scene-static-spread"><strong>场景画册</strong><span>选择上方场景开始演示</span></div>
+              </div>
+              <div class="scene-inspector" id="scene-inspector" aria-hidden="true"><span></span></div>
+              <div class="scene-feature-panel" id="scene-feature-panel" aria-hidden="true">
+                <span>01 · 柔光材料</span><span>02 · 无缝结构</span><span>03 · 自适应形态</span>
+              </div>
+              <div class="scene-curation-note" id="scene-curation-note" aria-hidden="true">策展注记：翻页让每件作品拥有明确的进入与离开时刻。</div>
+              <div class="scene-autoplay-indicator" id="scene-autoplay-indicator" aria-hidden="true"><i></i><span>自动导览中</span></div>
+            </div>
+            <div class="scenario-controls">
+              <button type="button" id="scene-prev"><span aria-hidden="true">←</span> 上一页</button>
+              <p id="scene-status" aria-live="polite">作品集已就绪</p>
+              <button type="button" id="scene-next">下一页 <span aria-hidden="true">→</span></button>
+            </div>
+          </div>
+          <aside class="scenario-panel" aria-live="polite">
+            <span class="status-chip status-chip--verified" id="scene-fit">高适配</span>
+            <p class="card-index" id="scene-index">SCENE 01</p>
+            <h3 id="scene-title">作品集与视觉画册</h3>
+            <p id="scene-summary">让一件作品占据一个完整展开页；柔性翻页负责建立节奏、期待和物理记忆。</p>
+            <dl>
+              <div><dt>场景收益</dt><dd id="scene-benefit">强叙事 / 强记忆</dd></div>
+              <div><dt>采用门槛</dt><dd id="scene-risk">固定比例内容</dd></div>
+              <div><dt>专属行为</dt><dd id="scene-behavior">策展注记</dd></div>
+            </dl>
+            <button class="scenario-action" id="scene-action" type="button" aria-pressed="false">显示策展注记</button>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="extensions-section section-shell" id="extensions" aria-labelledby="extensions-title">
+      <div class="section-heading">
+        <p class="eyebrow"><span>扩展原型</span> PROVE THE NEXT STEP</p>
+        <h2 id="extensions-title">扩展方向不只写在路线图里，<br>先做成可以操作的假设。</h2>
+        <p>下面三个原型分别验证性能、二维手势和内容复用；它们不是生产级实现，但每个输入都会改变真实视觉状态。</p>
+      </div>
+      <div class="extension-lab-grid">
+        <article class="extension-prototype extension-prototype--quality">
+          <header><span class="prototype-tag">实验 A · 性能</span><output id="quality-output" for="budget-slider">18 strips</output></header>
+          <h3>自适应条带预算</h3>
+          <p>模拟设备的稳定刷新预算，让渲染器在 8 / 12 / 18 / 24 条带间选择。</p>
+          <div class="quality-fan" id="quality-fan" aria-hidden="true"></div>
+          <label for="budget-slider"><span>设备预算</span><strong id="budget-readout">90 Hz</strong></label>
+          <input id="budget-slider" type="range" min="30" max="120" value="90" step="1">
+          <small id="quality-note" aria-live="polite">平衡档：18 条带，保留逐带光照。</small>
+        </article>
+        <article class="extension-prototype extension-prototype--corner">
+          <header><span class="prototype-tag">实验 B · 手势</span><output id="corner-output">x 20 · y 20</output></header>
+          <h3>二维纸角抓取</h3>
+          <p>把单一水平进度扩展为 x / y 两个自由度。拖动右下角，观察局部折角而非整宽旋转。</p>
+          <div class="corner-surface" id="corner-surface">
+            <div class="corner-sheet" id="corner-sheet"><span>LOCAL<br>CORNER</span><i class="corner-fold"></i></div>
+            <button class="corner-grip" id="corner-grip" type="button" aria-label="拖动纸张右下角；方向键也可调整"></button>
+          </div>
+          <button class="prototype-reset" id="corner-reset" type="button">复位纸角</button>
+        </article>
+        <article class="extension-prototype extension-prototype--adapter">
+          <header><span class="prototype-tag">实验 C · 内容</span><output id="adapter-output">SVG illustration</output></header>
+          <h3>内容适配器</h3>
+          <p>同一个翻页控制器，可以接收插画、文章、产品卡或数据摘要，再决定如何快照和切片。</p>
+          <div class="adapter-tabs" role="group" aria-label="选择内容类型">
+            <button type="button" data-adapter="illustration" aria-pressed="true">插画</button>
+            <button type="button" data-adapter="editorial" aria-pressed="false">文章</button>
+            <button type="button" data-adapter="product" aria-pressed="false">产品</button>
+            <button type="button" data-adapter="data" aria-pressed="false">数据</button>
+          </div>
+          <div class="adapter-preview" id="adapter-preview" data-adapter="illustration" aria-live="polite"></div>
+          <small id="adapter-note">策略：原生 SVG 直接作为可切片背景。</small>
+        </article>
+      </div>
+      <div class="roadmap-heading"><span>从原型回到工程路线</span><p>验证价值之后，再决定是否承担完整实现成本。</p></div>
+      <ol class="roadmap">
+        <li><span class="horizon">现在 · 工程化</span><div><h3>Renderer / Controller 解耦</h3><p>保留统一进度、阈值和页索引；将 rigid、strip-chain、未来 WebGL 作为可替换渲染器。</p><code>PageTurnController → Renderer</code></div><b>高价值 / 中成本</b></li>
+        <li><span class="horizon">现在 · 内容化</span><div><h3>内容适配器与动态切片</h3><p>从固定 PNG 扩展到图片、SVG、文章快照或 Canvas 纹理，同时处理双页裁切与响应式比例。</p><code>SpreadSource → FaceSlices</code></div><b>高价值 / 高成本</b></li>
+        <li><span class="horizon">下一步 · 性能</span><div><h3>自适应条带预算</h3><p>依据页面尺寸、设备能力和帧时动态选择 8–24 条带；拖动时降低阴影复杂度，结算后恢复。</p><code>quality = budget(frameTime)</code></div><b>高价值 / 中成本</b></li>
+        <li><span class="horizon">下一步 · 交互</span><div><h3>角点抓取与二维纸张模型</h3><p>当前只有水平进度。加入抓取高度、角点约束和纸角路径，可表达局部折角而非整宽均匀弯曲。</p><code>t → {x, y, curl}</code></div><b>中价值 / 高成本</b></li>
+        <li><span class="horizon">探索 · 渲染</span><div><h3>WebGL 网格与真实光照</h3><p>把 DOM 条带换成细分网格、法线和纸张着色器，适合更自由的弯曲与稳定光照；语义内容必须另留可读层。</p><code>DOM strips → mesh vertices</code></div><b>条件价值 / 高成本</b></li>
+        <li><span class="horizon">探索 · 产品化</span><div><h3>编辑器、埋点与无障碍视图</h3><p>提供页稿检查、拖拽热区、跳页目录、阅读顺序和降级页面，让效果进入真实生产流程。</p><code>authoring + telemetry + fallback</code></div><b>高价值 / 高成本</b></li>
+      </ol>
+    </section>
+
+    <section class="meaning-section" id="meaning" aria-labelledby="meaning-title">
+      <div class="section-shell meaning-layout">
+        <div>
+          <p class="eyebrow"><span>对我们的意义</span> SO WHAT</p>
+          <h2 id="meaning-title">旧项目给我们“可用翻页”，<br>这个库给我们“质量旋钮”。</h2>
+        </div>
+        <div class="meaning-points">
+          <article><span>保留</span><h3>控制器与输入模型</h3><p>页索引、方向键、触控阈值、提交/回退和 reduced-motion 都能继续复用，不需要重写产品逻辑。</p></article>
+          <article><span>新增</span><h3>可替换的柔性渲染器</h3><p>在需要主视觉的页面启用条带链；在内容密集、低性能或辅助模式中回到刚性页或普通文档流。</p></article>
+          <article><span>纠偏</span><h3>放大镜不是核心差异</h3><p>它可以单独组合进地图、画廊和细节检查器，也可以完全移除；删掉它不会改变翻页几何。</p></article>
+          <article><span>机会</span><h3>形成统一 PageTurn API</h3><p>下一阶段最有价值的不是继续临摹视觉，而是把控制器、渲染器、内容源和质量策略变成清晰接口。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="evidence-section section-shell" id="evidence" aria-labelledby="evidence-title">
+      <div class="section-heading section-heading--wide">
+        <p class="eyebrow"><span>证据与边界</span> TRUST THE TRACE</p>
+        <h2 id="evidence-title">我们能证明什么，<br>也明确不假装知道什么。</h2>
+      </div>
+      <div class="evidence-grid">
+        <article><p class="evidence-type">固定事实</p><h3>源码机制</h3><p>条带数、曲率公式、拖拽阈值、放大镜克隆方式均可指向固定提交的具体代码行。</p><a href="https://github.com/MengTo/sketchbook/blob/c1e477814c4c9e204452ebf9b298aa13629cbfc2/index.html#L565-L630" target="_blank" rel="noreferrer">查看条带实现 ↗</a></article>
+        <article><p class="evidence-type">独立重建</p><h3>本页实验</h3><p>几何模型和页面素材从零编写，不复制上游源码、PNG 或字体。它验证机制可行，不宣称像素级复刻。</p><a href="../artifacts/source-analysis.md">查看静态分析 →</a></article>
+        <article><p class="evidence-type evidence-type--warn">许可边界</p><h3>未发现标准许可证</h3><p>上游 README 的 educational use 不是标准开源许可证。本研究只保存固定来源与独立实现。</p><a href="https://github.com/MengTo/sketchbook/tree/c1e477814c4c9e204452ebf9b298aa13629cbfc2" target="_blank" rel="noreferrer">核对仓库根目录 ↗</a></article>
+        <article><p class="evidence-type evidence-type--warn">证据冲突</p><h3>画稿来源表述不一致</h3><p>README 写 GPT Image 2，源码注释写 Higgsfield；当前只能报告冲突，不能替作者判断真实来源。</p><a href="https://github.com/MengTo/sketchbook/blob/c1e477814c4c9e204452ebf9b298aa13629cbfc2/README.md" target="_blank" rel="noreferrer">查看上游说明 ↗</a></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>R-001 · Sketchbook Page Curl Study · Independent reconstruction · 2026-08-30</p>
+    <p><a href="#lab">回到实验台 ↑</a></p>
+  </footer>
+
+  <script type="module" src="./app.mjs"></script>
+  <script type="module" src="./scenario-demos.mjs"></script>
+  <script type="module" src="./extension-demos.mjs"></script>
+</body>
+</html>
