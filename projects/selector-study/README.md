@@ -12,6 +12,7 @@
 | 在线研究页 | [GitHub Pages / R-006](https://yydshly.github.io/0830_1_codex_project/projects/selector-study/) |
 | 在线 Web 展厅 | [能力整理、场景模拟、决策台与源库实跑](https://yydshly.github.io/0830_1_codex_project/projects/selector-study/showcase/) |
 | 源库实跑直达 | [Selector v0.4.1 安全 fixture](https://yydshly.github.io/0830_1_codex_project/projects/selector-study/showcase/source-demo/) |
+| 发布状态 | GitHub Pages 已上线；HTML 入口、锁定运行时哈希与线上真实选择主流程均已验证 |
 | 开始日期 | 2026-08-30 |
 | 最近更新 | 2026-08-31 |
 | 负责人 | yydshly |

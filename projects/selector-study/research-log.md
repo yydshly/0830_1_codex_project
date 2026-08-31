@@ -11,7 +11,9 @@
 - **响应式：** 1280px 真实运行态和 390×844 启动页均无横向溢出；主展厅同源 iframe 成功加载真实启动按钮。
 - **边界：** clipboard 镜像只在无真实数据的 fixture 中观察上游生成文本，不修改、不上传、不保存；本实验未调用 Codex，未证明 React/Vue source、跨浏览器或 Agent 成功率。
 - **证据：** `artifacts/source-demo-runtime.png`、`source-demo-mobile.png`、`showcase-source-live.png`、`source-demo-runtime-prompt.md` 与 `showcase/source-demo/runtime/UPSTREAM.md`。
-- **下一步：** 完成全仓校验、精确暂存、提交 main、推送并等待 GitHub Pages 成功，再验证三个在线入口。
+- **发布结果：** 研究提交 `df4ebc3` 已推送 main；Pages run `33374938190` 的 build/deploy 成功。根站、研究页、展厅和源库实跑页均 HTTP 200；线上运行时字节数与 SHA-256 保持一致。
+- **线上实跑：** Chrome 从 GitHub Pages 启动 `v0.4.1`，生成 186 个 `data-ai-id`，选中标签为 `button "创建活动"`，无横向溢出。
+- **下一步：** 网页发布范围关闭；研究继续时进入 E3 的其他浏览器、Shadow DOM 与 iframe fixture，再做 E5 隐私红队和 E4 Agent 效果对照。
 
 ## 2026-08-30 · 新增五维采用决策台
 

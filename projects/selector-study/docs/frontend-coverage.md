@@ -62,4 +62,4 @@
 | 边界 | 明确区分源库效果、fixture、研究模拟和 Agent | all | 三类 truth cards、README 和真实 prompt 说明 | Stage 3/6 | pass | 已完成 |
 | 响应式 | 源库入口和运行态在桌面/手机可用 | 1280 / 390 | 两张截图、无横向溢出断言 | Stage 7 | pass | 已完成 |
 | 工程 | 新测试覆盖哈希、版本、入口和零外部网络依赖 | source/test | `verify-source-demo.mjs` | Stage 9 | pass | 已完成 |
-| 发布 | 根 README 有 R-006 摘要、源库与在线 Web 索引 | GitHub / Pages | root row、Pages workflow、在线 URL | Stage 9 | continue | 推送后验证 |
+| 发布 | 根 README 有 R-006 摘要、源库与在线 Web 索引 | GitHub / Pages | commit `df4ebc3`、Pages run `33374938190`、线上 HTTP/浏览器证据 | Stage 9 | pass | 已完成 |

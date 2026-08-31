@@ -101,3 +101,11 @@ node .\scripts\validate-repository.mjs
 - 三张最终截图分别保留设计复刻/默认推荐、QA/敏感生产停止、Markdown/批量替代组合，用最小证据集覆盖场景与决策状态；平板同时覆盖暗色主题。
 - `?static=1` 是为浏览器验收提供的显式静态阅读入口，与真正禁用 JavaScript 时保留 `.no-js` 的页面路径使用同一套 CSS；真正无脚本时还会显示 `<noscript>` 说明。
 - 上游 Selector 的 Chrome / Light DOM 普通主流程已经有直接证据；其余浏览器、Shadow DOM、iframe 深层选择、Sharingan 完整报告和 Agent 效果仍属于 E3–E5，不从单一 fixture 外推。
+
+## GitHub Pages 发布验证
+
+- 首轮研究提交：`df4ebc33ac3fd0401a09244e73238cf3205f06da`；
+- Pages workflow：run [`33374938190`](https://github.com/yydshly/0830_1_codex_project/actions/runs/33374938190)，build 与 deploy 均成功；
+- 根站、R-006 研究页、Web 展厅和源库实跑页均返回 HTTP 200，并分别命中 `R-006`、`第 6 个研究子项目`、`不用相信示意图`、`启动真实 Selector` 内容标记；
+- 线上 `selector-0.4.1.js` 为 258171 bytes、SHA-256 `8680cfcb…fb50`；CSS 为 32911 bytes、SHA-256 `09d2b376…d0e5`，与锁定构建一致；
+- 在线 Chrome 实际启动 `v0.4.1`，页面获得 186 个 `data-ai-id`，选中标签为 `button "创建活动"`，无横向溢出。
