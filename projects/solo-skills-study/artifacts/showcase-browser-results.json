@@ -1,6 +1,6 @@
 {
-  "url": "http://127.0.0.1:4192/",
-  "timestamp": "2026-08-31T07:56:44.827Z",
+  "url": "https://yydshly.github.io/0830_1_codex_project/projects/solo-skills-study/showcase/",
+  "timestamp": "2026-08-31T08:03:40.023Z",
   "browser": "Chromium",
   "checks": {
     "pageLoads": true,
@@ -42,13 +42,13 @@
     "externalApiCalls": 0
   },
   "performance": {
-    "ttfb": 87.19999999552965,
-    "domContentLoaded": 494.3999999985099,
-    "load": 494.59999999403954,
-    "resources": 5,
+    "ttfb": 625.1999999955297,
+    "domContentLoaded": 1328.6999999955297,
+    "load": 1364.1000000014901,
+    "resources": 6,
     "paints": {
-      "first-paint": 432,
-      "first-contentful-paint": 432
+      "first-paint": 1292,
+      "first-contentful-paint": 1292
     }
   },
   "screenshots": [

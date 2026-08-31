@@ -26,10 +26,10 @@
 | Motion | 新案例进度与切换在 reduced-motion 下不隐藏信息 | reduced motion | 浏览器模拟、计算样式 | Stage 7/8 | pass | Chromium reduced-motion 媒体查询命中；进度过渡 ≤0.00001s，五阶段结果仍可见 |
 | Fallback | JS 不可用时核心内容仍可读 | no-JS | 静态 DOM、CSS | Stage 8 | pass | `noscript` 边界存在；隐藏面板在无 JS CSS 下展开 |
 | 工程 | 能力索引仍为零依赖静态页面且不调用真实 API | 本地服务 | 文件、更新后的自动测试、HTTP 结果 | Stage 9 | pass | 静态与浏览器契约确认 8 类、26 句话、26 项、9/9/8 筛选、外部 API 0；HTTP 页面 200 |
-| R-007 编号 | 根索引、项目入口与展厅统一标识第 7 个研究子项目 | README、index、Web 首屏/页脚 | 文件、DOM、线上页面 | Stage 3/9 | continue | 更新四处编号并加入“不随排序变化”说明 |
-| 外部摘要与索引 | 根 README 提供摘要、锁定上游、研究源码、在线研究页、在线 Web | GitHub README | Markdown diff、链接 HTTP 状态 | Stage 3/9 | continue | 仅修改和暂存 R-007 对应 hunk，避免并行项目变更 |
-| GitHub 发布 | R-007 原创研究、演示和媒体提交到 `origin/main` | Git index、远端 commit、Actions | staged diff、push、workflow 结果 | Stage 9 | continue | 审计文件和媒体后提交，等待 quality/pages 工作流成功 |
-| 线上 Web | GitHub Pages 研究页、展厅与 MP4 可用 | 1440/390、案例、视频 | HTTP、真实 Chromium、媒体元数据 | Stage 7/8/9 | continue | 部署完成后运行线上 Playwright 验收并记录结果 |
-| 交付 | 浏览器验收、证据、研究日志与交接记录反映 revision 6 | 最终状态 | validation/handoff/research-log 文档 | Stage 9 | continue | 回写 commit、Actions、线上 URL 与浏览器证据后完成第二次同步 |
+| R-007 编号 | 根索引、项目入口与展厅统一标识第 7 个研究子项目 | README、index、Web 首屏/页脚 | 文件、DOM、线上页面 | Stage 3/9 | pass | 根 README、项目 README/index 与在线展厅统一为 `R-007 / 第 7 个研究子项目`；编号声明不随排序变化 |
+| 外部摘要与索引 | 根 README 提供摘要、锁定上游、研究源码、在线研究页、在线 Web | GitHub README | Markdown diff、链接 HTTP 状态 | Stage 3/9 | pass | 根索引只增加 R-007 对应行；上游、研究源码、研究页、Web 与 MP4 均有公开入口，四个远端端点返回 200 |
+| GitHub 发布 | R-007 原创研究、演示和媒体提交到 `origin/main` | Git index、远端 commit、Actions | staged diff、push、workflow 结果 | Stage 9 | pass | 研究提交 [`d2f8e67`](https://github.com/yydshly/0830_1_codex_project/commit/d2f8e6702b0c4568ebd038f7350ce79baecbed66)；仓库检查 33371045085、Pages 33371045153 均 success |
+| 线上 Web | GitHub Pages 研究页、展厅与 MP4 可用 | 1440/390、案例、视频 | HTTP、真实 Chromium、媒体元数据 | Stage 7/8/9 | pass | 线上 Playwright 完成 1440/768/390、7 案例、主题、键盘、reduced-motion 与 32 秒视频播放；HTML/MP4 均 200，无 console/page error |
+| 交付 | 浏览器验收、证据、研究日志与交接记录反映 revision 6 | 最终状态 | validation/handoff/research-log 文档 | Stage 9 | pass | validation、handoff、research-log 与 `github-publication.json` 已回写提交、Actions、公开 URL 和线上证据 |
 
-Revision 6 保留 revision 5 的全部本地与媒体证据，并重新打开编号、外部摘要、GitHub 发布、线上 Web 与交付记录；这些 `continue` 项将在本轮推送、部署与线上验收后关闭。
+Revision 6 保留 revision 5 的全部本地与媒体证据，并关闭编号、外部摘要、GitHub 发布、线上 Web 与交付记录；Coverage manifest 当前无 `continue`、`blocked` 或未说明的 `defer` 项。

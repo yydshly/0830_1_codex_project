@@ -10,6 +10,7 @@
 - `showcase-tablet.png`：768px 深色、真实视频案例和播放器单栏布局的完整网页证据。
 - `showcase-mobile.png`：390px 明色、真实视频案例和播放器纵向重排的完整网页证据。
 - `showcase-browser-results.json`：七类目标调用、案例门禁、运行取消、键盘、主题、视口、错误与性能观察的结构化结果。
+- `github-publication.json`：R-007 提交、Actions、公开端点与线上 Chromium 复验的机器可读发布证据。
 - `solo-skills-real-demo-contact-sheet.jpg`：真实视频首屏、筛选、机制、案例、5/5 与结束卡六个代表帧。
 - `solo-skills-real-demo-evidence.json`：32 秒 MP4 的规格、浏览器状态检查点、媒体路径与错误记录。
 

@@ -2,7 +2,7 @@
 
 ## 项目和当前阶段
 
-`showcase/` 是 Solo Skills 子项目的零依赖中文交互研究展厅。设计、实现、浏览器验证和交付记录已经闭合，Coverage manifest 没有未完成项。
+`showcase/` 是 R-007（第 7 个研究子项目）的零依赖中文交互研究展厅。Revision 6 的设计、实现、本地/线上浏览器验证和 GitHub Pages 交付记录已经闭合，Coverage manifest 没有未完成项。
 
 ## 已完成
 
@@ -20,6 +20,15 @@
 - 七个案例分别得到 READY、HOLD、SETUP、DRY RUN 或 REVIEW；视频本地媒体已经 READY，消息发送、删除和平台发布等外部动作仍保持关闭；
 - 保留固定 commit 源码、研究说明和基线证据链接；
 - 完成静态契约、媒体探针、三视口 Chromium 验收、播放器元数据检查、最终截图和视频接触表。
+
+## 公开交付状态
+
+- 研究源码：[GitHub · R-007 项目目录](https://github.com/yydshly/0830_1_codex_project/tree/main/projects/solo-skills-study)；
+- 在线研究页：[GitHub Pages · R-007](https://yydshly.github.io/0830_1_codex_project/projects/solo-skills-study/)；
+- 在线 Web：[能力、原理、七案例与扩展演示](https://yydshly.github.io/0830_1_codex_project/projects/solo-skills-study/showcase/)；
+- 真实视频：[32 秒 1080p MP4](https://yydshly.github.io/0830_1_codex_project/projects/solo-skills-study/showcase/media/solo-skills-real-demo.mp4)；
+- 发布证据：[研究提交 `d2f8e67`](https://github.com/yydshly/0830_1_codex_project/commit/d2f8e6702b0c4568ebd038f7350ce79baecbed66)、[仓库检查 33371045085](https://github.com/yydshly/0830_1_codex_project/actions/runs/33371045085)、[Pages 33371045153](https://github.com/yydshly/0830_1_codex_project/actions/runs/33371045153)；
+- 公开端点均返回 HTTP 200；线上 Chromium 在 1440、768、390px 完成七案例、键盘、主题、reduced-motion 和视频播放复验，错误为 0。
 
 ## 如何使用
 

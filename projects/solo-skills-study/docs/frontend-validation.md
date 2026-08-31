@@ -2,7 +2,7 @@
 
 ## 结论
 
-2026-08-31 在本地静态服务 `http://127.0.0.1:4192/` 完成 revision 5 真实 Chromium 验收。页面在 1440、768、390 像素三档视口均正常渲染，无错误遮罩、控制台错误或横向溢出；8 类能力总览、26 条一句话能力、技能筛选、原理步骤、七个目标场景、真实视频播放、明暗主题、键盘路径和 reduced-motion 均取得浏览器证据。
+2026-08-31 先在本地静态服务 `http://127.0.0.1:4192/` 完成 revision 5 验收，再对正式 GitHub Pages 地址完成 revision 6 真实 Chromium 复验。线上页面在 1440、768、390 像素三档视口均正常渲染，无错误遮罩、控制台错误或横向溢出；8 类能力总览、26 条一句话能力、技能筛选、原理步骤、七个目标场景、真实视频播放、明暗主题、键盘路径和 reduced-motion 均取得浏览器证据。
 
 首选 `agent-browser` 命令未安装在当前 PATH 中。按浏览器验证技能的替代路线，使用工作区随附 Playwright 1.62.1 与本机 Chromium 完成同等真实浏览器检查，没有把源码阅读或构建成功当成视觉证据。
 
@@ -12,10 +12,24 @@
 | --- | --- |
 | 页面类型 | 零依赖静态 HTML / CSS / JavaScript |
 | 服务 | Python 3.10 `http.server`，127.0.0.1:4192 |
+| 公开服务 | GitHub Pages，`https://yydshly.github.io/0830_1_codex_project/projects/solo-skills-study/showcase/` |
 | 自动化 | Playwright 1.62.1 |
 | 浏览器 | Headless Chromium，Windows |
 | 媒体工具 | FFmpeg / FFprobe n6.1.3 |
 | 上游证据版本 | bam-bam-2/solo-skills，commit `d5789f592af17980054052fc7c05fe8a8e46be79` |
+
+## GitHub Pages 发布复验
+
+| 检查 | 结果 |
+| --- | --- |
+| 公开研究提交 | [`d2f8e6702b0c4568ebd038f7350ce79baecbed66`](https://github.com/yydshly/0830_1_codex_project/commit/d2f8e6702b0c4568ebd038f7350ce79baecbed66)，只引入根 README 的 R-007 索引行与 `projects/solo-skills-study/**` |
+| 部署基线 | `4e21b998073003a0248b70edc1cda882633bcf8e`，完整保留 R-007 的 34 个公开文件 |
+| 仓库检查 | [Actions 33371045085](https://github.com/yydshly/0830_1_codex_project/actions/runs/33371045085)，`success` |
+| Pages 构建与部署 | [Actions 33371045153](https://github.com/yydshly/0830_1_codex_project/actions/runs/33371045153)，build 与 deploy 均为 `success` |
+| 公开端点 | 研究页 200 HTML；Web 展厅 200 HTML；研究源码 200 HTML；MP4 200 `video/mp4`、3,297,168 bytes |
+| 线上 Chromium | 2026-08-31T08:03:40.023Z；7 个案例、三档视口、主题、键盘、reduced-motion 和 32 秒视频播放全部通过；console/page errors 均为 0 |
+
+机器可读的提交、Actions、端点和浏览器摘要保存在 [`github-publication.json`](../artifacts/github-publication.json)。线上复验直接访问公开 Pages，没有使用本地服务作为替代证据。
 
 ## 验收结果
 
@@ -55,13 +69,13 @@
 
 能力总览图、聚焦调用图、媒体交付图、三张完整页面与视频接触表构成 revision 5 的最终视觉证据集。网页结构化结果见 [`showcase-browser-results.json`](../artifacts/showcase-browser-results.json)，媒体规格与状态检查点见 [`solo-skills-real-demo-evidence.json`](../artifacts/solo-skills-real-demo-evidence.json)。
 
-## Revision 5 验收观察
+## Revision 6 验收观察
 
 - 8 类能力与 26 条一句话描述的静态和 Chromium 契约首轮通过，既有筛选、案例和真实视频未回归；
 - 聚焦截图确认读者先看到工作结果域，再进入逐项 Skill；“一句话能力”微标签把结果说明与文件名、成熟类型区分开；
-- 最终复核首屏内容绘制约 512ms，本地初始资源 5 个；此数值只描述本机静态服务，不外推到线上或低性能设备；
+- 本地复核首屏内容绘制约 512ms、初始资源 5 个；线上复验首屏内容绘制约 1,292ms、资源 6 个。二者只描述当次环境，不外推到其他网络或低性能设备；
 - 全页面截图确认能力总览、Skill 清单、调用卡、媒体卡、阶段轨迹和产物区在三档视口没有裁切或重叠；
-- `agent-browser` 仍不在 PATH，因此继续使用已验证的 Playwright 1.62.1 + Chromium 替代路线。
+- `agent-browser` 仍不在 PATH，因此继续使用已验证的 Playwright 1.62.1 + Chromium 替代路线；本地与线上运行同一验收脚本。
 
 ## 复现命令
 
@@ -71,6 +85,9 @@ node .\projects\solo-skills-study\tests\verify-showcase.mjs
 
 $env:WORKSPACE_NODE_MODULES = '<包含 playwright 的 node_modules>'
 $env:SHOWCASE_URL = 'http://127.0.0.1:4192/'
+node .\projects\solo-skills-study\tests\verify-showcase-browser.mjs
+
+$env:SHOWCASE_URL = 'https://yydshly.github.io/0830_1_codex_project/projects/solo-skills-study/showcase/'
 node .\projects\solo-skills-study\tests\verify-showcase-browser.mjs
 ```
 

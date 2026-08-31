@@ -26,6 +26,8 @@ Solo Skills 不是新的 Agent 运行时，而是一套把个人经营经验写�
 | 真实演示视频 | [32 秒 · 1920×1080 · H.264](https://yydshly.github.io/0830_1_codex_project/projects/solo-skills-study/showcase/media/solo-skills-real-demo.mp4) |
 | 总研究索引 | [0830 Research Lab](https://yydshly.github.io/0830_1_codex_project/) |
 
+公开基线由[研究提交 `d2f8e67`](https://github.com/yydshly/0830_1_codex_project/commit/d2f8e6702b0c4568ebd038f7350ce79baecbed66)引入；[仓库检查](https://github.com/yydshly/0830_1_codex_project/actions/runs/33371045085)与 [GitHub Pages 部署](https://github.com/yydshly/0830_1_codex_project/actions/runs/33371045153)均为 `success`。在线研究页、Web 展厅、研究源码和 MP4 已分别返回 HTTP 200，完整机器证据见 [`artifacts/github-publication.json`](artifacts/github-publication.json)。
+
 ## 当前结论
 
 Solo Skills 不是新的 Agent 运行时，而是一套面向个人经营与内容运营的过程知识库：`SKILL.md` 负责描述触发条件、步骤、异常处理和审批边界，脚本与模板负责一部分确定性执行。

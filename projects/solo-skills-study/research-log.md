@@ -2,6 +2,17 @@
 
 实验记录按时间倒序排列。每次记录说明目标、环境、执行、观察、证据、判断和下一步；失败实验不得删除。
 
+## 2026-08-31 · R-007 GitHub 与 GitHub Pages 公开发布
+
+- **目标：** 把 Solo Skills 的能力、原理、使用场景、扩展方向和研究价值作为第 7 个研究子项目公开发布；外部 README 同时提供摘要、锁定源库、研究源码、在线研究页、Web 展厅与真实视频索引。
+- **环境：** GitHub `yydshly/0830_1_codex_project`；现有 Jekyll Pages 工作流；Playwright 1.62.1 + Headless Chromium；上游锁定提交 `d5789f592af17980054052fc7c05fe8a8e46be79`。
+- **执行：** 用独立 Git 索引审计发布边界，研究提交 `d2f8e6702b0c4568ebd038f7350ce79baecbed66` 只引入根 README 的 R-007 索引与 `projects/solo-skills-study/**`；等待仓库检查 33371045085 与 Pages 33371045153 完成；随后直接访问正式 Pages，重跑七案例、三档视口、键盘、主题、reduced-motion 和 MP4 播放验收，并单独请求研究页、Web、源码和媒体端点。
+- **观察：** 两个 Actions 均为 `success`；在线研究页、Web 展厅、研究源码与 MP4 均返回 HTTP 200，MP4 为 `video/mp4`、3,297,168 bytes。线上 Chromium 确认 8 类能力、26 条一句话能力、七案例门禁、无横向溢出、可见焦点、32 秒 1920×1080 视频可播放，console/page errors 和外部 API 调用均为 0。
+- **并发与隔离：** 同一工作区的 R-001 任务在 R-007 提交后更新 `main`；最终部署基线 `4e21b998073003a0248b70edc1cda882633bcf8e` 完整保留 R-007 的 34 个公开文件。Dashi、Selector 与其他未提交工作没有进入 R-007 研究提交。
+- **证据：** [`github-publication.json`](artifacts/github-publication.json)、[`showcase-browser-results.json`](artifacts/showcase-browser-results.json)、[`frontend-validation.md`](docs/frontend-validation.md)、[研究提交](https://github.com/yydshly/0830_1_codex_project/commit/d2f8e6702b0c4568ebd038f7350ce79baecbed66)、[Pages 工作流](https://github.com/yydshly/0830_1_codex_project/actions/runs/33371045153)。
+- **判断：** R-007 已形成“固定上游 → 有边界结论 → 多场景可操作演示 → 真实媒体 → 公开源码与网页 → 线上复验”的可复核闭环。发布不改变研究边界：除 `web-demo-video` 外，其余上游 Skill 的真实模型表现、账号集成和外部副作用仍待授权环境验证。
+- **下一步：** 选择用户授权的真实会议材料验证 `meeting-summary`，或把本研究的收口流程制作成仓库内可执行 Skill；涉及消息、删除、远程执行或账号写入时继续保持 preview / approval / recovery 护栏。
+
 ## 2026-08-31 · 8 类能力总览与 26 条一句话说明
 
 - **目标：** 让读者不必先理解仓库目录名、FFmpeg、DAG、IMAP 等实现术语，就能直接回答“整个库有哪些实际能力”和“每个 Skill 一句话能完成什么”。

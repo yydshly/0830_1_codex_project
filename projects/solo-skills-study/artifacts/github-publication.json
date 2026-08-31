@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "researchId": "R-007",
+  "projectOrdinal": 7,
+  "verifiedAt": "2026-08-31T08:03:40.023Z",
+  "upstream": {
+    "repository": "https://github.com/bam-bam-2/solo-skills",
+    "commit": "d5789f592af17980054052fc7c05fe8a8e46be79",
+    "license": "MIT"
+  },
+  "publication": {
+    "repository": "https://github.com/yydshly/0830_1_codex_project",
+    "researchCommit": "d2f8e6702b0c4568ebd038f7350ce79baecbed66",
+    "deployedHead": "4e21b998073003a0248b70edc1cda882633bcf8e",
+    "repositoryChecks": {
+      "runId": 33371045085,
+      "conclusion": "success",
+      "url": "https://github.com/yydshly/0830_1_codex_project/actions/runs/33371045085"
+    },
+    "githubPages": {
+      "runId": 33371045153,
+      "conclusion": "success",
+      "url": "https://github.com/yydshly/0830_1_codex_project/actions/runs/33371045153"
+    }
+  },
+  "endpoints": {
+    "researchPage": {
+      "url": "https://yydshly.github.io/0830_1_codex_project/projects/solo-skills-study/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8"
+    },
+    "showcase": {
+      "url": "https://yydshly.github.io/0830_1_codex_project/projects/solo-skills-study/showcase/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8"
+    },
+    "realVideo": {
+      "url": "https://yydshly.github.io/0830_1_codex_project/projects/solo-skills-study/showcase/media/solo-skills-real-demo.mp4",
+      "status": 200,
+      "contentType": "video/mp4",
+      "bytes": 3297168
+    },
+    "researchSource": {
+      "url": "https://github.com/yydshly/0830_1_codex_project/tree/main/projects/solo-skills-study",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8"
+    }
+  },
+  "browser": {
+    "engine": "Chromium",
+    "viewports": [1440, 768, 390],
+    "capabilityDomains": 8,
+    "skills": 26,
+    "cases": 7,
+    "horizontalOverflow": false,
+    "consoleErrors": 0,
+    "pageErrors": 0,
+    "externalApiCalls": 0,
+    "video": {
+      "durationSeconds": 32,
+      "width": 1920,
+      "height": 1080,
+      "playedInBrowser": true
+    },
+    "gates": {
+      "research": "READY",
+      "meeting": "HOLD",
+      "workshop": "SETUP",
+      "video": "READY",
+      "launch": "REVIEW",
+      "brief": "DRY RUN",
+      "cleanup": "HOLD"
+    }
+  },
+  "boundary": "The public deterministic showcase proves the research contract, interaction, responsive delivery, and one real local video workflow. It does not prove production behavior for the other upstream skills or external account integrations."
+}
