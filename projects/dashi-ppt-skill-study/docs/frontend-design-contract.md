@@ -68,6 +68,17 @@
 43. 本地发布候选在 1440、768、390px、明暗主题、键盘和 reduced-motion 下通过；发布前发现的 1440px 横向溢出必须归零。
 44. 推送 `origin/main` 后，Repository checks 与 Deploy research site 均成功；canonical GitHub Pages URL、根站点 R-003 索引、示例切换和公开下载链接返回 200。
 
+## Revision 8 direction：把“模板如何工作”放到摘要中心
+
+| 决策层 | 保留 | 修订 | 可观察验收 |
+| --- | --- | --- | --- |
+| Position | 3+1、canonical content、分层导出 | 首屏先回答模板、模型和引擎三者如何分工 | 5 秒内能复述“模板预设边界、模型理解内容、引擎装配导出” |
+| Template mechanism | 容量筛选和候选模拟 | 明确模板是 React/CSS 组件、槽位、容量和 props，不是背景图 | Web 和 README 均出现可核验的模板定义 |
+| Runtime boundary | Agent 与确定性层二分 | v1—v3 锁结构；v4 受 12×8 网格、9 类构图和主题 recipe 约束 | 不再把 bespoke 描述为无边界的“更自由页面” |
+| Concrete evidence | theme03 第二轮品牌实验 | 公开 `theme03_page076` 的预设项和实际写入项 | 摘要读者可用一个真实页面理解“设置了什么” |
+| Image/export | HTML/PDF/PPTX 分层交付 | 直接说明外部图片生成只是可选素材来源，DOM 才是 PPTX 转换输入 | 页面不再被误解为整页生图 |
+| Organizational value | 可控生产实验场 | 把重点改为自有品牌、页型、字段容量和 QA 的可执行模板系统 | 采用区同时写清价值、实施顺序和当前插件边界 |
+
 ## Revision 7 direction：R-003 公开研究发布
 
 | 决策层 | 保留 | 修订 | 可观察验收 |

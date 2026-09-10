@@ -22,6 +22,7 @@ try {
     page.on('pageerror', error => errors.push(error.message));
     if (name.startsWith('mobile')) await page.emulateMedia({ reducedMotion: 'reduce' });
     const response = await page.goto(url, { waitUntil: 'domcontentloaded' });
+    await page.screenshot({ path: path.join(evidenceDir, `${name}-summary.png`), fullPage: false });
     await page.locator('[data-example-scenario="training"]').click();
     await page.locator('[data-run02-route="dashi"]').focus();
     await page.keyboard.press('ArrowRight');
@@ -35,6 +36,8 @@ try {
     }
     const snapshot = await page.evaluate(() => ({
       researchId: document.querySelector('.brand strong')?.textContent,
+      heroTitle: document.querySelector('#overview-title')?.textContent,
+      heroLead: document.querySelector('.hero-lead')?.textContent,
       exampleCount: document.querySelectorAll('.example-card').length,
       selectedScenario: document.querySelector('[data-scenario][aria-selected="true"]')?.dataset.scenario,
       route: document.querySelector('[data-run02-route][aria-selected="true"]')?.dataset.run02Route,
@@ -61,6 +64,8 @@ const passed = results.every(result => result.status === 200
   && !result.errors.length
   && !result.overflow
   && result.researchId?.includes('R-003')
+  && result.heroTitle?.includes('模板先定边界')
+  && result.heroLead?.includes('不是整页生图')
   && result.exampleCount === 6
   && result.selectedScenario === 'training'
   && result.route === 'direct'

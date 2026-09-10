@@ -31,6 +31,19 @@ test("R-003 公开索引包含源库、在线 Web 和六个示例", () => {
   assert.match(js, /setupExampleAtlas/);
 });
 
+test("最新摘要明确模板、模型、装配和组织价值的边界", () => {
+  for (const term of ["预制主题", "页面组件", "props", "contentMap", "不是整页生图"]) {
+    assert.match(html + projectReadme + repositoryReadme, new RegExp(term, "i"));
+  }
+  assert.match(html, /模板先定边界/);
+  assert.match(html, /模板作者预设边界/);
+  assert.match(projectReadme, /theme03_page076/);
+  assert.match(projectReadme, /12×8 网格/);
+  assert.match(projectReadme, /9 类构图/);
+  assert.match(projectReadme, /没有成熟的“上传 PPTX 即成为主题”能力/);
+  assert.match(repositoryReadme, /可执行模板系统/);
+});
+
 test("真实运行审计台连接 8×3+1 产物与可复现报告", () => {
   assert.equal((html.match(/data-real-page="/g) || []).length, 8);
   assert.equal((html.match(/data-real-variant="/g) || []).length, 4);

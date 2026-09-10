@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-31T08:12:53.795Z",
-  "url": "https://yydshly.github.io/0830_1_codex_project/projects/dashi-ppt-skill-study/showcase/",
+  "generatedAt": "2026-09-10T06:48:25.223Z",
+  "url": "http://127.0.0.1:4175/projects/dashi-ppt-skill-study/showcase/",
   "passed": true,
   "results": [
     {
@@ -9,27 +9,29 @@
       "errors": [],
       "downloadStatuses": [
         {
-          "href": "https://yydshly.github.io/0830_1_codex_project/projects/dashi-ppt-skill-study/artifacts/real-run-02-brand-media/dashi-brand-media-selected-v4.pptx",
+          "href": "http://127.0.0.1:4175/projects/dashi-ppt-skill-study/artifacts/real-run-02-brand-media/dashi-brand-media-selected-v4.pptx",
           "status": 200
         },
         {
-          "href": "https://yydshly.github.io/0830_1_codex_project/projects/dashi-ppt-skill-study/artifacts/real-run-02-brand-media/dashi-brand-media-selected-v4.pdf",
+          "href": "http://127.0.0.1:4175/projects/dashi-ppt-skill-study/artifacts/real-run-02-brand-media/dashi-brand-media-selected-v4.pdf",
           "status": 200
         },
         {
-          "href": "https://yydshly.github.io/0830_1_codex_project/projects/dashi-ppt-skill-study/artifacts/real-run-02-brand-media/dashi-brand-media-comparison.pptx",
+          "href": "http://127.0.0.1:4175/projects/dashi-ppt-skill-study/artifacts/real-run-02-brand-media/dashi-brand-media-comparison.pptx",
           "status": 200
         },
         {
-          "href": "https://yydshly.github.io/0830_1_codex_project/projects/dashi-ppt-skill-study/artifacts/real-run-02-brand-media/direct-programmatic-baseline.pptx",
+          "href": "http://127.0.0.1:4175/projects/dashi-ppt-skill-study/artifacts/real-run-02-brand-media/direct-programmatic-baseline.pptx",
           "status": 200
         },
         {
-          "href": "https://yydshly.github.io/0830_1_codex_project/projects/dashi-ppt-skill-study/experiments/real-run-02-brand-media/experiment-report.json",
+          "href": "http://127.0.0.1:4175/projects/dashi-ppt-skill-study/experiments/real-run-02-brand-media/experiment-report.json",
           "status": 200
         }
       ],
       "researchId": "R-003 / Dashi PPT Skill",
+      "heroTitle": "模板先定边界模型负责装配",
+      "heroLead": "Dashi 把预制主题与页面组件交给 Agent 使用：模型理解材料、规划叙事，引擎再通过 props / contentMap 把文字、指标和媒体装入模板并导出。它不是让模型从空白画页面，也不是整页生图。",
       "exampleCount": 6,
       "selectedScenario": "training",
       "route": "direct",
@@ -43,27 +45,29 @@
       "errors": [],
       "downloadStatuses": [
         {
-          "href": "https://yydshly.github.io/0830_1_codex_project/projects/dashi-ppt-skill-study/artifacts/real-run-02-brand-media/dashi-brand-media-selected-v4.pptx",
+          "href": "http://127.0.0.1:4175/projects/dashi-ppt-skill-study/artifacts/real-run-02-brand-media/dashi-brand-media-selected-v4.pptx",
           "status": 200
         },
         {
-          "href": "https://yydshly.github.io/0830_1_codex_project/projects/dashi-ppt-skill-study/artifacts/real-run-02-brand-media/dashi-brand-media-selected-v4.pdf",
+          "href": "http://127.0.0.1:4175/projects/dashi-ppt-skill-study/artifacts/real-run-02-brand-media/dashi-brand-media-selected-v4.pdf",
           "status": 200
         },
         {
-          "href": "https://yydshly.github.io/0830_1_codex_project/projects/dashi-ppt-skill-study/artifacts/real-run-02-brand-media/dashi-brand-media-comparison.pptx",
+          "href": "http://127.0.0.1:4175/projects/dashi-ppt-skill-study/artifacts/real-run-02-brand-media/dashi-brand-media-comparison.pptx",
           "status": 200
         },
         {
-          "href": "https://yydshly.github.io/0830_1_codex_project/projects/dashi-ppt-skill-study/artifacts/real-run-02-brand-media/direct-programmatic-baseline.pptx",
+          "href": "http://127.0.0.1:4175/projects/dashi-ppt-skill-study/artifacts/real-run-02-brand-media/direct-programmatic-baseline.pptx",
           "status": 200
         },
         {
-          "href": "https://yydshly.github.io/0830_1_codex_project/projects/dashi-ppt-skill-study/experiments/real-run-02-brand-media/experiment-report.json",
+          "href": "http://127.0.0.1:4175/projects/dashi-ppt-skill-study/experiments/real-run-02-brand-media/experiment-report.json",
           "status": 200
         }
       ],
       "researchId": "R-003 / Dashi PPT Skill",
+      "heroTitle": "模板先定边界模型负责装配",
+      "heroLead": "Dashi 把预制主题与页面组件交给 Agent 使用：模型理解材料、规划叙事，引擎再通过 props / contentMap 把文字、指标和媒体装入模板并导出。它不是让模型从空白画页面，也不是整页生图。",
       "exampleCount": 6,
       "selectedScenario": "training",
       "route": "direct",
@@ -77,27 +81,29 @@
       "errors": [],
       "downloadStatuses": [
         {
-          "href": "https://yydshly.github.io/0830_1_codex_project/projects/dashi-ppt-skill-study/artifacts/real-run-02-brand-media/dashi-brand-media-selected-v4.pptx",
+          "href": "http://127.0.0.1:4175/projects/dashi-ppt-skill-study/artifacts/real-run-02-brand-media/dashi-brand-media-selected-v4.pptx",
           "status": 200
         },
         {
-          "href": "https://yydshly.github.io/0830_1_codex_project/projects/dashi-ppt-skill-study/artifacts/real-run-02-brand-media/dashi-brand-media-selected-v4.pdf",
+          "href": "http://127.0.0.1:4175/projects/dashi-ppt-skill-study/artifacts/real-run-02-brand-media/dashi-brand-media-selected-v4.pdf",
           "status": 200
         },
         {
-          "href": "https://yydshly.github.io/0830_1_codex_project/projects/dashi-ppt-skill-study/artifacts/real-run-02-brand-media/dashi-brand-media-comparison.pptx",
+          "href": "http://127.0.0.1:4175/projects/dashi-ppt-skill-study/artifacts/real-run-02-brand-media/dashi-brand-media-comparison.pptx",
           "status": 200
         },
         {
-          "href": "https://yydshly.github.io/0830_1_codex_project/projects/dashi-ppt-skill-study/artifacts/real-run-02-brand-media/direct-programmatic-baseline.pptx",
+          "href": "http://127.0.0.1:4175/projects/dashi-ppt-skill-study/artifacts/real-run-02-brand-media/direct-programmatic-baseline.pptx",
           "status": 200
         },
         {
-          "href": "https://yydshly.github.io/0830_1_codex_project/projects/dashi-ppt-skill-study/experiments/real-run-02-brand-media/experiment-report.json",
+          "href": "http://127.0.0.1:4175/projects/dashi-ppt-skill-study/experiments/real-run-02-brand-media/experiment-report.json",
           "status": 200
         }
       ],
       "researchId": "R-003 / Dashi PPT Skill",
+      "heroTitle": "模板先定边界模型负责装配",
+      "heroLead": "Dashi 把预制主题与页面组件交给 Agent 使用：模型理解材料、规划叙事，引擎再通过 props / contentMap 把文字、指标和媒体装入模板并导出。它不是让模型从空白画页面，也不是整页生图。",
       "exampleCount": 6,
       "selectedScenario": "training",
       "route": "direct",

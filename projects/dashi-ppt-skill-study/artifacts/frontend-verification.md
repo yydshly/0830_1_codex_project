@@ -7,6 +7,14 @@
 - 页面：`showcase/index.html`、`showcase/styles.css`、`showcase/app.js`
 - 日期：2026-08-30
 
+## 2026-09-10 · 模板机制摘要复验
+
+- 首屏改为“模板先定边界 / 模型负责装配”，正文直接说明预制页面组件、`props` / `contentMap`、非整页生图，以及模板作者、Agent、确定性引擎的职责分工。
+- 浏览器脚本新增摘要字段与首屏截图断言；1440×1000、768×1024、390×844 三档均为 HTTP 200、横向溢出 0、console/page errors 0，手机 reduced-motion 生效。
+- 三档均实际读取到“模板先定边界”和“不是整页生图”；六案例、training 场景切换、第二轮 direct / slide 4 路线及 5 个下载链接继续通过。
+- 视觉抽查确认桌面端主结论、职责卡与统计同屏，手机端标题、解释、三项入口与证据标签顺序清楚，无孤行或控件裁切。
+- 证据：`frontend-evidence/desktop-r003-release-summary.png`、`tablet-r003-release-summary.png`、`mobile-r003-release-summary.png`、`real-run-browser-report.json`；专题页契约 15/15、能力契约 8/8、仓库结构验证通过。
+
 ## 2026-08-31 · REAL RUN 01 复验
 
 - 新增真实运行审计台：8 个逻辑页、32 个 3+1 PowerPoint 渲染、逐候选对象统计、5 步失败修正轨迹和 5 个产物/报告入口。

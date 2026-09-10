@@ -69,3 +69,4 @@
 | 发布候选浏览器 | 修复 1440px overflow，并复验主题/键盘/reduced-motion | 1440、768、390px | 三档 HTTP 200、overflow 0、console 0；主题往返与 mobile reduce 通过 | pass |
 | GitHub 远端提交 | 意图明确的 R-003 文件提交并推送 `origin/main` | main branch | 首次公开提交 `e916b29f45d0de738205d5195d96a3448a05db13` 已推送 `origin/main`；未纳入并行的 R-006 工作区变更 | pass |
 | GitHub Pages 上线 | Actions 成功，研究索引/Web/下载公开可达 | canonical online URL | Repository checks `33371746745`、Deploy research site `33371746832` 通过；在线三视口与 5 个下载链接均 HTTP 200 | pass |
+| 机制摘要更新 | 首屏和外部 README 明确模板作者、Agent、确定性引擎的职责 | 根索引、项目 README、Web 首屏与机制区 | 摘要契约测试覆盖预制组件、props/contentMap、12×8 网格、9 类构图、非整页生图和自有模板系统；三档 `*-summary.png` 视觉证据 | pass |

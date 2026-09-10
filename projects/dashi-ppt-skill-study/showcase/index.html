@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="R-003：Dashi PPT Skill 的两轮真实生成实验、四类场景样例、工程机制、采用边界与可下载证据。">
+  <meta name="description" content="R-003：解释 Dashi PPT Skill 如何用预制模板、Agent 内容理解和确定性装配生成 PPT，以及组织应如何沉淀自己的模板系统。">
   <meta name="color-scheme" content="light dark">
   <title>R-003 · Dashi PPT Skill 能力与工程机制研究</title>
   <link rel="stylesheet" href="./styles.css">
@@ -40,9 +40,9 @@
     <section class="hero section-shell" id="overview" aria-labelledby="overview-title">
       <div class="hero-grid" aria-hidden="true"></div>
       <div class="hero-copy">
-        <p class="eyebrow">R-003 · 第 3 个研究子项目 · 2026.08.31</p>
-        <h1 id="overview-title">内容只存一份<br><em>方案生成四套</em></h1>
-        <p class="hero-lead">Dashi 的特色不是“也能生成 PPT”，而是把 <strong>canonical content、容量约束、全稿分配、浏览器编辑和分层导出</strong>连成一条可检查的生产线。</p>
+        <p class="eyebrow">R-003 · 第 3 个研究子项目 · 2026.09.10</p>
+        <h1 id="overview-title">模板先定边界<br><em>模型负责装配</em></h1>
+        <p class="hero-lead">Dashi 把<strong>预制主题与页面组件</strong>交给 Agent 使用：模型理解材料、规划叙事，引擎再通过 <strong>props / contentMap</strong> 把文字、指标和媒体装入模板并导出。它不是让模型从空白画页面，也不是整页生图。</p>
         <div class="hero-actions">
           <a class="button button-primary" href="#examples">查看六个案例 <span aria-hidden="true">↓</span></a>
           <a class="button button-quiet" href="#dashi-lab">进入机制模拟</a>
@@ -58,14 +58,14 @@
       <aside class="hero-aside" aria-label="核心判断">
         <div class="decision-card">
           <span class="decision-index">00 / POSITION</span>
-          <p class="decision-question">它和通用 AI PPT<br>差在哪？</p>
-          <p class="decision-answer"><strong>通用工具通常从 Prompt 直接得到一个结果。</strong>Dashi 先冻结事实，再让规则筛掉装不下的版式，并同时保留三套模板候选和一套 Agent 定制方案。</p>
-          <div class="hero-compare" aria-label="通用生成与 Dashi 工作流比较"><span>COMMON</span><b>Prompt → 单一成品</b><span>DASHI</span><b>内容契约 → 约束 → 3+1 → DOM 导出</b></div>
+          <p class="decision-question">模板、模型与引擎<br>如何分工？</p>
+          <p class="decision-answer"><strong>模板作者先写视觉、槽位、容量和允许调整项。</strong>Agent 决定讲什么；Dashi 负责选页、绑定字段、渲染和导出。前三套锁结构，第 4 套只在预置网格与主题规则内重组。</p>
+          <div class="hero-compare" aria-label="模板构建期与生成运行时比较"><span>TEMPLATE</span><b>组件 + 槽位 + 容量</b><span>RUNTIME</span><b>理解 → 选页 → 绑定 → DOM 导出</b></div>
         </div>
         <dl class="stat-grid">
           <div><dt>12</dt><dd>主题</dd></div><div><dt>1,020</dt><dd>布局</dd></div><div><dt>8,576</dt><dd>控件</dd></div><div><dt>3+1</dt><dd>生产模式</dd></div>
         </dl>
-        <p class="source-note"><span class="tag tag-verified">已核验</span> 数量来自固定提交中的 manifest；“3+1”表示三套模板工作流与一条 bespoke 自定义路线。</p>
+        <p class="source-note"><span class="tag tag-verified">已核验</span> 12 个主题与 1,020 个布局是预先编写的代码资产；“3+1”表示三套锁结构模板与一条受约束的 bespoke composition 路线。</p>
       </aside>
     </section>
 
@@ -294,10 +294,10 @@
     <section class="dashi-lab-section" id="dashi-lab" aria-labelledby="dashi-lab-title" data-dashi-lab>
       <div class="section-shell">
         <header class="section-heading heading-inverse">
-          <div><p class="section-index">00.5 / DASHI COMPILER</p><h2 id="dashi-lab-title">别看成品，直接看它如何作出选择</h2></div>
-          <p><span class="tag tag-simulated">机制模拟</span> 参数与评分用于解释锁定版本的工作方式，不代表本次调用了上游模型或导出器。</p>
+          <div><p class="section-index">00.5 / DASHI COMPILER</p><h2 id="dashi-lab-title">模板已经写好，运行时负责选择与装配</h2></div>
+          <p><span class="tag tag-simulated">机制模拟</span> 调整内容容量，观察同一份内容如何匹配页面组件并进入 3+1 路线；这里不代表实时调用了上游模型或导出器。</p>
         </header>
-        <div class="compiler-rail" aria-label="Dashi 处理阶段"><span><b>01</b>CANONICAL<br>内容冻结</span><i>→</i><span><b>02</b>CAPACITY<br>容量筛选</span><i>→</i><span><b>03</b>3 + 1<br>全稿分配</span><i>→</i><span><b>04</b>DOM MAP<br>分层导出</span></div>
+        <div class="compiler-rail" aria-label="Dashi 处理阶段"><span><b>01</b>AUTHOR<br>主题与槽位</span><i>→</i><span><b>02</b>MATCH<br>容量筛选</span><i>→</i><span><b>03</b>BIND<br>内容与属性</span><i>→</i><span><b>04</b>RENDER<br>DOM 到 PPTX</span></div>
         <div class="compiler-workbench">
           <form class="content-contract" data-content-contract>
             <div class="compiler-panel-head"><span>INPUT / CONTENT CONTRACT</span><strong>同一份事实输入</strong></div>
@@ -320,7 +320,7 @@
               <article data-status="reject"><span>REJECT</span><strong>dense-grid</strong><small>需要至少 5 个条目</small></article>
               <article data-status="reject"><span>REJECT</span><strong>media-focus</strong><small>需要主媒体</small></article>
             </div>
-            <p class="gate-note"><b>为什么有特色：</b>先用容量硬条件排除错误版式，再用角色、重点和全稿重复惩罚排序，而不是让模型凭感觉挑一页。</p>
+            <p class="gate-note"><b>模型不是在画模板：</b>模板容量已提前声明；运行时先用容量约束排除装不下的页面，再按角色、重点和全稿重复惩罚排序。</p>
           </section>
 
           <section class="variant-compiler" aria-labelledby="variant-compiler-title">
@@ -338,7 +338,7 @@
           </section>
         </div>
         <div class="difference-strip">
-          <div><span>通用 AI PPT</span><strong>“再生成一版”可能连内容一起变化</strong></div><i aria-hidden="true">≠</i><div><span>Dashi 的关键设计</span><strong>内容只存一份，四个方案通过 contentMap 投影</strong></div><p><span class="tag tag-verified">源码已核验</span> schema v2、layout-query 与 layout-allocation 支持这条机制；视觉质量和真实导出仍需独立实验。</p>
+          <div><span>模板作者 / 构建期</span><strong>用 React / CSS 写视觉组件、槽位、容量与 props</strong></div><i aria-hidden="true">→</i><div><span>Agent + Dashi / 运行时</span><strong>理解内容，经 contentMap 绑定后渲染与导出</strong></div><p><span class="tag tag-verified">真实配置</span> <code>theme03_page076</code> 预设 0—2 图、0—3 chips、横纵布局与 blue/lime 强调；实验只写入 1 图、3 chips，并绑定标题、摘要和指标。</p>
         </div>
       </div>
     </section>
@@ -352,9 +352,9 @@
         <button class="chip is-active" type="button" data-cap-filter="all" aria-pressed="true">全部</button><button class="chip" type="button" data-cap-filter="content" aria-pressed="false">内容</button><button class="chip" type="button" data-cap-filter="visual" aria-pressed="false">视觉</button><button class="chip" type="button" data-cap-filter="delivery" aria-pressed="false">交付</button><button class="chip" type="button" data-cap-filter="governance" aria-pressed="false">治理</button>
       </div>
       <div class="capability-grid" data-capability-grid>
-        <article class="cap-card cap-card-featured" data-capability="content visual"><span class="card-number">01</span><span class="tag tag-verified">已核验</span><h3>内容规划 → 版式匹配</h3><p>宿主 Agent 先拆解叙事，再用硬约束与软约束检索合适布局；不是把文字直接塞进固定模版。</p><ul class="mini-list"><li>Canonical JSON</li><li>布局查询</li><li>全局分配</li></ul></article>
+        <article class="cap-card cap-card-featured" data-capability="content visual"><span class="card-number">01</span><span class="tag tag-verified">已核验</span><h3>内容规划 → 模板装配</h3><p>宿主 Agent 先拆解叙事；Dashi 按容量选择已经写好的页面组件，再通过 props / contentMap 映射文字、指标与媒体。</p><ul class="mini-list"><li>Canonical JSON</li><li>布局查询</li><li>字段绑定</li></ul></article>
         <article class="cap-card" data-capability="visual"><span class="card-number">02</span><span class="tag tag-verified">已核验</span><h3>12 个主题与千级布局库</h3><p>固定提交中包含 12 个主题、1,020 个布局、8,576 个控件，支持从标准模板快速起稿。</p></article>
-        <article class="cap-card" data-capability="visual content"><span class="card-number">03</span><span class="tag tag-verified">已核验</span><h3>3 套模板 + 1 条自定义路线</h3><p>standard、template、poster 三类既定入口之外，还能走 bespoke 路线制作更自由的页面。</p></article>
+        <article class="cap-card" data-capability="visual content"><span class="card-number">03</span><span class="tag tag-verified">已核验</span><h3>3 套锁模板 + 1 条受控重组</h3><p>v1—v3 保留原组件的结构与视觉；v4 由 Agent 输出 composition，但只在 12×8 网格、9 类构图和主题 recipe 内重组。</p></article>
         <article class="cap-card" data-capability="content visual"><span class="card-number">04</span><span class="tag tag-verified">已核验</span><h3>图表、模型与媒体暂存</h3><p>提供图表、结构化模型、媒体 staging 等内容原语，让 Agent 不只会排文本框。</p></article>
         <article class="cap-card cap-card-dark" data-capability="delivery visual"><span class="card-number">05</span><span class="tag tag-verified">已核验</span><h3>浏览器内编辑与自动保存</h3><p>生成结果不是一次性图片：网页编辑器让用户调整文本、强调和页面，再继续导出。</p></article>
         <article class="cap-card" data-capability="delivery"><span class="card-number">06</span><span class="tag tag-verified">已核验</span><h3>HTML / PDF / PPTX</h3><p>一份结构化内容可进入三种交付通道，但表达能力、可编辑性和保真方式并不相同。</p></article>
@@ -391,12 +391,12 @@
 
     <section class="section-shell mechanism-section" id="mechanism" aria-labelledby="mechanism-title">
       <header class="section-heading heading-inverse">
-        <div><p class="section-index">02 / MECHANISM</p><h2 id="mechanism-title">Agent 负责判断，确定性引擎负责落地</h2></div>
-        <p>真正的核心不是一个“生成”按钮，而是两种能力分工后形成的流水线。</p>
+        <div><p class="section-index">02 / MECHANISM</p><h2 id="mechanism-title">模板作者预设边界，Agent 理解内容，引擎执行装配</h2></div>
+        <p>视觉设计、内容判断和工程渲染是三种职责，不是一个大模型从头包办。</p>
       </header>
       <div class="role-split" aria-label="职责分工">
-        <div><span>A / AGENT LAYER</span><strong>理解材料、构造叙事、选择信息密度、提出布局意图</strong></div>
-        <div><span>B / DETERMINISTIC LAYER</span><strong>查布局、渲染 HTML、编辑状态、导出、校验</strong></div>
+        <div><span>A / AUTHOR + AGENT</span><strong>作者先写模板契约；Agent 再理解材料、构造叙事与内容</strong></div>
+        <div><span>B / DETERMINISTIC ENGINE</span><strong>按容量查模板、绑定字段、渲染 HTML、导出与校验</strong></div>
       </div>
       <div class="pipeline-layout">
         <div class="pipeline-rail" role="tablist" aria-label="生成流程步骤" data-pipeline-tabs>
@@ -516,16 +516,16 @@
     </section>
 
     <section class="section-shell extensions-section" id="extensions" aria-labelledby="extensions-title">
-      <header class="section-heading heading-inverse"><div><p class="section-index">06 / EXTENSION</p><h2 id="extensions-title">从“生成器”扩展为组织级演示基础设施</h2></div><p>按建设周期筛选方向。真正有价值的扩展，优先解决证据、治理和协作，而不只是再加一批模板。</p></header>
+      <header class="section-heading heading-inverse"><div><p class="section-index">06 / EXTENSION</p><h2 id="extensions-title">从“用别人的模板”扩展为自己的演示基础设施</h2></div><p>模板数量不是壁垒；真正有价值的是把品牌、常用页型、字段容量、图表规则、证据和 QA 一起编码。</p></header>
       <div class="filter-bar filter-inverse" role="toolbar" aria-label="扩展周期筛选"><button class="chip is-active" type="button" data-extension-filter="all" aria-pressed="true">全部方向</button><button class="chip" type="button" data-extension-filter="near" aria-pressed="false">近期 / 0—3 月</button><button class="chip" type="button" data-extension-filter="mid" aria-pressed="false">中期 / 3—9 月</button><button class="chip" type="button" data-extension-filter="long" aria-pressed="false">长期 / 9 月+</button></div>
       <div class="extension-grid" data-extension-grid><article data-horizon="near"><span>01 / NEAR</span><h3>证据感知的 Deck</h3><p>为每条事实保留来源、时间和置信度，导出前提示无证据结论。</p><b>优先级 A</b></article><article data-horizon="near"><span>02 / NEAR</span><h3>品牌设计系统</h3><p>把品牌字体、色板、图表、页脚和可用布局封装为可测试资产。</p><b>优先级 A</b></article><article data-horizon="near"><span>03 / NEAR</span><h3>独立质量基准</h3><p>建立可复现的 PPTX 保真、溢出、可编辑率、耗时与成本测试。</p><b>优先级 A</b></article><article data-horizon="mid"><span>04 / MID</span><h3>开放导出适配器</h3><p>降低对专有导出器的锁定，并允许按行业接入不同交付通道。</p><b>优先级 B</b></article><article data-horizon="mid"><span>05 / MID</span><h3>输入连接器</h3><p>连接知识库、表格、BI、代码仓库与引用管理系统，保留来源血缘。</p><b>优先级 B</b></article><article data-horizon="mid"><span>06 / MID</span><h3>协作与版本化</h3><p>让 Canonical JSON 进入审阅、差异对比、评论和回滚工作流。</p><b>优先级 B</b></article><article data-horizon="long"><span>07 / LONG</span><h3>治理与可观测性</h3><p>记录模型、提示、素材、渲染器、导出器版本和每次生产成本。</p><b>优先级 C</b></article><article data-horizon="long"><span>08 / LONG</span><h3>本地化与无障碍</h3><p>处理多语言排版、阅读顺序、对比度、替代文本与演讲者辅助。</p><b>优先级 C</b></article></div>
       <div class="supplement-grid"><article><p class="section-index">LICENSE</p><h3>许可不是一句“开源”</h3><p>主仓库是 AGPL-3.0；其中 <code>html-deck-to-pptx</code> 导出器标注为专有许可。商用或分发前需要分别审视。</p><span class="tag tag-verified">已核验</span></article><article><p class="section-index">PRIVACY</p><h3>本地优先也要看监听地址</h3><p>预览服务默认配置可能监听 <code>0.0.0.0</code>。处理敏感材料时建议明确绑定 <code>127.0.0.1</code> 并检查网络边界。</p><span class="tag tag-verified">已核验</span></article><article><p class="section-index">CLAIMS</p><h3>成本与效果要自己复测</h3><p>上游关于 token 成本和效果的数字属于作者自述；本站没有把它们当成独立基准结论。</p><span class="tag tag-upstream">上游自述</span></article></div>
-      <div class="decision-gate"><div><p class="section-index">ADOPTION GATE</p><h3>对你的意义：它值得成为一个“可控的 PPT 生产实验场”</h3></div><ol><li><span>01</span><p><strong>先验证内容效率</strong> 同一材料，比较人工与 Agent 的首稿时间和结构质量。</p></li><li><span>02</span><p><strong>再验证交付质量</strong> 检查 PDF 保真、PPTX 可编辑率、字体和复杂元素。</p></li><li><span>03</span><p><strong>最后决定组织化</strong> 只有当品牌、合规、成本和维护都过门槛，再接入正式流程。</p></li></ol></div>
+      <div class="decision-gate"><div><p class="section-index">ADOPTION GATE</p><h3>对我们的意义：把品牌与汇报经验变成可执行模板系统</h3><p>直接用上游主题只能提效；形成组织能力，需要建设自己的主题、页型、字段契约与验收规则。当前版本没有成熟的 PPTX 模板导入或稳定外部主题插件，深度定制需要源码集成。</p></div><ol><li><span>01</span><p><strong>先选高频页型</strong> 从复盘、研究、培训中提取反复出现的 10—20 类页面。</p></li><li><span>02</span><p><strong>再编码品牌契约</strong> 固定字体、色板、Logo、安全区、容量和图表规则。</p></li><li><span>03</span><p><strong>最后建立 QA</strong> 用真实材料检查事实、溢出、品牌、原生编辑率与人工返工。</p></li></ol></div>
     </section>
   </main>
 
-  <footer class="site-footer"><div><strong>R-003 / Dashi PPT Skill</strong><p>第 3 个研究子项目；独立研究站点，不代表上游项目立场。</p></div><nav aria-label="研究资料"><a href="../README.md">完整研究</a><a href="../experiments/real-run-01/experiment-report.json">实测 01</a><a href="../experiments/real-run-02-brand-media/experiment-report.json">实测 02</a><a href="https://github.com/chuspeeism/dashi-ppt-skill/tree/7cb23347f91cda1a5519eafc8c040704e389535a">固定上游版本</a></nav><span>Updated / 2026.08.31</span></footer>
-  <noscript><section class="noscript-note"><h2>无 JavaScript 阅读提示</h2><p>真实实验已完成：8 个逻辑页生成 32 个 3+1 候选页，再导出 8 页 v4 精选稿。固定 seed 与同一修正规则可逐字节复现 goal.json；初始 PowerPoint 渲染捕获 2 个越界候选，替换 2 个同主题布局后最终为 0 越界。</p><p><a href="../artifacts/real-run-01/dashi-real-run-01-selected-v4.pptx">下载 8 页精选 PPTX</a> · <a href="../artifacts/real-run-01/dashi-real-run-01-selected-v4.pdf">下载 PDF</a> · <a href="../experiments/real-run-01/experiment-report.json">机器审计报告</a></p><p>Dashi 的差异化机制仍可直接阅读：同一份 canonical content 先通过版式容量约束，再映射到三套模板候选和一套 Agent 定制方案；PPTX 导出按对象能力采用原生映射与截图回退。</p><p>四份扩展场景样例的目录如下，启用 JavaScript 后可切换并预览每一页。</p><h3>研究咨询</h3><ol><li>决策封面</li><li>结论摘要</li><li>研究范围</li><li>市场分层</li><li>证据矩阵</li><li>路径比较</li><li>目标场景</li><li>90 天验证</li><li>建议与门槛</li></ol><h3>季度经营复盘</h3><ol><li>季度封面</li><li>经营摘要</li><li>核心指标</li><li>增长漏斗</li><li>偏差诊断</li><li>产品线比较</li><li>Q4 行动</li><li>Q4 路线</li><li>责任与目标</li></ol><h3>企业培训</h3><ol><li>课程封面</li><li>学习成果</li><li>课程地图</li><li>判断流程</li><li>风险案例</li><li>情境测验</li><li>岗位场景</li><li>推广计划</li><li>行为承诺</li></ol><h3>项目方案路演</h3><ol><li>方案封面</li><li>价值主张</li><li>目标范围</li><li>方案架构</li><li>数据边界</li><li>目标收益</li><li>应用场景</li><li>实施路线</li><li>试点决策</li></ol></section></noscript>
+  <footer class="site-footer"><div><strong>R-003 / Dashi PPT Skill</strong><p>第 3 个研究子项目；独立研究站点，不代表上游项目立场。</p></div><nav aria-label="研究资料"><a href="../README.md">完整研究</a><a href="../experiments/real-run-01/experiment-report.json">实测 01</a><a href="../experiments/real-run-02-brand-media/experiment-report.json">实测 02</a><a href="https://github.com/chuspeeism/dashi-ppt-skill/tree/7cb23347f91cda1a5519eafc8c040704e389535a">固定上游版本</a></nav><span>Updated / 2026.09.10</span></footer>
+  <noscript><section class="noscript-note"><h2>无 JavaScript 阅读提示</h2><p>Dashi 本质是预制主题/页面组件、Agent 内容理解和确定性装配的组合。v1—v3 锁定结构，只通过 props / contentMap 填文字、指标和媒体；v4 只在预置 12×8 网格、9 类构图与主题 recipe 内重组。它不是整页生图。</p><p>真实实验已完成：8 个逻辑页生成 32 个 3+1 候选页，再导出 8 页 v4 精选稿。固定 seed 与同一修正规则可逐字节复现 goal.json；初始 PowerPoint 渲染捕获 2 个越界候选，替换 2 个同主题布局后最终为 0 越界。</p><p><a href="../artifacts/real-run-01/dashi-real-run-01-selected-v4.pptx">下载 8 页精选 PPTX</a> · <a href="../artifacts/real-run-01/dashi-real-run-01-selected-v4.pdf">下载 PDF</a> · <a href="../experiments/real-run-01/experiment-report.json">机器审计报告</a></p><p>PPTX 导出按对象能力采用原生映射与截图回退。对我们的长期价值不是拥有更多现成模板，而是把品牌、常用页型、容量、字段绑定和 QA 变成自己的可执行模板系统。</p><p>四份扩展场景样例的目录如下，启用 JavaScript 后可切换并预览每一页。</p><h3>研究咨询</h3><ol><li>决策封面</li><li>结论摘要</li><li>研究范围</li><li>市场分层</li><li>证据矩阵</li><li>路径比较</li><li>目标场景</li><li>90 天验证</li><li>建议与门槛</li></ol><h3>季度经营复盘</h3><ol><li>季度封面</li><li>经营摘要</li><li>核心指标</li><li>增长漏斗</li><li>偏差诊断</li><li>产品线比较</li><li>Q4 行动</li><li>Q4 路线</li><li>责任与目标</li></ol><h3>企业培训</h3><ol><li>课程封面</li><li>学习成果</li><li>课程地图</li><li>判断流程</li><li>风险案例</li><li>情境测验</li><li>岗位场景</li><li>推广计划</li><li>行为承诺</li></ol><h3>项目方案路演</h3><ol><li>方案封面</li><li>价值主张</li><li>目标范围</li><li>方案架构</li><li>数据边界</li><li>目标收益</li><li>应用场景</li><li>实施路线</li><li>试点决策</li></ol></section></noscript>
   <script src="./app.js" defer></script>
 </body>
 </html>
