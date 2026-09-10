@@ -13,6 +13,7 @@
 - 浏览器脚本新增摘要字段与首屏截图断言；1440×1000、768×1024、390×844 三档均为 HTTP 200、横向溢出 0、console/page errors 0，手机 reduced-motion 生效。
 - 三档均实际读取到“模板先定边界”和“不是整页生图”；六案例、training 场景切换、第二轮 direct / slide 4 路线及 5 个下载链接继续通过。
 - 视觉抽查确认桌面端主结论、职责卡与统计同屏，手机端标题、解释、三项入口与证据标签顺序清楚，无孤行或控件裁切。
+- 提交 `4002a73206e52d09d33e322b707edb6daee6eb21` 推送后，Repository checks run `34447034242` 和 Deploy research site run `34447034271` 均成功；同一脚本在 canonical GitHub Pages URL 复跑通过，机器报告 URL 已由本地地址更新为线上地址。
 - 证据：`frontend-evidence/desktop-r003-release-summary.png`、`tablet-r003-release-summary.png`、`mobile-r003-release-summary.png`、`real-run-browser-report.json`；专题页契约 15/15、能力契约 8/8、仓库结构验证通过。
 
 ## 2026-08-31 · REAL RUN 01 复验
